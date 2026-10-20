@@ -486,7 +486,7 @@ def ejecutar_particion_search(particion):
     return []
 
 
-def ejecutar_region_mapa(region_tuple):
+def ejecutar_region_mapa(region_tuple, iv_min=100, iv_max=100, pokemon_ids=None):
     nombre_region, n_lat, w_lng, s_lat, e_lng = region_tuple
     payload = {
         "mode": "pokemon",
@@ -496,12 +496,12 @@ def ejecutar_region_mapa(region_tuple):
         "e_lng": e_lng,
         "num_results": 100,
         "filters": {
-            "pokemon_ids": [],
+            "pokemon_ids": pokemon_ids or [],
             "species_forms": [],
             "blacklist_pokemon_ids": [],
             "blacklist_species_forms": [],
-            "iv_min": 100,
-            "iv_max": 100,
+            "iv_min": iv_min,
+            "iv_max": iv_max,
             "cp_min": None,
             "cp_max": None,
             "level_min": None,
@@ -615,12 +615,11 @@ def preparar_lista_spawns(diccionario_spawns, cache_coords, estado_cuota):
                     mon["coords_final"] = f"{apx_lat:.6f},{apx_long:.6f}"
                     mon["lat_final"] = apx_lat
                     mon["lng_final"] = apx_long
-                    mon["precision_coords"] = "Mapa (~300m)"
+                    mon["precision_coords"] = "Mapa"
                 else:
-                    mon["coords_final"] = "No disponible (cuota /reveal en espera)"
+                    mon["coords_final"] = None
                     mon["lat_final"] = None
                     mon["lng_final"] = None
-                    mon["precision_coords"] = "Pendiente"
 
         lat = mon.get("lat_final")
         lng = mon.get("lng_final")
@@ -668,7 +667,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
 
     with ThreadPoolExecutor(max_workers=14) as executor:
         fut_shundos = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_SHUNDOS]
-        fut_mapa = [executor.submit(ejecutar_region_mapa, r) for r in REGIONES_GLOBALES]
+        fut_mapa = [executor.submit(ejecutar_region_mapa, r, 100, 100, None) for r in REGIONES_GLOBALES]
         fut_gl = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_GL]
         fut_ul = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_UL]
 
@@ -698,6 +697,25 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
                 if mon.get("shiny") and pvp.get("league") == "ultra" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
                     eid = str(mon.get("encounter_id"))
                     ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
+
+    # Cruzar los Pokémon de GL y UL con /map/lookup para tener siempre sus coordenadas (incluso si /reveal entra en enfriamiento)
+    pvp_poke_ids = list({
+        int(m["pokemon_id"])
+        for d in (gl_por_id, ul_por_id)
+        for m in d.values()
+        if m.get("pokemon_id") is not None
+    })
+    if pvp_poke_ids:
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            fut_mapa_pvp = [executor.submit(ejecutar_region_mapa, r, None, None, pvp_poke_ids) for r in REGIONES_GLOBALES]
+            for fut in as_completed(fut_mapa_pvp):
+                _, items = fut.result()
+                for mon in items:
+                    eid = str(mon.get("encounter_id"))
+                    if eid in gl_por_id:
+                        gl_por_id[eid] = normalizar_spawn(gl_por_id[eid], mon)
+                    if eid in ul_por_id:
+                        ul_por_id[eid] = normalizar_spawn(ul_por_id[eid], mon)
 
     cache_coords = cargar_json(CACHE_FILE)
     notificados = cargar_json(NOTIFICADOS_FILE)
