@@ -2,61 +2,211 @@
   "shundo:-8964881626200729002": {
     "canal": "shundo",
     "pokemon": "Lillipup",
-    "coords": "36.958797,-120.045893",
-    "ts": 1792518517,
+    "coords": "36.960426,-120.049289",
+    "ts": 1792519146,
     "despawn_unix": 1792519768,
-    "discord_msg_id": "1562160631375994993",
+    "discord_msg_id": "1562163267550318623",
     "eliminado_de_discord": false,
-    "notificado_en": "2026-10-20 17:48:39"
+    "notificado_en": "2026-10-20 12:59:09"
+  },
+  "shundo:-2499200120285271917": {
+    "canal": "shundo",
+    "pokemon": "Smoliv",
+    "coords": "25.421635,51.498481",
+    "ts": 1792519146,
+    "despawn_unix": 1792520493,
+    "discord_msg_id": "1562163271338041445",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 12:59:09"
   },
   "shundo:3346775305146102509": {
     "canal": "shundo",
     "pokemon": "Hitmonchan",
-    "coords": "35.691591,-78.41146",
-    "ts": 1792518517,
+    "coords": "35.689872,-78.407783",
+    "ts": 1792519146,
     "despawn_unix": 1792519567,
-    "discord_msg_id": "1562160632898256917",
+    "discord_msg_id": "1562163274454401055",
     "eliminado_de_discord": false,
-    "notificado_en": "2026-10-20 17:48:39"
-  },
-  "shundo:-3635673937419569381": {
-    "canal": "shundo",
-    "pokemon": "Gastly",
-    "coords": "10.838657,106.831122",
-    "ts": 1792518517,
-    "despawn_unix": 1792518976,
-    "discord_msg_id": "1562160634345554041",
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-20 17:48:39"
-  },
-  "shundo:8397377359751300700": {
-    "canal": "shundo",
-    "pokemon": "Cyndaquil",
-    "coords": "30.599666,-96.381559",
-    "ts": 1792518517,
-    "despawn_unix": 1792519052,
-    "discord_msg_id": "1562160635561902252",
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-20 17:48:39"
-  },
-  "shundo:-6600964309259007265": {
-    "canal": "shundo",
-    "pokemon": "Zubat",
-    "coords": "51.083172,13.782506",
-    "ts": 1792518991,
-    "despawn_unix": 1792519120,
-    "discord_msg_id": "1562162619480019086",
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-20 17:56:32"
+    "notificado_en": "2026-10-20 12:59:09"
   },
   "shundo:-5210388735542790114": {
     "canal": "shundo",
     "pokemon": "Skitty",
     "coords": "30.109404,-95.651467",
-    "ts": 1792518991,
+    "ts": 1792519146,
     "despawn_unix": 1792519897,
-    "discord_msg_id": "1562162621287768095",
+    "discord_msg_id": "1562163276585111706",
     "eliminado_de_discord": false,
-    "notificado_en": "2026-10-20 17:56:32"
+    "notificado_en": "2026-10-20 12:59:09"
+  },
+  "great:8631693521352797821": {
+    "canal": "great",
+    "pokemon": "Buneary",
+    "coords": "43.052228,-87.898197",
+    "ts": 1792519377,
+    "despawn_unix": 1792520190,
+    "discord_msg_id": "1562164236380012556",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:-5823053121737360503": {
+    "canal": "great",
+    "pokemon": "Stunfisk (Galarian)",
+    "coords": "52.016782,7.698864",
+    "ts": 1792519377,
+    "despawn_unix": 1792520131,
+    "discord_msg_id": "1562164240465395784",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:-5873556336874645851": {
+    "canal": "great",
+    "pokemon": "Sewaddle",
+    "coords": "33.772727,-84.325501",
+    "ts": 1792519377,
+    "despawn_unix": 1792520090,
+    "discord_msg_id": "1562164244047466657",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:3585510782403894153": {
+    "canal": "great",
+    "pokemon": "Shelmet",
+    "coords": "53.697517,10.043041",
+    "ts": 1792519377,
+    "despawn_unix": 1792519977,
+    "discord_msg_id": "1562164247398457345",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:5927874379617283473": {
+    "canal": "great",
+    "pokemon": "Mareep",
+    "coords": "51.486042,7.324644",
+    "ts": 1792519377,
+    "despawn_unix": 1792519495,
+    "discord_msg_id": "1562164251290898653",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:-6081553458766136271": {
+    "canal": "great",
+    "pokemon": "Tympole",
+    "coords": "51.607990,-0.084177",
+    "ts": 1792519377,
+    "despawn_unix": 1792519949,
+    "discord_msg_id": "1562164254646337587",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:1354560310677978083": {
+    "canal": "great",
+    "pokemon": "Turtwig",
+    "coords": "55.874354,-4.285646",
+    "ts": 1792519377,
+    "despawn_unix": 1792519642,
+    "discord_msg_id": "1562164258488324138",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:-8525364412107649690": {
+    "canal": "great",
+    "pokemon": "Oshawott",
+    "coords": "51.355445,5.415514",
+    "ts": 1792519377,
+    "despawn_unix": 1792520431,
+    "discord_msg_id": "1562164261428658218",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:8332111275301890820": {
+    "canal": "great",
+    "pokemon": "Eevee",
+    "coords": "52.987158,-1.139825",
+    "ts": 1792519377,
+    "despawn_unix": 1792520584,
+    "discord_msg_id": "1562164272124002495",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "great:1922531998167505083": {
+    "canal": "great",
+    "pokemon": "Shuppet",
+    "coords": "52.062769,5.098537",
+    "ts": 1792519377,
+    "despawn_unix": 1792520316,
+    "discord_msg_id": "1562164275630317729",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:08"
+  },
+  "ultra:7631025967529012506": {
+    "canal": "ultra",
+    "pokemon": "Snover",
+    "coords": "51.155546,16.994478",
+    "ts": 1792519377,
+    "despawn_unix": 1792520268,
+    "discord_msg_id": "1562164280688906240",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:14"
+  },
+  "ultra:3585510782403894153": {
+    "canal": "ultra",
+    "pokemon": "Shelmet",
+    "coords": "53.697517,10.043041",
+    "ts": 1792519377,
+    "despawn_unix": 1792519977,
+    "discord_msg_id": "1562164284518170665",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:14"
+  },
+  "ultra:239578011486541239": {
+    "canal": "ultra",
+    "pokemon": "Whismur",
+    "coords": "36.012134,-115.163699",
+    "ts": 1792519377,
+    "despawn_unix": 1792519916,
+    "discord_msg_id": "1562164288196710462",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:14"
+  },
+  "ultra:-459095262696146759": {
+    "canal": "ultra",
+    "pokemon": "Shuppet",
+    "coords": "45.533961,-122.689653",
+    "ts": 1792519377,
+    "despawn_unix": 1792522296,
+    "discord_msg_id": "1562164291161952259",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:14"
+  },
+  "ultra:3268074647811215441": {
+    "canal": "ultra",
+    "pokemon": "Mienfoo",
+    "coords": "41.728728,-87.677518",
+    "ts": 1792519377,
+    "despawn_unix": 1792520601,
+    "discord_msg_id": "1562164295503052902",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:14"
+  },
+  "ultra:-6081553458766136271": {
+    "canal": "ultra",
+    "pokemon": "Tympole",
+    "coords": "51.607990,-0.084177",
+    "ts": 1792519377,
+    "despawn_unix": 1792519949,
+    "discord_msg_id": "1562164299193917512",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:14"
+  },
+  "ultra:-1523091075039162224": {
+    "canal": "ultra",
+    "pokemon": "Hitmonchan",
+    "coords": "51.369534,5.362848",
+    "ts": 1792519377,
+    "despawn_unix": 1792520107,
+    "discord_msg_id": "1562164302407016530",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 13:03:14"
   }
 }
