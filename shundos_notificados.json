@@ -65,10 +65,27 @@
   "6965142223619283014": {
     "pokemon": "Fletchling",
     "coords": "45.016553,7.618309",
+<<<<<<< Updated upstream
     "ts": 1792517358,
     "despawn_unix": 1792518290,
     "discord_msg_id": "1562155765001621525",
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-20 12:29:18"
+=======
+    "ts": 1792517023,
+    "notificado_en": "2026-10-20 12:23:43"
+  },
+  "5894649730265632585": {
+    "pokemon": "Grubbin",
+    "coords": "51.5782444,-0.2756433",
+    "ts": 1792517099,
+    "notificado_en": "2026-10-20 17:24:59"
+  },
+  "-3049337337852335587": {
+    "pokemon": "Numel",
+    "coords": "35.061238,-106.5671081",
+    "ts": 1792517099,
+    "notificado_en": "2026-10-20 17:24:59"
+>>>>>>> Stashed changes
   }
 }
