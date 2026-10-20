@@ -2176,5 +2176,31 @@
     ],
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-20 20:27:58"
+  },
+  "shundo:2586550170922707927": {
+    "canal": "shundo",
+    "pokemon": "Litwick",
+    "coords": "10.788855,106.656012",
+    "ts": 1792528178,
+    "despawn_unix": 1792528692,
+    "discord_msg_id": "1562201151305162953",
+    "discord_msg_ids": [
+      "1562201151305162953"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 20:29:38"
+  },
+  "ultra:-337887548621783293": {
+    "canal": "ultra",
+    "pokemon": "Magnemite",
+    "coords": "41.640341,-0.879210",
+    "ts": 1792528178,
+    "despawn_unix": 1792529614,
+    "discord_msg_id": "1562201152609583196",
+    "discord_msg_ids": [
+      "1562201152609583196"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 20:29:39"
   }
 }
