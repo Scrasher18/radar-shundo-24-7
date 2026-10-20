@@ -4971,5 +4971,31 @@
     ],
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-20 22:54:00"
+  },
+  "ultra:6174330292518784766": {
+    "canal": "ultra",
+    "pokemon": "Rattata",
+    "coords": "-37.760821,144.958332",
+    "ts": 1792536884,
+    "despawn_unix": 1792538371,
+    "discord_msg_id": "1562237665598898230",
+    "discord_msg_ids": [
+      "1562237665598898230"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 22:54:44"
+  },
+  "ultra:5873349828305554095": {
+    "canal": "ultra",
+    "pokemon": "Skwovet",
+    "coords": "29.509924,-98.513686",
+    "ts": 1792536884,
+    "despawn_unix": 1792538465,
+    "discord_msg_id": "1562237667255656479",
+    "discord_msg_ids": [
+      "1562237667255656479"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 22:54:44"
   }
 }
