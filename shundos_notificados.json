@@ -2,44 +2,57 @@
   "4747617517942411339": {
     "pokemon": "Stufful",
     "coords": "50.090961,14.440035",
-    "ts": 1792517358,
+    "ts": 1792517432,
     "despawn_unix": 1792518049,
+<<<<<<< Updated upstream
     "discord_msg_id": "1562155740066615309",
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-20 12:29:18"
+=======
+    "discord_msg_id": "1562156061467615366",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 17:30:32"
+>>>>>>> Stashed changes
   },
   "-3207753989357129088": {
     "pokemon": "Shellos (East Sea)",
     "coords": "51.5176491,-0.0810407",
-    "ts": 1792517358,
+    "ts": 1792517432,
     "despawn_unix": 1792517619,
+<<<<<<< Updated upstream
     "discord_msg_id": "1562155745074610228",
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-20 12:29:18"
+=======
+    "discord_msg_id": "1562156062877163574",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 17:30:32"
+>>>>>>> Stashed changes
   },
   "5894649730265632585": {
     "pokemon": "Grubbin",
     "coords": "51.5782444,-0.2756433",
-    "ts": 1792517358,
+    "ts": 1792517432,
     "despawn_unix": 1792518503,
-    "discord_msg_id": "1562155747951906937",
+    "discord_msg_id": "1562156064084856967",
     "eliminado_de_discord": false,
-    "notificado_en": "2026-10-20 12:29:18"
+    "notificado_en": "2026-10-20 17:30:32"
   },
   "6948624369232243574": {
     "pokemon": "Zigzagoon",
     "coords": "29.0407917,-98.5857094",
-    "ts": 1792517358,
+    "ts": 1792517432,
     "despawn_unix": 1792518310,
-    "discord_msg_id": "1562155750980198411",
-    "eliminado_de_discord": false,
-    "notificado_en": "2026-10-20 12:29:18"
+    "discord_msg_id": "1562156065221644320",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 17:30:32"
   },
   "-9059260565814284946": {
     "pokemon": "Minun",
     "coords": "41.341057,19.837349",
-    "ts": 1792517358,
+    "ts": 1792517432,
     "despawn_unix": 1792517809,
+<<<<<<< Updated upstream
     "discord_msg_id": "1562155754637762662",
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-20 12:29:18"
@@ -52,24 +65,38 @@
     "discord_msg_id": "1562155758408171552",
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-20 12:29:18"
+=======
+    "discord_msg_id": "1562156066794635396",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 17:30:32"
+>>>>>>> Stashed changes
   },
   "8397377359751300700": {
     "pokemon": "Cyndaquil",
-    "coords": "30.5987774,-96.3838233",
-    "ts": 1792517358,
+    "coords": "30.599666,-96.381559",
+    "ts": 1792517432,
     "despawn_unix": 1792519052,
-    "discord_msg_id": "1562155761545642069",
+    "discord_msg_id": "1562156068254126190",
     "eliminado_de_discord": false,
-    "notificado_en": "2026-10-20 12:29:18"
+    "notificado_en": "2026-10-20 17:30:32"
   },
   "6965142223619283014": {
     "pokemon": "Fletchling",
-    "coords": "45.016553,7.618309",
-<<<<<<< Updated upstream
-    "ts": 1792517358,
+    "coords": "45.014142,7.619861",
+    "ts": 1792517432,
     "despawn_unix": 1792518290,
-    "discord_msg_id": "1562155765001621525",
+    "discord_msg_id": "1562156078110740491",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 17:30:32"
+  },
+  "3346775305146102509": {
+    "pokemon": "Hitmonchan",
+    "coords": "35.691591,-78.41146",
+    "ts": 1792517917,
+    "despawn_unix": 1792519567,
+    "discord_msg_id": "1562158111681417309",
     "eliminado_de_discord": false,
+<<<<<<< Updated upstream
     "notificado_en": "2026-10-20 12:29:18"
 <<<<<<< Updated upstream
 =======
@@ -199,6 +226,9 @@
     "discord_msg_id": "1562159646972710914",
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-20 12:44:44"
+>>>>>>> Stashed changes
+=======
+    "notificado_en": "2026-10-20 17:38:37"
 >>>>>>> Stashed changes
   }
 }
