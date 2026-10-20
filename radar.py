@@ -8,11 +8,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 import requests
 
-try:
-    import winsound
-except ImportError:
-    winsound = None
-
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
@@ -47,14 +42,12 @@ ES_MODO_NUBE = os.environ.get("CLOUD_MODE") == "1" or sys.platform != "win32"
 LAT_ORIGEN = -12.058662
 LNG_ORIGEN = -77.036896
 
-# Opciones locales de apoyo (se desactivan solas cuando corre en la nube Linux)
-ACTIVAR_ALARMA_SONORA_PC = not ES_MODO_NUBE
 AUTO_COPIAR_PORTAPAPELES = not ES_MODO_NUBE
 
 # Configuración del Vigilante Automático 24/7
 MODO_VIGILANTE_CONTINUO = True     # True = revisa cada INTERVALO_SEGUNDOS automáticamente
 INTERVALO_SEGUNDOS = 480           # Cada cuántos segundos busca nuevos Shundos (480s = 8 minutos)
-MIN_SEGUNDOS_VIDA = 90             # Ignorar Shundos a los que les queden menos de 90s de vida (evita saltar en vano)
+MIN_SEGUNDOS_VIDA = 90             # Ignorar Shundos a los que les queden menos de 90s de vida
 TTL_LIMPIEZA_CACHE_SEGUNDOS = 43200 # Limpiar automáticamente registros de más de 12 horas (mantenimiento 24/7)
 MAX_REVEALS_POR_EJECUCION = 50
 
@@ -65,23 +58,6 @@ headers = {
     "Content-Type": "application/json",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 }
-
-# Tabla oficial de Cooldown de Pokémon GO (distancia en km -> minutos de espera)
-TABLA_COOLDOWN_POGO = [
-    (1, "0m 30s (Sin espera)"),
-    (5, "2 min"),
-    (10, "6 min"),
-    (25, "11 min"),
-    (30, "14 min"),
-    (65, "22 min"),
-    (81, "25 min"),
-    (100, "28 min"),
-    (250, "43 min"),
-    (500, "62 min (1h 02m)"),
-    (750, "78 min (1h 18m)"),
-    (1000, "90 min (1h 30m)"),
-    (1500, "120 min (2h máx)"),
-]
 
 # 8 regiones globales que cubren todo el mundo (hasta 100 Shundos por región en /map/lookup)
 REGIONES_GLOBALES = [
@@ -121,15 +97,6 @@ def calcular_distancia_km(lat1, lon1, lat2, lon2):
     return r * c
 
 
-def calcular_cooldown_pogo(distancia_km):
-    if distancia_km is None:
-        return "Desconocido"
-    for km_max, texto in TABLA_COOLDOWN_POGO:
-        if distancia_km <= km_max:
-            return texto
-    return "120 min (2h máx)"
-
-
 def cargar_json(ruta):
     if os.path.exists(ruta):
         try:
@@ -150,7 +117,6 @@ def guardar_json(ruta, datos):
 
 def limpiar_archivos_antiguos(cache_coords, notificados):
     ahora = int(time.time())
-    # Limpiar cache_coordenadas (>12h)
     claves_borrar_cache = [
         k for k, v in cache_coords.items()
         if isinstance(v, dict) and (ahora - int(v.get("ts", ahora))) > TTL_LIMPIEZA_CACHE_SEGUNDOS
@@ -158,7 +124,6 @@ def limpiar_archivos_antiguos(cache_coords, notificados):
     for k in claves_borrar_cache:
         del cache_coords[k]
 
-    # Limpiar shundos_notificados (>12h), conservando metadatos especiales (_meta_*)
     claves_borrar_notif = [
         k for k, v in notificados.items()
         if not k.startswith("_meta_") and isinstance(v, dict) and (ahora - int(v.get("ts", ahora))) > TTL_LIMPIEZA_CACHE_SEGUNDOS
@@ -177,23 +142,12 @@ def copiar_al_portapapeles(texto):
         return False
 
 
-def sonar_alarma_shundo():
-    if not ACTIVAR_ALARMA_SONORA_PC or not winsound:
-        return
-    try:
-        for freq, dur in [(880, 160), (1175, 160), (1397, 160), (1760, 350), (1397, 150), (1760, 450)]:
-            winsound.Beep(freq, dur)
-    except Exception:
-        pass
-
-
 def enviar_alerta_token_vencido():
     if not DISCORD_WEBHOOK_URL.strip():
         return
     notificados = cargar_json(NOTIFICADOS_FILE)
     ahora = int(time.time())
     ultimo_aviso = int(notificados.get("_meta_alerta_401_ts", 0))
-    # Avisar máximo 1 vez cada 6 horas para no hacer spam
     if ahora - ultimo_aviso < 21600:
         return
 
@@ -237,15 +191,12 @@ def obtener_etiquetas_rareza(mon):
     return " • ".join(etiquetas)
 
 
-def enviar_alerta_discord(nuevos_shundos, ultimo_shundo_previo=None):
+def enviar_alerta_discord(nuevos_shundos):
     if not DISCORD_WEBHOOK_URL.strip():
         return False
 
     embeds = []
     origen_txt = "☁️ Nube 24/7" if ES_MODO_NUBE else "💻 PC Local"
-    ref_lat = ultimo_shundo_previo.get("lat") if isinstance(ultimo_shundo_previo, dict) else None
-    ref_lng = ultimo_shundo_previo.get("lng") if isinstance(ultimo_shundo_previo, dict) else None
-    ref_nombre = ultimo_shundo_previo.get("pokemon") if isinstance(ultimo_shundo_previo, dict) else None
 
     for mon in nuevos_shundos[:10]:
         poke_id = mon.get("pokemon_id") or 1
@@ -262,44 +213,18 @@ def enviar_alerta_discord(nuevos_shundos, ultimo_shundo_previo=None):
         despawn_unix = mon.get("despawn_unix")
         icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{poke_id}.s.icon.png"
 
-        # Semáforo de urgencia según el tiempo de vida restante
         if seg_rest >= 900:
             estado_tiempo = f"🟢 **Tiempo Seguro** (`{ttl}`)"
-            color_embed = 0xFFD700  # Dorado
+            color_embed = 0xFFD700
         elif seg_rest >= 300:
             estado_tiempo = f"🟡 **Tiempo Medio** (`{ttl}`)"
-            color_embed = 0xF97316  # Naranja
+            color_embed = 0xF97316
         else:
             estado_tiempo = f"🔴 **¡SALTAR YA!** (`{ttl}`)"
-            color_embed = 0xEF4444  # Rojo urgencia
+            color_embed = 0xEF4444
 
         if despawn_unix:
             estado_tiempo += f"\n🕒 Desaparece: <t:{despawn_unix}:R>"
-
-        # Ataques
-        fast_m = mon.get("fast_move")
-        charge_m = mon.get("charge_move")
-        ataques_txt = f"`{fast_m}` / `{charge_m}`" if (fast_m or charge_m) else "Estándar"
-
-        # Calculadora de Cooldown desde el Shundo anterior (y desde origen)
-        lat_m = mon.get("lat_final")
-        lng_m = mon.get("lng_final")
-        dist_origen = mon.get("distancia_km")
-        cd_origen = calcular_cooldown_pogo(dist_origen)
-
-        if ref_lat is not None and ref_lng is not None and lat_m is not None and lng_m is not None:
-            dist_prev = calcular_distancia_km(ref_lat, ref_lng, lat_m, lng_m)
-            cd_prev = calcular_cooldown_pogo(dist_prev)
-            cooldown_txt = (
-                f"🔄 **Desde {ref_nombre}:** `{cd_prev}` ({dist_prev:.1f} km)\n"
-                f"🏠 **Desde tu Origen:** `{cd_origen}` ({dist_origen:.0f} km)"
-            )
-        else:
-            cooldown_txt = f"🏠 **Desde tu Origen:** `{cd_origen}` ({dist_origen:.0f} km)" if dist_origen is not None else "N/A"
-
-        # Actualizar referencia para el siguiente en la lista
-        if lat_m is not None and lng_m is not None:
-            ref_lat, ref_lng, ref_nombre = lat_m, lng_m, nombre
 
         rareza_txt = obtener_etiquetas_rareza(mon)
 
@@ -312,8 +237,6 @@ def enviar_alerta_discord(nuevos_shundos, ultimo_shundo_previo=None):
             "fields": [
                 {"name": "📊 Estadísticas", "value": f"**IV:** `100% (15/15/15)`\n**CP:** `{cp}` | **Nivel:** `{nivel}`\n**Talla:** `{size}` ({gender})", "inline": True},
                 {"name": "⏳ Estado Despawn", "value": estado_tiempo, "inline": True},
-                {"name": "⚔️ Movimientos", "value": ataques_txt, "inline": False},
-                {"name": "⏱️ Calculadora de Cooldown", "value": cooldown_txt, "inline": False},
                 {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
                 {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
             ],
@@ -330,16 +253,7 @@ def enviar_alerta_discord(nuevos_shundos, ultimo_shundo_previo=None):
     try:
         r = requests.post(DISCORD_WEBHOOK_URL.strip(), json=payload, timeout=10)
         if r.status_code in (200, 204):
-            # Enviar mensaje separado SOLO con la coordenada limpia para copiar en 1 toque en Discord Móvil
-            for mon in nuevos_shundos[:5]:
-                coords = mon.get("coords_final") or ""
-                if "," in str(coords):
-                    requests.post(
-                        DISCORD_WEBHOOK_URL.strip(),
-                        json={"username": f"📋 Copiar: {mon.get('nombre_completo')} (CP {mon.get('cp')} L{mon.get('level')})", "content": f"{coords}"},
-                        timeout=8
-                    )
-            print("   ✅ [Discord] ¡Tarjeta(s) + Coordenada(s) de 1-toque enviadas a tu Discord!")
+            print("   ✅ [Discord] ¡Alerta enviada exitosamente a tu canal de Discord!")
             return True
         else:
             print(f"   ⚠️ [Discord] Error HTTP {r.status_code}: {r.text[:150]}")
@@ -348,7 +262,7 @@ def enviar_alerta_discord(nuevos_shundos, ultimo_shundo_previo=None):
     return False
 
 
-def disparar_alertas_nuevos_shundos(nuevos_shundos, ultimo_shundo_previo=None):
+def disparar_alertas_nuevos_shundos(nuevos_shundos):
     if not nuevos_shundos:
         return
 
@@ -356,16 +270,10 @@ def disparar_alertas_nuevos_shundos(nuevos_shundos, ultimo_shundo_previo=None):
     coords_mejor = mejor.get("coords_final") or ""
     nombre_mejor = mejor.get("nombre_completo") or mejor.get("pokemon_name")
 
-    print("\n" + "🚨" * 35)
-    print(f"🔔 ¡ALARMA DISCORD ACTIVADA! {len(nuevos_shundos)} NUEVO(S) SHUNDO(S) 100% IV DETECTADO(S) 🔔")
-    print("🚨" * 35)
-
     if AUTO_COPIAR_PORTAPAPELES and copiar_al_portapapeles(coords_mejor):
         print(f"   📋 [Portapapeles] Coordenada copiada automáticamente (Ctrl+V): {coords_mejor} ({nombre_mejor})")
 
-    sonar_alarma_shundo()
-    enviar_alerta_discord(nuevos_shundos, ultimo_shundo_previo=ultimo_shundo_previo)
-    print("🚨" * 35 + "\n")
+    enviar_alerta_discord(nuevos_shundos)
 
 
 def obtener_perfil_entrenador():
@@ -650,7 +558,6 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
         else:
             mon["distancia_km"] = None
 
-    ultimo_shundo_previo = notificados.get("_meta_ultimo_shundo")
     nuevos_shundos = []
     ahora_ts = int(time.time())
     for mon in spawns_activos:
@@ -662,17 +569,6 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
                 "coords": mon.get("coords_final"),
                 "ts": ahora_ts,
                 "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            }
-
-    if nuevos_shundos:
-        ultimo = nuevos_shundos[-1]
-        if ultimo.get("lat_final") is not None and ultimo.get("lng_final") is not None:
-            notificados["_meta_ultimo_shundo"] = {
-                "pokemon": ultimo.get("nombre_completo"),
-                "lat": ultimo.get("lat_final"),
-                "lng": ultimo.get("lng_final"),
-                "coords": ultimo.get("coords_final"),
-                "ts": ahora_ts
             }
     guardar_json(NOTIFICADOS_FILE, notificados)
 
@@ -703,8 +599,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
         precision = mon.get("precision_coords")
         ttl = mon.get("ttl_texto")
         dist = mon.get("distancia_km")
-        cd_txt = calcular_cooldown_pogo(dist)
-        dist_str = f"{dist:.2f} km • Cooldown: {cd_txt}" if dist is not None else "N/A"
+        dist_str = f"{dist:.2f} km" if dist is not None else "N/A"
         maps_url = f"https://www.google.com/maps?q={coords}" if coords and "," in coords else "N/A"
         es_nuevo_tag = " 🆕 ¡ENVIADO A DISCORD!" if mon in nuevos_shundos else ""
 
@@ -727,7 +622,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
         pass
 
     if nuevos_shundos:
-        disparar_alertas_nuevos_shundos(nuevos_shundos, ultimo_shundo_previo=ultimo_shundo_previo)
+        disparar_alertas_nuevos_shundos(nuevos_shundos)
 
 
 def iniciar_radar():
