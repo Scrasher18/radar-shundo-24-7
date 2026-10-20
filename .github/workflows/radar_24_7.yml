@@ -18,9 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 50
     steps:
-      - name: Checkout repositorio
+      - name: Checkout repositorio (siempre última versión de main)
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 1
 
       - name: Configurar Python

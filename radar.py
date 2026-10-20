@@ -127,6 +127,86 @@ def guardar_json(ruta, datos):
         pass
 
 
+def fusionar_notificados(base_dict, nuevo_dict):
+    resultado = dict(base_dict)
+    for k, v in nuevo_dict.items():
+        if k not in resultado or not isinstance(v, dict) or not isinstance(resultado.get(k), dict):
+            resultado[k] = v
+        else:
+            prev = resultado[k]
+            mids = []
+            for m in (prev.get("discord_msg_ids") or []) + [prev.get("discord_msg_id")] + (v.get("discord_msg_ids") or []) + [v.get("discord_msg_id")]:
+                if m and m not in mids:
+                    mids.append(m)
+            combinado = {**prev, **v}
+            if mids:
+                combinado["discord_msg_id"] = mids[-1]
+                combinado["discord_msg_ids"] = mids
+            combinado["eliminado_de_discord"] = bool(prev.get("eliminado_de_discord") or v.get("eliminado_de_discord"))
+            resultado[k] = combinado
+    return resultado
+
+
+def sincronizar_estado_remoto_pull():
+    if not ES_MODO_NUBE:
+        return
+    try:
+        subprocess.run(["git", "fetch", "origin", "main"], cwd=BASE_DIR, timeout=15, capture_output=True)
+        r_notif = subprocess.run(["git", "show", "origin/main:shundos_notificados.json"], cwd=BASE_DIR, text=True, capture_output=True, encoding="utf-8", timeout=10)
+        if r_notif.returncode == 0:
+            remoto_notif = json.loads(r_notif.stdout)
+            local_notif = cargar_json(NOTIFICADOS_FILE)
+            guardar_json(NOTIFICADOS_FILE, fusionar_notificados(remoto_notif, local_notif))
+    except Exception:
+        pass
+
+
+def sincronizar_estado_remoto_push():
+    if not ES_MODO_NUBE:
+        return
+    try:
+        sincronizar_estado_remoto_pull()
+        subprocess.run(["git", "reset", "--soft", "origin/main"], cwd=BASE_DIR, timeout=10, capture_output=True)
+        subprocess.run(["git", "add", "shundos_notificados.json", "cache_coordenadas.json"], cwd=BASE_DIR, timeout=10, capture_output=True)
+        diff = subprocess.run(["git", "diff", "--staged", "--quiet"], cwd=BASE_DIR, timeout=10)
+        if diff.returncode != 0:
+            subprocess.run(["git", "commit", "-m", "chore: sync estado en vivo [skip ci]"], cwd=BASE_DIR, timeout=10, capture_output=True)
+            subprocess.run(["git", "push", "origin", "main"], cwd=BASE_DIR, timeout=20, capture_output=True)
+    except Exception:
+        pass
+
+
+def ya_fue_notificado(mon, canal_tipo, notificados):
+    eid = str(mon.get("encounter_id"))
+    if f"{canal_tipo}:{eid}" in notificados:
+        return True
+    if canal_tipo == "shundo" and eid in notificados:
+        return True
+
+    ahora = int(time.time())
+    nombre = mon.get("nombre_completo") or mon.get("pokemon_name")
+    lat = mon.get("lat_final")
+    lng = mon.get("lng_final")
+
+    for k, info in notificados.items():
+        if k.startswith("_meta_") or not isinstance(info, dict):
+            continue
+        if info.get("canal", "shundo") != canal_tipo:
+            continue
+        if (ahora - int(info.get("ts", 0))) > 3600:
+            continue
+        if info.get("pokemon") == nombre and lat is not None and lng is not None:
+            coords_prev = str(info.get("coords") or "")
+            if "," in coords_prev:
+                try:
+                    plat, plng = map(float, coords_prev.split(",", 1))
+                    if abs(lat - plat) <= 0.008 and abs(lng - plng) <= 0.008:
+                        return True
+                except Exception:
+                    pass
+    return False
+
+
 def limpiar_archivos_antiguos(cache_coords, notificados):
     ahora = int(time.time())
     claves_borrar_cache = [
@@ -154,27 +234,34 @@ def eliminar_mensajes_expirados_discord():
     for clave, info in list(notificados.items()):
         if clave.startswith("_meta_") or not isinstance(info, dict):
             continue
-        msg_id = info.get("discord_msg_id")
+        mids = list(info.get("discord_msg_ids") or [])
+        if info.get("discord_msg_id") and info.get("discord_msg_id") not in mids:
+            mids.append(info.get("discord_msg_id"))
         despawn_unix = info.get("despawn_unix")
         ya_borrado = info.get("eliminado_de_discord", False)
         canal_tipo = info.get("canal", "shundo")
         webhook_url = WEBHOOKS_POR_CANAL.get(canal_tipo) or DISCORD_WEBHOOK_URL
 
-        if msg_id and despawn_unix and not ya_borrado and webhook_url and ahora >= int(despawn_unix):
+        if mids and despawn_unix and not ya_borrado and webhook_url and ahora >= int(despawn_unix):
             base_webhook = webhook_url.strip().split("?")[0].rstrip("/")
-            try:
-                del_url = f"{base_webhook}/messages/{msg_id}"
-                r = requests.delete(del_url, timeout=8)
-                if r.status_code in (200, 204, 404):
-                    info["eliminado_de_discord"] = True
-                    hubo_cambios = True
-                    eliminados += 1
-                    print(f"   🗑️ [Discord-{canal_tipo.upper()}] Mensaje de {info.get('pokemon', clave)} eliminado del chat (ya hizo despawn).")
-            except Exception:
-                pass
+            borrado_alguno = False
+            for mid in mids:
+                try:
+                    del_url = f"{base_webhook}/messages/{mid}"
+                    r = requests.delete(del_url, timeout=8)
+                    if r.status_code in (200, 204, 404):
+                        borrado_alguno = True
+                except Exception:
+                    pass
+            if borrado_alguno:
+                info["eliminado_de_discord"] = True
+                hubo_cambios = True
+                eliminados += 1
+                print(f"   🗑️ [Discord-{canal_tipo.upper()}] Mensaje de {info.get('pokemon', clave)} eliminado del chat (ya hizo despawn).")
 
     if hubo_cambios:
         guardar_json(NOTIFICADOS_FILE, notificados)
+        sincronizar_estado_remoto_push()
     return eliminados
 
 
@@ -624,6 +711,7 @@ def preparar_lista_spawns(diccionario_spawns, cache_coords, estado_cuota):
 
 def ejecutar_ciclo_radar(mostrar_cabecera=True):
     inicio = time.time()
+    sincronizar_estado_remoto_pull()
     eliminar_mensajes_expirados_discord()
 
     perfil, status_perfil = obtener_perfil_entrenador()
@@ -728,9 +816,9 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
     gl_activos.sort(key=lambda x: (int((x.get("pvp") or {}).get("rank", 99)), -float((x.get("pvp") or {}).get("percent", 0.0)), -int(x.get("ttl_segundos") or 0)))
     ul_activos.sort(key=lambda x: (int((x.get("pvp") or {}).get("rank", 99)), -float((x.get("pvp") or {}).get("percent", 0.0)), -int(x.get("ttl_segundos") or 0)))
 
-    nuevos_shundos = [m for m in shundos_activos if f"shundo:{m.get('encounter_id')}" not in notificados and str(m.get("encounter_id")) not in notificados]
-    nuevos_gl = [m for m in gl_activos if f"great:{m.get('encounter_id')}" not in notificados]
-    nuevos_ul = [m for m in ul_activos if f"ultra:{m.get('encounter_id')}" not in notificados]
+    nuevos_shundos = [m for m in shundos_activos if not ya_fue_notificado(m, "shundo", notificados)]
+    nuevos_gl = [m for m in gl_activos if not ya_fue_notificado(m, "great", notificados)]
+    nuevos_ul = [m for m in ul_activos if not ya_fue_notificado(m, "ultra", notificados)]
 
     duracion = time.time() - inicio
     hora_actual = datetime.now().strftime("%H:%M:%S")
@@ -762,13 +850,15 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
         ids_shundo = enviar_lote_webhook(DISCORD_WEBHOOK_URL, nuevos_shundos, "shundo", "Radar Shundo Pro ✨")
         for mon in nuevos_shundos:
             eid = str(mon.get("encounter_id"))
+            mid = ids_shundo.get(eid)
             notificados[f"shundo:{eid}"] = {
                 "canal": "shundo",
                 "pokemon": mon.get("nombre_completo"),
                 "coords": mon.get("coords_final"),
                 "ts": ahora_ts,
                 "despawn_unix": mon.get("despawn_unix"),
-                "discord_msg_id": ids_shundo.get(eid),
+                "discord_msg_id": mid,
+                "discord_msg_ids": [mid] if mid else [],
                 "eliminado_de_discord": False,
                 "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
@@ -778,13 +868,15 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
         ids_gl = enviar_lote_webhook(DISCORD_WEBHOOK_GL, nuevos_gl, "great", "Radar PvP Great League 🔵✨")
         for mon in nuevos_gl:
             eid = str(mon.get("encounter_id"))
+            mid = ids_gl.get(eid)
             notificados[f"great:{eid}"] = {
                 "canal": "great",
                 "pokemon": mon.get("nombre_completo"),
                 "coords": mon.get("coords_final"),
                 "ts": ahora_ts,
                 "despawn_unix": mon.get("despawn_unix"),
-                "discord_msg_id": ids_gl.get(eid),
+                "discord_msg_id": mid,
+                "discord_msg_ids": [mid] if mid else [],
                 "eliminado_de_discord": False,
                 "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
@@ -794,19 +886,22 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
         ids_ul = enviar_lote_webhook(DISCORD_WEBHOOK_UL, nuevos_ul, "ultra", "Radar PvP Ultra League 🟣✨")
         for mon in nuevos_ul:
             eid = str(mon.get("encounter_id"))
+            mid = ids_ul.get(eid)
             notificados[f"ultra:{eid}"] = {
                 "canal": "ultra",
                 "pokemon": mon.get("nombre_completo"),
                 "coords": mon.get("coords_final"),
                 "ts": ahora_ts,
                 "despawn_unix": mon.get("despawn_unix"),
-                "discord_msg_id": ids_ul.get(eid),
+                "discord_msg_id": mid,
+                "discord_msg_ids": [mid] if mid else [],
                 "eliminado_de_discord": False,
                 "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
 
     if nuevos_shundos or nuevos_gl or nuevos_ul:
         guardar_json(NOTIFICADOS_FILE, notificados)
+        sincronizar_estado_remoto_push()
 
 
 def esperar_con_limpieza_despawn(segundos_totales):
