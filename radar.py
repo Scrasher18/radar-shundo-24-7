@@ -132,6 +132,41 @@ def limpiar_archivos_antiguos(cache_coords, notificados):
         del notificados[k]
 
 
+def eliminar_mensajes_expirados_discord():
+    """Revisa los Shundos enviados a Discord y elimina del chat aquellos que ya hicieron despawn."""
+    if not DISCORD_WEBHOOK_URL.strip():
+        return 0
+
+    notificados = cargar_json(NOTIFICADOS_FILE)
+    ahora = int(time.time())
+    eliminados = 0
+    hubo_cambios = False
+    base_webhook = DISCORD_WEBHOOK_URL.strip().split("?")[0].rstrip("/")
+
+    for eid, info in list(notificados.items()):
+        if eid.startswith("_meta_") or not isinstance(info, dict):
+            continue
+        msg_id = info.get("discord_msg_id")
+        despawn_unix = info.get("despawn_unix")
+        ya_borrado = info.get("eliminado_de_discord", False)
+
+        if msg_id and despawn_unix and not ya_borrado and ahora >= int(despawn_unix):
+            try:
+                del_url = f"{base_webhook}/messages/{msg_id}"
+                r = requests.delete(del_url, timeout=8)
+                if r.status_code in (200, 204, 404):
+                    info["eliminado_de_discord"] = True
+                    hubo_cambios = True
+                    eliminados += 1
+                    print(f"   🗑️ [Discord] Mensaje de {info.get('pokemon', eid)} eliminado del chat (ya hizo despawn).")
+            except Exception:
+                pass
+
+    if hubo_cambios:
+        guardar_json(NOTIFICADOS_FILE, notificados)
+    return eliminados
+
+
 def copiar_al_portapapeles(texto):
     if not AUTO_COPIAR_PORTAPAPELES or not texto or "," not in texto:
         return False
@@ -191,80 +226,98 @@ def obtener_etiquetas_rareza(mon):
     return " • ".join(etiquetas)
 
 
-def enviar_alerta_discord(nuevos_shundos):
-    if not DISCORD_WEBHOOK_URL.strip():
-        return False
-
-    embeds = []
+def construir_embed_shundo(mon):
     origen_txt = "☁️ Nube 24/7" if ES_MODO_NUBE else "💻 PC Local"
+    poke_id = mon.get("pokemon_id") or 1
+    nombre = mon.get("nombre_completo") or mon.get("pokemon_name") or f"#{poke_id}"
+    coords = mon.get("coords_final") or "N/A"
+    maps_url = f"https://www.google.com/maps?q={coords}" if "," in str(coords) else "https://maps.google.com"
+    ubicacion = mon.get("location") or mon.get("region_mapa") or "Global"
+    cp = mon.get("cp") or "?"
+    nivel = mon.get("level") or "?"
+    size = mon.get("size") or "-"
+    gender = mon.get("gender") or "-"
+    seg_rest = max(0, int(mon.get("ttl_segundos") or 0))
+    mins, secs = divmod(seg_rest, 60)
+    ttl_con_segundos = f"{mins} min {secs:02d} seg"
+    despawn_unix = mon.get("despawn_unix")
+    icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{poke_id}.s.icon.png"
 
-    for mon in nuevos_shundos[:10]:
-        poke_id = mon.get("pokemon_id") or 1
-        nombre = mon.get("nombre_completo") or mon.get("pokemon_name") or f"#{poke_id}"
-        coords = mon.get("coords_final") or "N/A"
-        maps_url = f"https://www.google.com/maps?q={coords}" if "," in str(coords) else "https://maps.google.com"
-        ubicacion = mon.get("location") or mon.get("region_mapa") or "Global"
-        cp = mon.get("cp") or "?"
-        nivel = mon.get("level") or "?"
-        size = mon.get("size") or "-"
-        gender = mon.get("gender") or "-"
-        ttl = mon.get("ttl_texto") or "?"
-        seg_rest = int(mon.get("ttl_segundos") or 0)
-        despawn_unix = mon.get("despawn_unix")
-        icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{poke_id}.s.icon.png"
+    if seg_rest >= 900:
+        semaforo = "🟢 **Tiempo Seguro**"
+        color_embed = 0xFFD700
+    elif seg_rest >= 300:
+        semaforo = "🟡 **Tiempo Medio**"
+        color_embed = 0xF97316
+    else:
+        semaforo = "🔴 **¡SALTAR YA!**"
+        color_embed = 0xEF4444
 
-        if seg_rest >= 900:
-            estado_tiempo = f"🟢 **Tiempo Seguro** (`{ttl}`)"
-            color_embed = 0xFFD700
-        elif seg_rest >= 300:
-            estado_tiempo = f"🟡 **Tiempo Medio** (`{ttl}`)"
-            color_embed = 0xF97316
-        else:
-            estado_tiempo = f"🔴 **¡SALTAR YA!** (`{ttl}`)"
-            color_embed = 0xEF4444
+    estado_tiempo = f"{semaforo}\n⏱️ **Desaparece en:** `{ttl_con_segundos}`"
+    if despawn_unix:
+        estado_tiempo += f"\n🕒 **Hora exacta:** <t:{despawn_unix}:T>"
 
-        if despawn_unix:
-            estado_tiempo += f"\n🕒 Desaparece: <t:{despawn_unix}:R>"
+    rareza_txt = obtener_etiquetas_rareza(mon)
 
-        rareza_txt = obtener_etiquetas_rareza(mon)
-
-        embeds.append({
-            "title": f"🌟 ¡SHUNDO 100% IV: {nombre}! (CP {cp} • Nivel {nivel})",
-            "description": rareza_txt,
-            "url": maps_url,
-            "color": color_embed,
-            "thumbnail": {"url": icon_url},
-            "fields": [
-                {"name": "📊 Estadísticas", "value": f"**IV:** `100% (15/15/15)`\n**CP:** `{cp}` | **Nivel:** `{nivel}`\n**Talla:** `{size}` ({gender})", "inline": True},
-                {"name": "⏳ Estado Despawn", "value": estado_tiempo, "inline": True},
-                {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
-                {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
-            ],
-            "footer": {"text": f"Radar Shundo Pro ({origen_txt}) • 100% Shiny Garantizado para XxTheScrasherxX"},
-            "timestamp": datetime.now(timezone.utc).isoformat()
-        })
-
-    mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
-    payload = {
-        "username": "Radar Shundo Pro ✨",
-        "content": f"🚨 {mencion}¡Apareció **{len(nuevos_shundos)} nuevo(s) SHUNDO(S) 100% IV (15/15/15)** en el mundo!",
-        "embeds": embeds
+    return {
+        "title": f"🌟 ¡SHUNDO 100% IV: {nombre}! (CP {cp} • Nivel {nivel})",
+        "description": rareza_txt,
+        "url": maps_url,
+        "color": color_embed,
+        "thumbnail": {"url": icon_url},
+        "fields": [
+            {"name": "📊 Estadísticas", "value": f"**IV:** `100% (15/15/15)`\n**CP:** `{cp}` | **Nivel:** `{nivel}`\n**Talla:** `{size}` ({gender})", "inline": True},
+            {"name": "⏳ Estado Despawn", "value": estado_tiempo, "inline": True},
+            {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
+            {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
+        ],
+        "footer": {"text": f"Radar Shundo Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
+        "timestamp": datetime.now(timezone.utc).isoformat()
     }
-    try:
-        r = requests.post(DISCORD_WEBHOOK_URL.strip(), json=payload, timeout=10)
-        if r.status_code in (200, 204):
-            print("   ✅ [Discord] ¡Alerta enviada exitosamente a tu canal de Discord!")
-            return True
-        else:
-            print(f"   ⚠️ [Discord] Error HTTP {r.status_code}: {r.text[:150]}")
-    except Exception as e:
-        print(f"   ⚠️ [Discord] Error al enviar webhook: {e}")
-    return False
+
+
+def enviar_alerta_discord(nuevos_shundos):
+    """Envía cada Shundo en su propio mensaje con ?wait=true para guardar su message_id y borrarlo al expirar."""
+    if not DISCORD_WEBHOOK_URL.strip():
+        return {}
+
+    base_webhook = DISCORD_WEBHOOK_URL.strip().split("?")[0].rstrip("/")
+    url_wait = f"{base_webhook}?wait=true"
+    mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
+    ids_mensajes = {}
+
+    for idx, mon in enumerate(nuevos_shundos[:10]):
+        eid = str(mon.get("encounter_id"))
+        nombre = mon.get("nombre_completo") or mon.get("pokemon_name")
+        embed = construir_embed_shundo(mon)
+        contenido = f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre})** detectado!" if idx == 0 else f"🌟 ¡Nuevo **SHUNDO 100% IV ({nombre})**!"
+
+        payload = {
+            "username": "Radar Shundo Pro ✨",
+            "content": contenido,
+            "embeds": [embed]
+        }
+        try:
+            r = requests.post(url_wait, json=payload, timeout=10)
+            if r.status_code in (200, 204):
+                try:
+                    msg_data = r.json()
+                    if msg_data and "id" in msg_data:
+                        ids_mensajes[eid] = msg_data["id"]
+                except Exception:
+                    pass
+                print(f"   ✅ [Discord] Alerta enviada para {nombre} (se borrará del chat al expirar).")
+            else:
+                print(f"   ⚠️ [Discord] Error HTTP {r.status_code}: {r.text[:150]}")
+        except Exception as e:
+            print(f"   ⚠️ [Discord] Error al enviar webhook: {e}")
+
+    return ids_mensajes
 
 
 def disparar_alertas_nuevos_shundos(nuevos_shundos):
     if not nuevos_shundos:
-        return
+        return {}
 
     mejor = nuevos_shundos[0]
     coords_mejor = mejor.get("coords_final") or ""
@@ -273,7 +326,7 @@ def disparar_alertas_nuevos_shundos(nuevos_shundos):
     if AUTO_COPIAR_PORTAPAPELES and copiar_al_portapapeles(coords_mejor):
         print(f"   📋 [Portapapeles] Coordenada copiada automáticamente (Ctrl+V): {coords_mejor} ({nombre_mejor})")
 
-    enviar_alerta_discord(nuevos_shundos)
+    return enviar_alerta_discord(nuevos_shundos)
 
 
 def obtener_perfil_entrenador():
@@ -420,6 +473,9 @@ def normalizar_spawn(existente, nuevo):
 
 def ejecutar_ciclo_radar(mostrar_cabecera=True):
     inicio = time.time()
+    # Antes de escanear, eliminar cualquier mensaje de Discord cuyo Pokémon ya haya expirado
+    eliminar_mensajes_expirados_discord()
+
     perfil, status_perfil = obtener_perfil_entrenador()
 
     if status_perfil == 401:
@@ -429,7 +485,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
 
     if mostrar_cabecera:
         print("=" * 78)
-        print("🌍 RADAR PRO GLOBAL DE SHUNDOS + ALARMA INTELIGENTE EN DISCORD")
+        print("🌍 RADAR PRO GLOBAL DE SHUNDOS + AUTO-LIMPIEZA DE DESPAWN EN DISCORD")
         print("=" * 78)
 
         if perfil:
@@ -559,18 +615,10 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
             mon["distancia_km"] = None
 
     nuevos_shundos = []
-    ahora_ts = int(time.time())
     for mon in spawns_activos:
         eid = str(mon.get("encounter_id"))
         if eid not in notificados:
             nuevos_shundos.append(mon)
-            notificados[eid] = {
-                "pokemon": mon.get("nombre_completo"),
-                "coords": mon.get("coords_final"),
-                "ts": ahora_ts,
-                "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            }
-    guardar_json(NOTIFICADOS_FILE, notificados)
 
     duracion = time.time() - inicio
     hora_actual = datetime.now().strftime("%H:%M:%S")
@@ -622,7 +670,31 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
         pass
 
     if nuevos_shundos:
-        disparar_alertas_nuevos_shundos(nuevos_shundos)
+        ids_enviados = disparar_alertas_nuevos_shundos(nuevos_shundos)
+        ahora_ts = int(time.time())
+        for mon in nuevos_shundos:
+            eid = str(mon.get("encounter_id"))
+            notificados[eid] = {
+                "pokemon": mon.get("nombre_completo"),
+                "coords": mon.get("coords_final"),
+                "ts": ahora_ts,
+                "despawn_unix": mon.get("despawn_unix"),
+                "discord_msg_id": ids_enviados.get(eid),
+                "eliminado_de_discord": False,
+                "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+        guardar_json(NOTIFICADOS_FILE, notificados)
+
+
+def esperar_con_limpieza_despawn(segundos_totales):
+    """Durante la espera entre escaneos, verifica cada 5s si algún Shundo ya expiró para borrarlo del chat de Discord al instante."""
+    fin = time.time() + segundos_totales
+    while time.time() < fin:
+        eliminar_mensajes_expirados_discord()
+        restante = fin - time.time()
+        if restante <= 0:
+            break
+        time.sleep(min(5.0, restante))
 
 
 def iniciar_radar():
@@ -651,10 +723,12 @@ def iniciar_radar():
             if duracion_minutos is not None:
                 transcurrido_min = (time.time() - inicio_bucle) / 60.0
                 if transcurrido_min + (INTERVALO_SEGUNDOS / 60.0) >= duracion_minutos:
+                    # Antes de cerrar el ciclo en la nube, limpiar cualquier despawn pendiente
+                    eliminar_mensajes_expirados_discord()
                     print(f"✅ Ciclo en la nube de {duracion_minutos} minutos completado. Guardando estado y encadenando siguiente ciclo...")
                     break
-            print(f"⏳ Vigilante activo: próximo escaneo automático en {INTERVALO_SEGUNDOS // 60} minutos ({INTERVALO_SEGUNDOS}s)...")
-            time.sleep(INTERVALO_SEGUNDOS)
+            print(f"⏳ Vigilante activo: próximo escaneo en {INTERVALO_SEGUNDOS // 60} min (borrado automático de despawns activo cada 5s)...")
+            esperar_con_limpieza_despawn(INTERVALO_SEGUNDOS)
             ciclo += 1
     except KeyboardInterrupt:
         print("\n👋 Vigilante detenido por el usuario.")
