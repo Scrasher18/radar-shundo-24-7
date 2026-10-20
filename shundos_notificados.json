@@ -1617,5 +1617,31 @@
     ],
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-20 19:51:23"
+  },
+  "ultra:3312406871645687145": {
+    "canal": "ultra",
+    "pokemon": "Oddish",
+    "coords": "43.540332,-79.718044",
+    "ts": 1792525932,
+    "despawn_unix": 1792527157,
+    "discord_msg_id": "1562191730525339669",
+    "discord_msg_ids": [
+      "1562191730525339669"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 19:52:13"
+  },
+  "ultra:-3348861396985218119": {
+    "canal": "ultra",
+    "pokemon": "Doduo",
+    "coords": "44.814194,-0.629390",
+    "ts": 1792525932,
+    "despawn_unix": 1792527649,
+    "discord_msg_id": "1562191732345540621",
+    "discord_msg_ids": [
+      "1562191732345540621"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 19:52:13"
   }
 }
