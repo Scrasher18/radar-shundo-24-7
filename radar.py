@@ -80,36 +80,20 @@ REGIONES_GLOBALES = [
     ("Oceanía (Australia y Nueva Zelanda)", -10.0, 112.0, -48.0, 180.0),
 ]
 
-# Particiones de /search exclusivas para SHUNDOS (100% IV + Shiny)
+# Consultas balanceadas de /search (evita HTTP 429 en /search y garantiza respuesta en los 3 canales)
 PARTICIONES_SHUNDOS = [
     {"label": "100% Shundos (DSP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "DSP"},
     {"label": "100% Shundos (CP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "CP"},
-    {"label": "100% Shundos (LEVEL)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "LEVEL"},
-    {"label": "100% Shundos (Male)", "iv_percent_min": 100, "iv_percent_max": 100, "gender": "Male", "sort": "DSP"},
-    {"label": "100% Shundos (Female)", "iv_percent_min": 100, "iv_percent_max": 100, "gender": "Female", "sort": "DSP"},
-    {"label": "100% Shundos (Genderless)", "iv_percent_min": 100, "iv_percent_max": 100, "gender": "Genderless", "sort": "DSP"},
-    {"label": "100% Shundos (Nivel 1-14)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 1, "level_max": 14, "sort": "DSP"},
-    {"label": "100% Shundos (Nivel 15-25)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 15, "level_max": 25, "sort": "DSP"},
-    {"label": "100% Shundos (Nivel 26-35)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 26, "level_max": 35, "sort": "DSP"},
 ]
 
-# Particiones de /search para PvP Great League (GL) y Ultra League (UL) Top 1-5 Shiny Garantizado
 PARTICIONES_PVP_GL = [
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": 1, "pvp_include_pre_evolutions": True, "sort": "DSP"},
     {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "DSP"},
     {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "CP"},
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "LEVEL"},
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Male", "sort": "DSP"},
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Female", "sort": "DSP"},
 ]
 
 PARTICIONES_PVP_UL = [
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": 1, "pvp_include_pre_evolutions": True, "sort": "DSP"},
     {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "DSP"},
     {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "CP"},
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "LEVEL"},
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Male", "sort": "DSP"},
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Female", "sort": "DSP"},
 ]
 
 
@@ -477,16 +461,19 @@ def construir_payload_search(overrides):
 
 def ejecutar_particion_search(particion):
     payload = construir_payload_search(particion)
-    try:
-        r = requests.post(f"{API_BASE}/search", headers=headers, json=payload, timeout=12)
-        if r.status_code == 200:
-            return r.json().get("results", [])
-    except Exception:
-        pass
+    for intento in range(2):
+        try:
+            r = requests.post(f"{API_BASE}/search", headers=headers, json=payload, timeout=12)
+            if r.status_code == 200:
+                return r.json().get("results", [])
+            elif r.status_code == 429 and intento == 0:
+                time.sleep(1.5)
+        except Exception:
+            pass
     return []
 
 
-def ejecutar_region_mapa(region_tuple):
+def ejecutar_region_mapa(region_tuple, iv_min=100, iv_max=100, pokemon_ids=None):
     nombre_region, n_lat, w_lng, s_lat, e_lng = region_tuple
     payload = {
         "mode": "pokemon",
@@ -496,12 +483,12 @@ def ejecutar_region_mapa(region_tuple):
         "e_lng": e_lng,
         "num_results": 100,
         "filters": {
-            "pokemon_ids": [],
+            "pokemon_ids": pokemon_ids or [],
             "species_forms": [],
             "blacklist_pokemon_ids": [],
             "blacklist_species_forms": [],
-            "iv_min": 100,
-            "iv_max": 100,
+            "iv_min": iv_min,
+            "iv_max": iv_max,
             "cp_min": None,
             "cp_max": None,
             "level_min": None,
@@ -615,12 +602,11 @@ def preparar_lista_spawns(diccionario_spawns, cache_coords, estado_cuota):
                     mon["coords_final"] = f"{apx_lat:.6f},{apx_long:.6f}"
                     mon["lat_final"] = apx_lat
                     mon["lng_final"] = apx_long
-                    mon["precision_coords"] = "Mapa (~300m)"
+                    mon["precision_coords"] = "Mapa"
                 else:
-                    mon["coords_final"] = "No disponible (cuota /reveal en espera)"
+                    mon["coords_final"] = None
                     mon["lat_final"] = None
                     mon["lng_final"] = None
-                    mon["precision_coords"] = "Pendiente"
 
         lat = mon.get("lat_final")
         lng = mon.get("lng_final")
@@ -666,11 +652,11 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
     gl_por_id = {}
     ul_por_id = {}
 
-    with ThreadPoolExecutor(max_workers=14) as executor:
+    with ThreadPoolExecutor(max_workers=8) as executor:
         fut_shundos = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_SHUNDOS]
-        fut_mapa = [executor.submit(ejecutar_region_mapa, r) for r in REGIONES_GLOBALES]
         fut_gl = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_GL]
         fut_ul = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_UL]
+        fut_mapa = [executor.submit(ejecutar_region_mapa, r, 100, 100, None) for r in REGIONES_GLOBALES]
 
         for fut in as_completed(fut_shundos):
             for mon in fut.result():
@@ -698,6 +684,25 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
                 if mon.get("shiny") and pvp.get("league") == "ultra" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
                     eid = str(mon.get("encounter_id"))
                     ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
+
+    # Cruzar los Pokémon de GL y UL con /map/lookup para tener siempre sus coordenadas
+    pvp_poke_ids = list({
+        int(m["pokemon_id"])
+        for d in (gl_por_id, ul_por_id)
+        for m in d.values()
+        if m.get("pokemon_id") is not None
+    })
+    if pvp_poke_ids:
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            fut_mapa_pvp = [executor.submit(ejecutar_region_mapa, r, None, None, pvp_poke_ids) for r in REGIONES_GLOBALES]
+            for fut in as_completed(fut_mapa_pvp):
+                _, items = fut.result()
+                for mon in items:
+                    eid = str(mon.get("encounter_id"))
+                    if eid in gl_por_id:
+                        gl_por_id[eid] = normalizar_spawn(gl_por_id[eid], mon)
+                    if eid in ul_por_id:
+                        ul_por_id[eid] = normalizar_spawn(ul_por_id[eid], mon)
 
     cache_coords = cargar_json(CACHE_FILE)
     notificados = cargar_json(NOTIFICADOS_FILE)
