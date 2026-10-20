@@ -53,7 +53,7 @@ AUTO_COPIAR_PORTAPAPELES = not ES_MODO_NUBE
 
 # Configuración del Vigilante Automático 24/7
 MODO_VIGILANTE_CONTINUO = True     # True = revisa cada INTERVALO_SEGUNDOS automáticamente
-INTERVALO_SEGUNDOS = 60            # Cada cuántos segundos busca nuevos Shundos
+INTERVALO_SEGUNDOS = 480           # Cada cuántos segundos busca nuevos Shundos (480s = 8 minutos)
 MAX_REVEALS_POR_EJECUCION = 50
 
 API_BASE = "https://coordinates-api.pokemongopro.com"

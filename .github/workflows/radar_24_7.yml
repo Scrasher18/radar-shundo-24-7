@@ -16,7 +16,7 @@ concurrency:
 jobs:
   radar-24-7:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 50
     steps:
       - name: Checkout repositorio
         uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests
 
-      - name: Ejecutar Radar Shundo en bucle (25 min, escaneo cada 60s)
+      - name: Ejecutar Radar Shundo en bucle (escaneo cada 8 minutos)
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -40,7 +40,7 @@ jobs:
         run: |
           git config user.name "radar-shundo-bot"
           git config user.email "radar-bot@users.noreply.github.com"
-          python radar.py --duracion-minutos 25
+          python radar.py --duracion-minutos 40
 
       - name: Guardar historial de Shundos notificados
         if: always()
