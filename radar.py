@@ -624,7 +624,9 @@ def preparar_lista_spawns(diccionario_spawns, cache_coords, estado_cuota):
 
         lat = mon.get("lat_final")
         lng = mon.get("lng_final")
-        mon["distancia_km"] = calcular_distancia_km(LAT_ORIGEN, LNG_ORIGEN, lat, lng) if (lat is not None and lng is not None) else None
+        if lat is None or lng is None:
+            continue
+        mon["distancia_km"] = calcular_distancia_km(LAT_ORIGEN, LNG_ORIGEN, lat, lng)
         activos.append(mon)
 
     return activos
