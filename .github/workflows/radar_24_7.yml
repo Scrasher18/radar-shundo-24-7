@@ -45,7 +45,7 @@ jobs:
           python radar.py --duracion-minutos 40
 
       - name: Guardar historial de notificados y cache
-        if: always()
+        if: ${{ !cancelled() }}
         run: |
           git fetch origin main || true
           git reset --soft origin/main || true
@@ -53,7 +53,7 @@ jobs:
           git diff --staged --quiet || (git commit -m "chore: actualizar cache shundos y pvp [skip ci]" && git push origin main) || true
 
       - name: Auto-encadenar siguiente ciclo 24/7
-        if: always()
+        if: ${{ !cancelled() }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

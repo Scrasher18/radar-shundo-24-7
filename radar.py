@@ -80,36 +80,20 @@ REGIONES_GLOBALES = [
     ("Oceanía (Australia y Nueva Zelanda)", -10.0, 112.0, -48.0, 180.0),
 ]
 
-# Particiones de /search exclusivas para SHUNDOS (100% IV + Shiny)
+# Consultas balanceadas de /search (evita HTTP 429 en /search y garantiza respuesta en los 3 canales)
 PARTICIONES_SHUNDOS = [
     {"label": "100% Shundos (DSP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "DSP"},
     {"label": "100% Shundos (CP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "CP"},
-    {"label": "100% Shundos (LEVEL)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "LEVEL"},
-    {"label": "100% Shundos (Male)", "iv_percent_min": 100, "iv_percent_max": 100, "gender": "Male", "sort": "DSP"},
-    {"label": "100% Shundos (Female)", "iv_percent_min": 100, "iv_percent_max": 100, "gender": "Female", "sort": "DSP"},
-    {"label": "100% Shundos (Genderless)", "iv_percent_min": 100, "iv_percent_max": 100, "gender": "Genderless", "sort": "DSP"},
-    {"label": "100% Shundos (Nivel 1-14)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 1, "level_max": 14, "sort": "DSP"},
-    {"label": "100% Shundos (Nivel 15-25)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 15, "level_max": 25, "sort": "DSP"},
-    {"label": "100% Shundos (Nivel 26-35)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 26, "level_max": 35, "sort": "DSP"},
 ]
 
-# Particiones de /search para PvP Great League (GL) y Ultra League (UL) Top 1-5 Shiny Garantizado
 PARTICIONES_PVP_GL = [
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": 1, "pvp_include_pre_evolutions": True, "sort": "DSP"},
     {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "DSP"},
     {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "CP"},
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "LEVEL"},
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Male", "sort": "DSP"},
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Female", "sort": "DSP"},
 ]
 
 PARTICIONES_PVP_UL = [
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": 1, "pvp_include_pre_evolutions": True, "sort": "DSP"},
     {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "DSP"},
     {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "CP"},
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "LEVEL"},
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Male", "sort": "DSP"},
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Female", "sort": "DSP"},
 ]
 
 
@@ -276,7 +260,7 @@ def construir_estado_despawn(mon):
 
 
 def construir_embed_shundo(mon):
-    origen_txt = "☁️ Nube 24/7" if ES_MODO_NUBE else "💻 PC Local"
+    origen_txt = "☁️ Nube 24/7"
     poke_id = mon.get("pokemon_id") or 1
     nombre = mon.get("nombre_completo") or mon.get("pokemon_name") or f"#{poke_id}"
     coords = mon.get("coords_final") or "N/A"
@@ -309,7 +293,7 @@ def construir_embed_shundo(mon):
 
 
 def construir_embed_pvp(mon, league):
-    origen_txt = "☁️ Nube 24/7" if ES_MODO_NUBE else "💻 PC Local"
+    origen_txt = "☁️ Nube 24/7"
     poke_id = mon.get("pokemon_id") or 1
     nombre_salvaje = mon.get("nombre_completo") or mon.get("pokemon_name") or f"#{poke_id}"
     coords = mon.get("coords_final") or "N/A"
@@ -477,17 +461,21 @@ def construir_payload_search(overrides):
 
 def ejecutar_particion_search(particion):
     payload = construir_payload_search(particion)
-    try:
-        r = requests.post(f"{API_BASE}/search", headers=headers, json=payload, timeout=12)
-        if r.status_code == 200:
-            return r.json().get("results", [])
-    except Exception:
-        pass
+    for intento in range(2):
+        try:
+            r = requests.post(f"{API_BASE}/search", headers=headers, json=payload, timeout=12)
+            if r.status_code == 200:
+                return r.json().get("results", [])
+            elif r.status_code == 429 and intento == 0:
+                time.sleep(1.5)
+        except Exception:
+            pass
     return []
 
 
-def ejecutar_region_mapa(region_tuple):
+def ejecutar_region_mapa(region_tuple, modo="shundo"):
     nombre_region, n_lat, w_lng, s_lat, e_lng = region_tuple
+    es_pvp = modo in ("great", "ultra")
     payload = {
         "mode": "pokemon",
         "n_lat": n_lat,
@@ -500,8 +488,8 @@ def ejecutar_region_mapa(region_tuple):
             "species_forms": [],
             "blacklist_pokemon_ids": [],
             "blacklist_species_forms": [],
-            "iv_min": 100,
-            "iv_max": 100,
+            "iv_min": None if es_pvp else 100,
+            "iv_max": None if es_pvp else 100,
             "cp_min": None,
             "cp_max": None,
             "level_min": None,
@@ -510,9 +498,9 @@ def ejecutar_region_mapa(region_tuple):
             "sizes": [],
             "boosted": None,
             "sort": "DSP",
-            "pvp_mode": False,
-            "pvp_league": "great",
-            "pvp_top_rank": None,
+            "pvp_mode": es_pvp,
+            "pvp_league": modo if es_pvp else "great",
+            "pvp_top_rank": PVP_TOP_RANK_MAX if es_pvp else None,
             "pvp_include_pre_evolutions": True,
             "pvp_min_cp": None,
             "shiny_only": True,
@@ -521,15 +509,18 @@ def ejecutar_region_mapa(region_tuple):
             "always_show": []
         }
     }
-    try:
-        r = requests.post(f"{API_BASE}/map/lookup", headers=headers, json=payload, timeout=12)
-        if r.status_code == 200:
-            items = r.json().get("results", [])
-            for item in items:
-                item["region_mapa"] = nombre_region
-            return nombre_region, items
-    except Exception:
-        pass
+    for intento in range(2):
+        try:
+            r = requests.post(f"{API_BASE}/map/lookup", headers=headers, json=payload, timeout=12)
+            if r.status_code == 200:
+                items = r.json().get("results", [])
+                for item in items:
+                    item["region_mapa"] = nombre_region
+                return nombre_region, items
+            elif r.status_code == 429 and intento == 0:
+                time.sleep(1.5)
+        except Exception:
+            pass
     return nombre_region, []
 
 
@@ -615,12 +606,11 @@ def preparar_lista_spawns(diccionario_spawns, cache_coords, estado_cuota):
                     mon["coords_final"] = f"{apx_lat:.6f},{apx_long:.6f}"
                     mon["lat_final"] = apx_lat
                     mon["lng_final"] = apx_long
-                    mon["precision_coords"] = "Mapa (~300m)"
+                    mon["precision_coords"] = "Mapa"
                 else:
-                    mon["coords_final"] = "No disponible (cuota /reveal en espera)"
+                    mon["coords_final"] = None
                     mon["lat_final"] = None
                     mon["lng_final"] = None
-                    mon["precision_coords"] = "Pendiente"
 
         lat = mon.get("lat_final")
         lng = mon.get("lng_final")
@@ -666,34 +656,57 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
     gl_por_id = {}
     ul_por_id = {}
 
-    with ThreadPoolExecutor(max_workers=14) as executor:
+    # Oleada 1: Shundos 100% IV
+    with ThreadPoolExecutor(max_workers=2) as executor:
         fut_shundos = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_SHUNDOS]
-        fut_mapa = [executor.submit(ejecutar_region_mapa, r) for r in REGIONES_GLOBALES]
-        fut_gl = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_GL]
-        fut_ul = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_UL]
-
+        fut_mapa_shundos = [executor.submit(ejecutar_region_mapa, r, "shundo") for r in REGIONES_GLOBALES]
         for fut in as_completed(fut_shundos):
             for mon in fut.result():
                 if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
                     eid = str(mon.get("encounter_id"))
                     shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
-
-        for fut in as_completed(fut_mapa):
+        for fut in as_completed(fut_mapa_shundos):
             _, items = fut.result()
             for mon in items:
                 if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
                     eid = str(mon.get("encounter_id"))
                     shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
 
+    time.sleep(1.0)
+
+    # Oleada 2: PvP Great League (Rank #1 al #5 Shiny)
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        fut_gl = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_GL]
+        fut_mapa_gl = [executor.submit(ejecutar_region_mapa, r, "great") for r in REGIONES_GLOBALES]
         for fut in as_completed(fut_gl):
             for mon in fut.result():
                 pvp = mon.get("pvp") or {}
                 if mon.get("shiny") and pvp.get("league") == "great" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
                     eid = str(mon.get("encounter_id"))
                     gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
+        for fut in as_completed(fut_mapa_gl):
+            _, items = fut.result()
+            for mon in items:
+                pvp = mon.get("pvp") or {}
+                if mon.get("shiny") and pvp.get("league") == "great" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
+                    eid = str(mon.get("encounter_id"))
+                    gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
 
+    time.sleep(1.0)
+
+    # Oleada 3: PvP Ultra League (Rank #1 al #5 Shiny)
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        fut_ul = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_UL]
+        fut_mapa_ul = [executor.submit(ejecutar_region_mapa, r, "ultra") for r in REGIONES_GLOBALES]
         for fut in as_completed(fut_ul):
             for mon in fut.result():
+                pvp = mon.get("pvp") or {}
+                if mon.get("shiny") and pvp.get("league") == "ultra" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
+                    eid = str(mon.get("encounter_id"))
+                    ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
+        for fut in as_completed(fut_mapa_ul):
+            _, items = fut.result()
+            for mon in items:
                 pvp = mon.get("pvp") or {}
                 if mon.get("shiny") and pvp.get("league") == "ultra" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
                     eid = str(mon.get("encounter_id"))
