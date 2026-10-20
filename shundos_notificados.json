@@ -6,7 +6,7 @@
     "ts": 1792518517,
     "despawn_unix": 1792519768,
     "discord_msg_id": "1562160631375994993",
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-20 17:48:39"
   },
   "shundo:3346775305146102509": {
@@ -16,7 +16,7 @@
     "ts": 1792518517,
     "despawn_unix": 1792519567,
     "discord_msg_id": "1562160632898256917",
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-20 17:48:39"
   },
   "shundo:-3635673937419569381": {
@@ -56,7 +56,7 @@
     "ts": 1792518991,
     "despawn_unix": 1792519897,
     "discord_msg_id": "1562162621287768095",
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-20 17:56:32"
   },
   "shundo:-2499200120285271917": {
@@ -66,7 +66,87 @@
     "ts": 1792519237,
     "despawn_unix": 1792520493,
     "discord_msg_id": "1562163650637336696",
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-20 18:00:38"
+  },
+  "shundo:2087351257502718894": {
+    "canal": "shundo",
+    "pokemon": "Fuecoco",
+    "coords": "38.731638,-77.074453",
+    "ts": 1792519488,
+    "despawn_unix": 1792519846,
+    "discord_msg_id": "1562164700781879408",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 18:04:48"
+  },
+  "great:-5823053121737360503": {
+    "canal": "great",
+    "pokemon": "Stunfisk (Galarian)",
+    "coords": "52.017011,7.692315",
+    "ts": 1792519971,
+    "despawn_unix": 1792520131,
+    "discord_msg_id": "1562166729285832775",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 18:12:52"
+  },
+  "shundo:-7116065368636713032": {
+    "canal": "shundo",
+    "pokemon": "Sawk",
+    "coords": "50.813259,7.115904",
+    "ts": 1792520454,
+    "despawn_unix": 1792520725,
+    "discord_msg_id": "1562168755658948629",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 18:20:55"
+  },
+  "shundo:-2140524297378105463": {
+    "canal": "shundo",
+    "pokemon": "Abra",
+    "coords": "50.124412,19.989099",
+    "ts": 1792520940,
+    "despawn_unix": 1792521557,
+    "discord_msg_id": "1562170794543423528",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 18:29:02"
+  },
+  "shundo:8392195820453961439": {
+    "canal": "shundo",
+    "pokemon": "Gulpin",
+    "coords": "46.855217,-96.7703755",
+    "ts": 1792520940,
+    "despawn_unix": 1792521226,
+    "discord_msg_id": "1562170797227774044",
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-20 18:29:02"
+  },
+  "shundo:8570359007064786372": {
+    "canal": "shundo",
+    "pokemon": "Hoppip",
+    "coords": "25.341794,51.455694",
+    "ts": 1792520940,
+    "despawn_unix": 1792522335,
+    "discord_msg_id": "1562170799140643007",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 18:29:02"
+  },
+  "shundo:5305273324671938840": {
+    "canal": "shundo",
+    "pokemon": "Lillipup",
+    "coords": "40.7613244,-73.4886827",
+    "ts": 1792520940,
+    "despawn_unix": 1792521524,
+    "discord_msg_id": "1562170800335884319",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 18:29:02"
+  },
+  "shundo:4100319609915575610": {
+    "canal": "shundo",
+    "pokemon": "Joltik",
+    "coords": "42.6112091,23.0861293",
+    "ts": 1792521426,
+    "despawn_unix": 1792521613,
+    "discord_msg_id": "1562172831926853732",
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-20 18:37:07"
   }
 }
