@@ -1,4 +1,4 @@
-name: Radar Shundo 24/7 (Cloud)
+name: Radar Shundo & PvP 24/7 (Cloud)
 
 on:
   workflow_dispatch:
@@ -31,10 +31,12 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests
 
-      - name: Ejecutar Radar Shundo en bucle (escaneo cada 8 minutos)
+      - name: Ejecutar Radar Shundo + PvP GL/UL en bucle (escaneo cada 8 minutos)
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_GL: ${{ secrets.DISCORD_WEBHOOK_GL }}
+          DISCORD_WEBHOOK_UL: ${{ secrets.DISCORD_WEBHOOK_UL }}
           DISCORD_USER_ID_MENCION: "924392800534011935"
           CLOUD_MODE: "1"
         run: |
@@ -42,12 +44,12 @@ jobs:
           git config user.email "radar-bot@users.noreply.github.com"
           python radar.py --duracion-minutos 40
 
-      - name: Guardar historial de Shundos notificados
+      - name: Guardar historial de notificados y cache
         if: always()
         run: |
           git pull --rebase --autostash origin main || true
           git add shundos_notificados.json cache_coordenadas.json || true
-          git diff --staged --quiet || (git commit -m "chore: actualizar cache shundos [skip ci]" && git push origin main) || true
+          git diff --staged --quiet || (git commit -m "chore: actualizar cache shundos y pvp [skip ci]" && git push origin main) || true
 
       - name: Auto-encadenar siguiente ciclo 24/7
         if: always()

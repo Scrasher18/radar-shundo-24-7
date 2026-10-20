@@ -32,12 +32,20 @@ def cargar_config_local():
 _cfg = cargar_config_local()
 
 # ==============================================================================
-# ⚙️ CONFIGURACIÓN PRINCIPAL Y ALARMA DE DISCORD (LOCAL + NUBE 24/7)
+# ⚙️ CONFIGURACIÓN PRINCIPAL Y CANALES DE DISCORD (SHUNDOS / GL / UL)
 # ==============================================================================
 JWT_TOKEN = os.environ.get("JWT_TOKEN") or _cfg.get("JWT_TOKEN", "")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL") or _cfg.get("DISCORD_WEBHOOK_URL", "")
+DISCORD_WEBHOOK_GL = os.environ.get("DISCORD_WEBHOOK_GL") or _cfg.get("DISCORD_WEBHOOK_GL", "")
+DISCORD_WEBHOOK_UL = os.environ.get("DISCORD_WEBHOOK_UL") or _cfg.get("DISCORD_WEBHOOK_UL", "")
 DISCORD_USER_ID_MENCION = os.environ.get("DISCORD_USER_ID_MENCION") or _cfg.get("DISCORD_USER_ID_MENCION", "924392800534011935")
 ES_MODO_NUBE = os.environ.get("CLOUD_MODE") == "1" or sys.platform != "win32"
+
+WEBHOOKS_POR_CANAL = {
+    "shundo": DISCORD_WEBHOOK_URL,
+    "great": DISCORD_WEBHOOK_GL,
+    "ultra": DISCORD_WEBHOOK_UL,
+}
 
 LAT_ORIGEN = -12.058662
 LNG_ORIGEN = -77.036896
@@ -46,10 +54,11 @@ AUTO_COPIAR_PORTAPAPELES = not ES_MODO_NUBE
 
 # Configuración del Vigilante Automático 24/7
 MODO_VIGILANTE_CONTINUO = True     # True = revisa cada INTERVALO_SEGUNDOS automáticamente
-INTERVALO_SEGUNDOS = 480           # Cada cuántos segundos busca nuevos Shundos (480s = 8 minutos)
-MIN_SEGUNDOS_VIDA = 90             # Ignorar Shundos a los que les queden menos de 90s de vida
+INTERVALO_SEGUNDOS = 480           # Cada cuántos segundos busca nuevos spawns (480s = 8 minutos)
+MIN_SEGUNDOS_VIDA = 90             # Ignorar spawns a los que les queden menos de 90s de vida
+PVP_TOP_RANK_MAX = 5               # Mostrar del Rank #1 al #5 en Great League y Ultra League
 TTL_LIMPIEZA_CACHE_SEGUNDOS = 43200 # Limpiar automáticamente registros de más de 12 horas (mantenimiento 24/7)
-MAX_REVEALS_POR_EJECUCION = 50
+MAX_REVEALS_POR_EJECUCION = 65
 
 API_BASE = "https://coordinates-api.pokemongopro.com"
 
@@ -71,8 +80,8 @@ REGIONES_GLOBALES = [
     ("Oceanía (Australia y Nueva Zelanda)", -10.0, 112.0, -48.0, 180.0),
 ]
 
-# Particiones de /search exclusivas para SHUNDOS (100% IV + Shiny) para superar el cap=10
-PARTICIONES_SEARCH = [
+# Particiones de /search exclusivas para SHUNDOS (100% IV + Shiny)
+PARTICIONES_SHUNDOS = [
     {"label": "100% Shundos (DSP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "DSP"},
     {"label": "100% Shundos (CP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "CP"},
     {"label": "100% Shundos (LEVEL)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "LEVEL"},
@@ -82,6 +91,25 @@ PARTICIONES_SEARCH = [
     {"label": "100% Shundos (Nivel 1-14)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 1, "level_max": 14, "sort": "DSP"},
     {"label": "100% Shundos (Nivel 15-25)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 15, "level_max": 25, "sort": "DSP"},
     {"label": "100% Shundos (Nivel 26-35)", "iv_percent_min": 100, "iv_percent_max": 100, "level_min": 26, "level_max": 35, "sort": "DSP"},
+]
+
+# Particiones de /search para PvP Great League (GL) y Ultra League (UL) Top 1-5 Shiny Garantizado
+PARTICIONES_PVP_GL = [
+    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": 1, "pvp_include_pre_evolutions": True, "sort": "DSP"},
+    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "DSP"},
+    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "CP"},
+    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "LEVEL"},
+    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Male", "sort": "DSP"},
+    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Female", "sort": "DSP"},
+]
+
+PARTICIONES_PVP_UL = [
+    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": 1, "pvp_include_pre_evolutions": True, "sort": "DSP"},
+    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "DSP"},
+    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "CP"},
+    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "LEVEL"},
+    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Male", "sort": "DSP"},
+    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "gender": "Female", "sort": "DSP"},
 ]
 
 
@@ -133,24 +161,23 @@ def limpiar_archivos_antiguos(cache_coords, notificados):
 
 
 def eliminar_mensajes_expirados_discord():
-    """Revisa los Shundos enviados a Discord y elimina del chat aquellos que ya hicieron despawn."""
-    if not DISCORD_WEBHOOK_URL.strip():
-        return 0
-
+    """Revisa los Shundos y PvP GL/UL enviados a Discord y elimina del canal correspondiente los que ya hicieron despawn."""
     notificados = cargar_json(NOTIFICADOS_FILE)
     ahora = int(time.time())
     eliminados = 0
     hubo_cambios = False
-    base_webhook = DISCORD_WEBHOOK_URL.strip().split("?")[0].rstrip("/")
 
-    for eid, info in list(notificados.items()):
-        if eid.startswith("_meta_") or not isinstance(info, dict):
+    for clave, info in list(notificados.items()):
+        if clave.startswith("_meta_") or not isinstance(info, dict):
             continue
         msg_id = info.get("discord_msg_id")
         despawn_unix = info.get("despawn_unix")
         ya_borrado = info.get("eliminado_de_discord", False)
+        canal_tipo = info.get("canal", "shundo")
+        webhook_url = WEBHOOKS_POR_CANAL.get(canal_tipo) or DISCORD_WEBHOOK_URL
 
-        if msg_id and despawn_unix and not ya_borrado and ahora >= int(despawn_unix):
+        if msg_id and despawn_unix and not ya_borrado and webhook_url and ahora >= int(despawn_unix):
+            base_webhook = webhook_url.strip().split("?")[0].rstrip("/")
             try:
                 del_url = f"{base_webhook}/messages/{msg_id}"
                 r = requests.delete(del_url, timeout=8)
@@ -158,7 +185,7 @@ def eliminar_mensajes_expirados_discord():
                     info["eliminado_de_discord"] = True
                     hubo_cambios = True
                     eliminados += 1
-                    print(f"   🗑️ [Discord] Mensaje de {info.get('pokemon', eid)} eliminado del chat (ya hizo despawn).")
+                    print(f"   🗑️ [Discord-{canal_tipo.upper()}] Mensaje de {info.get('pokemon', clave)} eliminado del chat (ya hizo despawn).")
             except Exception:
                 pass
 
@@ -212,8 +239,8 @@ def enviar_alerta_token_vencido():
         pass
 
 
-def obtener_etiquetas_rareza(mon):
-    etiquetas = ["✨ **SHUNDO 100% IV**"]
+def obtener_etiquetas_rareza(mon, etiqueta_base="✨ **SHUNDO 100% IV**"):
+    etiquetas = [etiqueta_base]
     if mon.get("background"):
         etiquetas.append("🏞️ **FONDO ESPECIAL (BACKGROUND)**")
     if mon.get("costume"):
@@ -224,6 +251,28 @@ def obtener_etiquetas_rareza(mon):
     if mon.get("weather_boosted"):
         etiquetas.append("☁️ **CLIMA BOOSTEADO**")
     return " • ".join(etiquetas)
+
+
+def construir_estado_despawn(mon):
+    seg_rest = max(0, int(mon.get("ttl_segundos") or 0))
+    mins, secs = divmod(seg_rest, 60)
+    ttl_con_segundos = f"{mins} min {secs:02d} seg"
+    despawn_unix = mon.get("despawn_unix")
+
+    if seg_rest >= 900:
+        semaforo = "🟢 **Tiempo Seguro**"
+        color_urgencia = 0xFFD700
+    elif seg_rest >= 300:
+        semaforo = "🟡 **Tiempo Medio**"
+        color_urgencia = 0xF97316
+    else:
+        semaforo = "🔴 **¡SALTAR YA!**"
+        color_urgencia = 0xEF4444
+
+    estado_tiempo = f"{semaforo}\n⏱️ **Desaparece en:** `{ttl_con_segundos}`"
+    if despawn_unix:
+        estado_tiempo += f"\n🕒 **Hora exacta:** <t:{despawn_unix}:T>"
+    return estado_tiempo, color_urgencia
 
 
 def construir_embed_shundo(mon):
@@ -237,27 +286,10 @@ def construir_embed_shundo(mon):
     nivel = mon.get("level") or "?"
     size = mon.get("size") or "-"
     gender = mon.get("gender") or "-"
-    seg_rest = max(0, int(mon.get("ttl_segundos") or 0))
-    mins, secs = divmod(seg_rest, 60)
-    ttl_con_segundos = f"{mins} min {secs:02d} seg"
-    despawn_unix = mon.get("despawn_unix")
     icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{poke_id}.s.icon.png"
 
-    if seg_rest >= 900:
-        semaforo = "🟢 **Tiempo Seguro**"
-        color_embed = 0xFFD700
-    elif seg_rest >= 300:
-        semaforo = "🟡 **Tiempo Medio**"
-        color_embed = 0xF97316
-    else:
-        semaforo = "🔴 **¡SALTAR YA!**"
-        color_embed = 0xEF4444
-
-    estado_tiempo = f"{semaforo}\n⏱️ **Desaparece en:** `{ttl_con_segundos}`"
-    if despawn_unix:
-        estado_tiempo += f"\n🕒 **Hora exacta:** <t:{despawn_unix}:T>"
-
-    rareza_txt = obtener_etiquetas_rareza(mon)
+    estado_tiempo, color_embed = construir_estado_despawn(mon)
+    rareza_txt = obtener_etiquetas_rareza(mon, "✨ **SHUNDO 100% IV**")
 
     return {
         "title": f"🌟 ¡SHUNDO 100% IV: {nombre}! (CP {cp} • Nivel {nivel})",
@@ -276,24 +308,99 @@ def construir_embed_shundo(mon):
     }
 
 
-def enviar_alerta_discord(nuevos_shundos):
-    """Envía cada Shundo en su propio mensaje con ?wait=true para guardar su message_id y borrarlo al expirar."""
-    if not DISCORD_WEBHOOK_URL.strip():
+def construir_embed_pvp(mon, league):
+    origen_txt = "☁️ Nube 24/7" if ES_MODO_NUBE else "💻 PC Local"
+    poke_id = mon.get("pokemon_id") or 1
+    nombre_salvaje = mon.get("nombre_completo") or mon.get("pokemon_name") or f"#{poke_id}"
+    coords = mon.get("coords_final") or "N/A"
+    maps_url = f"https://www.google.com/maps?q={coords}" if "," in str(coords) else "https://maps.google.com"
+    ubicacion = mon.get("location") or mon.get("region_mapa") or "Global"
+    cp_salvaje = mon.get("cp") or "?"
+    nivel_salvaje = mon.get("level") or "?"
+    raw_iv = mon.get("raw_iv") or "?/?/?"
+    size = mon.get("size") or "-"
+    gender = mon.get("gender") or "-"
+
+    pvp = mon.get("pvp") or {}
+    rank = pvp.get("rank", "?")
+    pvp_poke_id = pvp.get("pokemon_id") or poke_id
+    pvp_poke_name = pvp.get("pokemon_name") or nombre_salvaje
+    pvp_cp = pvp.get("cp", "?")
+    pvp_lvl = pvp.get("level", "?")
+    pvp_pct = pvp.get("percent", 100.0)
+
+    es_gl = league == "great"
+    liga_nombre = "🔵 GREAT LEAGUE (1500 CP)" if es_gl else "🟣 ULTRA LEAGUE (2500 CP)"
+    color_liga = 0x3B82F6 if es_gl else 0xA855F7
+    medalla_rank = "🥇 **RANK #1 (100% STAT PRODUCT)**" if rank == 1 else f"🏆 **RANK #{rank}** (`{pvp_pct:.2f}%` PvP)"
+
+    evolucion_txt = (
+        f"🔄 **Para Liga:** Evolucionar a **{pvp_poke_name}** (`CP {pvp_cp}` a Nivel `{pvp_lvl}`)"
+        if int(pvp_poke_id) != int(poke_id)
+        else f"⚔️ **En Liga:** **{pvp_poke_name}** alcanza `CP {pvp_cp}` en Nivel `{pvp_lvl}`"
+    )
+
+    icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{pvp_poke_id}.s.icon.png"
+    estado_tiempo, _ = construir_estado_despawn(mon)
+    rareza_txt = obtener_etiquetas_rareza(mon, f"✨ **SHINY GARANTIZADO** • {medalla_rank}")
+
+    titulo_especie = f"{nombre_salvaje} ➔ {pvp_poke_name}" if int(pvp_poke_id) != int(poke_id) else nombre_salvaje
+
+    return {
+        "title": f"⚔️ ¡{liga_nombre} — RANK #{rank}: {titulo_especie}!",
+        "description": f"{rareza_txt}\n{evolucion_txt}",
+        "url": maps_url,
+        "color": color_liga,
+        "thumbnail": {"url": icon_url},
+        "fields": [
+            {
+                "name": "📊 Datos de Captura y PvP",
+                "value": (
+                    f"**Rank PvP:** `#{rank}` (`{pvp_pct:.2f}%`)\n"
+                    f"**IVs PvP:** `{raw_iv}`\n"
+                    f"**Salvaje:** `CP {cp_salvaje}` | `Nivel {nivel_salvaje}` ({size}, {gender})\n"
+                    f"**Final en Liga:** `CP {pvp_cp}` | `Nivel {pvp_lvl}`"
+                ),
+                "inline": True
+            },
+            {"name": "⏳ Estado Despawn", "value": estado_tiempo, "inline": True},
+            {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
+            {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
+        ],
+        "footer": {"text": f"Radar PvP Shiny Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    }
+
+
+def enviar_lote_webhook(webhook_url, spawns_nuevos, canal_tipo, bot_username):
+    if not webhook_url or not webhook_url.strip() or not spawns_nuevos:
         return {}
 
-    base_webhook = DISCORD_WEBHOOK_URL.strip().split("?")[0].rstrip("/")
+    base_webhook = webhook_url.strip().split("?")[0].rstrip("/")
     url_wait = f"{base_webhook}?wait=true"
     mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
     ids_mensajes = {}
 
-    for idx, mon in enumerate(nuevos_shundos[:10]):
+    for idx, mon in enumerate(spawns_nuevos[:10]):
         eid = str(mon.get("encounter_id"))
         nombre = mon.get("nombre_completo") or mon.get("pokemon_name")
-        embed = construir_embed_shundo(mon)
-        contenido = f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre})** detectado!" if idx == 0 else f"🌟 ¡Nuevo **SHUNDO 100% IV ({nombre})**!"
+        if canal_tipo == "shundo":
+            embed = construir_embed_shundo(mon)
+            contenido = f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre})** detectado!" if idx == 0 else f"🌟 ¡Nuevo **SHUNDO 100% IV ({nombre})**!"
+        else:
+            pvp = mon.get("pvp") or {}
+            rank = pvp.get("rank", "?")
+            pvp_name = pvp.get("pokemon_name") or nombre
+            liga_tag = "Great League" if canal_tipo == "great" else "Ultra League"
+            embed = construir_embed_pvp(mon, canal_tipo)
+            contenido = (
+                f"⚔️ {mencion}¡Nuevo **SHINY {liga_tag.upper()} RANK #{rank} ({nombre} ➔ {pvp_name})** detectado!"
+                if idx == 0
+                else f"⚔️ ¡Nuevo **SHINY {liga_tag} Rank #{rank} ({nombre})**!"
+            )
 
         payload = {
-            "username": "Radar Shundo Pro ✨",
+            "username": bot_username,
             "content": contenido,
             "embeds": [embed]
         }
@@ -306,27 +413,13 @@ def enviar_alerta_discord(nuevos_shundos):
                         ids_mensajes[eid] = msg_data["id"]
                 except Exception:
                     pass
-                print(f"   ✅ [Discord] Alerta enviada para {nombre} (se borrará del chat al expirar).")
+                print(f"   ✅ [Discord-{canal_tipo.upper()}] Alerta enviada para {nombre} (se borrará al expirar).")
             else:
-                print(f"   ⚠️ [Discord] Error HTTP {r.status_code}: {r.text[:150]}")
+                print(f"   ⚠️ [Discord-{canal_tipo.upper()}] Error HTTP {r.status_code}: {r.text[:150]}")
         except Exception as e:
-            print(f"   ⚠️ [Discord] Error al enviar webhook: {e}")
+            print(f"   ⚠️ [Discord-{canal_tipo.upper()}] Error al enviar webhook: {e}")
 
     return ids_mensajes
-
-
-def disparar_alertas_nuevos_shundos(nuevos_shundos):
-    if not nuevos_shundos:
-        return {}
-
-    mejor = nuevos_shundos[0]
-    coords_mejor = mejor.get("coords_final") or ""
-    nombre_mejor = mejor.get("nombre_completo") or mejor.get("pokemon_name")
-
-    if AUTO_COPIAR_PORTAPAPELES and copiar_al_portapapeles(coords_mejor):
-        print(f"   📋 [Portapapeles] Coordenada copiada automáticamente (Ctrl+V): {coords_mejor} ({nombre_mejor})")
-
-    return enviar_alerta_discord(nuevos_shundos)
 
 
 def obtener_perfil_entrenador():
@@ -357,8 +450,8 @@ def construir_payload_search(overrides):
         "level_min": None,
         "level_max": None,
         "iv_mode": "percent",
-        "iv_percent_min": 100,
-        "iv_percent_max": 100,
+        "iv_percent_min": None,
+        "iv_percent_max": None,
         "raw_iv_atk": None,
         "raw_iv_def": None,
         "raw_iv_sta": None,
@@ -471,9 +564,74 @@ def normalizar_spawn(existente, nuevo):
     return combinado
 
 
+def preparar_lista_spawns(diccionario_spawns, cache_coords, estado_cuota):
+    activos = []
+    for eid, mon in diccionario_spawns.items():
+        txt_ttl, seg_restantes, despawn_unix = calcular_tiempo_restante(mon.get("despawn_at"), mon.get("despawn_at_ms"))
+        if seg_restantes < MIN_SEGUNDOS_VIDA:
+            continue
+        mon["ttl_texto"] = txt_ttl
+        mon["ttl_segundos"] = seg_restantes
+        mon["despawn_unix"] = despawn_unix
+
+        nombre = mon.get("pokemon_name") or f"#{mon.get('pokemon_id')}"
+        form = mon.get("form")
+        costume = mon.get("costume")
+        extras_nombre = " ".join(f"({x})" for x in [form, costume] if x and x != "Normal")
+        mon["nombre_completo"] = f"{nombre} {extras_nombre}" if extras_nombre else nombre
+
+        if eid in cache_coords:
+            c_data = cache_coords[eid]
+            mon["coords_final"] = c_data["coords"]
+            mon["lat_final"] = c_data["lat"]
+            mon["lng_final"] = c_data["lng"]
+            mon["precision_coords"] = "Exacta (Caché)"
+        else:
+            reveal_code = mon.get("reveal_code")
+            if reveal_code and not estado_cuota["agotada"] and estado_cuota["revelados"] < MAX_REVEALS_POR_EJECUCION:
+                try:
+                    rev_res = requests.get(f"{API_BASE}/reveal/{reveal_code}", headers=headers, timeout=8)
+                    if rev_res.status_code == 200:
+                        res_data = rev_res.json()
+                        coords = res_data.get("coords")
+                        lat = res_data.get("lat")
+                        lng = res_data.get("lng")
+                        if coords and lat is not None and lng is not None:
+                            mon["coords_final"] = coords
+                            mon["lat_final"] = lat
+                            mon["lng_final"] = lng
+                            mon["precision_coords"] = "Exacta (Revelada)"
+                            cache_coords[eid] = {"coords": coords, "lat": lat, "lng": lng, "ts": int(time.time())}
+                            estado_cuota["revelados"] += 1
+                    elif rev_res.status_code in (403, 429):
+                        estado_cuota["agotada"] = True
+                except Exception:
+                    pass
+
+            if not mon.get("coords_final"):
+                apx_lat = mon.get("apx_lat")
+                apx_long = mon.get("apx_long")
+                if apx_lat is not None and apx_long is not None:
+                    mon["coords_final"] = f"{apx_lat:.6f},{apx_long:.6f}"
+                    mon["lat_final"] = apx_lat
+                    mon["lng_final"] = apx_long
+                    mon["precision_coords"] = "Mapa (~300m)"
+                else:
+                    mon["coords_final"] = "No disponible (cuota /reveal en espera)"
+                    mon["lat_final"] = None
+                    mon["lng_final"] = None
+                    mon["precision_coords"] = "Pendiente"
+
+        lat = mon.get("lat_final")
+        lng = mon.get("lng_final")
+        mon["distancia_km"] = calcular_distancia_km(LAT_ORIGEN, LNG_ORIGEN, lat, lng) if (lat is not None and lng is not None) else None
+        activos.append(mon)
+
+    return activos
+
+
 def ejecutar_ciclo_radar(mostrar_cabecera=True):
     inicio = time.time()
-    # Antes de escanear, eliminar cualquier mensaje de Discord cuyo Pokémon ya haya expirado
     eliminar_mensajes_expirados_discord()
 
     perfil, status_perfil = obtener_perfil_entrenador()
@@ -485,7 +643,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
 
     if mostrar_cabecera:
         print("=" * 78)
-        print("🌍 RADAR PRO GLOBAL DE SHUNDOS + AUTO-LIMPIEZA DE DESPAWN EN DISCORD")
+        print("🌍 RADAR PRO MULTI-CANAL: SHUNDOS 100% + PVP GREAT LEAGUE + PVP ULTRA LEAGUE")
         print("=" * 78)
 
         if perfil:
@@ -497,197 +655,147 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
             entorno = "Nube GitHub Actions 24/7 ☁️" if ES_MODO_NUBE else "PC Local 💻"
             print(f"👤 Usuario Discord : {perfil.get('display_name')} | Modo: {entorno}")
             print(f"🎮 Entrenador PoGO : {t_name} (Código: {t_code} | Equipo: {t_team} | Nivel: {t_lvl})")
-            print("✨ Nota: Todos los Pokémon listados son 100% IV (15/15/15) y SHINY GARANTIZADO para esta cuenta.")
+            print("📡 Canales Activos : [1] 🌟 Shundos 100%  |  [2] 🔵 PvP GL (Top 1-5)  |  [3] 🟣 PvP UL (Top 1-5)")
         else:
             print("⚠️ No se pudo verificar /users/me temporalmente. Continuando escaneo...")
         print("-" * 78)
 
-    spawns_por_id = {}
+    shundos_por_id = {}
+    gl_por_id = {}
+    ul_por_id = {}
 
-    with ThreadPoolExecutor(max_workers=12) as executor:
-        futuros_search = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_SEARCH]
-        futuros_mapa = [executor.submit(ejecutar_region_mapa, r) for r in REGIONES_GLOBALES]
+    with ThreadPoolExecutor(max_workers=14) as executor:
+        fut_shundos = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_SHUNDOS]
+        fut_mapa = [executor.submit(ejecutar_region_mapa, r) for r in REGIONES_GLOBALES]
+        fut_gl = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_GL]
+        fut_ul = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_UL]
 
-        for fut in as_completed(futuros_search):
+        for fut in as_completed(fut_shundos):
             for mon in fut.result():
                 if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
                     eid = str(mon.get("encounter_id"))
-                    spawns_por_id[eid] = normalizar_spawn(spawns_por_id.get(eid), mon)
+                    shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
 
-        for fut in as_completed(futuros_mapa):
+        for fut in as_completed(fut_mapa):
             _, items = fut.result()
-            shundos_reg = [m for m in items if float(m.get("iv_percent") or 0.0) == 100.0 and m.get("shiny")]
-            for mon in shundos_reg:
-                eid = str(mon.get("encounter_id"))
-                spawns_por_id[eid] = normalizar_spawn(spawns_por_id.get(eid), mon)
+            for mon in items:
+                if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
+                    eid = str(mon.get("encounter_id"))
+                    shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
 
-    spawns_activos = []
-    ignorados_por_ttl = 0
-    for eid, mon in spawns_por_id.items():
-        if float(mon.get("iv_percent") or 0.0) != 100.0:
-            continue
-        txt_ttl, seg_restantes, despawn_unix = calcular_tiempo_restante(mon.get("despawn_at"), mon.get("despawn_at_ms"))
-        if seg_restantes < 0:
-            continue
-        if seg_restantes < MIN_SEGUNDOS_VIDA:
-            ignorados_por_ttl += 1
-            continue
-        mon["ttl_texto"] = txt_ttl
-        mon["ttl_segundos"] = seg_restantes
-        mon["despawn_unix"] = despawn_unix
+        for fut in as_completed(fut_gl):
+            for mon in fut.result():
+                pvp = mon.get("pvp") or {}
+                if mon.get("shiny") and pvp.get("league") == "great" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
+                    eid = str(mon.get("encounter_id"))
+                    gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
 
-        nombre = mon.get("pokemon_name") or f"#{mon.get('pokemon_id')}"
-        form = mon.get("form")
-        costume = mon.get("costume")
-        extras_nombre = " ".join(f"({x})" for x in [form, costume] if x and x != "Normal")
-        mon["nombre_completo"] = f"{nombre} {extras_nombre}" if extras_nombre else nombre
-        spawns_activos.append(mon)
-
-    spawns_activos.sort(
-        key=lambda x: (
-            float(x.get("level") or 0.0),
-            int(x.get("cp") or 0),
-            int(x.get("ttl_segundos") or 0)
-        ),
-        reverse=True
-    )
+        for fut in as_completed(fut_ul):
+            for mon in fut.result():
+                pvp = mon.get("pvp") or {}
+                if mon.get("shiny") and pvp.get("league") == "ultra" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
+                    eid = str(mon.get("encounter_id"))
+                    ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
 
     cache_coords = cargar_json(CACHE_FILE)
     notificados = cargar_json(NOTIFICADOS_FILE)
     limpiar_archivos_antiguos(cache_coords, notificados)
 
-    revelados_nuevos = 0
-    cuota_agotada = False
+    estado_cuota = {"revelados": 0, "agotada": False}
 
-    for mon in spawns_activos:
-        eid = str(mon.get("encounter_id"))
-        if eid in cache_coords:
-            c_data = cache_coords[eid]
-            mon["coords_final"] = c_data["coords"]
-            mon["lat_final"] = c_data["lat"]
-            mon["lng_final"] = c_data["lng"]
-            mon["precision_coords"] = "Exacta (Caché)"
-            continue
-
-        reveal_code = mon.get("reveal_code")
-        if reveal_code and not cuota_agotada and revelados_nuevos < MAX_REVEALS_POR_EJECUCION:
-            try:
-                rev_res = requests.get(f"{API_BASE}/reveal/{reveal_code}", headers=headers, timeout=8)
-                if rev_res.status_code == 200:
-                    res_data = rev_res.json()
-                    coords = res_data.get("coords")
-                    lat = res_data.get("lat")
-                    lng = res_data.get("lng")
-                    if coords and lat is not None and lng is not None:
-                        mon["coords_final"] = coords
-                        mon["lat_final"] = lat
-                        mon["lng_final"] = lng
-                        mon["precision_coords"] = "Exacta (Revelada)"
-                        cache_coords[eid] = {"coords": coords, "lat": lat, "lng": lng, "ts": int(time.time())}
-                        revelados_nuevos += 1
-                        continue
-                elif rev_res.status_code in (403, 429):
-                    cuota_agotada = True
-            except Exception:
-                pass
-
-        apx_lat = mon.get("apx_lat")
-        apx_long = mon.get("apx_long")
-        if apx_lat is not None and apx_long is not None:
-            mon["coords_final"] = f"{apx_lat:.6f},{apx_long:.6f}"
-            mon["lat_final"] = apx_lat
-            mon["lng_final"] = apx_long
-            mon["precision_coords"] = "Mapa (~300m)"
-        else:
-            mon["coords_final"] = "No disponible (cuota /reveal en espera)"
-            mon["lat_final"] = None
-            mon["lng_final"] = None
-            mon["precision_coords"] = "Pendiente"
+    shundos_activos = preparar_lista_spawns(shundos_por_id, cache_coords, estado_cuota)
+    gl_activos = preparar_lista_spawns(gl_por_id, cache_coords, estado_cuota)
+    ul_activos = preparar_lista_spawns(ul_por_id, cache_coords, estado_cuota)
 
     guardar_json(CACHE_FILE, cache_coords)
 
-    for mon in spawns_activos:
-        lat = mon.get("lat_final")
-        lng = mon.get("lng_final")
-        if lat is not None and lng is not None:
-            mon["distancia_km"] = calcular_distancia_km(LAT_ORIGEN, LNG_ORIGEN, lat, lng)
-        else:
-            mon["distancia_km"] = None
+    shundos_activos.sort(key=lambda x: (float(x.get("level") or 0.0), int(x.get("cp") or 0), int(x.get("ttl_segundos") or 0)), reverse=True)
+    gl_activos.sort(key=lambda x: (int((x.get("pvp") or {}).get("rank", 99)), -float((x.get("pvp") or {}).get("percent", 0.0)), -int(x.get("ttl_segundos") or 0)))
+    ul_activos.sort(key=lambda x: (int((x.get("pvp") or {}).get("rank", 99)), -float((x.get("pvp") or {}).get("percent", 0.0)), -int(x.get("ttl_segundos") or 0)))
 
-    nuevos_shundos = []
-    for mon in spawns_activos:
-        eid = str(mon.get("encounter_id"))
-        if eid not in notificados:
-            nuevos_shundos.append(mon)
+    nuevos_shundos = [m for m in shundos_activos if f"shundo:{m.get('encounter_id')}" not in notificados and str(m.get("encounter_id")) not in notificados]
+    nuevos_gl = [m for m in gl_activos if f"great:{m.get('encounter_id')}" not in notificados]
+    nuevos_ul = [m for m in ul_activos if f"ultra:{m.get('encounter_id')}" not in notificados]
 
     duracion = time.time() - inicio
     hora_actual = datetime.now().strftime("%H:%M:%S")
-    extra_ign = f" | ⏭️ Ignorados (<{MIN_SEGUNDOS_VIDA}s): {ignorados_por_ttl}" if ignorados_por_ttl else ""
-    print(f"\n[{hora_actual}] 📊 ESCANEO COMPLETADO ({duracion:.1f}s) | 🌟 Shundos: {len(spawns_activos)} | 🆕 Nuevos: {len(nuevos_shundos)}{extra_ign}")
+    print(
+        f"\n[{hora_actual}] 📊 ESCANEO COMPLETADO ({duracion:.1f}s) | "
+        f"🌟 Shundos: {len(shundos_activos)} (🆕 {len(nuevos_shundos)}) | "
+        f"🔵 GL Top 1-5: {len(gl_activos)} (🆕 {len(nuevos_gl)}) | "
+        f"🟣 UL Top 1-5: {len(ul_activos)} (🆕 {len(nuevos_ul)})"
+    )
     print("=" * 78)
 
-    if not spawns_activos:
-        print("No hay spawns 100% IV Shiny activos (>90s de vida) en este preciso instante en todo el mundo.")
-        return
+    for idx, mon in enumerate(shundos_activos, start=1):
+        print(f"  [SHUNDO #{idx:02d}] 🌟 {mon['nombre_completo']} 100% IV | CP {mon.get('cp')} | L{mon.get('level')} | 📍 {mon.get('location') or mon.get('region_mapa')} | 🎯 {mon.get('coords_final')} | ⏳ {mon.get('ttl_texto')}")
 
-    lineas_export = [
-        f"REPORTE MUNDIAL DE SHUNDOS (100% IV SHINY) - Generado: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
-        f"Total Shundos Activos: {len(spawns_activos)}\n"
-    ]
+    for idx, mon in enumerate(gl_activos, start=1):
+        pvp = mon.get("pvp") or {}
+        print(f"  [GL #{idx:02d}] 🔵 Rank #{pvp.get('rank')} ({pvp.get('percent')}%) {mon['nombre_completo']} ➔ {pvp.get('pokemon_name')} (CP {pvp.get('cp')}) | IV {mon.get('raw_iv')} | 🎯 {mon.get('coords_final')} | ⏳ {mon.get('ttl_texto')}")
 
-    for idx, mon in enumerate(spawns_activos, start=1):
-        nombre = mon.get("nombre_completo")
-        raw_iv = mon.get("raw_iv") or "15/15/15"
-        cp = mon.get("cp") or "?"
-        nivel = mon.get("level") or "?"
-        size = mon.get("size") or "-"
-        gender = mon.get("gender") or "-"
-        ubicacion = mon.get("location") or mon.get("region_mapa") or "Global"
-        coords = mon.get("coords_final")
-        precision = mon.get("precision_coords")
-        ttl = mon.get("ttl_texto")
-        dist = mon.get("distancia_km")
-        dist_str = f"{dist:.2f} km" if dist is not None else "N/A"
-        maps_url = f"https://www.google.com/maps?q={coords}" if coords and "," in coords else "N/A"
-        es_nuevo_tag = " 🆕 ¡ENVIADO A DISCORD!" if mon in nuevos_shundos else ""
+    for idx, mon in enumerate(ul_activos, start=1):
+        pvp = mon.get("pvp") or {}
+        print(f"  [UL #{idx:02d}] 🟣 Rank #{pvp.get('rank')} ({pvp.get('percent')}%) {mon['nombre_completo']} ➔ {pvp.get('pokemon_name')} (CP {pvp.get('cp')}) | IV {mon.get('raw_iv')} | 🎯 {mon.get('coords_final')} | ⏳ {mon.get('ttl_texto')}")
 
-        bloque = (
-            f"[{idx:02d}] 🌟 SHUNDO 100% IV ({raw_iv}) — {nombre}{es_nuevo_tag} | CP {cp} | Nivel {nivel} | Talla {size} ({gender})\n"
-            f"     📍 Ubicación  : {ubicacion} ({dist_str})\n"
-            f"     🎯 Coordenadas: {coords} [{precision}]\n"
-            f"     🗺️ Google Maps: {maps_url}\n"
-            f"     ⏳ Expira en  : {ttl}\n"
-        )
-        lineas_export.append(bloque)
-        print(bloque)
+    ahora_ts = int(time.time())
 
-    try:
-        with open(EXPORT_TXT, "w", encoding="utf-8") as f:
-            f.write("\n".join(lineas_export))
-        with open(EXPORT_JSON, "w", encoding="utf-8") as f:
-            json.dump(spawns_activos, f, ensure_ascii=False, indent=2)
-    except Exception:
-        pass
-
+    # 1. Enviar nuevos Shundos al canal de Shundos
     if nuevos_shundos:
-        ids_enviados = disparar_alertas_nuevos_shundos(nuevos_shundos)
-        ahora_ts = int(time.time())
+        if AUTO_COPIAR_PORTAPAPELES:
+            copiar_al_portapapeles(nuevos_shundos[0].get("coords_final") or "")
+        ids_shundo = enviar_lote_webhook(DISCORD_WEBHOOK_URL, nuevos_shundos, "shundo", "Radar Shundo Pro ✨")
         for mon in nuevos_shundos:
             eid = str(mon.get("encounter_id"))
-            notificados[eid] = {
+            notificados[f"shundo:{eid}"] = {
+                "canal": "shundo",
                 "pokemon": mon.get("nombre_completo"),
                 "coords": mon.get("coords_final"),
                 "ts": ahora_ts,
                 "despawn_unix": mon.get("despawn_unix"),
-                "discord_msg_id": ids_enviados.get(eid),
+                "discord_msg_id": ids_shundo.get(eid),
                 "eliminado_de_discord": False,
                 "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
+
+    # 2. Enviar nuevos PvP Great League (Rank 1-5) al canal GL
+    if nuevos_gl:
+        ids_gl = enviar_lote_webhook(DISCORD_WEBHOOK_GL, nuevos_gl, "great", "Radar PvP Great League 🔵✨")
+        for mon in nuevos_gl:
+            eid = str(mon.get("encounter_id"))
+            notificados[f"great:{eid}"] = {
+                "canal": "great",
+                "pokemon": mon.get("nombre_completo"),
+                "coords": mon.get("coords_final"),
+                "ts": ahora_ts,
+                "despawn_unix": mon.get("despawn_unix"),
+                "discord_msg_id": ids_gl.get(eid),
+                "eliminado_de_discord": False,
+                "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+    # 3. Enviar nuevos PvP Ultra League (Rank 1-5) al canal UL
+    if nuevos_ul:
+        ids_ul = enviar_lote_webhook(DISCORD_WEBHOOK_UL, nuevos_ul, "ultra", "Radar PvP Ultra League 🟣✨")
+        for mon in nuevos_ul:
+            eid = str(mon.get("encounter_id"))
+            notificados[f"ultra:{eid}"] = {
+                "canal": "ultra",
+                "pokemon": mon.get("nombre_completo"),
+                "coords": mon.get("coords_final"),
+                "ts": ahora_ts,
+                "despawn_unix": mon.get("despawn_unix"),
+                "discord_msg_id": ids_ul.get(eid),
+                "eliminado_de_discord": False,
+                "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            }
+
+    if nuevos_shundos or nuevos_gl or nuevos_ul:
         guardar_json(NOTIFICADOS_FILE, notificados)
 
 
 def esperar_con_limpieza_despawn(segundos_totales):
-    """Durante la espera entre escaneos, verifica cada 5s si algún Shundo ya expiró para borrarlo del chat de Discord al instante."""
+    """Durante la espera entre escaneos, verifica cada 5s si algún Shundo o PvP GL/UL ya expiró para borrarlo de su canal de Discord."""
     fin = time.time() + segundos_totales
     while time.time() < fin:
         eliminar_mensajes_expirados_discord()
@@ -723,11 +831,10 @@ def iniciar_radar():
             if duracion_minutos is not None:
                 transcurrido_min = (time.time() - inicio_bucle) / 60.0
                 if transcurrido_min + (INTERVALO_SEGUNDOS / 60.0) >= duracion_minutos:
-                    # Antes de cerrar el ciclo en la nube, limpiar cualquier despawn pendiente
                     eliminar_mensajes_expirados_discord()
                     print(f"✅ Ciclo en la nube de {duracion_minutos} minutos completado. Guardando estado y encadenando siguiente ciclo...")
                     break
-            print(f"⏳ Vigilante activo: próximo escaneo en {INTERVALO_SEGUNDOS // 60} min (borrado automático de despawns activo cada 5s)...")
+            print(f"⏳ Vigilante activo: próximo escaneo en {INTERVALO_SEGUNDOS // 60} min (borrado automático de despawns activo en los 3 canales)...")
             esperar_con_limpieza_despawn(INTERVALO_SEGUNDOS)
             ciclo += 1
     except KeyboardInterrupt:
