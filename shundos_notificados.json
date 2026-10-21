@@ -1884,10 +1884,11 @@
     "coords": "32.8441862,-83.6967051",
     "ts": 1792604343,
     "despawn_unix": 1792605715,
-    "discord_msg_id": "1562523463678296208",
+    "discord_msg_id": "1562524829217726471",
     "discord_msg_ids": [
       "1562520611513827372",
-      "1562523463678296208"
+      "1562523463678296208",
+      "1562524829217726471"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Pikipek! (CP 150 • Nivel 6.0)",
@@ -1905,7 +1906,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 33 seg`\n🕒 **Hora exacta:** <t:1792605715:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 06 seg`\n🕒 **Hora exacta:** <t:1792605715:T>",
           "inline": true
         },
         {
@@ -1922,9 +1923,9 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T17:50:23.854347+00:00"
+      "timestamp": "2026-10-21T17:55:49.489065+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 17:39:04"
   },
   "shundo:-2167790785715299564": {
@@ -1933,16 +1934,17 @@
     "coords": "40.298587,-105.076337",
     "ts": 1792604343,
     "despawn_unix": 1792605495,
-    "discord_msg_id": "1562523463678296208",
+    "discord_msg_id": "1562524829217726471",
     "discord_msg_ids": [
       "1562520611513827372",
-      "1562523463678296208"
+      "1562523463678296208",
+      "1562524829217726471"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Scorbunny! (CP 148 • Nivel 5.0)",
       "description": "✨ **SHUNDO 100% IV**",
       "url": "https://www.google.com/maps?q=40.298587,-105.076337",
-      "color": 16347926,
+      "color": 15680580,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm813.s.icon.png"
       },
@@ -1954,7 +1956,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `7 min 53 seg`\n🕒 **Hora exacta:** <t:1792605495:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `2 min 26 seg`\n🕒 **Hora exacta:** <t:1792605495:T>",
           "inline": true
         },
         {
@@ -1971,9 +1973,9 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T17:50:23.854358+00:00"
+      "timestamp": "2026-10-21T17:55:49.489075+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 17:39:04"
   },
   "great:-8584538932837827902": {
@@ -2374,15 +2376,16 @@
     "coords": "52.356186,4.5168503",
     "ts": 1792605023,
     "despawn_unix": 1792605620,
-    "discord_msg_id": "1562523463678296208",
+    "discord_msg_id": "1562524829217726471",
     "discord_msg_ids": [
-      "1562523463678296208"
+      "1562523463678296208",
+      "1562524829217726471"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Pumpkaboo (Average)! (CP 698 • Nivel 20.0)",
       "description": "✨ **SHUNDO 100% IV**",
       "url": "https://www.google.com/maps?q=52.356186,4.5168503",
-      "color": 16347926,
+      "color": 15680580,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm710.s.icon.png"
       },
@@ -2394,7 +2397,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `9 min 58 seg`\n🕒 **Hora exacta:** <t:1792605620:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 31 seg`\n🕒 **Hora exacta:** <t:1792605620:T>",
           "inline": true
         },
         {
@@ -2411,9 +2414,9 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T17:50:23.854325+00:00"
+      "timestamp": "2026-10-21T17:55:49.489028+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 17:50:24"
   },
   "great:-5884703630520041223": {
@@ -2703,5 +2706,53 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 17:50:26"
+  },
+  "shundo:6760074098865257181": {
+    "canal": "shundo",
+    "pokemon": "Cottonee",
+    "coords": "38.572248,-89.910538",
+    "ts": 1792605349,
+    "despawn_unix": 1792606604,
+    "discord_msg_id": "1562524829217726471",
+    "discord_msg_ids": [
+      "1562524829217726471"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Cottonee! (CP 400 • Nivel 20.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=38.572248,-89.910538",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm546.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `400` | **Nivel:** `20.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `20 min 55 seg`\n🕒 **Hora exacta:** <t:1792606604:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Shiloh, Illinois, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.572248,-89.910538)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n38.572248,-89.910538\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T17:55:49.489056+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 17:55:49"
   }
 }
