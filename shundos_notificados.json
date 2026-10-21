@@ -1,105 +1,4 @@
 {
-  "great:8044366340770101128": {
-    "canal": "great",
-    "pokemon": "Tynamo",
-    "coords": "35.638217,139.522633",
-    "ts": 1792619471,
-    "despawn_unix": 1792620837,
-    "discord_msg_id": "1562588603371098191",
-    "discord_msg_ids": [
-      "1562584067395027067",
-      "1562585484000235526",
-      "1562586884851503107",
-      "1562588603371098191"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #2: Tynamo ➔ Eelektrik!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.97%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Eelektrik** (`CP 1499` a Nivel `37.5`)",
-      "url": "https://www.google.com/maps?q=35.638217,139.522633",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm603.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.97%`)\n**IVs PvP:** `0/14/14`\n**Salvaje:** `CP 602` | `Nivel 30.0` (M, Male)\n**Final en Liga:** `CP 1499` | `Nivel 37.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 45 seg`\n🕒 **Hora exacta:** <t:1792620837:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Suga-inadazutsumi, Tokyo, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.638217,139.522633)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n35.638217,139.522633\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T22:09:11.869353+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 21:51:13"
-  },
-  "ultra:-1500931292182908719": {
-    "canal": "ultra",
-    "pokemon": "Machop",
-    "coords": "52.558548,-1.787206",
-    "ts": 1792619471,
-    "despawn_unix": 1792620590,
-    "discord_msg_id": "1562586891868704936",
-    "discord_msg_ids": [
-      "1562584069697699856",
-      "1562585488815030434",
-      "1562586891868704936"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Machop ➔ Machamp!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.61%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Machamp** (`CP 2493` a Nivel `30.5`)",
-      "url": "https://www.google.com/maps?q=52.558548,-1.787206",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm68.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.61%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 261` | `Nivel 8.0` (M, Male)\n**Final en Liga:** `CP 2493` | `Nivel 30.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `7 min 26 seg`\n🕒 **Hora exacta:** <t:1792620590:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Sutton Coldfield, Birmingham, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.558548,-1.787206)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.558548,-1.787206\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T22:02:26.369026+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 21:51:13"
-  },
   "shundo:-6956631882227792083": {
     "canal": "shundo",
     "pokemon": "Drifblim",
@@ -2077,7 +1976,7 @@
       },
       "timestamp": "2026-10-21T22:49:44.506036+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 22:31:46"
   },
   "great:-485337600460003621": {
