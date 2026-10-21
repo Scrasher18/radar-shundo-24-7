@@ -49,7 +49,7 @@ jobs:
         if: ${{ !cancelled() }}
         run: |
           git fetch origin main || true
-          git reset --soft origin/main || true
+          git reset --mixed origin/main || true
           git add shundos_notificados.json cache_coordenadas.json || true
           git diff --staged --quiet || (git commit -m "chore: actualizar cache shundos y pvp [skip ci]" && git push origin main) || true
 
