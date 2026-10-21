@@ -1233,5 +1233,94 @@
     ],
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 05:25:07"
+  },
+  "shundo:1344165001892634056": {
+    "canal": "shundo",
+    "pokemon": "Bidoof",
+    "coords": "45.432471,9.147293",
+    "ts": 1792560810,
+    "despawn_unix": 1792561924,
+    "discord_msg_id": "1562338021079261295",
+    "discord_msg_ids": [
+      "1562338021079261295"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:33:31"
+  },
+  "great:-8488359455027084536": {
+    "canal": "great",
+    "pokemon": "Torchic",
+    "coords": "53.500044,-2.398867",
+    "ts": 1792560810,
+    "despawn_unix": 1792561877,
+    "discord_msg_id": "1562338022542934118",
+    "discord_msg_ids": [
+      "1562338022542934118"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:33:31"
+  },
+  "great:-4623398404467447791": {
+    "canal": "great",
+    "pokemon": "Munna",
+    "coords": "44.851943,-0.578924",
+    "ts": 1792560810,
+    "despawn_unix": 1792562081,
+    "discord_msg_id": "1562338023973068875",
+    "discord_msg_ids": [
+      "1562338023973068875"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:33:31"
+  },
+  "ultra:-5702127285299880430": {
+    "canal": "ultra",
+    "pokemon": "Treecko",
+    "coords": "52.453125,13.489478",
+    "ts": 1792560810,
+    "despawn_unix": 1792562100,
+    "discord_msg_id": "1562338024761860100",
+    "discord_msg_ids": [
+      "1562338024761860100"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:33:32"
+  },
+  "ultra:-9086132095563870304": {
+    "canal": "ultra",
+    "pokemon": "Sewaddle",
+    "coords": "51.082164,13.655548",
+    "ts": 1792560810,
+    "despawn_unix": 1792561622,
+    "discord_msg_id": "1562338025390866466",
+    "discord_msg_ids": [
+      "1562338025390866466"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:33:32"
+  },
+  "ultra:3662699799227105840": {
+    "canal": "ultra",
+    "pokemon": "Nidoran_female",
+    "coords": "44.305475,-88.356569",
+    "ts": 1792560810,
+    "despawn_unix": 1792561811,
+    "discord_msg_id": "1562338026170875915",
+    "discord_msg_ids": [
+      "1562338026170875915"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:33:32"
+  },
+  "ultra:-4623398404467447791": {
+    "canal": "ultra",
+    "pokemon": "Munna",
+    "coords": "44.851943,-0.578924",
+    "ts": 1792560810,
+    "despawn_unix": 1792562081,
+    "discord_msg_id": null,
+    "discord_msg_ids": [],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:33:32"
   }
 }
