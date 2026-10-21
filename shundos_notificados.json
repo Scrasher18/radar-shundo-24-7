@@ -1,199 +1,4 @@
 {
-  "shundo:-779421999387928705": {
-    "canal": "shundo",
-    "pokemon": "Trubbish",
-    "coords": "36.164795,-115.342233",
-    "ts": 1792622984,
-    "despawn_unix": 1792624235,
-    "discord_msg_id": "1562603061925642336",
-    "discord_msg_ids": [
-      "1562598795848712195",
-      "1562600222918713379",
-      "1562601613569302563",
-      "1562603061925642336"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Trubbish! (CP 914 • Nivel 34.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=36.164795,-115.342233",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm568.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `914` | **Nivel:** `34.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 53 seg`\n🕒 **Hora exacta:** <t:1792624235:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Summerlin South, Nevada, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=36.164795,-115.342233)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n36.164795,-115.342233\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T23:06:41.631111+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 22:49:44"
-  },
-  "ultra:-3766911956729717712": {
-    "canal": "ultra",
-    "pokemon": "Pawmi",
-    "coords": "34.681473,135.454875",
-    "ts": 1792622984,
-    "despawn_unix": 1792624005,
-    "discord_msg_id": "1562598809068900388",
-    "discord_msg_ids": [
-      "1562598809068900388"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Pawmi ➔ Pawmot!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Pawmot** (`CP 2490` a Nivel `40.5`)",
-      "url": "https://www.google.com/maps?q=34.681473,135.454875",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm923.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 266` | `Nivel 17.0` (M, Female)\n**Final en Liga:** `CP 2490` | `Nivel 40.5`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `17 min 00 seg`\n🕒 **Hora exacta:** <t:1792624005:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=34.681473,135.454875)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n34.681473,135.454875\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T22:49:47.665598+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 22:49:47"
-  },
-  "ultra:-1332172786870891762": {
-    "canal": "ultra",
-    "pokemon": "Snivy",
-    "coords": "55.717921,12.395003",
-    "ts": 1792622984,
-    "despawn_unix": 1792623420,
-    "discord_msg_id": "1562598809068900388",
-    "discord_msg_ids": [
-      "1562598809068900388"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Snivy ➔ Serperior!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.97%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Serperior** (`CP 2497` a Nivel `50.0`)",
-      "url": "https://www.google.com/maps?q=55.717921,12.395003",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm497.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.97%`)\n**IVs PvP:** `11/14/13`\n**Salvaje:** `CP 300` | `Nivel 13.0` (M, Male)\n**Final en Liga:** `CP 2497` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `7 min 15 seg`\n🕒 **Hora exacta:** <t:1792623420:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Ballerup, Hovedstaden, Denmark • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=55.717921,12.395003)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n55.717921,12.395003\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T22:49:47.665673+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 22:49:47"
-  },
-  "ultra:338526354548755365": {
-    "canal": "ultra",
-    "pokemon": "Surskit",
-    "coords": "51.540322,-3.321706",
-    "ts": 1792622984,
-    "despawn_unix": 1792623665,
-    "discord_msg_id": "1562598809068900388",
-    "discord_msg_ids": [
-      "1562598809068900388"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Surskit ➔ Masquerain!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.86%` PvP) • 🍬 **REQUIERE CARAMELOS XL** • ☁️ **CLIMA BOOSTEADO**\n🔄 **Para Liga:** Evolucionar a **Masquerain** (`CP 2498` a Nivel `50.0`)",
-      "url": "https://www.google.com/maps?q=51.540322,-3.321706",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm284.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.86%`)\n**IVs PvP:** `10/15/14`\n**Salvaje:** `CP 644` | `Nivel 30.0` (XS, Male)\n**Final en Liga:** `CP 2498` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 20 seg`\n🕒 **Hora exacta:** <t:1792623665:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Beddau, Rhondda, Cynon, Taff, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.540322,-3.321706)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.540322,-3.321706\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T22:49:47.665685+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 22:49:47"
-  },
   "shundo:-3364166444690889066": {
     "canal": "shundo",
     "pokemon": "Cubone",
@@ -1685,7 +1490,7 @@
       },
       "timestamp": "2026-10-21T23:47:29.977274+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 23:17:58"
   },
   "great:5785331597107555170": {
@@ -2474,7 +2279,7 @@
       },
       "timestamp": "2026-10-21T23:47:29.977226+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 23:36:08"
   },
   "great:9129170949937704381": {
@@ -2524,7 +2329,7 @@
       },
       "timestamp": "2026-10-21T23:47:29.977260+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 23:36:08"
   },
   "ultra:-2096663375076087140": {
@@ -2818,7 +2623,7 @@
       },
       "timestamp": "2026-10-21T23:47:29.977245+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 23:41:50"
   },
   "ultra:2934030695435661876": {
@@ -3107,7 +2912,7 @@
       },
       "timestamp": "2026-10-21T23:47:29.977203+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 23:47:30"
   },
   "ultra:-2879805988655029026": {
