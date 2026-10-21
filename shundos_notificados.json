@@ -1,147 +1,4 @@
 {
-  "shundo:-752914626100697860": {
-    "canal": "shundo",
-    "pokemon": "Croagunk",
-    "coords": "50.804954,7.014552",
-    "ts": 1792559474,
-    "despawn_unix": 1792560742,
-    "discord_msg_id": "1562332414896902206",
-    "discord_msg_ids": [
-      "1562332414896902206"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:15"
-  },
-  "shundo:-3489794277648716150": {
-    "canal": "shundo",
-    "pokemon": "Miltank",
-    "coords": "51.733088,5.270823",
-    "ts": 1792559474,
-    "despawn_unix": 1792560445,
-    "discord_msg_id": "1562332416176168971",
-    "discord_msg_ids": [
-      "1562332416176168971"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:15"
-  },
-  "shundo:9032823218240637182": {
-    "canal": "shundo",
-    "pokemon": "Gothita",
-    "coords": "44.419947,8.883298",
-    "ts": 1792559474,
-    "despawn_unix": 1792560254,
-    "discord_msg_id": "1562332417056837643",
-    "discord_msg_ids": [
-      "1562332417056837643"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:15"
-  },
-  "great:-5688540792892673790": {
-    "canal": "great",
-    "pokemon": "Rattata (Alola)",
-    "coords": "1.306862,103.826544",
-    "ts": 1792559474,
-    "despawn_unix": 1792560609,
-    "discord_msg_id": "1562332417967267955",
-    "discord_msg_ids": [
-      "1562332417967267955"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:16"
-  },
-  "great:1243310546802834057": {
-    "canal": "great",
-    "pokemon": "Cubone",
-    "coords": "-27.334715,153.090676",
-    "ts": 1792559474,
-    "despawn_unix": 1792560897,
-    "discord_msg_id": "1562332419779067966",
-    "discord_msg_ids": [
-      "1562332419779067966"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:16"
-  },
-  "great:4486557475575868214": {
-    "canal": "great",
-    "pokemon": "Cottonee",
-    "coords": "51.479640,-2.694200",
-    "ts": 1792559474,
-    "despawn_unix": 1792561418,
-    "discord_msg_id": "1562332420731174974",
-    "discord_msg_ids": [
-      "1562332420731174974"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:16"
-  },
-  "great:-7282030746176523222": {
-    "canal": "great",
-    "pokemon": "Charmander",
-    "coords": "52.051216,5.287535",
-    "ts": 1792559474,
-    "despawn_unix": 1792560465,
-    "discord_msg_id": "1562332421431492660",
-    "discord_msg_ids": [
-      "1562332421431492660"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:16"
-  },
-  "great:4583536921184449404": {
-    "canal": "great",
-    "pokemon": "Nickit",
-    "coords": "50.951389,4.339236",
-    "ts": 1792559474,
-    "despawn_unix": 1792560308,
-    "discord_msg_id": "1562332422719152150",
-    "discord_msg_ids": [
-      "1562332422719152150"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:16"
-  },
-  "ultra:-5688540792892673790": {
-    "canal": "ultra",
-    "pokemon": "Rattata (Alola)",
-    "coords": "1.306862,103.826544",
-    "ts": 1792559474,
-    "despawn_unix": 1792560609,
-    "discord_msg_id": "1562332423927369850",
-    "discord_msg_ids": [
-      "1562332423927369850"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:17"
-  },
-  "ultra:7794002424643320781": {
-    "canal": "ultra",
-    "pokemon": "Remoraid",
-    "coords": "48.221293,12.039007",
-    "ts": 1792559474,
-    "despawn_unix": 1792560661,
-    "discord_msg_id": "1562332425248579635",
-    "discord_msg_ids": [
-      "1562332425248579635"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:17"
-  },
-  "ultra:-2866289625122156182": {
-    "canal": "ultra",
-    "pokemon": "Helioptile",
-    "coords": "50.476079,30.634165",
-    "ts": 1792559474,
-    "despawn_unix": 1792560832,
-    "discord_msg_id": "1562332426477510807",
-    "discord_msg_ids": [
-      "1562332426477510807"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:11:17"
-  },
   "shundo:3706452186408841738": {
     "canal": "shundo",
     "pokemon": "Vulpix",
@@ -863,15 +720,16 @@
     "coords": "46.252204,-119.108356",
     "ts": 1792562723,
     "despawn_unix": 1792563949,
-    "discord_msg_id": "1562346044543598637",
+    "discord_msg_id": "1562348127032320105",
     "discord_msg_ids": [
-      "1562346044543598637"
+      "1562346044543598637",
+      "1562348127032320105"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Lillipup! (CP 784 • Nivel 30.0)",
       "description": "✨ **SHUNDO 100% IV**",
       "url": "https://www.google.com/maps?q=46.252204,-119.108356",
-      "color": 16766720,
+      "color": 16347926,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm506.s.icon.png"
       },
@@ -883,7 +741,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `20 min 25 seg`\n🕒 **Hora exacta:** <t:1792563949:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `12 min 08 seg`\n🕒 **Hora exacta:** <t:1792563949:T>",
           "inline": true
         },
         {
@@ -900,7 +758,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T06:05:23.886243+00:00"
+      "timestamp": "2026-10-21T06:13:40.379358+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 06:05:24"
@@ -959,15 +817,16 @@
     "coords": "44.032721,-123.095899",
     "ts": 1792562723,
     "despawn_unix": 1792563444,
-    "discord_msg_id": "1562346044543598637",
+    "discord_msg_id": "1562348127032320105",
     "discord_msg_ids": [
-      "1562346044543598637"
+      "1562346044543598637",
+      "1562348127032320105"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Ekans! (CP 423 • Nivel 16.0)",
       "description": "✨ **SHUNDO 100% IV**",
       "url": "https://www.google.com/maps?q=44.032721,-123.095899",
-      "color": 16347926,
+      "color": 15680580,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm23.s.icon.png"
       },
@@ -979,7 +838,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `12 min 00 seg`\n🕒 **Hora exacta:** <t:1792563444:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 43 seg`\n🕒 **Hora exacta:** <t:1792563444:T>",
           "inline": true
         },
         {
@@ -996,7 +855,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T06:05:23.886285+00:00"
+      "timestamp": "2026-10-21T06:13:40.379398+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 06:05:24"
@@ -1048,5 +907,53 @@
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 06:05:24"
+  },
+  "shundo:-6406063835359284773": {
+    "canal": "shundo",
+    "pokemon": "Diglett",
+    "coords": "41.460116,-82.116013",
+    "ts": 1792563220,
+    "despawn_unix": 1792566438,
+    "discord_msg_id": "1562348127032320105",
+    "discord_msg_ids": [
+      "1562348127032320105"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Diglett! (CP 502 • Nivel 26.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=41.460116,-82.116013",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm50.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `502` | **Nivel:** `26.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `53 min 37 seg`\n🕒 **Hora exacta:** <t:1792566438:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sheffield Lake, Ohio, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=41.460116,-82.116013)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n41.460116,-82.116013\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T06:13:40.379387+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 06:13:40"
   }
 }
