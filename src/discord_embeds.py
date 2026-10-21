@@ -83,7 +83,7 @@ def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
             {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
             {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
         ],
-        "footer": {"text": f"Radar Shundo Pro ({origen_txt}) • Reloj en vivo • Auto-eliminación al desaparecer"},
+        "footer": {"text": f"Radar Shundo Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -156,7 +156,7 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
             {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
             {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
         ],
-        "footer": {"text": f"Radar PvP Shiny Pro ({origen_txt}) • Reloj en vivo • Auto-eliminación al desaparecer"},
+        "footer": {"text": f"Radar PvP Shiny Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 

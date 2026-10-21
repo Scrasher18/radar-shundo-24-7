@@ -100,18 +100,15 @@ def construir_encabezado_lote(spawns_nuevos: List[Dict[str, Any]], total_activos
     primero = spawns_nuevos[0]
     nombre = primero.get("nombre_completo") or primero.get("pokemon_name")
     if canal_tipo == "shundo":
-        if len(spawns_nuevos) == 1:
-            return f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre})** detectado! (`{total_activos}` activo(s) en vivo)"
-        nombres = ", ".join((m.get("nombre_completo") or m.get("pokemon_name") or "?") for m in spawns_nuevos[:4])
-        return f"🚨 {mencion}¡**{len(spawns_nuevos)} Nuevos SHUNDOS 100% IV** ({nombres})! (`{total_activos}` en vivo)"
+        return f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre})** detectado!"
+    elif canal_tipo == "evento":
+        return f"🎉 {mencion}¡Nuevo **SHINY DE EVENTO / CD ({nombre})** detectado!"
     else:
         pvp = primero.get("pvp") or {}
         rank = pvp.get("rank", "?")
         pvp_name = pvp.get("pokemon_name") or nombre
         liga_tag = "GREAT LEAGUE" if canal_tipo == "great" else "ULTRA LEAGUE"
-        if len(spawns_nuevos) == 1:
-            return f"⚔️ {mencion}¡Nuevo **SHINY {liga_tag} RANK #{rank} ({nombre} ➔ {pvp_name})**! (`{total_activos}` activo(s) en vivo)"
-        return f"⚔️ {mencion}¡**{len(spawns_nuevos)} Nuevos SHINIES {liga_tag} Top 1-5** (destacado: Rank #{rank} {nombre} ➔ {pvp_name})! (`{total_activos}` en vivo)"
+        return f"⚔️ {mencion}¡Nuevo **SHINY {liga_tag} RANK #{rank} ({nombre} ➔ {pvp_name})** detectado!"
 
 
 def publicar_panel_consolidado_canal(
@@ -264,14 +261,17 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                 actualizar_embed_con_segundos_reales(emb, d_unix, canal_tipo)
                 for _, _, d_unix, emb in todas_vivas
             ]
-            liga_txt = (
-                "SHUNDOS 100% IV"
-                if canal_tipo == "shundo"
-                else ("GREAT LEAGUE TOP 1-5" if canal_tipo == "great" else "ULTRA LEAGUE TOP 1-5")
-            )
+            mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
+            nombre_dest = todas_vivas[0][1].get("pokemon", "Pokémon")
+            if canal_tipo == "shundo":
+                contenido_limpio = f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre_dest})** detectado!"
+            elif canal_tipo == "great":
+                contenido_limpio = f"⚔️ {mencion}¡Nuevo **SHINY GREAT LEAGUE ({nombre_dest})** detectado!"
+            else:
+                contenido_limpio = f"⚔️ {mencion}¡Nuevo **SHINY ULTRA LEAGUE ({nombre_dest})** detectado!"
             payload_unificado = {
                 "username": BOT_NOMBRES_POR_CANAL.get(canal_tipo, "Radar Pro ✨"),
-                "content": f"📡 **Panel en Vivo — {liga_txt}** (`{len(todas_vivas)}` activo(s) • Actualización cada 1s):",
+                "content": contenido_limpio,
                 "embeds": embeds_unificados,
             }
             try:
@@ -369,10 +369,25 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                     )
 
             if embeds_actualizados:
+                mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
+                nombre_dest = vivos_en_mid[0][1].get("pokemon", "Pokémon")
+                if canal_tipo == "shundo":
+                    contenido_patch = f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre_dest})** detectado!"
+                    footer_limpio = "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+                elif canal_tipo == "great":
+                    contenido_patch = f"⚔️ {mencion}¡Nuevo **SHINY GREAT LEAGUE ({nombre_dest})** detectado!"
+                    footer_limpio = "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+                else:
+                    contenido_patch = f"⚔️ {mencion}¡Nuevo **SHINY ULTRA LEAGUE ({nombre_dest})** detectado!"
+                    footer_limpio = "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+
+                for emb_item in embeds_actualizados:
+                    emb_item["footer"] = {"text": footer_limpio}
+
                 try:
                     r_patch = sesion.patch(
                         f"{base_webhook}/messages/{mid}",
-                        json={"embeds": embeds_actualizados},
+                        json={"content": contenido_patch, "embeds": embeds_actualizados},
                         timeout=5,
                     )
                     if r_patch.status_code == 200:
