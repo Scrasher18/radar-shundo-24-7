@@ -1,16 +1,12 @@
 {
-  "activo": true,
+  "activo": false,
   "nombre_evento": "Community Day / Evento Especial",
   "webhook_evento": "",
-  "pokemon_ids": [
-    755
-  ],
-  "pokemon_nombres": [
-    "Morelull"
-  ],
+  "pokemon_ids": [],
+  "pokemon_nombres": [],
   "incluir_shundos_100": true,
   "incluir_pvp_gl": true,
   "incluir_pvp_ul": true,
   "pvp_top_rank": 5,
-  "panel_msg_id": "1562490184463949946"
+  "panel_msg_id": "1562476341981610077"
 }

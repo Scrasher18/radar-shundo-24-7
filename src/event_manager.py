@@ -308,46 +308,57 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
     }
 
 
-def publicar_o_actualizar_panel_control(aviso_permisos: bool = False) -> Optional[str]:
-    """Envía o actualiza el Panel de Control al inicio del canal #🎉-evento-cd."""
+def publicar_o_actualizar_panel_control(aviso_permisos: bool = False, permitir_crear: bool = False) -> Optional[str]:
+    """
+    Actualiza el Panel de Control existente en #🎉-evento-cd mediante PATCH.
+    Nunca crea mensajes nuevos en bucle: solo publica uno si no existe panel_msg_id
+    o si el usuario escribe explícitamente 'panel' (permitir_crear=True) y el anterior fue borrado (404).
+    """
     if not DISCORD_WEBHOOK_EVENTO.strip():
         return None
 
-    cfg = cargar_config_evento()
-    base_webhook = DISCORD_WEBHOOK_EVENTO.strip().split("?")[0].rstrip("/")
-    embed_panel = construir_embed_panel_evento(cfg, aviso_permisos=aviso_permisos)
-    panel_mid = cfg.get("panel_msg_id")
+    with _LOCK_EVENTO:
+        cfg = cargar_config_evento()
+        base_webhook = DISCORD_WEBHOOK_EVENTO.strip().split("?")[0].rstrip("/")
+        embed_panel = construir_embed_panel_evento(cfg, aviso_permisos=aviso_permisos)
+        panel_mid = cfg.get("panel_msg_id")
 
-    if panel_mid:
-        try:
-            r_patch = _SESION_WEBHOOK_EV.patch(
-                f"{base_webhook}/messages/{panel_mid}",
-                json={"content": "", "embeds": [embed_panel]},
-                timeout=8,
-            )
-            if r_patch.status_code == 200:
+        if panel_mid:
+            try:
+                r_patch = _SESION_WEBHOOK_EV.patch(
+                    f"{base_webhook}/messages/{panel_mid}",
+                    json={"content": "", "embeds": [embed_panel]},
+                    timeout=8,
+                )
+                if r_patch.status_code == 200:
+                    return str(panel_mid)
+                # Si no fue borrado (ej. rate limit o timeout temporal), NO crear otro mensaje
+                if r_patch.status_code != 404 or not permitir_crear:
+                    return str(panel_mid)
+            except Exception:
                 return str(panel_mid)
+
+        if not permitir_crear and panel_mid:
+            return str(panel_mid)
+
+        try:
+            r_post = _SESION_WEBHOOK_EV.post(
+                f"{base_webhook}?wait=true",
+                json={
+                    "username": "Panel Eventos & CD 🎛️",
+                    "content": "",
+                    "embeds": [embed_panel],
+                },
+                timeout=10,
+            )
+            if r_post.status_code in (200, 204):
+                nuevo_id = str(r_post.json().get("id"))
+                cfg["panel_msg_id"] = nuevo_id
+                guardar_config_evento(cfg)
+                return nuevo_id
         except Exception:
             pass
-
-    try:
-        r_post = _SESION_WEBHOOK_EV.post(
-            f"{base_webhook}?wait=true",
-            json={
-                "username": "Panel Eventos & CD 🎛️",
-                "content": "",
-                "embeds": [embed_panel],
-            },
-            timeout=10,
-        )
-        if r_post.status_code in (200, 204):
-            nuevo_id = str(r_post.json().get("id"))
-            cfg["panel_msg_id"] = nuevo_id
-            guardar_config_evento(cfg)
-            return nuevo_id
-    except Exception:
-        pass
-    return None
+        return None
 
 
 def limpiar_alertas_evento_discord() -> None:
@@ -406,7 +417,7 @@ def procesar_comando_texto_evento(texto: str) -> bool:
 
     # 2. Comando de mostrar panel
     if low in ("panel", "ayuda", "help", "estado", "status"):
-        publicar_o_actualizar_panel_control()
+        publicar_o_actualizar_panel_control(permitir_crear=True)
         return False
 
     # 3. Comando de cambio de modo
@@ -528,10 +539,9 @@ def _worker_lector_comandos_discord() -> None:
     canal_general_fallback = "929565903325126717"
     ultimos_vistos: Dict[str, str] = {}
 
-    # Verificar si ScrasherBOT ya tiene acceso al canal #🎉-evento-cd
+    # Verificar si ScrasherBOT ya tiene acceso al canal #🎉-evento-cd (sin reenviar ni tocar el panel al iniciar)
     r_test = _SESION_BOT.get(f"https://discord.com/api/v10/channels/{canal_evento}/messages?limit=1", headers=headers_bot, timeout=6)
     sin_permiso_canal_privado = r_test.status_code == 403
-    publicar_o_actualizar_panel_control(aviso_permisos=sin_permiso_canal_privado)
 
     while True:
         try:

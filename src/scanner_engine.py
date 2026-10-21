@@ -215,7 +215,6 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
     iniciar_hilos_reloj_tiempo_real()
     iniciar_hilo_bot_eventos(callback_escaneo_inmediato=ejecutar_escaneo_evento_inmediato)
     sincronizar_estado_remoto_pull()
-    publicar_o_actualizar_panel_control()
 
     perfil, status_perfil = obtener_perfil_entrenador()
 
