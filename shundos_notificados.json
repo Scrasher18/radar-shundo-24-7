@@ -1,199 +1,4 @@
 {
-  "shundo:434901967432046672": {
-    "canal": "shundo",
-    "pokemon": "Machop",
-    "coords": "28.003767,-80.739759",
-    "ts": 1792557863,
-    "despawn_unix": 1792558952,
-    "discord_msg_id": "1562325658988978218",
-    "discord_msg_ids": [
-      "1562325658988978218"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:24"
-  },
-  "shundo:-4641387303512716577": {
-    "canal": "shundo",
-    "pokemon": "Diglett",
-    "coords": "32.642850,-97.420838",
-    "ts": 1792557863,
-    "despawn_unix": 1792558512,
-    "discord_msg_id": "1562325660918087701",
-    "discord_msg_ids": [
-      "1562325660918087701"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:24"
-  },
-  "shundo:-7656965260476179789": {
-    "canal": "shundo",
-    "pokemon": "Stufful",
-    "coords": "51.981410,7.544108",
-    "ts": 1792557863,
-    "despawn_unix": 1792560985,
-    "discord_msg_id": "1562325662193426476",
-    "discord_msg_ids": [
-      "1562325662193426476"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:24"
-  },
-  "shundo:3579243443185287207": {
-    "canal": "shundo",
-    "pokemon": "Ekans",
-    "coords": "-37.711692,145.016197",
-    "ts": 1792557863,
-    "despawn_unix": 1792558892,
-    "discord_msg_id": "1562325663506243588",
-    "discord_msg_ids": [
-      "1562325663506243588"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:24"
-  },
-  "great:1706830396823757624": {
-    "canal": "great",
-    "pokemon": "Wooloo",
-    "coords": "-7.771251,110.381660",
-    "ts": 1792557863,
-    "despawn_unix": 1792558357,
-    "discord_msg_id": "1562325665028513803",
-    "discord_msg_ids": [
-      "1562325665028513803"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:26"
-  },
-  "great:7174119422820474465": {
-    "canal": "great",
-    "pokemon": "Oddish",
-    "coords": "43.481360,1.573716",
-    "ts": 1792557863,
-    "despawn_unix": 1792559127,
-    "discord_msg_id": "1562325666324811869",
-    "discord_msg_ids": [
-      "1562325666324811869"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:26"
-  },
-  "great:2513280853469244073": {
-    "canal": "great",
-    "pokemon": "Tympole",
-    "coords": "35.905466,-78.807579",
-    "ts": 1792557863,
-    "despawn_unix": 1792558759,
-    "discord_msg_id": "1562325667528310887",
-    "discord_msg_ids": [
-      "1562325667528310887"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:26"
-  },
-  "great:-5912862579889317443": {
-    "canal": "great",
-    "pokemon": "Bounsweet",
-    "coords": "32.232900,-101.457789",
-    "ts": 1792557863,
-    "despawn_unix": 1792561039,
-    "discord_msg_id": "1562325668635738153",
-    "discord_msg_ids": [
-      "1562325668635738153"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:26"
-  },
-  "great:-5020089841770999105": {
-    "canal": "great",
-    "pokemon": "Glameow",
-    "coords": "32.886908,-96.917830",
-    "ts": 1792557863,
-    "despawn_unix": 1792560397,
-    "discord_msg_id": "1562325669851959369",
-    "discord_msg_ids": [
-      "1562325669851959369"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:26"
-  },
-  "ultra:-8987715533142729031": {
-    "canal": "ultra",
-    "pokemon": "Zorua",
-    "coords": "45.009072,-93.250286",
-    "ts": 1792557863,
-    "despawn_unix": 1792559174,
-    "discord_msg_id": "1562325671907426387",
-    "discord_msg_ids": [
-      "1562325671907426387"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:28"
-  },
-  "ultra:-5912862579889317443": {
-    "canal": "ultra",
-    "pokemon": "Bounsweet",
-    "coords": "32.232900,-101.457789",
-    "ts": 1792557863,
-    "despawn_unix": 1792561039,
-    "discord_msg_id": "1562325673412923483",
-    "discord_msg_ids": [
-      "1562325673412923483"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:28"
-  },
-  "ultra:2168620447959461354": {
-    "canal": "ultra",
-    "pokemon": "Minccino",
-    "coords": "43.614008,1.224412",
-    "ts": 1792557863,
-    "despawn_unix": 1792558682,
-    "discord_msg_id": "1562325674461630566",
-    "discord_msg_ids": [
-      "1562325674461630566"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:28"
-  },
-  "ultra:2513280853469244073": {
-    "canal": "ultra",
-    "pokemon": "Tympole",
-    "coords": "35.905466,-78.807579",
-    "ts": 1792557863,
-    "despawn_unix": 1792558759,
-    "discord_msg_id": "1562325675547828235",
-    "discord_msg_ids": [
-      "1562325675547828235"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:28"
-  },
-  "ultra:9144891244953987647": {
-    "canal": "ultra",
-    "pokemon": "Munna",
-    "coords": "41.101042,-8.579819",
-    "ts": 1792557863,
-    "despawn_unix": 1792560759,
-    "discord_msg_id": "1562325676713971733",
-    "discord_msg_ids": [
-      "1562325676713971733"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:28"
-  },
-  "ultra:-5020089841770999105": {
-    "canal": "ultra",
-    "pokemon": "Glameow",
-    "coords": "32.886908,-96.917830",
-    "ts": 1792557863,
-    "despawn_unix": 1792560397,
-    "discord_msg_id": "1562325677804486760",
-    "discord_msg_ids": [
-      "1562325677804486760"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:28"
-  },
   "shundo:8847973275828038842": {
     "canal": "shundo",
     "pokemon": "Rattata",
@@ -1205,5 +1010,18 @@
     ],
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 05:36:37"
+  },
+  "shundo:-6569935073154235043": {
+    "canal": "shundo",
+    "pokemon": "Lickitung",
+    "coords": "29.992460,-95.106521",
+    "ts": 1792561490,
+    "despawn_unix": 1792561947,
+    "discord_msg_id": "1562340872354275379",
+    "discord_msg_ids": [
+      "1562340872354275379"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:44:50"
   }
 }
