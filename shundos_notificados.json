@@ -1,108 +1,4 @@
 {
-  "great:5681555882048512984": {
-    "canal": "great",
-    "pokemon": "Tepig",
-    "coords": "1.292422,103.763294",
-    "ts": 1792599446,
-    "despawn_unix": 1792602165,
-    "discord_msg_id": "1562507497174990865",
-    "discord_msg_ids": [
-      "1562500069985620111",
-      "1562501500603867143",
-      "1562502919079858257",
-      "1562504354898903167",
-      "1562505792286888073",
-      "1562506051436421212",
-      "1562507497174990865"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #2: Tepig ➔ Emboar!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.99%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Emboar** (`CP 1498` a Nivel `18.5`)",
-      "url": "https://www.google.com/maps?q=1.292422,103.763294",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm500.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.99%`)\n**IVs PvP:** `3/15/14`\n**Salvaje:** `CP 73` | `Nivel 3.0` (M, Male)\n**Final en Liga:** `CP 1498` | `Nivel 18.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `15 min 48 seg`\n🕒 **Hora exacta:** <t:1792602165:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Sudeste Asiático e India • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=1.292422,103.763294)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n1.292422,103.763294\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T16:46:57.218963+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 16:17:26"
-  },
-  "ultra:7206418436177182162": {
-    "canal": "ultra",
-    "pokemon": "Oshawott",
-    "coords": "50.922418,-1.306176",
-    "ts": 1792599446,
-    "despawn_unix": 1792600617,
-    "discord_msg_id": "1562504358451482682",
-    "discord_msg_ids": [
-      "1562500074263806093",
-      "1562502922108010511",
-      "1562504358451482682"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Oshawott ➔ Samurott!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Samurott** (`CP 2500` a Nivel `36.0`)",
-      "url": "https://www.google.com/maps?q=50.922418,-1.306176",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm503.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 480` | `Nivel 18.0` (M, Male)\n**Final en Liga:** `CP 2500` | `Nivel 36.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `2 min 30 seg`\n🕒 **Hora exacta:** <t:1792600617:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Hedge End, Hampshire, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.922418,-1.306176)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n50.922418,-1.306176\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T16:34:28.719510+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 16:17:27"
-  },
   "shundo:-3185646375102239881": {
     "canal": "shundo",
     "pokemon": "Smoliv",
@@ -2800,7 +2696,7 @@
       },
       "timestamp": "2026-10-21T17:15:19.675750+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 17:15:20"
   },
   "ultra:7002463048775828070": {
