@@ -100,9 +100,15 @@ def fusionar_notificados(base_dict: Dict[str, Any], nuevo_dict: Dict[str, Any]) 
             if mids:
                 combinado["discord_msg_id"] = mids[-1]
                 combinado["discord_msg_ids"] = mids
-            combinado["eliminado_de_discord"] = bool(
-                prev.get("eliminado_de_discord") or v.get("eliminado_de_discord")
-            )
+            prev_mid = str(prev.get("discord_msg_id") or "")
+            v_mid = str(v.get("discord_msg_id") or "")
+            if v_mid.isdigit() and prev_mid.isdigit() and int(v_mid) != int(prev_mid):
+                mas_nuevo = v if int(v_mid) > int(prev_mid) else prev
+                combinado["eliminado_de_discord"] = bool(mas_nuevo.get("eliminado_de_discord", False))
+            else:
+                combinado["eliminado_de_discord"] = bool(
+                    prev.get("eliminado_de_discord") or v.get("eliminado_de_discord")
+                )
             resultado[k] = combinado
     return limpiar_diccionario_notificados(resultado)
 
