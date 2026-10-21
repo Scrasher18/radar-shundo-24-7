@@ -1,18 +1,21 @@
 """
-Servicio multihilo de Discord:
-- Envío de alertas por canal (Shundos 100%, Great League, Ultra League)
-- 3 Hilos dedicados (uno por canal) con Connection Pooling (requests.Session)
-  que actualizan el reloj segundo a segundo en tiempo real (PATCH) sin bloquearse
-- Eliminación instantánea (DELETE) en cuanto el contador llega a 00 seg
+Servicio multihilo de Discord con Panel Consolidado Multi-Embed por Canal:
+- Agrupa los Pokémon activos de cada canal (Shundos, Great League, Ultra League)
+  en un único mensaje activo por canal (hasta 8 embeds simultáneos).
+- Gracias a esto, cada canal requiere SOLO 1 petición PATCH por segundo para
+  actualizar TODOS sus Pokémon al mismo tiempo (1s exacto en Shundos, GL y UL).
+- Cuando un Pokémon individual dentro del mensaje llega a 00 seg, su tarjeta desaparece
+  instantáneamente del mensaje; cuando expira el último, se elimina el mensaje completo.
 """
 
 import threading
 import time
 from datetime import datetime, timezone
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 import requests
 
 from src.config import (
+    BOT_NOMBRES_POR_CANAL,
     DISCORD_USER_ID_MENCION,
     DISCORD_WEBHOOK_URL,
     NOTIFICADOS_FILE,
@@ -30,12 +33,14 @@ from src.state_manager import (
     sincronizar_estado_remoto_push,
 )
 
-_MEM_EMBEDS: Dict[str, Dict[str, Any]] = {}
-_ULTIMO_SEGUNDO_RENDERIZADO: Dict[str, int] = {}
+MAX_EMBEDS_POR_MENSAJE = 8
+
+_MEM_EMBEDS_POR_CLAVE: Dict[str, Dict[str, Any]] = {}
+_ULTIMO_TICK_CANAL: Dict[str, int] = {}
 _HILOS_RELOJ_INICIADOS = False
 _LOCK_HILOS = threading.Lock()
 
-# Sesiones HTTP persistentes (Keep-Alive) independientes por canal para latencia mínima (~70ms por PATCH)
+# Sesiones HTTP persistentes (Keep-Alive) independientes por canal
 _SESIONES_CANAL: Dict[str, requests.Session] = {
     "shundo": requests.Session(),
     "great": requests.Session(),
@@ -84,75 +89,109 @@ def enviar_alerta_token_vencido() -> None:
         pass
 
 
-def enviar_lote_webhook(
-    webhook_url: str,
-    spawns_nuevos: List[Dict[str, Any]],
+def construir_embed_seguro(mon: Dict[str, Any], canal_tipo: str) -> Dict[str, Any]:
+    if canal_tipo == "shundo":
+        return construir_embed_shundo(mon)
+    return construir_embed_pvp(mon, canal_tipo)
+
+
+def construir_encabezado_lote(spawns_nuevos: List[Dict[str, Any]], total_activos: int, canal_tipo: str) -> str:
+    mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
+    primero = spawns_nuevos[0]
+    nombre = primero.get("nombre_completo") or primero.get("pokemon_name")
+    if canal_tipo == "shundo":
+        if len(spawns_nuevos) == 1:
+            return f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre})** detectado! (`{total_activos}` activo(s) en vivo)"
+        nombres = ", ".join((m.get("nombre_completo") or m.get("pokemon_name") or "?") for m in spawns_nuevos[:4])
+        return f"🚨 {mencion}¡**{len(spawns_nuevos)} Nuevos SHUNDOS 100% IV** ({nombres})! (`{total_activos}` en vivo)"
+    else:
+        pvp = primero.get("pvp") or {}
+        rank = pvp.get("rank", "?")
+        pvp_name = pvp.get("pokemon_name") or nombre
+        liga_tag = "GREAT LEAGUE" if canal_tipo == "great" else "ULTRA LEAGUE"
+        if len(spawns_nuevos) == 1:
+            return f"⚔️ {mencion}¡Nuevo **SHINY {liga_tag} RANK #{rank} ({nombre} ➔ {pvp_name})**! (`{total_activos}` activo(s) en vivo)"
+        return f"⚔️ {mencion}¡**{len(spawns_nuevos)} Nuevos SHINIES {liga_tag} Top 1-5** (destacado: Rank #{rank} {nombre} ➔ {pvp_name})! (`{total_activos}` en vivo)"
+
+
+def publicar_panel_consolidado_canal(
     canal_tipo: str,
-    bot_username: str,
-) -> Dict[str, str]:
-    """Envía nuevos spawns al webhook del canal indicado y registra su embed en memoria para el reloj de 1s."""
-    if not webhook_url or not webhook_url.strip() or not spawns_nuevos:
-        return {}
+    spawns_nuevos: List[Dict[str, Any]],
+    spawns_activos_totales: List[Dict[str, Any]],
+) -> Optional[str]:
+    """
+    Reemplaza el mensaje anterior del canal por un único mensaje consolidado con todos los
+    Pokémon activos del canal (máx 8 embeds), para que 1 solo PATCH por segundo actualice TODOS a 1s.
+    """
+    webhook_url = WEBHOOKS_POR_CANAL.get(canal_tipo) or ""
+    if not webhook_url.strip() or not spawns_nuevos:
+        return None
 
     sesion = _SESIONES_CANAL.get(canal_tipo) or requests.Session()
     base_webhook = webhook_url.strip().split("?")[0].rstrip("/")
     url_wait = f"{base_webhook}?wait=true"
-    mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
-    ids_mensajes: Dict[str, str] = {}
 
-    for idx, mon in enumerate(spawns_nuevos[:10]):
-        eid = str(mon.get("encounter_id"))
-        nombre = mon.get("nombre_completo") or mon.get("pokemon_name")
-        if canal_tipo == "shundo":
-            embed = construir_embed_shundo(mon)
-            contenido = (
-                f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre})** detectado!"
-                if idx == 0
-                else f"🌟 ¡Nuevo **SHUNDO 100% IV ({nombre})**!"
-            )
-        else:
-            pvp = mon.get("pvp") or {}
-            rank = pvp.get("rank", "?")
-            pvp_name = pvp.get("pokemon_name") or nombre
-            liga_tag = "Great League" if canal_tipo == "great" else "Ultra League"
-            embed = construir_embed_pvp(mon, canal_tipo)
-            contenido = (
-                f"⚔️ {mencion}¡Nuevo **SHINY {liga_tag.upper()} RANK #{rank} ({nombre} ➔ {pvp_name})** detectado!"
-                if idx == 0
-                else f"⚔️ ¡Nuevo **SHINY {liga_tag} Rank #{rank} ({nombre})**!"
-            )
+    # 1. Eliminar cualquier mensaje previo activo de este canal para que solo exista 1 mensaje vivo
+    with _LOCK_ESTADO:
+        notificados = cargar_json(NOTIFICADOS_FILE)
+        mids_previos = set()
+        for k, info in notificados.items():
+            if k.startswith("_meta_") or not isinstance(info, dict):
+                continue
+            if info.get("canal", "shundo") == canal_tipo and not info.get("eliminado_de_discord", False):
+                for m in (info.get("discord_msg_ids") or []) + [info.get("discord_msg_id")]:
+                    if m:
+                        mids_previos.add(str(m))
 
-        payload = {
-            "username": bot_username,
-            "content": contenido,
-            "embeds": [embed],
-        }
+    for old_mid in mids_previos:
         try:
-            r = sesion.post(url_wait, json=payload, timeout=10)
-            if r.status_code in (200, 204):
-                try:
-                    msg_data = r.json()
-                    if msg_data and "id" in msg_data:
-                        mid = str(msg_data["id"])
-                        ids_mensajes[eid] = mid
-                        _MEM_EMBEDS[mid] = embed
-                        _ULTIMO_SEGUNDO_RENDERIZADO[mid] = int(mon.get("ttl_segundos") or 0)
-                except Exception:
-                    pass
-                print(f"   ✅ [Discord-{canal_tipo.upper()}] Alerta enviada para {nombre} (reloj 1s en vivo activo).")
-            else:
-                print(f"   ⚠️ [Discord-{canal_tipo.upper()}] Error HTTP {r.status_code}: {r.text[:150]}")
-        except Exception as e:
-            print(f"   ⚠️ [Discord-{canal_tipo.upper()}] Error al enviar webhook: {e}")
+            sesion.delete(f"{base_webhook}/messages/{old_mid}", timeout=6)
+        except Exception:
+            pass
 
-    return ids_mensajes
+    # 2. Construir la lista de embeds de los spawns activos (hasta MAX_EMBEDS_POR_MENSAJE)
+    seleccionados = spawns_activos_totales[:MAX_EMBEDS_POR_MENSAJE]
+    embeds_lote: List[Dict[str, Any]] = []
+    for mon in seleccionados:
+        eid = str(mon.get("encounter_id"))
+        clave = f"{canal_tipo}:{eid}"
+        emb = construir_embed_seguro(mon, canal_tipo)
+        _MEM_EMBEDS_POR_CLAVE[clave] = emb
+        mon["embed_base"] = emb
+        embeds_lote.append(emb)
+
+    contenido = construir_encabezado_lote(spawns_nuevos, len(seleccionados), canal_tipo)
+    payload = {
+        "username": BOT_NOMBRES_POR_CANAL.get(canal_tipo, "Radar Pro ✨"),
+        "content": contenido,
+        "embeds": embeds_lote,
+    }
+
+    try:
+        r = sesion.post(url_wait, json=payload, timeout=10)
+        if r.status_code in (200, 204):
+            msg_data = r.json()
+            if msg_data and "id" in msg_data:
+                nuevo_mid = str(msg_data["id"])
+                print(
+                    f"   ✅ [Discord-{canal_tipo.upper()}] Panel enviado ({len(seleccionados)} Pokémon activos en 1 mensaje • reloj 1s exacto)."
+                )
+                return nuevo_mid
+        else:
+            print(f"   ⚠️ [Discord-{canal_tipo.upper()}] Error HTTP {r.status_code}: {r.text[:150]}")
+    except Exception as e:
+        print(f"   ⚠️ [Discord-{canal_tipo.upper()}] Error al enviar panel webhook: {e}")
+
+    return None
 
 
 def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True) -> int:
     """
-    Procesa un canal específico ('shundo', 'great', 'ultra'):
-    1. Elimina al instante cualquier mensaje cuyo despawn_unix ya se cumplió.
-    2. Actualiza en tiempo real los segundos restantes (PATCH) de los mensajes activos.
+    Procesa un canal ('shundo', 'great', 'ultra') cada 1 segundo:
+    - Si hay mensajes antiguos separados, los consolida o limpia al expirar.
+    - Actualiza todos los embeds activos del mensaje del canal en UNA SOLA petición PATCH (1s exacto).
+    - Si algún Pokémon dentro del mensaje ya expiró, lo quita inmediatamente del mensaje.
+    - Si todos los Pokémon del mensaje expiraron, elimina el mensaje completo con DELETE.
     """
     webhook_url = WEBHOOKS_POR_CANAL.get(canal_tipo) or ""
     if not webhook_url.strip():
@@ -166,9 +205,10 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
 
     ahora = int(time.time())
     eliminados = 0
-    claves_eliminadas: List[str] = []
-    activos_canal: List[tuple] = []
+    claves_recien_expiradas: List[str] = []
 
+    # Agrupar entradas por discord_msg_id
+    entradas_por_mid: Dict[str, List[tuple]] = {}
     for clave, info in list(notificados.items()):
         if clave.startswith("_meta_") or not isinstance(info, dict):
             continue
@@ -177,118 +217,200 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
         if info.get("eliminado_de_discord", False):
             continue
 
-        mids = list(info.get("discord_msg_ids") or [])
-        if info.get("discord_msg_id") and info.get("discord_msg_id") not in mids:
-            mids.append(info.get("discord_msg_id"))
+        mid = info.get("discord_msg_id")
         despawn_unix = info.get("despawn_unix")
-        if not mids or not despawn_unix:
+        if not mid or not despawn_unix:
+            continue
+        entradas_por_mid.setdefault(str(mid), []).append((clave, info, int(despawn_unix)))
+
+    if not entradas_por_mid:
+        return 0
+
+    hubo_cambios_estado = False
+
+    # Si por una ejecución anterior quedaron varios mensajes distintos en el mismo canal,
+    # consolidarlos en un único mensaje para que el reloj vaya a 1s por segundo
+    if len(entradas_por_mid) > 1 and actualizar_tiempo_real:
+        todas_vivas = []
+        mids_viejos = list(entradas_por_mid.keys())
+        for mid_v, lista_ent in entradas_por_mid.items():
+            for clave, info, despawn_unix in lista_ent:
+                if ahora < despawn_unix:
+                    emb = _MEM_EMBEDS_POR_CLAVE.get(clave) or info.get("embed_base")
+                    if not emb:
+                        try:
+                            r_g = sesion.get(f"{base_webhook}/messages/{mid_v}", timeout=5)
+                            if r_g.status_code == 200:
+                                embs = r_g.json().get("embeds") or []
+                                if embs:
+                                    emb = embs[0]
+                                    _MEM_EMBEDS_POR_CLAVE[clave] = emb
+                        except Exception:
+                            pass
+                    if emb:
+                        todas_vivas.append((clave, info, despawn_unix, emb))
+                else:
+                    claves_recien_expiradas.append(clave)
+
+        for mid_v in mids_viejos:
+            try:
+                sesion.delete(f"{base_webhook}/messages/{mid_v}", timeout=5)
+            except Exception:
+                pass
+
+        if todas_vivas:
+            todas_vivas = todas_vivas[:MAX_EMBEDS_POR_MENSAJE]
+            embeds_unificados = [
+                actualizar_embed_con_segundos_reales(emb, d_unix, canal_tipo)
+                for _, _, d_unix, emb in todas_vivas
+            ]
+            liga_txt = (
+                "SHUNDOS 100% IV"
+                if canal_tipo == "shundo"
+                else ("GREAT LEAGUE TOP 1-5" if canal_tipo == "great" else "ULTRA LEAGUE TOP 1-5")
+            )
+            payload_unificado = {
+                "username": BOT_NOMBRES_POR_CANAL.get(canal_tipo, "Radar Pro ✨"),
+                "content": f"📡 **Panel en Vivo — {liga_txt}** (`{len(todas_vivas)}` activo(s) • Actualización cada 1s):",
+                "embeds": embeds_unificados,
+            }
+            try:
+                r_post = sesion.post(f"{base_webhook}?wait=true", json=payload_unificado, timeout=8)
+                if r_post.status_code in (200, 204):
+                    nuevo_mid = str(r_post.json().get("id"))
+                    with _LOCK_ESTADO:
+                        notif_actual = cargar_json(NOTIFICADOS_FILE)
+                        for clave, _, _, emb in todas_vivas:
+                            if clave in notif_actual and isinstance(notif_actual[clave], dict):
+                                notif_actual[clave]["discord_msg_id"] = nuevo_mid
+                                notif_actual[clave]["discord_msg_ids"] = [nuevo_mid]
+                                notif_actual[clave]["embed_base"] = emb
+                        for clave_exp in claves_recien_expiradas:
+                            if clave_exp in notif_actual and isinstance(notif_actual[clave_exp], dict):
+                                notif_actual[clave_exp]["eliminado_de_discord"] = True
+                        guardar_json(NOTIFICADOS_FILE, notif_actual)
+                    sincronizar_estado_remoto_push(asincrono=True)
+                    return len(claves_recien_expiradas)
+            except Exception:
+                pass
+
+    # Procesar cada mensaje activo (normalmente 1 único mensaje por canal)
+    for mid, lista_entradas in entradas_por_mid.items():
+        vivos_en_mid = []
+        expirados_en_mid = []
+        for clave, info, despawn_unix in lista_entradas:
+            if int(time.time()) >= despawn_unix:
+                expirados_en_mid.append((clave, info))
+            else:
+                vivos_en_mid.append((clave, info, despawn_unix))
+
+        # Caso A: Todos los Pokémon de este mensaje ya expiraron -> DELETE del mensaje completo
+        if not vivos_en_mid:
+            try:
+                r_del = sesion.delete(f"{base_webhook}/messages/{mid}", timeout=6)
+                if r_del.status_code in (200, 204, 404):
+                    for clave, info in expirados_en_mid:
+                        claves_recien_expiradas.append(clave)
+                        _MEM_EMBEDS_POR_CLAVE.pop(clave, None)
+                        eliminados += 1
+                        print(
+                            f"   🗑️ [Discord-{canal_tipo.upper()}] Mensaje de {info.get('pokemon', clave)} eliminado del chat (ya hizo despawn)."
+                        )
+                    hubo_cambios_estado = True
+            except Exception:
+                pass
             continue
 
-        if ahora >= int(despawn_unix):
-            borrado_alguno = False
-            for mid in mids:
-                try:
-                    r = sesion.delete(f"{base_webhook}/messages/{mid}", timeout=6)
-                    if r.status_code in (200, 204, 404):
-                        borrado_alguno = True
-                    _MEM_EMBEDS.pop(mid, None)
-                    _ULTIMO_SEGUNDO_RENDERIZADO.pop(mid, None)
-                except Exception:
-                    pass
-            if borrado_alguno:
-                claves_eliminadas.append(clave)
+        # Caso B: Algunos expiraron pero otros siguen vivos en el mismo mensaje -> marcar expirados
+        if expirados_en_mid:
+            for clave, info in expirados_en_mid:
+                claves_recien_expiradas.append(clave)
+                _MEM_EMBEDS_POR_CLAVE.pop(clave, None)
                 eliminados += 1
                 print(
-                    f"   🗑️ [Discord-{canal_tipo.upper()}] Mensaje de {info.get('pokemon', clave)} eliminado del chat (ya hizo despawn)."
+                    f"   🗑️ [Discord-{canal_tipo.upper()}] Tarjeta de {info.get('pokemon', clave)} retirada del panel (ya hizo despawn)."
                 )
-        elif actualizar_tiempo_real:
-            activos_canal.append((clave, info, str(mids[-1]), int(despawn_unix)))
+            hubo_cambios_estado = True
 
-    if claves_eliminadas:
+        # Caso C: Actualizar cada segundo en una sola llamada PATCH todos los embeds vivos de este mensaje
+        if actualizar_tiempo_real:
+            ahora_sec = int(time.time())
+            if _ULTIMO_TICK_CANAL.get(mid) == ahora_sec and not expirados_en_mid:
+                continue
+
+            embeds_actualizados: List[Dict[str, Any]] = []
+            embeds_remotos_cache: Optional[List[Dict[str, Any]]] = None
+
+            for idx_e, (clave, info, despawn_unix) in enumerate(vivos_en_mid[:MAX_EMBEDS_POR_MENSAJE]):
+                emb_base = _MEM_EMBEDS_POR_CLAVE.get(clave) or info.get("embed_base")
+                if not emb_base:
+                    if embeds_remotos_cache is None:
+                        try:
+                            r_get = sesion.get(f"{base_webhook}/messages/{mid}", timeout=5)
+                            if r_get.status_code == 200:
+                                embeds_remotos_cache = r_get.json().get("embeds") or []
+                            elif r_get.status_code == 404:
+                                for c_v, _, _ in vivos_en_mid:
+                                    claves_recien_expiradas.append(c_v)
+                                hubo_cambios_estado = True
+                                break
+                            else:
+                                embeds_remotos_cache = []
+                        except Exception:
+                            embeds_remotos_cache = []
+                    if embeds_remotos_cache and idx_e < len(embeds_remotos_cache):
+                        emb_base = embeds_remotos_cache[idx_e]
+                        _MEM_EMBEDS_POR_CLAVE[clave] = emb_base
+
+                if emb_base:
+                    _MEM_EMBEDS_POR_CLAVE[clave] = emb_base
+                    embeds_actualizados.append(
+                        actualizar_embed_con_segundos_reales(emb_base, despawn_unix, canal_tipo)
+                    )
+
+            if embeds_actualizados:
+                try:
+                    r_patch = sesion.patch(
+                        f"{base_webhook}/messages/{mid}",
+                        json={"embeds": embeds_actualizados},
+                        timeout=5,
+                    )
+                    if r_patch.status_code == 200:
+                        _ULTIMO_TICK_CANAL[mid] = int(time.time())
+                        rem = r_patch.headers.get("X-RateLimit-Remaining")
+                        reset_after = r_patch.headers.get("X-RateLimit-Reset-After")
+                        if rem == "0" and reset_after:
+                            try:
+                                time.sleep(min(float(reset_after), 1.5))
+                            except Exception:
+                                pass
+                    elif r_patch.status_code == 404:
+                        for c_v, _, _ in vivos_en_mid:
+                            claves_recien_expiradas.append(c_v)
+                        hubo_cambios_estado = True
+                    elif r_patch.status_code == 429:
+                        try:
+                            retry_after = float(r_patch.json().get("retry_after", 1.0))
+                        except Exception:
+                            retry_after = 1.0
+                        time.sleep(min(retry_after, 2.0))
+                except Exception:
+                    pass
+
+    if hubo_cambios_estado and claves_recien_expiradas:
         with _LOCK_ESTADO:
             notif_actual = cargar_json(NOTIFICADOS_FILE)
-            for k in claves_eliminadas:
+            for k in claves_recien_expiradas:
                 if k in notif_actual and isinstance(notif_actual[k], dict):
                     notif_actual[k]["eliminado_de_discord"] = True
             guardar_json(NOTIFICADOS_FILE, notif_actual)
         sincronizar_estado_remoto_push(asincrono=True)
 
-    if not actualizar_tiempo_real or not activos_canal:
-        return eliminados
-
-    # Ordenar por menor tiempo restante para priorizar los que están más próximos a desaparecer
-    activos_canal.sort(key=lambda x: x[3])
-
-    for clave, info, mid, despawn_unix in activos_canal:
-        ahora_sec = int(time.time())
-        if ahora_sec >= despawn_unix:
-            continue
-
-        seg_rest = despawn_unix - ahora_sec
-        if _ULTIMO_SEGUNDO_RENDERIZADO.get(mid) == seg_rest:
-            continue
-
-        embed_base = _MEM_EMBEDS.get(mid)
-        if not embed_base:
-            try:
-                r_get = sesion.get(f"{base_webhook}/messages/{mid}", timeout=5)
-                if r_get.status_code == 200:
-                    embeds_remotos = r_get.json().get("embeds") or []
-                    if embeds_remotos:
-                        embed_base = embeds_remotos[0]
-                        _MEM_EMBEDS[mid] = embed_base
-                elif r_get.status_code == 404:
-                    with _LOCK_ESTADO:
-                        notif_actual = cargar_json(NOTIFICADOS_FILE)
-                        if clave in notif_actual and isinstance(notif_actual[clave], dict):
-                            notif_actual[clave]["eliminado_de_discord"] = True
-                            guardar_json(NOTIFICADOS_FILE, notif_actual)
-                    continue
-            except Exception:
-                continue
-
-        if not embed_base:
-            continue
-
-        # Recalcular justo antes de enviar el PATCH para que el segundo mostrado sea exacto
-        seg_rest_exacto = max(0, despawn_unix - int(time.time()))
-        nuevo_embed = actualizar_embed_con_segundos_reales(embed_base, despawn_unix, canal_tipo)
-        try:
-            r_patch = sesion.patch(
-                f"{base_webhook}/messages/{mid}",
-                json={"embeds": [nuevo_embed]},
-                timeout=5,
-            )
-            if r_patch.status_code == 200:
-                _ULTIMO_SEGUNDO_RENDERIZADO[mid] = seg_rest_exacto
-                rem = r_patch.headers.get("X-RateLimit-Remaining")
-                reset_after = r_patch.headers.get("X-RateLimit-Reset-After")
-                if rem == "0" and reset_after:
-                    try:
-                        time.sleep(min(float(reset_after), 2.0))
-                    except Exception:
-                        pass
-            elif r_patch.status_code == 404:
-                with _LOCK_ESTADO:
-                    notif_actual = cargar_json(NOTIFICADOS_FILE)
-                    if clave in notif_actual and isinstance(notif_actual[clave], dict):
-                        notif_actual[clave]["eliminado_de_discord"] = True
-                        guardar_json(NOTIFICADOS_FILE, notif_actual)
-            elif r_patch.status_code == 429:
-                try:
-                    retry_after = float(r_patch.json().get("retry_after", 1.0))
-                except Exception:
-                    retry_after = 1.0
-                time.sleep(min(retry_after, 2.5))
-                break
-        except Exception:
-            pass
-
     return eliminados
 
 
 def _worker_reloj_canal(canal_tipo: str) -> None:
-    """Bucle dedicado que corre cada 1.0 segundo en su propio hilo para un canal de Discord."""
+    """Bucle dedicado que corre cada 1.0 segundo en su propio hilo para actualizar el canal."""
     while True:
         inicio_tick = time.time()
         try:
@@ -296,12 +418,12 @@ def _worker_reloj_canal(canal_tipo: str) -> None:
         except Exception:
             pass
         transcurrido = time.time() - inicio_tick
-        pausa = max(0.15, 1.0 - transcurrido)
+        pausa = max(0.10, 1.0 - transcurrido)
         time.sleep(pausa)
 
 
 def iniciar_hilos_reloj_tiempo_real() -> None:
-    """Inicia los 3 hilos daemon independientes (Shundo, GL, UL) para actualizar los relojes cada segundo."""
+    """Inicia los 3 hilos daemon independientes (Shundo, GL, UL) para actualizar los relojes cada 1 segundo."""
     global _HILOS_RELOJ_INICIADOS
     with _LOCK_HILOS:
         if _HILOS_RELOJ_INICIADOS:
@@ -318,7 +440,7 @@ def iniciar_hilos_reloj_tiempo_real() -> None:
 
 
 def eliminar_mensajes_expirados_discord(actualizar_tiempo_real: bool = True) -> int:
-    """Función compatible que procesa los 3 canales de inmediato."""
+    """Procesa de inmediato los 3 canales (Shundos, GL, UL)."""
     total = 0
     for canal in ("shundo", "great", "ultra"):
         total += procesar_canal_discord(canal, actualizar_tiempo_real=actualizar_tiempo_real)

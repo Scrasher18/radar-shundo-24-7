@@ -36,10 +36,11 @@ from src.config import (
     REGIONES_GLOBALES,
 )
 from src.discord_service import (
+    MAX_EMBEDS_POR_MENSAJE,
     eliminar_mensajes_expirados_discord,
     enviar_alerta_token_vencido,
-    enviar_lote_webhook,
     iniciar_hilos_reloj_tiempo_real,
+    publicar_panel_consolidado_canal,
 )
 from src.models import copiar_al_portapapeles, normalizar_spawn
 from src.state_manager import (
@@ -231,40 +232,41 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
         )
 
     ahora_ts = int(time.time())
-    lotes_enviados = [
-        ("shundo", DISCORD_WEBHOOK_URL, nuevos_shundos),
-        ("great", DISCORD_WEBHOOK_GL, nuevos_gl),
-        ("ultra", DISCORD_WEBHOOK_UL, nuevos_ul),
+    lotes_canales = [
+        ("shundo", nuevos_shundos, shundos_activos),
+        ("great", nuevos_gl, gl_activos),
+        ("ultra", nuevos_ul, ul_activos),
     ]
 
     if nuevos_shundos and AUTO_COPIAR_PORTAPAPELES:
         copiar_al_portapapeles(nuevos_shundos[0].get("coords_final") or "")
 
     hubo_nuevos = False
-    for canal_tipo, webhook_url, lista_nuevos in lotes_enviados:
+    for canal_tipo, lista_nuevos, lista_activos in lotes_canales:
         if not lista_nuevos:
             continue
-        ids_enviados = enviar_lote_webhook(
-            webhook_url,
-            lista_nuevos,
+        nuevo_mid = publicar_panel_consolidado_canal(
             canal_tipo,
-            BOT_NOMBRES_POR_CANAL[canal_tipo],
+            lista_nuevos,
+            lista_activos,
         )
         with _LOCK_ESTADO:
             notificados_actual = cargar_json(NOTIFICADOS_FILE)
-            for mon in lista_nuevos:
+            for mon in lista_activos[:MAX_EMBEDS_POR_MENSAJE]:
                 eid = str(mon.get("encounter_id"))
-                mid = ids_enviados.get(eid)
-                notificados_actual[f"{canal_tipo}:{eid}"] = {
+                clave = f"{canal_tipo}:{eid}"
+                prev = notificados_actual.get(clave) if isinstance(notificados_actual.get(clave), dict) else {}
+                notificados_actual[clave] = {
                     "canal": canal_tipo,
                     "pokemon": mon.get("nombre_completo"),
                     "coords": mon.get("coords_final"),
-                    "ts": ahora_ts,
+                    "ts": prev.get("ts", ahora_ts),
                     "despawn_unix": mon.get("despawn_unix"),
-                    "discord_msg_id": mid,
-                    "discord_msg_ids": [mid] if mid else [],
+                    "discord_msg_id": nuevo_mid,
+                    "discord_msg_ids": [nuevo_mid] if nuevo_mid else [],
+                    "embed_base": mon.get("embed_base"),
                     "eliminado_de_discord": False,
-                    "notificado_en": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                    "notificado_en": prev.get("notificado_en") or datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 }
             guardar_json(NOTIFICADOS_FILE, notificados_actual)
             hubo_nuevos = True
