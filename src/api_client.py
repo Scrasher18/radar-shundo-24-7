@@ -128,7 +128,7 @@ def ejecutar_region_mapa(
             "pvp_league": modo if es_pvp else "great",
             "pvp_top_rank": PVP_TOP_RANK_MAX if es_pvp else None,
             "pvp_include_pre_evolutions": True,
-            "pvp_min_cp": PVP_MIN_CP_GL if modo == "great" else (PVP_MIN_CP_UL if modo == "ultra" else None),
+            "pvp_min_cp": None,
             "shiny_only": True,
             "shiny_account": None,
             "background_only": False,
