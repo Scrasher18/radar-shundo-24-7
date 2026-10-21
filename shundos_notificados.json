@@ -246,14 +246,15 @@
     "coords": "38.389600,-121.381957",
     "ts": 1792578677,
     "despawn_unix": 1792581812,
-    "discord_msg_id": "1562424394486259750",
+    "discord_msg_id": "1562424596643454991",
     "discord_msg_ids": [
       "1562412959563649087",
       "1562415869571768324",
       "1562417995945611360",
       "1562420128174444595",
       "1562422261791719454",
-      "1562424394486259750"
+      "1562424394486259750",
+      "1562424596643454991"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Rhydon! (CP 2815 • Nivel 32.0)",
@@ -271,7 +272,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 48 seg`\n🕒 **Hora exacta:** <t:1792581812:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 00 seg`\n🕒 **Hora exacta:** <t:1792581812:T>",
           "inline": true
         },
         {
@@ -288,7 +289,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T11:16:44.002813+00:00"
+      "timestamp": "2026-10-21T11:17:32.113136+00:00"
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 10:31:18"
@@ -2079,7 +2080,7 @@
       },
       "timestamp": "2026-10-21T11:16:44.002862+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 11:08:15"
   },
   "shundo:-4750489587831009127": {
@@ -2128,7 +2129,7 @@
       },
       "timestamp": "2026-10-21T11:16:44.002885+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 11:08:15"
   },
   "shundo:2125607533747499471": {
@@ -2532,9 +2533,10 @@
     "coords": "52.536678,-1.880343",
     "ts": 1792581403,
     "despawn_unix": 1792582548,
-    "discord_msg_id": "1562424394486259750",
+    "discord_msg_id": "1562424596643454991",
     "discord_msg_ids": [
-      "1562424394486259750"
+      "1562424394486259750",
+      "1562424596643454991"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Helioptile! (CP 773 • Nivel 29.0)",
@@ -2552,7 +2554,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `19 min 04 seg`\n🕒 **Hora exacta:** <t:1792582548:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `18 min 16 seg`\n🕒 **Hora exacta:** <t:1792582548:T>",
           "inline": true
         },
         {
@@ -2569,7 +2571,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T11:16:44.002843+00:00"
+      "timestamp": "2026-10-21T11:17:32.113172+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 11:16:44"
@@ -2619,7 +2621,7 @@
       },
       "timestamp": "2026-10-21T11:16:44.002853+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 11:16:44"
   },
   "shundo:2554351423173376544": {
@@ -2628,9 +2630,10 @@
     "coords": "33.918876,-117.937887",
     "ts": 1792581403,
     "despawn_unix": 1792582289,
-    "discord_msg_id": "1562424394486259750",
+    "discord_msg_id": "1562424596643454991",
     "discord_msg_ids": [
-      "1562424394486259750"
+      "1562424394486259750",
+      "1562424596643454991"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Eevee! (CP 428 • Nivel 14.0)",
@@ -2648,7 +2651,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `14 min 45 seg`\n🕒 **Hora exacta:** <t:1792582289:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `13 min 57 seg`\n🕒 **Hora exacta:** <t:1792582289:T>",
           "inline": true
         },
         {
@@ -2665,7 +2668,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T11:16:44.002874+00:00"
+      "timestamp": "2026-10-21T11:17:32.113193+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 11:16:44"
@@ -2965,5 +2968,53 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 11:16:45"
+  },
+  "shundo:-1958880021616339822": {
+    "canal": "shundo",
+    "pokemon": "Ditto",
+    "coords": "23.065640,120.161837",
+    "ts": 1792581451,
+    "despawn_unix": 1792583759,
+    "discord_msg_id": "1562424596643454991",
+    "discord_msg_ids": [
+      "1562424596643454991"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Ditto! (CP 16 • Nivel 1.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=23.065640,120.161837",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm132.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `16` | **Nivel:** `1.0`\n**Talla:** `M` (Genderless)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `38 min 27 seg`\n🕒 **Hora exacta:** <t:1792583759:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Tainan, Tainan City, Taiwan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=23.065640,120.161837)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n23.065640,120.161837\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T11:17:32.113207+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 11:17:32"
   }
 }
