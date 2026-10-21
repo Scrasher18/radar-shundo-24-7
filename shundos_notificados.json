@@ -1154,5 +1154,53 @@
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Reloj en vivo • Auto-eliminación al desaparecer"
       }
     }
+  },
+  "shundo:-7526825531628004649": {
+    "canal": "shundo",
+    "pokemon": "Dewpider",
+    "coords": "47.541005,7.681731",
+    "ts": 1792562219,
+    "despawn_unix": 1792563577,
+    "discord_msg_id": "1562343927330242590",
+    "discord_msg_ids": [
+      "1562343927330242590"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Dewpider! (CP 326 • Nivel 16.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=47.541005,7.681731",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm751.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `326` | **Nivel:** `16.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `22 min 38 seg`\n🕒 **Hora exacta:** <t:1792563577:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Grenzach-Wyhlen, Basel-Landschaft, Switzerland • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=47.541005,7.681731)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n47.541005,7.681731\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T05:56:59.047007+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:56:59"
   }
 }
