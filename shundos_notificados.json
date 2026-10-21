@@ -1585,10 +1585,11 @@
     "coords": "49.502013,8.457641",
     "ts": 1792577663,
     "despawn_unix": 1792579643,
-    "discord_msg_id": "1562410855541375038",
+    "discord_msg_id": "1562412963854557196",
     "discord_msg_ids": [
       "1562408718845349914",
-      "1562410855541375038"
+      "1562410855541375038",
+      "1562412963854557196"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Smoliv ➔ Arboliva!",
@@ -1606,7 +1607,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `24 min 28 seg`\n🕒 **Hora exacta:** <t:1792579643:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `16 min 05 seg`\n🕒 **Hora exacta:** <t:1792579643:T>",
           "inline": true
         },
         {
@@ -1623,7 +1624,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T10:22:56.076706+00:00"
+      "timestamp": "2026-10-21T10:31:18.740568+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 10:14:26"
@@ -2106,7 +2107,7 @@
       },
       "timestamp": "2026-10-21T10:31:18.325268+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 10:31:18"
   },
   "great:-5458508167379699844": {
@@ -2201,6 +2202,54 @@
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
       "timestamp": "2026-10-21T10:31:18.325303+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 10:31:18"
+  },
+  "ultra:5427223409120116040": {
+    "canal": "ultra",
+    "pokemon": "Munna",
+    "coords": "51.541707,7.437945",
+    "ts": 1792578677,
+    "despawn_unix": 1792580330,
+    "discord_msg_id": "1562412963854557196",
+    "discord_msg_ids": [
+      "1562412963854557196"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #4: Munna ➔ Musharna!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #4** (`99.53%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Musharna** (`CP 2494` a Nivel `39.5`)",
+      "url": "https://www.google.com/maps?q=51.541707,7.437945",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm518.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#4` (`99.53%`)\n**IVs PvP:** `0/15/14`\n**Salvaje:** `CP 862` | `Nivel 30.0` (M, Male)\n**Final en Liga:** `CP 2494` | `Nivel 39.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `27 min 32 seg`\n🕒 **Hora exacta:** <t:1792580330:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Lindenhorst, Nordrhein-Westfalen, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.541707,7.437945)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n51.541707,7.437945\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T10:31:18.740603+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 10:31:18"
