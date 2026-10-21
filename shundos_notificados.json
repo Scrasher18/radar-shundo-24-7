@@ -12910,5 +12910,57 @@
     ],
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 04:18:27"
+  },
+  "shundo:4180430715481201105": {
+    "canal": "shundo",
+    "pokemon": "Scorbunny",
+    "coords": "44.829667,-0.606024",
+    "ts": 1792560152,
+    "despawn_unix": 1792560943,
+    "discord_msg_id": "1562335260593623112",
+    "discord_msg_ids": [
+      "1562335260593623112"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:22:33"
+  },
+  "great:-5058554957876531743": {
+    "canal": "great",
+    "pokemon": "Snivy",
+    "coords": "45.741762,4.976677",
+    "ts": 1792560152,
+    "despawn_unix": 1792561228,
+    "discord_msg_id": "1562335261776683142",
+    "discord_msg_ids": [
+      "1562335261776683142"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:22:33"
+  },
+  "great:-470674650768650326": {
+    "canal": "great",
+    "pokemon": "Tangela",
+    "coords": "47.197084,-1.608374",
+    "ts": 1792560152,
+    "despawn_unix": 1792560472,
+    "discord_msg_id": "1562335263030640721",
+    "discord_msg_ids": [
+      "1562335263030640721"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:22:33"
+  },
+  "ultra:-1354174459539228151": {
+    "canal": "ultra",
+    "pokemon": "Mareep",
+    "coords": "51.471539,5.683424",
+    "ts": 1792560152,
+    "despawn_unix": 1792561078,
+    "discord_msg_id": "1562335264146464920",
+    "discord_msg_ids": [
+      "1562335264146464920"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 05:22:33"
   }
 }
