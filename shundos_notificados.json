@@ -1702,17 +1702,18 @@
     "coords": "30.441252,-90.082084",
     "ts": 1792589485,
     "despawn_unix": 1792591032,
-    "discord_msg_id": "1562460497159389325",
+    "discord_msg_id": "1562462960998420616",
     "discord_msg_ids": [
       "1562458290867409010",
       "1562458314422616167",
-      "1562460497159389325"
+      "1562460497159389325",
+      "1562462960998420616"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Cyndaquil! (CP 868 • Nivel 32.0)",
       "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
       "url": "https://www.google.com/maps?q=30.441252,-90.082084",
-      "color": 16766720,
+      "color": 16347926,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm155.s.icon.png"
       },
@@ -1724,7 +1725,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `17 min 00 seg`\n🕒 **Hora exacta:** <t:1792591032:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `7 min 13 seg`\n🕒 **Hora exacta:** <t:1792591032:T>",
           "inline": true
         },
         {
@@ -1741,7 +1742,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:40:11.380910+00:00"
+      "timestamp": "2026-10-21T13:49:58.963982+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 13:31:25"
@@ -1751,18 +1752,19 @@
     "pokemon": "Elgyem",
     "coords": "46.006749,-123.922421",
     "ts": 1792589485,
-    "despawn_unix": 1792592272,
-    "discord_msg_id": "1562460497159389325",
+    "despawn_unix": 1792591322,
+    "discord_msg_id": "1562462960998420616",
     "discord_msg_ids": [
       "1562458290867409010",
       "1562458314422616167",
-      "1562460497159389325"
+      "1562460497159389325",
+      "1562462960998420616"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Elgyem! (CP 989 • Nivel 25.0)",
       "description": "✨ **SHUNDO 100% IV**",
       "url": "https://www.google.com/maps?q=46.006749,-123.922421",
-      "color": 16766720,
+      "color": 16347926,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm605.s.icon.png"
       },
@@ -1774,7 +1776,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `37 min 40 seg`\n🕒 **Hora exacta:** <t:1792592272:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `12 min 03 seg`\n🕒 **Hora exacta:** <t:1792591322:T>",
           "inline": true
         },
         {
@@ -1791,7 +1793,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:40:11.380964+00:00"
+      "timestamp": "2026-10-21T13:49:58.964032+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 13:31:25"
@@ -1802,13 +1804,14 @@
     "coords": "45.484204,9.156680",
     "ts": 1792589485,
     "despawn_unix": 1792590897,
-    "discord_msg_id": "1562460782619525157",
+    "discord_msg_id": "1562462962814287960",
     "discord_msg_ids": [
       "1562458293899628651",
       "1562458320021885048",
       "1562458332399144996",
       "1562458337109348419",
-      "1562460782619525157"
+      "1562460782619525157",
+      "1562462962814287960"
     ],
     "embed_base": {
       "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Geodude (Alola) ➔ Graveler!",
@@ -1826,7 +1829,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `13 min 37 seg`\n🕒 **Hora exacta:** <t:1792590897:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 58 seg`\n🕒 **Hora exacta:** <t:1792590897:T>",
           "inline": true
         },
         {
@@ -1843,7 +1846,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:41:19.232375+00:00"
+      "timestamp": "2026-10-21T13:49:59.369578+00:00"
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 13:31:26"
@@ -1905,13 +1908,14 @@
     "coords": "1.393968,103.724113",
     "ts": 1792589485,
     "despawn_unix": 1792591680,
-    "discord_msg_id": "1562460782619525157",
+    "discord_msg_id": "1562462962814287960",
     "discord_msg_ids": [
       "1562458293899628651",
       "1562458320021885048",
       "1562458332399144996",
       "1562458337109348419",
-      "1562460782619525157"
+      "1562460782619525157",
+      "1562462962814287960"
     ],
     "embed_base": {
       "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Sobble ➔ Inteleon!",
@@ -1929,7 +1933,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `26 min 40 seg`\n🕒 **Hora exacta:** <t:1792591680:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `18 min 01 seg`\n🕒 **Hora exacta:** <t:1792591680:T>",
           "inline": true
         },
         {
@@ -1946,7 +1950,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:41:19.232436+00:00"
+      "timestamp": "2026-10-21T13:49:59.369664+00:00"
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 13:31:26"
@@ -2060,13 +2064,14 @@
     "coords": "45.484204,9.156680",
     "ts": 1792589485,
     "despawn_unix": 1792590897,
-    "discord_msg_id": "1562460544420679747",
+    "discord_msg_id": "1562462968426270816",
     "discord_msg_ids": [
       "1562458297276039270",
       "1562458323154903047",
       "1562458331686244430",
       "1562458335775555690",
-      "1562460544420679747"
+      "1562460544420679747",
+      "1562462968426270816"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #5: Geodude (Alola) ➔ Golem!",
@@ -2084,7 +2089,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `14 min 45 seg`\n🕒 **Hora exacta:** <t:1792590897:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 58 seg`\n🕒 **Hora exacta:** <t:1792590897:T>",
           "inline": true
         },
         {
@@ -2101,7 +2106,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:40:22.829521+00:00"
+      "timestamp": "2026-10-21T13:49:59.804384+00:00"
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 13:31:27"
@@ -2112,15 +2117,16 @@
     "coords": "51.607007,7.063500",
     "ts": 1792590011,
     "despawn_unix": 1792590755,
-    "discord_msg_id": "1562460497159389325",
+    "discord_msg_id": "1562462960998420616",
     "discord_msg_ids": [
-      "1562460497159389325"
+      "1562460497159389325",
+      "1562462960998420616"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Shellos (East Sea)! (CP 843 • Nivel 26.0)",
       "description": "✨ **SHUNDO 100% IV**",
       "url": "https://www.google.com/maps?q=51.607007,7.063500",
-      "color": 16347926,
+      "color": 15680580,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm422.s.icon.png"
       },
@@ -2132,7 +2138,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `12 min 23 seg`\n🕒 **Hora exacta:** <t:1792590755:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `2 min 36 seg`\n🕒 **Hora exacta:** <t:1792590755:T>",
           "inline": true
         },
         {
@@ -2149,7 +2155,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:40:11.380946+00:00"
+      "timestamp": "2026-10-21T13:49:58.964015+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 13:40:12"
@@ -2256,9 +2262,10 @@
     "coords": "55.642605,12.460300",
     "ts": 1792590011,
     "despawn_unix": 1792591370,
-    "discord_msg_id": "1562460544420679747",
+    "discord_msg_id": "1562462968426270816",
     "discord_msg_ids": [
-      "1562460544420679747"
+      "1562460544420679747",
+      "1562462968426270816"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Spritzee ➔ Aromatisse!",
@@ -2276,7 +2283,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `22 min 38 seg`\n🕒 **Hora exacta:** <t:1792591370:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `12 min 51 seg`\n🕒 **Hora exacta:** <t:1792591370:T>",
           "inline": true
         },
         {
@@ -2293,7 +2300,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:40:22.829415+00:00"
+      "timestamp": "2026-10-21T13:49:59.804327+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 13:40:23"
@@ -2304,9 +2311,10 @@
     "coords": "52.261108,6.778142",
     "ts": 1792590011,
     "despawn_unix": 1792590650,
-    "discord_msg_id": "1562460544420679747",
+    "discord_msg_id": "1562462968426270816",
     "discord_msg_ids": [
-      "1562460544420679747"
+      "1562460544420679747",
+      "1562462968426270816"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #4: Minccino ➔ Cinccino!",
@@ -2352,9 +2360,10 @@
     "coords": "54.720153,9.697864",
     "ts": 1792590079,
     "despawn_unix": 1792591522,
-    "discord_msg_id": "1562460782619525157",
+    "discord_msg_id": "1562462962814287960",
     "discord_msg_ids": [
-      "1562460782619525157"
+      "1562460782619525157",
+      "1562462962814287960"
     ],
     "embed_base": {
       "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Hatenna ➔ Hatterene!",
@@ -2372,7 +2381,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `24 min 02 seg`\n🕒 **Hora exacta:** <t:1792591522:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `15 min 23 seg`\n🕒 **Hora exacta:** <t:1792591522:T>",
           "inline": true
         },
         {
@@ -2389,7 +2398,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:41:19.232342+00:00"
+      "timestamp": "2026-10-21T13:49:59.369545+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 13:41:19"
@@ -2400,9 +2409,10 @@
     "coords": "50.817007,3.481645",
     "ts": 1792590079,
     "despawn_unix": 1792590767,
-    "discord_msg_id": "1562460782619525157",
+    "discord_msg_id": "1562462962814287960",
     "discord_msg_ids": [
-      "1562460782619525157"
+      "1562460782619525157",
+      "1562462962814287960"
     ],
     "embed_base": {
       "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #2: Minun!",
@@ -2420,7 +2430,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 27 seg`\n🕒 **Hora exacta:** <t:1792590767:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `2 min 48 seg`\n🕒 **Hora exacta:** <t:1792590767:T>",
           "inline": true
         },
         {
@@ -2437,7 +2447,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:41:19.232408+00:00"
+      "timestamp": "2026-10-21T13:49:59.369600+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 13:41:19"
@@ -2448,9 +2458,10 @@
     "coords": "25.342856,51.521250",
     "ts": 1792590079,
     "despawn_unix": 1792591100,
-    "discord_msg_id": "1562460782619525157",
+    "discord_msg_id": "1562462962814287960",
     "discord_msg_ids": [
-      "1562460782619525157"
+      "1562460782619525157",
+      "1562462962814287960"
     ],
     "embed_base": {
       "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Chimecho!",
@@ -2468,7 +2479,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `17 min 00 seg`\n🕒 **Hora exacta:** <t:1792591100:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `8 min 21 seg`\n🕒 **Hora exacta:** <t:1792591100:T>",
           "inline": true
         },
         {
@@ -2485,9 +2496,297 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T13:41:19.232422+00:00"
+      "timestamp": "2026-10-21T13:49:59.369616+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 13:41:19"
+  },
+  "shundo:-1439471844178838679": {
+    "canal": "shundo",
+    "pokemon": "Ekans",
+    "coords": "-27.390725,152.975636",
+    "ts": 1792590598,
+    "despawn_unix": 1792591312,
+    "discord_msg_id": "1562462960998420616",
+    "discord_msg_ids": [
+      "1562462960998420616"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Ekans! (CP 582 • Nivel 22.0)",
+      "description": "✨ **SHUNDO 100% IV** • 📏 **TALLA RARA (XXL)** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=-27.390725,152.975636",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm23.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `582` | **Nivel:** `22.0`\n**Talla:** `XXL` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 53 seg`\n🕒 **Hora exacta:** <t:1792591312:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Everton Hills, Queensland, Australia • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-27.390725,152.975636)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n-27.390725,152.975636\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T13:49:58.964050+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 13:49:59"
+  },
+  "shundo:-5141153565583676010": {
+    "canal": "shundo",
+    "pokemon": "Glameow",
+    "coords": "50.096316,8.712255",
+    "ts": 1792590598,
+    "despawn_unix": 1792591387,
+    "discord_msg_id": "1562462960998420616",
+    "discord_msg_ids": [
+      "1562462960998420616"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Glameow! (CP 293 • Nivel 11.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=50.096316,8.712255",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm431.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `293` | **Nivel:** `11.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `13 min 08 seg`\n🕒 **Hora exacta:** <t:1792591387:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Frankfurt am Main, Hessen, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.096316,8.712255)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n50.096316,8.712255\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T13:49:58.964063+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 13:49:59"
+  },
+  "shundo:-3445381158430082187": {
+    "canal": "shundo",
+    "pokemon": "Oshawott",
+    "coords": "52.362591,16.854255",
+    "ts": 1792590598,
+    "despawn_unix": 1792592513,
+    "discord_msg_id": "1562462960998420616",
+    "discord_msg_ids": [
+      "1562462960998420616"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Oshawott! (CP 298 • Nivel 10.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=52.362591,16.854255",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm501.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `298` | **Nivel:** `10.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `31 min 54 seg`\n🕒 **Hora exacta:** <t:1792592513:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Plewiska, Greater Poland, Poland • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.362591,16.854255)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n52.362591,16.854255\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T13:49:58.964076+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 13:49:59"
+  },
+  "great:7192680347761689744": {
+    "canal": "great",
+    "pokemon": "Whismur",
+    "coords": "43.856992,-79.689463",
+    "ts": 1792590598,
+    "despawn_unix": 1792592014,
+    "discord_msg_id": "1562462962814287960",
+    "discord_msg_ids": [
+      "1562462962814287960"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Whismur ➔ Exploud!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.34%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Exploud** (`CP 1496` a Nivel `24.5`)",
+      "url": "https://www.google.com/maps?q=43.856992,-79.689463",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm295.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#3` (`99.34%`)\n**IVs PvP:** `0/14/10`\n**Salvaje:** `CP 290` | `Nivel 18.0` (M, Male)\n**Final en Liga:** `CP 1496` | `Nivel 24.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `23 min 35 seg`\n🕒 **Hora exacta:** <t:1792592014:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Bolton, Ontario, Canada • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=43.856992,-79.689463)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n43.856992,-79.689463\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T13:49:59.369685+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 13:49:59"
+  },
+  "ultra:-3085484459221262574": {
+    "canal": "ultra",
+    "pokemon": "Hippopotas",
+    "coords": "19.690162,-99.116479",
+    "ts": 1792590598,
+    "despawn_unix": 1792591392,
+    "discord_msg_id": "1562462968426270816",
+    "discord_msg_ids": [
+      "1562462968426270816"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Hippopotas ➔ Hippowdon!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.95%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Hippowdon** (`CP 2497` a Nivel `31.0`)",
+      "url": "https://www.google.com/maps?q=19.690162,-99.116479",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm450.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#2` (`99.95%`)\n**IVs PvP:** `0/15/14`\n**Salvaje:** `CP 966` | `Nivel 28.0` (M, Male)\n**Final en Liga:** `CP 2497` | `Nivel 31.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `13 min 13 seg`\n🕒 **Hora exacta:** <t:1792591392:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Tultepec, México, Mexico • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=19.690162,-99.116479)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n19.690162,-99.116479\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T13:49:59.804362+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 13:50:00"
+  },
+  "ultra:7574953193209247093": {
+    "canal": "ultra",
+    "pokemon": "Surskit",
+    "coords": "35.320443,136.845619",
+    "ts": 1792590598,
+    "despawn_unix": 1792590905,
+    "discord_msg_id": "1562462968426270816",
+    "discord_msg_ids": [
+      "1562462968426270816"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #5: Surskit ➔ Masquerain!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #5** (`99.50%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Masquerain** (`CP 2480` a Nivel `50.0`)",
+      "url": "https://www.google.com/maps?q=35.320443,136.845619",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm284.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#5` (`99.50%`)\n**IVs PvP:** `8/15/15`\n**Salvaje:** `CP 634` | `Nivel 30.0` (M, Male)\n**Final en Liga:** `CP 2480` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `5 min 06 seg`\n🕒 **Hora exacta:** <t:1792590905:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Kōnan, Aichi, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.320443,136.845619)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n35.320443,136.845619\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T13:49:59.804401+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 13:50:00"
   }
 }
