@@ -546,7 +546,7 @@
     "discord_msg_ids": [
       "1562341744199213070"
     ],
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 05:02:42",
     "embed_base": {
       "type": "rich",
@@ -1453,44 +1453,5 @@
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Reloj en vivo • Auto-eliminación al desaparecer"
       }
     }
-  },
-  "shundo:-7656965260476179789": {
-    "canal": "shundo",
-    "pokemon": "Stufful",
-    "coords": "51.981410,7.544108",
-    "ts": 1792557863,
-    "despawn_unix": 1792560985,
-    "discord_msg_id": "1562325662193426476",
-    "discord_msg_ids": [
-      "1562325662193426476"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:24"
-  },
-  "great:-5912862579889317443": {
-    "canal": "great",
-    "pokemon": "Bounsweet",
-    "coords": "32.232900,-101.457789",
-    "ts": 1792557863,
-    "despawn_unix": 1792561039,
-    "discord_msg_id": "1562325668635738153",
-    "discord_msg_ids": [
-      "1562325668635738153"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:26"
-  },
-  "ultra:-5912862579889317443": {
-    "canal": "ultra",
-    "pokemon": "Bounsweet",
-    "coords": "32.232900,-101.457789",
-    "ts": 1792557863,
-    "despawn_unix": 1792561039,
-    "discord_msg_id": "1562325673412923483",
-    "discord_msg_ids": [
-      "1562325673412923483"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:44:28"
   }
 }
