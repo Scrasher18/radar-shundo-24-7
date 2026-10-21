@@ -1,105 +1,4 @@
 {
-  "shundo:-1958880021616339822": {
-    "canal": "shundo",
-    "pokemon": "Ditto",
-    "coords": "23.065639,120.161836",
-    "ts": 1792581451,
-    "despawn_unix": 1792583759,
-    "discord_msg_id": "1562431488639897699",
-    "discord_msg_ids": [
-      "1562424596643454991",
-      "1562426916550615056",
-      "1562429222671089762",
-      "1562431488639897699"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Ditto! (CP 16 • Nivel 1.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=23.065639,120.161836",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm132.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `16` | **Nivel:** `1.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 04 seg`\n🕒 **Hora exacta:** <t:1792583759:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Tainan, Tainan City, Taiwan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=23.065639,120.161836)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n23.065639,120.161836\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T11:44:55.441626+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 11:17:32"
-  },
-  "ultra:-5067788516720104581": {
-    "canal": "ultra",
-    "pokemon": "Litten",
-    "coords": "38.758376,-9.279246",
-    "ts": 1792581451,
-    "despawn_unix": 1792582609,
-    "discord_msg_id": "1562429236017500160",
-    "discord_msg_ids": [
-      "1562424601336610925",
-      "1562426921873178684",
-      "1562429236017500160"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Litten ➔ Incineroar!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.78%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Incineroar** (`CP 2500` a Nivel `33.0`)",
-      "url": "https://www.google.com/maps?q=38.758376,-9.279246",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm727.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.78%`)\n**IVs PvP:** `0/12/15`\n**Salvaje:** `CP 338` | `Nivel 13.0` (XS, Male)\n**Final en Liga:** `CP 2500` | `Nivel 33.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `10 min 04 seg`\n🕒 **Hora exacta:** <t:1792582609:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Massamá, Lisboa, Portugal • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.758376,-9.279246)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n38.758376,-9.279246\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T11:26:46.473317+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 11:17:33"
-  },
   "shundo:5357093063221079031": {
     "canal": "shundo",
     "pokemon": "Abra",
@@ -2014,7 +1913,7 @@
       },
       "timestamp": "2026-10-21T12:12:17.077902+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 12:12:17"
   },
   "great:-7448523050852836058": {
