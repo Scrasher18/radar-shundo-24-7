@@ -2668,15 +2668,16 @@
     "coords": "25.272559,51.53271",
     "ts": 1792603260,
     "despawn_unix": 1792603929,
-    "discord_msg_id": "1562516067484565605",
+    "discord_msg_id": "1562517757017464945",
     "discord_msg_ids": [
-      "1562516067484565605"
+      "1562516067484565605",
+      "1562517757017464945"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Cyndaquil! (CP 336 • Nivel 12.0)",
       "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
       "url": "https://www.google.com/maps?q=25.272559,51.53271",
-      "color": 16347926,
+      "color": 15680580,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm155.s.icon.png"
       },
@@ -2688,7 +2689,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 09 seg`\n🕒 **Hora exacta:** <t:1792603929:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 26 seg`\n🕒 **Hora exacta:** <t:1792603929:T>",
           "inline": true
         },
         {
@@ -2705,7 +2706,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T17:21:00.491223+00:00"
+      "timestamp": "2026-10-21T17:27:43.336807+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 17:21:00"
@@ -2805,5 +2806,53 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 17:21:56"
+  },
+  "shundo:5156154800303123020": {
+    "canal": "shundo",
+    "pokemon": "Natu",
+    "coords": "38.8425264,-77.1743533",
+    "ts": 1792603662,
+    "despawn_unix": 1792604382,
+    "discord_msg_id": "1562517757017464945",
+    "discord_msg_ids": [
+      "1562517757017464945"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Natu! (CP 567 • Nivel 18.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=38.8425264,-77.1743533",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm177.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `567` | **Nivel:** `18.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 59 seg`\n🕒 **Hora exacta:** <t:1792604382:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Lake Barcroft, Virginia, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.8425264,-77.1743533)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n38.8425264,-77.1743533\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T17:27:43.336783+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 17:27:43"
   }
 }
