@@ -187,8 +187,13 @@ def ejecutar_escaneo_evento_inmediato() -> None:
 
     ahora_ts = int(time.time())
     nuevo_mid = publicar_panel_consolidado_canal("evento", nuevos_ev, evento_activos)
+    if not nuevo_mid:
+        return
     with _LOCK_ESTADO:
         notificados_actual = cargar_json(NOTIFICADOS_FILE)
+        for k_prev, info_prev in notificados_actual.items():
+            if not k_prev.startswith("_meta_") and isinstance(info_prev, dict) and info_prev.get("canal") == "evento":
+                info_prev["eliminado_de_discord"] = True
         for mon in evento_activos[:MAX_EMBEDS_POR_MENSAJE]:
             eid = str(mon.get("encounter_id"))
             clave = f"evento:{eid}"
@@ -424,6 +429,9 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
             continue
         with _LOCK_ESTADO:
             notificados_actual = cargar_json(NOTIFICADOS_FILE)
+            for k_prev, info_prev in notificados_actual.items():
+                if not k_prev.startswith("_meta_") and isinstance(info_prev, dict) and info_prev.get("canal", "shundo") == canal_tipo:
+                    info_prev["eliminado_de_discord"] = True
             for mon in lista_activos[:MAX_EMBEDS_POR_MENSAJE]:
                 eid = str(mon.get("encounter_id"))
                 clave = f"{canal_tipo}:{eid}"

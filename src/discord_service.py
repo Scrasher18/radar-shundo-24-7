@@ -117,6 +117,25 @@ def construir_encabezado_lote(spawns_nuevos: List[Dict[str, Any]], total_activos
         return f"⚔️ {mencion}¡Nuevo **SHINY {liga_tag} RANK #{rank} ({nombre} ➔ {pvp_name})** detectado!"
 
 
+def _eliminar_mensaje_webhook_seguro(sesion: requests.Session, base_webhook: str, mid: str) -> bool:
+    """Elimina un mensaje de webhook manejando automáticamente HTTP 429 (Rate Limit)."""
+    url_del = f"{base_webhook}/messages/{mid}"
+    for intento in range(3):
+        try:
+            r = sesion.delete(url_del, timeout=6)
+            if r.status_code in (200, 204, 404):
+                return True
+            if r.status_code == 429:
+                try:
+                    espera = float(r.json().get("retry_after", 1.2))
+                except Exception:
+                    espera = 1.2
+                time.sleep(min(espera + 0.15, 4.0))
+        except Exception:
+            time.sleep(0.4)
+    return False
+
+
 def publicar_panel_consolidado_canal(
     canal_tipo: str,
     spawns_nuevos: List[Dict[str, Any]],
@@ -124,7 +143,7 @@ def publicar_panel_consolidado_canal(
 ) -> Optional[str]:
     """
     Reemplaza el mensaje anterior del canal por un único mensaje consolidado con todos los
-    Pokémon activos del canal (máx 8 embeds), para que 1 solo PATCH por segundo actualice TODOS a 1s.
+    Pokémon activos del canal (máx 6 embeds), para que 1 solo PATCH por segundo actualice TODOS a 1s.
     """
     webhook_url = WEBHOOKS_POR_CANAL.get(canal_tipo) or ""
     if not webhook_url.strip() or not spawns_nuevos:
@@ -147,10 +166,7 @@ def publicar_panel_consolidado_canal(
                         mids_previos.add(str(m))
 
     for old_mid in mids_previos:
-        try:
-            sesion.delete(f"{base_webhook}/messages/{old_mid}", timeout=6)
-        except Exception:
-            pass
+        _eliminar_mensaje_webhook_seguro(sesion, base_webhook, old_mid)
 
     # 2. Construir la lista de embeds de los spawns activos (hasta MAX_EMBEDS_POR_MENSAJE)
     seleccionados = spawns_activos_totales[:MAX_EMBEDS_POR_MENSAJE]
@@ -190,10 +206,10 @@ def publicar_panel_consolidado_canal(
 
 def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True) -> int:
     """
-    Procesa un canal ('shundo', 'great', 'ultra') cada 1 segundo:
-    - Si hay mensajes antiguos separados, los consolida o limpia al expirar.
+    Procesa un canal ('shundo', 'great', 'ultra', 'evento') cada 1 segundo:
+    - Si existen mensajes antiguos rezagados, los elimina de Discord con DELETE.
     - Actualiza todos los embeds activos del mensaje del canal en UNA SOLA petición PATCH (1s exacto).
-    - Si algún Pokémon dentro del mensaje ya expiró, lo quita inmediatamente del mensaje.
+    - Si algún Pokémon dentro del mensaje ya expiró, retira su tarjeta inmediatamente con PATCH.
     - Si todos los Pokémon del mensaje expiraron, elimina el mensaje completo con DELETE.
     """
     webhook_url = WEBHOOKS_POR_CANAL.get(canal_tipo) or ""
@@ -206,11 +222,10 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
     with _LOCK_ESTADO:
         notificados = cargar_json(NOTIFICADOS_FILE)
 
-    ahora = int(time.time())
     eliminados = 0
     claves_recien_expiradas: List[str] = []
 
-    # Agrupar entradas por discord_msg_id
+    # Agrupar entradas activas por discord_msg_id
     entradas_por_mid: Dict[str, List[tuple]] = {}
     for clave, info in list(notificados.items()):
         if clave.startswith("_meta_") or not isinstance(info, dict):
@@ -231,117 +246,58 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
 
     hubo_cambios_estado = False
 
-    # Si por una ejecución anterior quedaron varios mensajes distintos en el mismo canal,
-    # consolidarlos en un único mensaje para que el reloj vaya a 1s por segundo
-    if len(entradas_por_mid) > 1 and actualizar_tiempo_real:
-        todas_vivas = []
-        mids_viejos = list(entradas_por_mid.keys())
-        for mid_v, lista_ent in entradas_por_mid.items():
-            for clave, info, despawn_unix in lista_ent:
-                if ahora < despawn_unix:
-                    emb = _MEM_EMBEDS_POR_CLAVE.get(clave) or info.get("embed_base")
-                    if not emb:
-                        try:
-                            r_g = sesion.get(f"{base_webhook}/messages/{mid_v}", timeout=5)
-                            if r_g.status_code == 200:
-                                embs = r_g.json().get("embeds") or []
-                                if embs:
-                                    emb = embs[0]
-                                    _MEM_EMBEDS_POR_CLAVE[clave] = emb
-                        except Exception:
-                            pass
-                    if emb:
-                        todas_vivas.append((clave, info, despawn_unix, emb))
-                else:
-                    claves_recien_expiradas.append(clave)
+    # Si hay más de 1 mensaje registrado como activo en el mismo canal, conservar SOLO el más reciente
+    # y eliminar de inmediato los mensajes anteriores en Discord (sin crear mensajes nuevos en bucle).
+    if len(entradas_por_mid) > 1:
+        mids_ordenados = sorted(entradas_por_mid.keys(), key=lambda x: int(x) if x.isdigit() else 0)
+        mid_mas_reciente = mids_ordenados[-1]
+        for mid_viejo in mids_ordenados[:-1]:
+            if _eliminar_mensaje_webhook_seguro(sesion, base_webhook, mid_viejo):
+                for clave_v, _, _ in entradas_por_mid[mid_viejo]:
+                    claves_recien_expiradas.append(clave_v)
+                    _MEM_EMBEDS_POR_CLAVE.pop(clave_v, None)
+                    eliminados += 1
+                hubo_cambios_estado = True
+            entradas_por_mid.pop(mid_viejo, None)
 
-        for mid_v in mids_viejos:
-            try:
-                sesion.delete(f"{base_webhook}/messages/{mid_v}", timeout=5)
-            except Exception:
-                pass
-
-        if todas_vivas:
-            todas_vivas = todas_vivas[:MAX_EMBEDS_POR_MENSAJE]
-            embeds_unificados = [
-                actualizar_embed_con_segundos_reales(emb, d_unix, canal_tipo)
-                for _, _, d_unix, emb in todas_vivas
-            ]
-            mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
-            nombre_dest = todas_vivas[0][1].get("pokemon", "Pokémon")
-            if canal_tipo == "shundo":
-                contenido_limpio = f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre_dest})** detectado!"
-            elif canal_tipo == "great":
-                contenido_limpio = f"⚔️ {mencion}¡Nuevo **SHINY GREAT LEAGUE ({nombre_dest})** detectado!"
-            elif canal_tipo == "evento":
-                contenido_limpio = f"🎉 {mencion}¡Nuevo **SHINY DE EVENTO / CD ({nombre_dest})** detectado!"
-            else:
-                contenido_limpio = f"⚔️ {mencion}¡Nuevo **SHINY ULTRA LEAGUE ({nombre_dest})** detectado!"
-            payload_unificado = {
-                "username": BOT_NOMBRES_POR_CANAL.get(canal_tipo, "Radar Pro ✨"),
-                "content": contenido_limpio,
-                "embeds": embeds_unificados,
-            }
-            try:
-                r_post = sesion.post(f"{base_webhook}?wait=true", json=payload_unificado, timeout=8)
-                if r_post.status_code in (200, 204):
-                    nuevo_mid = str(r_post.json().get("id"))
-                    with _LOCK_ESTADO:
-                        notif_actual = cargar_json(NOTIFICADOS_FILE)
-                        for clave, _, _, emb in todas_vivas:
-                            if clave in notif_actual and isinstance(notif_actual[clave], dict):
-                                notif_actual[clave]["discord_msg_id"] = nuevo_mid
-                                notif_actual[clave]["discord_msg_ids"] = [nuevo_mid]
-                                notif_actual[clave]["embed_base"] = emb
-                        for clave_exp in claves_recien_expiradas:
-                            if clave_exp in notif_actual and isinstance(notif_actual[clave_exp], dict):
-                                notif_actual[clave_exp]["eliminado_de_discord"] = True
-                        guardar_json(NOTIFICADOS_FILE, notif_actual)
-                    sincronizar_estado_remoto_push(asincrono=True)
-                    return len(claves_recien_expiradas)
-            except Exception:
-                pass
-
-    # Procesar cada mensaje activo (normalmente 1 único mensaje por canal)
-    for mid, lista_entradas in entradas_por_mid.items():
+    # Procesar el mensaje activo del canal
+    for mid, lista_entradas in list(entradas_por_mid.items()):
+        ahora_loop = int(time.time())
         vivos_en_mid = []
         expirados_en_mid = []
         for clave, info, despawn_unix in lista_entradas:
-            if int(time.time()) >= despawn_unix:
+            if ahora_loop >= despawn_unix:
                 expirados_en_mid.append((clave, info))
             else:
                 vivos_en_mid.append((clave, info, despawn_unix))
 
         # Caso A: Todos los Pokémon de este mensaje ya expiraron -> DELETE del mensaje completo
         if not vivos_en_mid:
-            try:
-                r_del = sesion.delete(f"{base_webhook}/messages/{mid}", timeout=6)
-                if r_del.status_code in (200, 204, 404):
-                    for clave, info in expirados_en_mid:
-                        claves_recien_expiradas.append(clave)
-                        _MEM_EMBEDS_POR_CLAVE.pop(clave, None)
-                        eliminados += 1
-                        print(
-                            f"   🗑️ [Discord-{canal_tipo.upper()}] Mensaje de {info.get('pokemon', clave)} eliminado del chat (ya hizo despawn)."
-                        )
-                    hubo_cambios_estado = True
-            except Exception:
-                pass
+            mids_a_borrar = {str(mid)}
+            for _, info_e in expirados_en_mid:
+                for m_extra in info_e.get("discord_msg_ids") or []:
+                    if m_extra:
+                        mids_a_borrar.add(str(m_extra))
+
+            borrado_ok = False
+            for m_del in mids_a_borrar:
+                if _eliminar_mensaje_webhook_seguro(sesion, base_webhook, m_del):
+                    borrado_ok = True
+
+            if borrado_ok:
+                for clave, info in expirados_en_mid:
+                    claves_recien_expiradas.append(clave)
+                    _MEM_EMBEDS_POR_CLAVE.pop(clave, None)
+                    eliminados += 1
+                    print(
+                        f"   🗑️ [Discord-{canal_tipo.upper()}] Mensaje de {info.get('pokemon', clave)} eliminado del chat (ya hizo despawn)."
+                    )
+                hubo_cambios_estado = True
             continue
 
-        # Caso B: Algunos expiraron pero otros siguen vivos en el mismo mensaje -> marcar expirados
-        if expirados_en_mid:
-            for clave, info in expirados_en_mid:
-                claves_recien_expiradas.append(clave)
-                _MEM_EMBEDS_POR_CLAVE.pop(clave, None)
-                eliminados += 1
-                print(
-                    f"   🗑️ [Discord-{canal_tipo.upper()}] Tarjeta de {info.get('pokemon', clave)} retirada del panel (ya hizo despawn)."
-                )
-            hubo_cambios_estado = True
-
-        # Caso C: Actualizar cada segundo en una sola llamada PATCH todos los embeds vivos de este mensaje
-        if actualizar_tiempo_real:
+        # Caso B y C: Siguen quedando Pokémon vivos en el mensaje -> Actualizar con PATCH cada 1s
+        # (y si alguno expiró en este segundo, el PATCH quita su tarjeta del mensaje inmediatamente)
+        if actualizar_tiempo_real or expirados_en_mid:
             ahora_sec = int(time.time())
             if _ULTIMO_TICK_CANAL.get(mid) == ahora_sec and not expirados_en_mid:
                 continue
@@ -360,6 +316,8 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                             elif r_get.status_code == 404:
                                 for c_v, _, _ in vivos_en_mid:
                                     claves_recien_expiradas.append(c_v)
+                                for c_e, _ in expirados_en_mid:
+                                    claves_recien_expiradas.append(c_e)
                                 hubo_cambios_estado = True
                                 break
                             else:
@@ -403,6 +361,15 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                     )
                     if r_patch.status_code == 200:
                         _ULTIMO_TICK_CANAL[mid] = int(time.time())
+                        if expirados_en_mid:
+                            for clave_e, info_e in expirados_en_mid:
+                                claves_recien_expiradas.append(clave_e)
+                                _MEM_EMBEDS_POR_CLAVE.pop(clave_e, None)
+                                eliminados += 1
+                                print(
+                                    f"   🗑️ [Discord-{canal_tipo.upper()}] Tarjeta de {info_e.get('pokemon', clave_e)} retirada del panel (ya hizo despawn)."
+                                )
+                            hubo_cambios_estado = True
                         rem = r_patch.headers.get("X-RateLimit-Remaining")
                         reset_after = r_patch.headers.get("X-RateLimit-Reset-After")
                         if rem == "0" and reset_after:
@@ -413,6 +380,8 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                     elif r_patch.status_code == 404:
                         for c_v, _, _ in vivos_en_mid:
                             claves_recien_expiradas.append(c_v)
+                        for c_e, _ in expirados_en_mid:
+                            claves_recien_expiradas.append(c_e)
                         hubo_cambios_estado = True
                     elif r_patch.status_code == 429:
                         try:
