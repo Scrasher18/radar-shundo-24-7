@@ -421,6 +421,8 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
             lista_nuevos,
             lista_activos,
         )
+        if not nuevo_mid:
+            continue
         with _LOCK_ESTADO:
             notificados_actual = cargar_json(NOTIFICADOS_FILE)
             for mon in lista_activos[:MAX_EMBEDS_POR_MENSAJE]:

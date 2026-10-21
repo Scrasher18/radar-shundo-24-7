@@ -33,7 +33,7 @@ from src.state_manager import (
     sincronizar_estado_remoto_push,
 )
 
-MAX_EMBEDS_POR_MENSAJE = 8
+MAX_EMBEDS_POR_MENSAJE = 6
 
 _MEM_EMBEDS_POR_CLAVE: Dict[str, Dict[str, Any]] = {}
 _ULTIMO_TICK_CANAL: Dict[str, int] = {}

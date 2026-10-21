@@ -187,7 +187,11 @@ def sincronizar_estado_remoto_push(asincrono: bool = True) -> None:
 def ya_fue_notificado(mon: Dict[str, Any], canal_tipo: str, notificados: Dict[str, Any]) -> bool:
     """Doble filtro anti-duplicados: verifica por encounter_id y por especie + coordenadas cercanas."""
     eid = str(mon.get("encounter_id"))
-    if f"{canal_tipo}:{eid}" in notificados:
+    clave_exacta = f"{canal_tipo}:{eid}"
+    if clave_exacta in notificados:
+        reg = notificados[clave_exacta]
+        if isinstance(reg, dict) and not reg.get("discord_msg_id") and not reg.get("eliminado_de_discord"):
+            return False
         return True
     if canal_tipo == "shundo" and eid in notificados:
         return True
@@ -201,6 +205,8 @@ def ya_fue_notificado(mon: Dict[str, Any], canal_tipo: str, notificados: Dict[st
         if k.startswith("_meta_") or not isinstance(info, dict):
             continue
         if info.get("canal", "shundo") != canal_tipo:
+            continue
+        if not info.get("discord_msg_id") and not info.get("eliminado_de_discord"):
             continue
         if (ahora - int(info.get("ts", 0))) > 3600:
             continue
