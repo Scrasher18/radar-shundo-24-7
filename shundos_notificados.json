@@ -1,134 +1,4 @@
 {
-  "shundo:-6419354393274597240": {
-    "canal": "shundo",
-    "pokemon": "Joltik",
-    "coords": "48.778392,9.180347",
-    "ts": 1792557349,
-    "despawn_unix": 1792560535,
-    "discord_msg_id": "1562323504093724772",
-    "discord_msg_ids": [
-      "1562323504093724772"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:50"
-  },
-  "great:5035136714699843109": {
-    "canal": "great",
-    "pokemon": "Venipede",
-    "coords": "41.931203,-87.651885",
-    "ts": 1792557349,
-    "despawn_unix": 1792558957,
-    "discord_msg_id": "1562323505213735024",
-    "discord_msg_ids": [
-      "1562323505213735024"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:51"
-  },
-  "great:-281883646095233083": {
-    "canal": "great",
-    "pokemon": "Scraggy",
-    "coords": "1.302602,103.799941",
-    "ts": 1792557349,
-    "despawn_unix": 1792557559,
-    "discord_msg_id": "1562323506400862210",
-    "discord_msg_ids": [
-      "1562323506400862210"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:51"
-  },
-  "great:-19458403590430483": {
-    "canal": "great",
-    "pokemon": "Poliwag",
-    "coords": "46.531383,6.703909",
-    "ts": 1792557349,
-    "despawn_unix": 1792558470,
-    "discord_msg_id": "1562323507407233115",
-    "discord_msg_ids": [
-      "1562323507407233115"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:51"
-  },
-  "great:-53126811007496860": {
-    "canal": "great",
-    "pokemon": "Wooloo",
-    "coords": "40.982385,-73.680407",
-    "ts": 1792557349,
-    "despawn_unix": 1792558037,
-    "discord_msg_id": "1562323508506140683",
-    "discord_msg_ids": [
-      "1562323508506140683"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:51"
-  },
-  "great:2465244373673236184": {
-    "canal": "great",
-    "pokemon": "Grimer (Alola)",
-    "coords": "52.963155,-1.145080",
-    "ts": 1792557349,
-    "despawn_unix": 1792559442,
-    "discord_msg_id": "1562323509349195871",
-    "discord_msg_ids": [
-      "1562323509349195871"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:51"
-  },
-  "great:-8040537968105330775": {
-    "canal": "great",
-    "pokemon": "Hitmontop",
-    "coords": "52.562349,-2.018086",
-    "ts": 1792557349,
-    "despawn_unix": 1792557607,
-    "discord_msg_id": "1562323510649552948",
-    "discord_msg_ids": [
-      "1562323510649552948"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:51"
-  },
-  "great:-443857158409290748": {
-    "canal": "great",
-    "pokemon": "Meowth",
-    "coords": "52.374816,9.766879",
-    "ts": 1792557349,
-    "despawn_unix": 1792557989,
-    "discord_msg_id": "1562323511706525698",
-    "discord_msg_ids": [
-      "1562323511706525698"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:51"
-  },
-  "ultra:8079334908612877590": {
-    "canal": "ultra",
-    "pokemon": "Tympole",
-    "coords": "51.520327,-0.095009",
-    "ts": 1792557349,
-    "despawn_unix": 1792558758,
-    "discord_msg_id": "1562323512708829205",
-    "discord_msg_ids": [
-      "1562323512708829205"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:52"
-  },
-  "ultra:-8743830030499359225": {
-    "canal": "ultra",
-    "pokemon": "Mankey",
-    "coords": "-34.554640,-58.463296",
-    "ts": 1792557349,
-    "despawn_unix": 1792558497,
-    "discord_msg_id": "1562323513782702170",
-    "discord_msg_ids": [
-      "1562323513782702170"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 04:35:52"
-  },
   "shundo:434901967432046672": {
     "canal": "shundo",
     "pokemon": "Machop",
@@ -165,7 +35,7 @@
     "discord_msg_ids": [
       "1562325662193426476"
     ],
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 04:44:24"
   },
   "shundo:3579243443185287207": {
@@ -1153,7 +1023,7 @@
     "discord_msg_ids": [
       "1562335260593623112"
     ],
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 05:22:33"
   },
   "great:-5058554957876531743": {
