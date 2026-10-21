@@ -1,104 +1,4 @@
 {
-  "great:-8806106309831100357": {
-    "canal": "great",
-    "pokemon": "Gothita",
-    "coords": "29.870928,-89.872839",
-    "ts": 1792618462,
-    "despawn_unix": 1792619629,
-    "discord_msg_id": "1562579830724370548",
-    "discord_msg_ids": [
-      "1562579830724370548"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #4: Gothita ➔ Gothorita!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #4** (`99.53%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Gothorita** (`CP 1498` a Nivel `43.0`)",
-      "url": "https://www.google.com/maps?q=29.870928,-89.872839",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm575.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#4` (`99.53%`)\n**IVs PvP:** `1/13/14`\n**Salvaje:** `CP 494` | `Nivel 21.0` (M, Female)\n**Final en Liga:** `CP 1498` | `Nivel 43.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `19 min 26 seg`\n🕒 **Hora exacta:** <t:1792619629:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Meraux, Louisiana, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=29.870928,-89.872839)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n29.870928,-89.872839\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T21:34:22.885749+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 21:34:23"
-  },
-  "ultra:3085971110733117977": {
-    "canal": "ultra",
-    "pokemon": "Murkrow",
-    "coords": "51.022143,13.657258",
-    "ts": 1792618462,
-    "despawn_unix": 1792620025,
-    "discord_msg_id": "1562585488815030434",
-    "discord_msg_ids": [
-      "1562579834230546437",
-      "1562581250596802691",
-      "1562582665050202249",
-      "1562584069697699856",
-      "1562585488815030434"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Murkrow ➔ Honchkrow!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.65%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Honchkrow** (`CP 2496` a Nivel `39.0`)",
-      "url": "https://www.google.com/maps?q=51.022143,13.657258",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm430.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.65%`)\n**IVs PvP:** `0/15/11`\n**Salvaje:** `CP 105` | `Nivel 3.0` (M, Female)\n**Final en Liga:** `CP 2496` | `Nivel 39.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 36 seg`\n🕒 **Hora exacta:** <t:1792620025:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Freital, Sachsen, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.022143,13.657258)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.022143,13.657258\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T21:56:51.789467+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 21:34:24"
-  },
   "shundo:7718036044893875987": {
     "canal": "shundo",
     "pokemon": "Diglett (Alola)",
@@ -1838,7 +1738,7 @@
       },
       "timestamp": "2026-10-21T22:31:46.819968+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 22:14:55"
   },
   "great:-2049074277160242869": {
@@ -2717,7 +2617,7 @@
       },
       "timestamp": "2026-10-21T22:31:47.444121+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 22:31:47"
   },
   "ultra:3713539289818239524": {
