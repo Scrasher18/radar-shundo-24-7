@@ -10,19 +10,6 @@
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 05:33:32"
   },
-  "shundo:-8647357939252426809": {
-    "canal": "shundo",
-    "pokemon": "Charmander",
-    "coords": "52.266693,5.193287",
-    "ts": 1792560996,
-    "despawn_unix": 1792561240,
-    "discord_msg_id": "1562338800099663873",
-    "discord_msg_ids": [
-      "1562338800099663873"
-    ],
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 05:36:37"
-  },
   "shundo:-6569935073154235043": {
     "canal": "shundo",
     "pokemon": "Lickitung",
@@ -941,7 +928,7 @@
       },
       "timestamp": "2026-10-21T06:36:04.859844+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 01:34:15"
   },
   "great:7473241689569551182": {
