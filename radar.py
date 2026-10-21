@@ -224,12 +224,31 @@ def limpiar_archivos_antiguos(cache_coords, notificados):
         del notificados[k]
 
 
-def eliminar_mensajes_expirados_discord():
-    """Revisa los Shundos y PvP GL/UL enviados a Discord y elimina del canal correspondiente los que ya hicieron despawn."""
+_MEM_EMBEDS = {}
+_MEM_ULTIMO_PATCH = {}
+
+
+def actualizar_embed_con_segundos_reales(embed_base, despawn_unix, canal_tipo):
+    ahora_actual = int(time.time())
+    seg_rest = max(0, int(despawn_unix) - ahora_actual)
+    estado_tiempo, color_urgencia = construir_estado_despawn({"ttl_segundos": seg_rest, "despawn_unix": despawn_unix})
+    nuevo_embed = json.loads(json.dumps(embed_base))
+    if canal_tipo == "shundo":
+        nuevo_embed["color"] = color_urgencia
+    for field in nuevo_embed.get("fields", []):
+        if "Estado Despawn" in str(field.get("name", "")):
+            field["value"] = estado_tiempo
+            break
+    return nuevo_embed
+
+
+def eliminar_mensajes_expirados_discord(actualizar_tiempo_real=True):
+    """Revisa los Shundos y PvP GL/UL en Discord: actualiza en tiempo real los segundos restantes y elimina los que ya hicieron despawn."""
     notificados = cargar_json(NOTIFICADOS_FILE)
     ahora = int(time.time())
     eliminados = 0
-    hubo_cambios = False
+    hubo_eliminados = False
+    activos_por_canal = {"shundo": [], "great": [], "ultra": []}
 
     for clave, info in list(notificados.items()):
         if clave.startswith("_meta_") or not isinstance(info, dict):
@@ -242,8 +261,12 @@ def eliminar_mensajes_expirados_discord():
         canal_tipo = info.get("canal", "shundo")
         webhook_url = WEBHOOKS_POR_CANAL.get(canal_tipo) or DISCORD_WEBHOOK_URL
 
-        if mids and despawn_unix and not ya_borrado and webhook_url and ahora >= int(despawn_unix):
-            base_webhook = webhook_url.strip().split("?")[0].rstrip("/")
+        if not mids or not despawn_unix or ya_borrado or not webhook_url:
+            continue
+
+        base_webhook = webhook_url.strip().split("?")[0].rstrip("/")
+
+        if ahora >= int(despawn_unix):
             borrado_alguno = False
             for mid in mids:
                 try:
@@ -251,15 +274,66 @@ def eliminar_mensajes_expirados_discord():
                     r = requests.delete(del_url, timeout=8)
                     if r.status_code in (200, 204, 404):
                         borrado_alguno = True
+                    _MEM_EMBEDS.pop(mid, None)
+                    _MEM_ULTIMO_PATCH.pop(mid, None)
                 except Exception:
                     pass
             if borrado_alguno:
                 info["eliminado_de_discord"] = True
-                hubo_cambios = True
+                hubo_eliminados = True
                 eliminados += 1
                 print(f"   🗑️ [Discord-{canal_tipo.upper()}] Mensaje de {info.get('pokemon', clave)} eliminado del chat (ya hizo despawn).")
+        elif actualizar_tiempo_real:
+            activos_por_canal.setdefault(canal_tipo, []).append((clave, info, mids[-1], base_webhook, int(despawn_unix)))
 
-    if hubo_cambios:
+    # Actualizar en tiempo real el contador de segundos (X min Y seg) en los 3 canales (Shundo, GL, UL)
+    if actualizar_tiempo_real:
+        for canal_tipo, lista_activos in activos_por_canal.items():
+            for clave, info, mid, base_webhook, despawn_unix in lista_activos:
+                ahora_loop = time.time()
+                if int(ahora_loop) >= despawn_unix:
+                    continue
+                intervalo_min_patch = max(1.5, len(lista_activos) * 1.05)
+                ultimo_patch = _MEM_ULTIMO_PATCH.get(mid, 0.0)
+                if (ahora_loop - ultimo_patch) < intervalo_min_patch:
+                    continue
+
+                embed_base = _MEM_EMBEDS.get(mid) or info.get("embed_base")
+                if not embed_base:
+                    try:
+                        r_get = requests.get(f"{base_webhook}/messages/{mid}", timeout=6)
+                        if r_get.status_code == 200:
+                            embeds_remotos = r_get.json().get("embeds") or []
+                            if embeds_remotos:
+                                embed_base = embeds_remotos[0]
+                                _MEM_EMBEDS[mid] = embed_base
+                        elif r_get.status_code == 404:
+                            info["eliminado_de_discord"] = True
+                            hubo_eliminados = True
+                            continue
+                    except Exception:
+                        pass
+
+                if embed_base:
+                    _MEM_EMBEDS[mid] = embed_base
+                    nuevo_embed = actualizar_embed_con_segundos_reales(embed_base, despawn_unix, canal_tipo)
+                    try:
+                        r_patch = requests.patch(f"{base_webhook}/messages/{mid}", json={"embeds": [nuevo_embed]}, timeout=6)
+                        if r_patch.status_code == 200:
+                            _MEM_ULTIMO_PATCH[mid] = time.time()
+                        elif r_patch.status_code == 404:
+                            info["eliminado_de_discord"] = True
+                            hubo_eliminados = True
+                        elif r_patch.status_code == 429:
+                            try:
+                                retry_after = float(r_patch.json().get("retry_after", 2.0))
+                            except Exception:
+                                retry_after = 2.0
+                            _MEM_ULTIMO_PATCH[mid] = time.time() + retry_after
+                    except Exception:
+                        pass
+
+    if hubo_eliminados:
         guardar_json(NOTIFICADOS_FILE, notificados)
         sincronizar_estado_remoto_push()
     return eliminados
@@ -481,10 +555,13 @@ def enviar_lote_webhook(webhook_url, spawns_nuevos, canal_tipo, bot_username):
                 try:
                     msg_data = r.json()
                     if msg_data and "id" in msg_data:
-                        ids_mensajes[eid] = msg_data["id"]
+                        mid = msg_data["id"]
+                        ids_mensajes[eid] = mid
+                        _MEM_EMBEDS[mid] = embed
+                        _MEM_ULTIMO_PATCH[mid] = time.time()
                 except Exception:
                     pass
-                print(f"   ✅ [Discord-{canal_tipo.upper()}] Alerta enviada para {nombre} (se borrará al expirar).")
+                print(f"   ✅ [Discord-{canal_tipo.upper()}] Alerta enviada para {nombre} (reloj en tiempo real y borrado automático activos).")
             else:
                 print(f"   ⚠️ [Discord-{canal_tipo.upper()}] Error HTTP {r.status_code}: {r.text[:150]}")
         except Exception as e:
@@ -905,14 +982,14 @@ def ejecutar_ciclo_radar(mostrar_cabecera=True):
 
 
 def esperar_con_limpieza_despawn(segundos_totales):
-    """Durante la espera entre escaneos, verifica cada 5s si algún Shundo o PvP GL/UL ya expiró para borrarlo de su canal de Discord."""
+    """Durante la espera entre escaneos, actualiza cada ~1.5s los segundos restantes en tiempo real en Discord (Shundo, GL, UL) y elimina los que ya expiraron."""
     fin = time.time() + segundos_totales
     while time.time() < fin:
-        eliminar_mensajes_expirados_discord()
+        eliminar_mensajes_expirados_discord(actualizar_tiempo_real=True)
         restante = fin - time.time()
         if restante <= 0:
             break
-        time.sleep(min(5.0, restante))
+        time.sleep(min(1.5, restante))
 
 
 def iniciar_radar():
