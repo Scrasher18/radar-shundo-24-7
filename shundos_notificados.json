@@ -1,104 +1,4 @@
 {
-  "great:6960759807518126560": {
-    "canal": "great",
-    "pokemon": "Stunfisk",
-    "coords": "40.421622,-3.711979",
-    "ts": 1792619136,
-    "despawn_unix": 1792620522,
-    "discord_msg_id": "1562586884851503107",
-    "discord_msg_ids": [
-      "1562582659798929414",
-      "1562584067395027067",
-      "1562585484000235526",
-      "1562586884851503107"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #2: Stunfisk!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.98%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n⚔️ **En Liga:** **Stunfisk** alcanza `CP 1499` en Nivel `27.0`",
-      "url": "https://www.google.com/maps?q=40.421622,-3.711979",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm618.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.98%`)\n**IVs PvP:** `0/13/14`\n**Salvaje:** `CP 611` | `Nivel 11.0` (M, Female)\n**Final en Liga:** `CP 1499` | `Nivel 27.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 18 seg`\n🕒 **Hora exacta:** <t:1792620522:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Universidad, Madrid, Spain • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.421622,-3.711979)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n40.421622,-3.711979\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T22:02:24.662113+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 21:45:37"
-  },
-  "ultra:-2760965077254935304": {
-    "canal": "ultra",
-    "pokemon": "Treecko",
-    "coords": "51.120745,6.391317",
-    "ts": 1792619136,
-    "despawn_unix": 1792619702,
-    "discord_msg_id": "1562584069697699856",
-    "discord_msg_ids": [
-      "1562582665050202249",
-      "1562584069697699856"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Treecko ➔ Sceptile!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.91%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Sceptile** (`CP 2500` a Nivel `38.5`)",
-      "url": "https://www.google.com/maps?q=51.120745,6.391317",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm254.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.91%`)\n**IVs PvP:** `0/11/15`\n**Salvaje:** `CP 421` | `Nivel 16.0` (M, Male)\n**Final en Liga:** `CP 2500` | `Nivel 38.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 50 seg`\n🕒 **Hora exacta:** <t:1792619702:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Mönchengladbach, Nordrhein-Westfalen, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.120745,6.391317)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.120745,6.391317\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T21:51:13.522535+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 21:45:38"
-  },
   "great:8044366340770101128": {
     "canal": "great",
     "pokemon": "Tynamo",
@@ -2424,7 +2324,7 @@
       },
       "timestamp": "2026-10-21T22:44:09.100906+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 22:37:29"
   },
   "great:6342148996796778255": {
