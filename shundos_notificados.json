@@ -1,103 +1,4 @@
 {
-  "shundo:1691232343977815956": {
-    "canal": "shundo",
-    "pokemon": "Pansear",
-    "coords": "51.102949,4.340592",
-    "ts": 1792596599,
-    "despawn_unix": 1792597751,
-    "discord_msg_id": "1562492557848748108",
-    "discord_msg_ids": [
-      "1562488131071115334",
-      "1562492557848748108"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Pansear! (CP 100 • Nivel 4.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=51.102949,4.340592",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm513.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `100` | **Nivel:** `4.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `1 min 35 seg`\n🕒 **Hora exacta:** <t:1792597751:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Niel, Antwerp, Belgium • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.102949,4.340592)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.102949,4.340592\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T15:47:35.281407+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 15:30:00"
-  },
-  "great:-1255091364042785421": {
-    "canal": "great",
-    "pokemon": "Nidoran_male",
-    "coords": "22.937015,120.230437",
-    "ts": 1792596599,
-    "despawn_unix": 1792597121,
-    "discord_msg_id": "1562488155091894388",
-    "discord_msg_ids": [
-      "1562488138050572398",
-      "1562488151237464070",
-      "1562488155091894388"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Nidoran_male ➔ Nidorino!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL** • ☁️ **CLIMA BOOSTEADO**\n🔄 **Para Liga:** Evolucionar a **Nidorino** (`CP 1493` a Nivel `49.5`)",
-      "url": "https://www.google.com/maps?q=22.937015,120.230437",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm33.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `8/15/15`\n**Salvaje:** `CP 602` | `Nivel 26.0` (M, Male)\n**Final en Liga:** `CP 1493` | `Nivel 49.5`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `8 min 41 seg`\n🕒 **Hora exacta:** <t:1792597121:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Tainan, Tainan City, Taiwan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=22.937015,120.230437)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n22.937015,120.230437\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T15:30:00.609829+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 15:30:01"
-  },
   "shundo:-4508097579157764649": {
     "canal": "shundo",
     "pokemon": "Seedot",
@@ -1299,7 +1200,7 @@
       },
       "timestamp": "2026-10-21T16:23:06.443772+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 16:00:25"
   },
   "great:2275231858792635870": {
