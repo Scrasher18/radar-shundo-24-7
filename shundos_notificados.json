@@ -1406,10 +1406,11 @@
     "coords": "46.491176,-80.988193",
     "ts": 1792573458,
     "despawn_unix": 1792574702,
-    "discord_msg_id": "1562391076139180039",
+    "discord_msg_id": "1562395400093044771",
     "discord_msg_ids": [
       "1562391072137805870",
-      "1562391076139180039"
+      "1562391076139180039",
+      "1562395400093044771"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Oshawott ➔ Samurott!",
@@ -1427,7 +1428,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `20 min 43 seg`\n🕒 **Hora exacta:** <t:1792574702:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 32 seg`\n🕒 **Hora exacta:** <t:1792574702:T>",
           "inline": true
         },
         {
@@ -1444,7 +1445,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-21T09:04:19.296743+00:00"
+      "timestamp": "2026-10-21T09:21:30.458132+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 09:04:19"
@@ -1455,10 +1456,11 @@
     "coords": "34.021610,-118.265065",
     "ts": 1792573458,
     "despawn_unix": 1792576433,
-    "discord_msg_id": "1562391076139180039",
+    "discord_msg_id": "1562395400093044771",
     "discord_msg_ids": [
       "1562391072137805870",
-      "1562391076139180039"
+      "1562391076139180039",
+      "1562395400093044771"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Skwovet ➔ Greedent!",
@@ -1789,7 +1791,7 @@
       },
       "timestamp": "2026-10-21T09:21:30.094594+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 09:12:55"
   },
   "great:-5174426161674531882": {
@@ -2076,6 +2078,102 @@
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
       "timestamp": "2026-10-21T09:21:30.094649+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 09:21:30"
+  },
+  "ultra:8871793341192383122": {
+    "canal": "ultra",
+    "pokemon": "Shellos (East Sea)",
+    "coords": "34.980670,137.161309",
+    "ts": 1792574489,
+    "despawn_unix": 1792574738,
+    "discord_msg_id": "1562395400093044771",
+    "discord_msg_ids": [
+      "1562395400093044771"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Shellos (East Sea) ➔ Gastrodon!",
+      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Gastrodon** (`CP 2499` a Nivel `50.0`)",
+      "url": "https://www.google.com/maps?q=34.980670,137.161309",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm423.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `6/15/15`\n**Salvaje:** `CP 479` | `Nivel 16.0` (M, Female)\n**Final en Liga:** `CP 2499` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 08 seg`\n🕒 **Hora exacta:** <t:1792574738:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Okazaki, Aichi, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=34.980670,137.161309)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n34.980670,137.161309\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T09:21:30.458104+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 09:21:30"
+  },
+  "ultra:7281276999289913511": {
+    "canal": "ultra",
+    "pokemon": "Oddish",
+    "coords": "-23.328247,-51.155253",
+    "ts": 1792574489,
+    "despawn_unix": 1792575206,
+    "discord_msg_id": "1562395400093044771",
+    "discord_msg_ids": [
+      "1562395400093044771"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #5: Oddish ➔ Bellossom!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #5** (`99.52%` PvP) • 🍬 **REQUIERE CARAMELOS XL** • ☁️ **CLIMA BOOSTEADO**\n🔄 **Para Liga:** Evolucionar a **Bellossom** (`CP 2495` a Nivel `49.5`)",
+      "url": "https://www.google.com/maps?q=-23.328247,-51.155253",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm182.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#5` (`99.52%`)\n**IVs PvP:** `11/13/15`\n**Salvaje:** `CP 1050` | `Nivel 32.0` (M, Male)\n**Final en Liga:** `CP 2495` | `Nivel 49.5`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 56 seg`\n🕒 **Hora exacta:** <t:1792575206:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Londrina, Paraná, Brazil • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-23.328247,-51.155253)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n-23.328247,-51.155253\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T09:21:30.458155+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 09:21:30"
