@@ -58,6 +58,8 @@ MODO_VIGILANTE_CONTINUO: bool = True
 INTERVALO_SEGUNDOS: int = 480              # Escaneo de nuevos spawns cada 8 minutos (480s)
 MIN_SEGUNDOS_VIDA: int = 90                # Ignorar spawns con menos de 90s restantes
 PVP_TOP_RANK_MAX: int = 5                  # Filtrar Rank #1 al #5 en Great League y Ultra League
+PVP_MIN_CP_GL: int = 1400                  # CP mínimo competitivo en Great League (tope 1500 CP)
+PVP_MIN_CP_UL: int = 2350                  # CP mínimo competitivo en Ultra League (tope 2500 CP)
 TTL_LIMPIEZA_CACHE_SEGUNDOS: int = 7200    # Limpiar registros ya expirados después de 2 horas
 MAX_REVEALS_POR_EJECUCION: int = 65
 
@@ -89,11 +91,11 @@ PARTICIONES_SHUNDOS: List[Dict[str, Any]] = [
 ]
 
 PARTICIONES_PVP_GL: List[Dict[str, Any]] = [
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "DSP"},
-    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "CP"},
+    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_min_cp": PVP_MIN_CP_GL, "pvp_include_pre_evolutions": True, "sort": "DSP"},
+    {"pvp_mode": True, "pvp_league": "great", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_min_cp": PVP_MIN_CP_GL, "pvp_include_pre_evolutions": True, "sort": "CP"},
 ]
 
 PARTICIONES_PVP_UL: List[Dict[str, Any]] = [
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "DSP"},
-    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_include_pre_evolutions": True, "sort": "CP"},
+    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_min_cp": PVP_MIN_CP_UL, "pvp_include_pre_evolutions": True, "sort": "DSP"},
+    {"pvp_mode": True, "pvp_league": "ultra", "pvp_top_rank": PVP_TOP_RANK_MAX, "pvp_min_cp": PVP_MIN_CP_UL, "pvp_include_pre_evolutions": True, "sort": "CP"},
 ]

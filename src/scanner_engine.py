@@ -30,6 +30,8 @@ from src.config import (
     PARTICIONES_PVP_GL,
     PARTICIONES_PVP_UL,
     PARTICIONES_SHUNDOS,
+    PVP_MIN_CP_GL,
+    PVP_MIN_CP_UL,
     PVP_TOP_RANK_MAX,
     REGIONES_GLOBALES,
 )
@@ -105,41 +107,61 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
 
     time.sleep(1.0)
 
-    # Oleada 2: PvP Great League (Rank #1 al #5 Shiny)
+    # Oleada 2: PvP Great League (Rank #1 al #5 Shiny, CP mínimo competitivo >= 1400)
     with ThreadPoolExecutor(max_workers=2) as executor:
         fut_gl = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_GL]
         fut_mapa_gl = [executor.submit(ejecutar_region_mapa, r, "great") for r in REGIONES_GLOBALES]
         for fut in as_completed(fut_gl):
             for mon in fut.result():
                 pvp = mon.get("pvp") or {}
-                if mon.get("shiny") and pvp.get("league") == "great" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
+                if (
+                    mon.get("shiny")
+                    and pvp.get("league") == "great"
+                    and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
+                    and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
+                ):
                     eid = str(mon.get("encounter_id"))
                     gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
         for fut in as_completed(fut_mapa_gl):
             _, items = fut.result()
             for mon in items:
                 pvp = mon.get("pvp") or {}
-                if mon.get("shiny") and pvp.get("league") == "great" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
+                if (
+                    mon.get("shiny")
+                    and pvp.get("league") == "great"
+                    and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
+                    and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
+                ):
                     eid = str(mon.get("encounter_id"))
                     gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
 
     time.sleep(1.0)
 
-    # Oleada 3: PvP Ultra League (Rank #1 al #5 Shiny)
+    # Oleada 3: PvP Ultra League (Rank #1 al #5 Shiny, CP mínimo competitivo >= 2350)
     with ThreadPoolExecutor(max_workers=2) as executor:
         fut_ul = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_UL]
         fut_mapa_ul = [executor.submit(ejecutar_region_mapa, r, "ultra") for r in REGIONES_GLOBALES]
         for fut in as_completed(fut_ul):
             for mon in fut.result():
                 pvp = mon.get("pvp") or {}
-                if mon.get("shiny") and pvp.get("league") == "ultra" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
+                if (
+                    mon.get("shiny")
+                    and pvp.get("league") == "ultra"
+                    and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
+                    and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
+                ):
                     eid = str(mon.get("encounter_id"))
                     ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
         for fut in as_completed(fut_mapa_ul):
             _, items = fut.result()
             for mon in items:
                 pvp = mon.get("pvp") or {}
-                if mon.get("shiny") and pvp.get("league") == "ultra" and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX:
+                if (
+                    mon.get("shiny")
+                    and pvp.get("league") == "ultra"
+                    and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
+                    and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
+                ):
                     eid = str(mon.get("encounter_id"))
                     ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
 

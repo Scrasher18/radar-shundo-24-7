@@ -115,6 +115,13 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
     color_liga = 0x3B82F6 if es_gl else 0xA855F7
     medalla_rank = "🥇 **RANK #1 (100% STAT PRODUCT)**" if rank == 1 else f"🏆 **RANK #{rank}** (`{pvp_pct:.2f}%` PvP)"
 
+    try:
+        requiere_xl = float(pvp_lvl) > 40.0
+    except Exception:
+        requiere_xl = False
+    etiqueta_xl = "🍬 **REQUIERE CARAMELOS XL**" if requiere_xl else "✅ **SIN CARAMELOS XL (≤ Nivel 40)**"
+    coste_xl_corto = "🍬 Sí (> Nivel 40)" if requiere_xl else "✅ No (≤ Nivel 40)"
+
     evolucion_txt = (
         f"🔄 **Para Liga:** Evolucionar a **{pvp_poke_name}** (`CP {pvp_cp}` a Nivel `{pvp_lvl}`)"
         if int(pvp_poke_id) != int(poke_id)
@@ -123,7 +130,7 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
 
     icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{pvp_poke_id}.s.icon.png"
     estado_tiempo, _ = construir_estado_despawn(mon)
-    rareza_txt = obtener_etiquetas_rareza(mon, f"✨ **SHINY GARANTIZADO** • {medalla_rank}")
+    rareza_txt = obtener_etiquetas_rareza(mon, f"✨ **SHINY GARANTIZADO** • {medalla_rank} • {etiqueta_xl}")
 
     titulo_especie = f"{nombre_salvaje} ➔ {pvp_poke_name}" if int(pvp_poke_id) != int(poke_id) else nombre_salvaje
 
@@ -140,7 +147,8 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
                     f"**Rank PvP:** `#{rank}` (`{pvp_pct:.2f}%`)\n"
                     f"**IVs PvP:** `{raw_iv}`\n"
                     f"**Salvaje:** `CP {cp_salvaje}` | `Nivel {nivel_salvaje}` ({size}, {gender})\n"
-                    f"**Final en Liga:** `CP {pvp_cp}` | `Nivel {pvp_lvl}`"
+                    f"**Final en Liga:** `CP {pvp_cp}` | `Nivel {pvp_lvl}`\n"
+                    f"**Caramelos XL:** `{coste_xl_corto}`"
                 ),
                 "inline": True,
             },

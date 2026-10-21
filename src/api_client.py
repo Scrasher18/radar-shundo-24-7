@@ -14,6 +14,8 @@ from src.config import (
     LNG_ORIGEN,
     MAX_REVEALS_POR_EJECUCION,
     MIN_SEGUNDOS_VIDA,
+    PVP_MIN_CP_GL,
+    PVP_MIN_CP_UL,
     PVP_TOP_RANK_MAX,
 )
 from src.models import calcular_distancia_km, calcular_tiempo_restante
@@ -125,7 +127,7 @@ def ejecutar_region_mapa(
             "pvp_league": modo if es_pvp else "great",
             "pvp_top_rank": PVP_TOP_RANK_MAX if es_pvp else None,
             "pvp_include_pre_evolutions": True,
-            "pvp_min_cp": None,
+            "pvp_min_cp": PVP_MIN_CP_GL if modo == "great" else (PVP_MIN_CP_UL if modo == "ultra" else None),
             "shiny_only": True,
             "shiny_account": None,
             "background_only": False,
