@@ -1,101 +1,4 @@
 {
-  "ultra:-3941104602361601070": {
-    "canal": "ultra",
-    "pokemon": "Dwebble",
-    "coords": "39.806023,-75.021141",
-    "ts": 1792608827,
-    "despawn_unix": 1792609575,
-    "discord_msg_id": "1562540886343032928",
-    "discord_msg_ids": [
-      "1562539459646464128",
-      "1562540886343032928"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Dwebble ➔ Crustle!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Crustle** (`CP 2499` a Nivel `45.0`)",
-      "url": "https://www.google.com/maps?q=39.806023,-75.021141",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm558.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/14/15`\n**Salvaje:** `CP 371` | `Nivel 12.0` (M, Male)\n**Final en Liga:** `CP 2499` | `Nivel 45.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 38 seg`\n🕒 **Hora exacta:** <t:1792609575:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Stratford, New Jersey, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=39.806023,-75.021141)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n39.806023,-75.021141\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T18:59:37.835498+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 18:53:57"
-  },
-  "ultra:-8290447439815326965": {
-    "canal": "ultra",
-    "pokemon": "Starly",
-    "coords": "-37.848338,144.868755",
-    "ts": 1792608827,
-    "despawn_unix": 1792610251,
-    "discord_msg_id": "1562539459646464128",
-    "discord_msg_ids": [
-      "1562539459646464128"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #4: Starly ➔ Staraptor!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #4** (`99.91%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Staraptor** (`CP 2497` a Nivel `36.0`)",
-      "url": "https://www.google.com/maps?q=-37.848338,144.868755",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm398.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#4` (`99.91%`)\n**IVs PvP:** `0/15/14`\n**Salvaje:** `CP 445` | `Nivel 25.0` (M, Female)\n**Final en Liga:** `CP 2497` | `Nivel 36.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `23 min 43 seg`\n🕒 **Hora exacta:** <t:1792610251:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Oceanía (Australia y Nueva Zelanda) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-37.848338,144.868755)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n-37.848338,144.868755\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T18:53:57.683522+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 18:53:57"
-  },
   "shundo:-2938566599192146728": {
     "canal": "shundo",
     "pokemon": "Growlithe (Hisuian)",
@@ -2281,7 +2184,7 @@
       },
       "timestamp": "2026-10-21T19:50:51.897298+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 19:33:51"
   },
   "shundo:-6989380227355743635": {
