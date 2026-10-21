@@ -2226,7 +2226,7 @@
       },
       "timestamp": "2026-10-21T20:13:59.244314+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 20:08:20"
   },
   "shundo:-6022626514411451524": {
@@ -2813,5 +2813,53 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 20:19:34"
+  },
+  "shundo:1469947857145727146": {
+    "canal": "shundo",
+    "pokemon": "Pidove",
+    "coords": "50.034716,14.522879",
+    "ts": 1792614305,
+    "despawn_unix": 1792615271,
+    "discord_msg_id": "1562562392917807209",
+    "discord_msg_ids": [
+      "1562562392917807209"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Pidove! (CP 88 • Nivel 4.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=50.034716,14.522879",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm519.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `88` | **Nivel:** `4.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `16 min 06 seg`\n🕒 **Hora exacta:** <t:1792615271:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Háje, Prague, Czech Republic • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.034716,14.522879)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n50.034716,14.522879\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-21T20:25:05.352068+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 20:25:05"
   }
 }
