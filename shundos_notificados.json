@@ -1,103 +1,4 @@
 {
-  "great:-499935559470481072": {
-    "canal": "great",
-    "pokemon": "Grimer",
-    "coords": "38.728779,-9.13874",
-    "ts": 1792610560,
-    "despawn_unix": 1792611541,
-    "discord_msg_id": "1562549495747838014",
-    "discord_msg_ids": [
-      "1562546689137446993",
-      "1562548041855148198",
-      "1562549495747838014"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Grimer!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.63%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Grimer** alcanza `CP 1494` en Nivel `50.0`",
-      "url": "https://www.google.com/maps?q=38.728779,-9.13874",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm88.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.63%`)\n**IVs PvP:** `10/14/15`\n**Salvaje:** `CP 868` | `Nivel 23.0` (M, Male)\n**Final en Liga:** `CP 1494` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `5 min 11 seg`\n🕒 **Hora exacta:** <t:1792611541:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "São Jorge de Arroios, Lisboa, Portugal • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.728779,-9.13874)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n38.728779,-9.13874\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T19:33:50.327378+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 19:22:41"
-  },
-  "ultra:2253917072228650753": {
-    "canal": "ultra",
-    "pokemon": "Turtwig",
-    "coords": "51.368115,5.318568",
-    "ts": 1792610560,
-    "despawn_unix": 1792611175,
-    "discord_msg_id": "1562548045311254546",
-    "discord_msg_ids": [
-      "1562546692593684591",
-      "1562548045311254546"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Turtwig ➔ Torterra!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Torterra** (`CP 2497` a Nivel `34.0`)",
-      "url": "https://www.google.com/maps?q=51.368115,5.318568",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm389.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 78` | `Nivel 3.0` (M, Male)\n**Final en Liga:** `CP 2497` | `Nivel 34.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 52 seg`\n🕒 **Hora exacta:** <t:1792611175:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Eersel, Noord-Brabant, Netherlands • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.368115,5.318568)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.368115,5.318568\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T19:28:04.631182+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 19:22:42"
-  },
   "shundo:-8333243868063393665": {
     "canal": "shundo",
     "pokemon": "Skwovet",
@@ -2474,7 +2375,7 @@
       },
       "timestamp": "2026-10-21T20:19:33.100535+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 20:08:21"
   },
   "great:5849319874585216917": {
