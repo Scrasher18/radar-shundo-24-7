@@ -1,54 +1,4 @@
 {
-  "great:3080912483613058080": {
-    "canal": "great",
-    "pokemon": "Komala",
-    "coords": "35.189621,129.054953",
-    "ts": 1792587898,
-    "despawn_unix": 1792588965,
-    "discord_msg_id": "1562456081861578839",
-    "discord_msg_ids": [
-      "1562451637920862337",
-      "1562453851540291682",
-      "1562456081861578839"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Komala!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.57%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n⚔️ **En Liga:** **Komala** alcanza `CP 1500` en Nivel `22.0`",
-      "url": "https://www.google.com/maps?q=35.189621,129.054953",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm775.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.57%`)\n**IVs PvP:** `0/11/15`\n**Salvaje:** `CP 887` | `Nivel 13.0` (M, Male)\n**Final en Liga:** `CP 1500` | `Nivel 22.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `8 min 58 seg`\n🕒 **Hora exacta:** <t:1792588965:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Busan, South Korea • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.189621,129.054953)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n35.189621,129.054953\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T13:13:47.123035+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 13:04:59"
-  },
   "shundo:-2743643649698728725": {
     "canal": "shundo",
     "pokemon": "Mareep",
@@ -1406,7 +1356,7 @@
       },
       "timestamp": "2026-10-21T13:58:42.628996+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 13:41:19"
   },
   "great:-1737733049015324052": {
