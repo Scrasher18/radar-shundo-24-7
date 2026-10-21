@@ -45,6 +45,7 @@ _SESIONES_CANAL: Dict[str, requests.Session] = {
     "shundo": requests.Session(),
     "great": requests.Session(),
     "ultra": requests.Session(),
+    "evento": requests.Session(),
 }
 
 
@@ -91,6 +92,11 @@ def enviar_alerta_token_vencido() -> None:
 
 def construir_embed_seguro(mon: Dict[str, Any], canal_tipo: str) -> Dict[str, Any]:
     if canal_tipo == "shundo":
+        return construir_embed_shundo(mon)
+    if canal_tipo == "evento":
+        pvp = mon.get("pvp") or {}
+        if pvp.get("league") in ("great", "ultra"):
+            return construir_embed_pvp(mon, str(pvp.get("league")))
         return construir_embed_shundo(mon)
     return construir_embed_pvp(mon, canal_tipo)
 
@@ -267,6 +273,8 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                 contenido_limpio = f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre_dest})** detectado!"
             elif canal_tipo == "great":
                 contenido_limpio = f"⚔️ {mencion}¡Nuevo **SHINY GREAT LEAGUE ({nombre_dest})** detectado!"
+            elif canal_tipo == "evento":
+                contenido_limpio = f"🎉 {mencion}¡Nuevo **SHINY DE EVENTO / CD ({nombre_dest})** detectado!"
             else:
                 contenido_limpio = f"⚔️ {mencion}¡Nuevo **SHINY ULTRA LEAGUE ({nombre_dest})** detectado!"
             payload_unificado = {
@@ -377,6 +385,9 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                 elif canal_tipo == "great":
                     contenido_patch = f"⚔️ {mencion}¡Nuevo **SHINY GREAT LEAGUE ({nombre_dest})** detectado!"
                     footer_limpio = "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+                elif canal_tipo == "evento":
+                    contenido_patch = f"🎉 {mencion}¡Nuevo **SHINY DE EVENTO / CD ({nombre_dest})** detectado!"
+                    footer_limpio = "Radar Eventos & CD Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
                 else:
                     contenido_patch = f"⚔️ {mencion}¡Nuevo **SHINY ULTRA LEAGUE ({nombre_dest})** detectado!"
                     footer_limpio = "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
@@ -438,12 +449,12 @@ def _worker_reloj_canal(canal_tipo: str) -> None:
 
 
 def iniciar_hilos_reloj_tiempo_real() -> None:
-    """Inicia los 3 hilos daemon independientes (Shundo, GL, UL) para actualizar los relojes cada 1 segundo."""
+    """Inicia los 4 hilos daemon independientes (Shundo, GL, UL, Evento) para actualizar los relojes cada 1 segundo."""
     global _HILOS_RELOJ_INICIADOS
     with _LOCK_HILOS:
         if _HILOS_RELOJ_INICIADOS:
             return
-        for canal in ("shundo", "great", "ultra"):
+        for canal in ("shundo", "great", "ultra", "evento"):
             t = threading.Thread(
                 target=_worker_reloj_canal,
                 args=(canal,),
@@ -455,8 +466,8 @@ def iniciar_hilos_reloj_tiempo_real() -> None:
 
 
 def eliminar_mensajes_expirados_discord(actualizar_tiempo_real: bool = True) -> int:
-    """Procesa de inmediato los 3 canales (Shundos, GL, UL)."""
+    """Procesa de inmediato los 4 canales (Shundos, GL, UL, Evento)."""
     total = 0
-    for canal in ("shundo", "great", "ultra"):
+    for canal in ("shundo", "great", "ultra", "evento"):
         total += procesar_canal_discord(canal, actualizar_tiempo_real=actualizar_tiempo_real)
     return total

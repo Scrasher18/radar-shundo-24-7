@@ -12,6 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_LOCAL_FILE = os.path.join(BASE_DIR, "config_local.json")
 CACHE_FILE = os.path.join(BASE_DIR, "cache_coordenadas.json")
 NOTIFICADOS_FILE = os.path.join(BASE_DIR, "shundos_notificados.json")
+EVENTO_CONFIG_FILE = os.path.join(BASE_DIR, "evento_config.json")
 
 
 def cargar_config_local() -> Dict[str, Any]:
@@ -32,6 +33,9 @@ JWT_TOKEN: str = os.environ.get("JWT_TOKEN") or _cfg.get("JWT_TOKEN", "")
 DISCORD_WEBHOOK_URL: str = os.environ.get("DISCORD_WEBHOOK_URL") or _cfg.get("DISCORD_WEBHOOK_URL", "")
 DISCORD_WEBHOOK_GL: str = os.environ.get("DISCORD_WEBHOOK_GL") or _cfg.get("DISCORD_WEBHOOK_GL", "")
 DISCORD_WEBHOOK_UL: str = os.environ.get("DISCORD_WEBHOOK_UL") or _cfg.get("DISCORD_WEBHOOK_UL", "")
+DISCORD_WEBHOOK_EVENTO: str = os.environ.get("DISCORD_WEBHOOK_EVENTO") or _cfg.get("DISCORD_WEBHOOK_EVENTO", "")
+DISCORD_EVENTO_CHANNEL_ID: str = os.environ.get("DISCORD_EVENTO_CHANNEL_ID") or _cfg.get("DISCORD_EVENTO_CHANNEL_ID", "1562344305606262846")
+DISCORD_BOT_TOKEN: str = os.environ.get("DISCORD_BOT_TOKEN") or _cfg.get("DISCORD_BOT_TOKEN", "")
 DISCORD_USER_ID_MENCION: str = os.environ.get("DISCORD_USER_ID_MENCION") or _cfg.get("DISCORD_USER_ID_MENCION", "924392800534011935")
 
 ES_MODO_NUBE: bool = os.environ.get("CLOUD_MODE") == "1" or sys.platform != "win32"
@@ -41,12 +45,14 @@ WEBHOOKS_POR_CANAL: Dict[str, str] = {
     "shundo": DISCORD_WEBHOOK_URL,
     "great": DISCORD_WEBHOOK_GL,
     "ultra": DISCORD_WEBHOOK_UL,
+    "evento": DISCORD_WEBHOOK_EVENTO,
 }
 
 BOT_NOMBRES_POR_CANAL: Dict[str, str] = {
     "shundo": "Radar Shundo Pro ✨",
     "great": "Radar PvP Great League 🔵✨",
     "ultra": "Radar PvP Ultra League 🟣✨",
+    "evento": "Radar Eventos & CD 🎉✨",
 }
 
 # Coordenadas base de referencia

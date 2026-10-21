@@ -154,7 +154,7 @@ def _worker_git_push() -> None:
 
         subprocess.run(["git", "reset", "--mixed", "origin/main"], cwd=BASE_DIR, timeout=10, capture_output=True)
         subprocess.run(
-            ["git", "add", "shundos_notificados.json", "cache_coordenadas.json"],
+            ["git", "add", "shundos_notificados.json", "cache_coordenadas.json", "evento_config.json"],
             cwd=BASE_DIR,
             timeout=10,
             capture_output=True,

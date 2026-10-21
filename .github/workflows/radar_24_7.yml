@@ -32,12 +32,15 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests
 
-      - name: Ejecutar Radar Shundo + PvP GL/UL en bucle (escaneo cada 8 minutos)
+      - name: Ejecutar Radar Shundo + PvP GL/UL + Eventos en bucle (escaneo cada 8 minutos)
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DISCORD_WEBHOOK_GL: ${{ secrets.DISCORD_WEBHOOK_GL }}
           DISCORD_WEBHOOK_UL: ${{ secrets.DISCORD_WEBHOOK_UL }}
+          DISCORD_WEBHOOK_EVENTO: ${{ secrets.DISCORD_WEBHOOK_EVENTO }}
+          DISCORD_EVENTO_CHANNEL_ID: ${{ secrets.DISCORD_EVENTO_CHANNEL_ID }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_USER_ID_MENCION: "924392800534011935"
           CLOUD_MODE: "1"
         run: |
@@ -50,7 +53,7 @@ jobs:
         run: |
           git fetch origin main || true
           git reset --mixed origin/main || true
-          git add shundos_notificados.json cache_coordenadas.json || true
+          git add shundos_notificados.json cache_coordenadas.json evento_config.json || true
           git diff --staged --quiet || (git commit -m "chore: actualizar cache shundos y pvp [skip ci]" && git push origin main) || true
 
       - name: Auto-encadenar siguiente ciclo 24/7

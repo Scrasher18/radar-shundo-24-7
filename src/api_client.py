@@ -96,7 +96,8 @@ def ejecutar_particion_search(particion: Dict[str, Any]) -> List[Dict[str, Any]]
 
 def ejecutar_region_mapa(
     region_tuple: Tuple[str, float, float, float, float],
-    modo: str = "shundo"
+    modo: str = "shundo",
+    pokemon_ids: Optional[List[int]] = None,
 ) -> Tuple[str, List[Dict[str, Any]]]:
     """Consulta una región geográfica en /map/lookup para Shundos 100%, Great League o Ultra League."""
     nombre_region, n_lat, w_lng, s_lat, e_lng = region_tuple
@@ -109,7 +110,7 @@ def ejecutar_region_mapa(
         "e_lng": e_lng,
         "num_results": 100,
         "filters": {
-            "pokemon_ids": [],
+            "pokemon_ids": pokemon_ids or [],
             "species_forms": [],
             "blacklist_pokemon_ids": [],
             "blacklist_species_forms": [],
