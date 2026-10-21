@@ -7296,5 +7296,44 @@
     ],
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-21 00:41:53"
+  },
+  "great:2009286963081748718": {
+    "canal": "great",
+    "pokemon": "Scorbunny",
+    "coords": "44.859899,-0.661425",
+    "ts": 1792543358,
+    "despawn_unix": 1792544877,
+    "discord_msg_id": "1562264821708226644",
+    "discord_msg_ids": [
+      "1562264821708226644"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 00:42:39"
+  },
+  "great:-8299178219560123465": {
+    "canal": "great",
+    "pokemon": "Nickit",
+    "coords": "49.859921,8.566429",
+    "ts": 1792543358,
+    "despawn_unix": 1792544055,
+    "discord_msg_id": "1562264823457128559",
+    "discord_msg_ids": [
+      "1562264823457128559"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 00:42:39"
+  },
+  "ultra:2009286963081748718": {
+    "canal": "ultra",
+    "pokemon": "Scorbunny",
+    "coords": "44.859899,-0.661425",
+    "ts": 1792543358,
+    "despawn_unix": 1792544877,
+    "discord_msg_id": "1562264824078139435",
+    "discord_msg_ids": [
+      "1562264824078139435"
+    ],
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-21 00:42:39"
   }
 }
