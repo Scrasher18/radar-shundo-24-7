@@ -1,103 +1,4 @@
 {
-  "great:7360261549712539819": {
-    "canal": "great",
-    "pokemon": "Murkrow",
-    "coords": "28.026604,-80.717850",
-    "ts": 1792658457,
-    "despawn_unix": 1792659876,
-    "discord_msg_id": "1562750312467538008",
-    "discord_msg_ids": [
-      "1562747582231355411",
-      "1562748963080380492",
-      "1562750312467538008"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #2: Murkrow!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.95%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Murkrow** alcanza `CP 1498` en Nivel `43.0`",
-      "url": "https://www.google.com/maps?q=28.026604,-80.717850",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm198.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.95%`)\n**IVs PvP:** `1/15/14`\n**Salvaje:** `CP 453` | `Nivel 11.0` (M, Female)\n**Final en Liga:** `CP 1498` | `Nivel 43.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `12 min 48 seg`\n🕒 **Hora exacta:** <t:1792659876:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "West Melbourne, Florida, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=28.026604,-80.717850)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n28.026604,-80.717850\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T08:51:48.719274+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 08:40:58"
-  },
-  "ultra:1377141285951863246": {
-    "canal": "ultra",
-    "pokemon": "Mienfoo",
-    "coords": "35.013981,137.127999",
-    "ts": 1792658457,
-    "despawn_unix": 1792658913,
-    "discord_msg_id": "1562748968922779705",
-    "discord_msg_ids": [
-      "1562747587587473495",
-      "1562748968922779705"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Mienfoo ➔ Mienshao!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Mienshao** (`CP 2498` a Nivel `38.5`)",
-      "url": "https://www.google.com/maps?q=35.013981,137.127999",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm620.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/14/15`\n**Salvaje:** `CP 56` | `Nivel 2.0` (M, Male)\n**Final en Liga:** `CP 2498` | `Nivel 38.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `2 min 06 seg`\n🕒 **Hora exacta:** <t:1792658913:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Toyota, Aichi, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.013981,137.127999)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n35.013981,137.127999\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T08:46:28.509504+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 08:40:59"
-  },
   "great:510984511270646429": {
     "canal": "great",
     "pokemon": "Eevee",
@@ -1085,7 +986,7 @@
       },
       "timestamp": "2026-10-22T09:31:15.522721+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 09:13:54"
   },
   "great:1729917877321968485": {
