@@ -1,52 +1,4 @@
 {
-  "great:1969827386351815997": {
-    "canal": "great",
-    "pokemon": "Oshawott",
-    "coords": "50.598825,5.578625",
-    "ts": 1792645591,
-    "despawn_unix": 1792645902,
-    "discord_msg_id": "1562693632610402320",
-    "discord_msg_ids": [
-      "1562693632610402320"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Oshawott ➔ Samurott!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.74%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Samurott** (`CP 1500` a Nivel `20.0`)",
-      "url": "https://www.google.com/maps?q=50.598825,5.578625",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm503.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.74%`)\n**IVs PvP:** `1/14/12`\n**Salvaje:** `CP 395` | `Nivel 15.0` (M, Male)\n**Final en Liga:** `CP 1500` | `Nivel 20.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `5 min 10 seg`\n🕒 **Hora exacta:** <t:1792645902:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Angleur, Liege, Belgium • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.598825,5.578625)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n50.598825,5.578625\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T05:06:35.338997+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 05:06:35"
-  },
   "shundo:-7249550689652678257": {
     "canal": "shundo",
     "pokemon": "Smoliv",
@@ -2375,7 +2327,7 @@
       },
       "timestamp": "2026-10-22T06:03:34.709992+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 05:46:06"
   },
   "great:6550568504299636829": {
