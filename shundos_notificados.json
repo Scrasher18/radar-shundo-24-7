@@ -1,104 +1,4 @@
 {
-  "shundo:-8049058543692880473": {
-    "canal": "shundo",
-    "pokemon": "Ponyta (Galarian)",
-    "coords": "48.149138,16.401914",
-    "ts": 1792671280,
-    "despawn_unix": 1792672449,
-    "discord_msg_id": "1562804178638606373",
-    "discord_msg_ids": [
-      "1562801365053349903",
-      "1562802780828205144",
-      "1562804178638606373"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Ponyta (Galarian)! (CP 969 • Nivel 20.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=48.149138,16.401914",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm77.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `969` | **Nivel:** `20.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `8 min 17 seg`\n🕒 **Hora exacta:** <t:1792672449:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Favoriten, Wien, Austria • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=48.149138,16.401914)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n48.149138,16.401914\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T12:25:51.607387+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 12:14:41"
-  },
-  "shundo:4032887693519061376": {
-    "canal": "shundo",
-    "pokemon": "Jigglypuff",
-    "coords": "40.744903,-111.829443",
-    "ts": 1792671280,
-    "despawn_unix": 1792672744,
-    "discord_msg_id": "1562804178638606373",
-    "discord_msg_ids": [
-      "1562801365053349903",
-      "1562802780828205144",
-      "1562804178638606373"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Jigglypuff! (CP 269 • Nivel 13.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=40.744903,-111.829443",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm39.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `269` | **Nivel:** `13.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `13 min 12 seg`\n🕒 **Hora exacta:** <t:1792672744:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Canyon Rim, Utah, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.744903,-111.829443)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n40.744903,-111.829443\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T12:25:51.607405+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 12:14:41"
-  },
   "shundo:-7285059129017290474": {
     "canal": "shundo",
     "pokemon": "Growlithe",
@@ -2271,7 +2171,7 @@
       },
       "timestamp": "2026-10-22T13:11:12.397205+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 13:11:12"
   },
   "great:3565845788716170031": {
