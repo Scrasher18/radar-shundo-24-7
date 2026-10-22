@@ -1,102 +1,4 @@
 {
-  "ultra:1717288100934698209": {
-    "canal": "ultra",
-    "pokemon": "Helioptile",
-    "coords": "32.290796,-110.792978",
-    "ts": 1792632339,
-    "despawn_unix": 1792632844,
-    "discord_msg_id": "1562638045528981510",
-    "discord_msg_ids": [
-      "1562638045528981510"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #4: Helioptile ➔ Heliolisk!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #4** (`99.82%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Heliolisk** (`CP 2496` a Nivel `42.5`)",
-      "url": "https://www.google.com/maps?q=32.290796,-110.792978",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm695.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#4` (`99.82%`)\n**IVs PvP:** `0/15/13`\n**Salvaje:** `CP 281` | `Nivel 12.0` (M, Female)\n**Final en Liga:** `CP 2496` | `Nivel 42.5`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `8 min 24 seg`\n🕒 **Hora exacta:** <t:1792632844:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Tanque Verde, Arizona, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=32.290796,-110.792978)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n32.290796,-110.792978\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T01:25:41.999891+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 01:25:42"
-  },
-  "ultra:8463582405319847797": {
-    "canal": "ultra",
-    "pokemon": "Litwick",
-    "coords": "35.132264,136.769977",
-    "ts": 1792632339,
-    "despawn_unix": 1792633848,
-    "discord_msg_id": "1562642301094985758",
-    "discord_msg_ids": [
-      "1562638045528981510",
-      "1562640901090578534",
-      "1562642301094985758"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #4: Litwick ➔ Chandelure!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #4** (`99.62%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Chandelure** (`CP 2496` a Nivel `28.5`)",
-      "url": "https://www.google.com/maps?q=35.132264,136.769977",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm609.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#4` (`99.62%`)\n**IVs PvP:** `0/11/15`\n**Salvaje:** `CP 248` | `Nivel 10.0` (M, Female)\n**Final en Liga:** `CP 2496` | `Nivel 28.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `8 min 13 seg`\n🕒 **Hora exacta:** <t:1792633848:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Kanie, Aichi, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.132264,136.769977)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n35.132264,136.769977\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T01:42:36.750347+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 01:25:42"
-  },
   "great:-4008823690305178395": {
     "canal": "great",
     "pokemon": "Purrloin",
@@ -1539,7 +1441,7 @@
       },
       "timestamp": "2026-10-22T02:23:04.460642+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 02:05:27"
   },
   "great:-1335567496637887012": {
