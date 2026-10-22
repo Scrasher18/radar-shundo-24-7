@@ -1,105 +1,4 @@
 {
-  "shundo:-8331024824430740993": {
-    "canal": "shundo",
-    "pokemon": "Eevee",
-    "coords": "37.663010,-122.493560",
-    "ts": 1792673329,
-    "despawn_unix": 1792674596,
-    "discord_msg_id": "1562812776043253883",
-    "discord_msg_ids": [
-      "1562809964001759266",
-      "1562811376592752663",
-      "1562812776043253883"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Eevee! (CP 176 • Nivel 6.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=37.663010,-122.493560",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm133.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `176` | **Nivel:** `6.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `9 min 55 seg`\n🕒 **Hora exacta:** <t:1792674596:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Pacifica, California, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=37.663010,-122.493560)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n37.663010,-122.493560\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T13:00:01.195158+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 12:48:51"
-  },
-  "great:2310966548340593107": {
-    "canal": "great",
-    "pokemon": "Dunsparce",
-    "coords": "25.080309,56.310991",
-    "ts": 1792673329,
-    "despawn_unix": 1792674452,
-    "discord_msg_id": "1562814164924244085",
-    "discord_msg_ids": [
-      "1562809968787197958",
-      "1562811379721699436",
-      "1562812780526960649",
-      "1562814164924244085"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Dunsparce!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n⚔️ **En Liga:** **Dunsparce** alcanza `CP 1500` en Nivel `40.0`",
-      "url": "https://www.google.com/maps?q=25.080309,56.310991",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm206.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/14/12`\n**Salvaje:** `CP 514` | `Nivel 12.0` (M, Female)\n**Final en Liga:** `CP 1500` | `Nivel 40.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `1 min 59 seg`\n🕒 **Hora exacta:** <t:1792674452:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Oriental y Medio Oriente • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=25.080309,56.310991)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n25.080309,56.310991\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T13:05:32.473015+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 12:48:52"
-  },
   "shundo:946591350089220208": {
     "canal": "shundo",
     "pokemon": "Nymble",
@@ -1737,7 +1636,7 @@
       },
       "timestamp": "2026-10-22T13:45:48.050810+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 13:23:23"
   },
   "great:6375145089382712070": {
