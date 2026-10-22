@@ -1,201 +1,4 @@
 {
-  "shundo:-7299604968100147792": {
-    "canal": "shundo",
-    "pokemon": "Bellsprout",
-    "coords": "55.870814,-4.361181",
-    "ts": 1792652374,
-    "despawn_unix": 1792653530,
-    "discord_msg_id": "1562726202794582095",
-    "discord_msg_ids": [
-      "1562722066871099492",
-      "1562723425443643446",
-      "1562724835992412221",
-      "1562726202794582095"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Bellsprout! (CP 708 • Nivel 24.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=55.870814,-4.361181",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm69.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `708` | **Nivel:** `24.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `2 min 49 seg`\n🕒 **Hora exacta:** <t:1792653530:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Renfrew, West Dunbartonshire, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=55.870814,-4.361181)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n55.870814,-4.361181\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T07:16:00.702942+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 06:59:34"
-  },
-  "great:3215455155698074148": {
-    "canal": "great",
-    "pokemon": "Magnemite",
-    "coords": "-34.817800,138.644493",
-    "ts": 1792652374,
-    "despawn_unix": 1792652890,
-    "discord_msg_id": "1562723429621440594",
-    "discord_msg_ids": [
-      "1562722070540845186",
-      "1562723429621440594"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Magnemite ➔ Magneton!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.85%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Magneton** (`CP 1500` a Nivel `22.5`)",
-      "url": "https://www.google.com/maps?q=-34.817800,138.644493",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm82.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.85%`)\n**IVs PvP:** `2/15/13`\n**Salvaje:** `CP 320` | `Nivel 9.0` (M, Genderless)\n**Final en Liga:** `CP 1500` | `Nivel 22.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 11 seg`\n🕒 **Hora exacta:** <t:1792652890:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Para Hills, South Australia, Australia • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-34.817800,138.644493)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n-34.817800,138.644493\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T07:04:59.345275+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 06:59:35"
-  },
-  "great:7085259521391729002": {
-    "canal": "great",
-    "pokemon": "Glameow",
-    "coords": "26.216586,127.666348",
-    "ts": 1792652374,
-    "despawn_unix": 1792653332,
-    "discord_msg_id": "1562722070540845186",
-    "discord_msg_ids": [
-      "1562722070540845186"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Glameow ➔ Purugly!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.83%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Purugly** (`CP 1498` a Nivel `29.5`)",
-      "url": "https://www.google.com/maps?q=26.216586,127.666348",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm432.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.83%`)\n**IVs PvP:** `0/15/11`\n**Salvaje:** `CP 578` | `Nivel 25.0` (M, Female)\n**Final en Liga:** `CP 1498` | `Nivel 29.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `15 min 57 seg`\n🕒 **Hora exacta:** <t:1792653332:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=26.216586,127.666348)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n26.216586,127.666348\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T06:59:35.469740+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 06:59:35"
-  },
-  "ultra:8793308017905575953": {
-    "canal": "ultra",
-    "pokemon": "Hitmonchan",
-    "coords": "-37.771990,175.228448",
-    "ts": 1792652374,
-    "despawn_unix": 1792652941,
-    "discord_msg_id": "1562723442745278486",
-    "discord_msg_ids": [
-      "1562722073737175139",
-      "1562723442745278486"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Hitmonchan!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Hitmonchan** alcanza `CP 2497` en Nivel `50.0`",
-      "url": "https://www.google.com/maps?q=-37.771990,175.228448",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm107.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `4/15/15`\n**Salvaje:** `CP 1388` | `Nivel 22.0` (M, Male)\n**Final en Liga:** `CP 2497` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 02 seg`\n🕒 **Hora exacta:** <t:1792652941:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Frankton Junction, Waikato, New Zealand • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-37.771990,175.228448)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n-37.771990,175.228448\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T07:05:02.612605+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 06:59:36"
-  },
   "shundo:8510586745296683899": {
     "canal": "shundo",
     "pokemon": "Helioptile",
@@ -1276,7 +1079,7 @@
       },
       "timestamp": "2026-10-22T07:55:27.771538+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 07:27:43"
   },
   "great:-3804304962652634009": {
@@ -2176,7 +1979,7 @@
       },
       "timestamp": "2026-10-22T07:55:27.771474+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 07:49:57"
   },
   "shundo:6874407467210655846": {
@@ -2225,7 +2028,7 @@
       },
       "timestamp": "2026-10-22T07:55:27.771522+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 07:49:57"
   },
   "great:-5618055413577955995": {
@@ -2471,7 +2274,7 @@
       },
       "timestamp": "2026-10-22T07:55:27.771507+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 07:55:28"
   },
   "great:2558366078849440058": {
