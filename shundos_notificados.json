@@ -1,101 +1,4 @@
 {
-  "ultra:-8560020558176949289": {
-    "canal": "ultra",
-    "pokemon": "Tepig",
-    "coords": "52.186192,21.178512",
-    "ts": 1792659441,
-    "despawn_unix": 1792660013,
-    "discord_msg_id": "1562753107606241401",
-    "discord_msg_ids": [
-      "1562751714052939776",
-      "1562753107606241401"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Tepig ➔ Emboar!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Emboar** (`CP 2498` a Nivel `32.5`)",
-      "url": "https://www.google.com/maps?q=52.186192,21.178512",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm500.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/14`\n**Salvaje:** `CP 436` | `Nivel 16.0` (M, Male)\n**Final en Liga:** `CP 2498` | `Nivel 32.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 08 seg`\n🕒 **Hora exacta:** <t:1792660013:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Wawer, Masovian, Poland • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.186192,21.178512)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.186192,21.178512\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T09:02:55.100610+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 08:57:23"
-  },
-  "ultra:-3732895695455233771": {
-    "canal": "ultra",
-    "pokemon": "Oddish",
-    "coords": "-22.719667,-47.663665",
-    "ts": 1792659441,
-    "despawn_unix": 1792660345,
-    "discord_msg_id": "1562751714052939776",
-    "discord_msg_ids": [
-      "1562751714052939776"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Oddish ➔ Bellossom!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.97%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Bellossom** (`CP 2493` a Nivel `49.5`)",
-      "url": "https://www.google.com/maps?q=-22.719667,-47.663665",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm182.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.97%`)\n**IVs PvP:** `10/15/15`\n**Salvaje:** `CP 373` | `Nivel 11.0` (M, Male)\n**Final en Liga:** `CP 2493` | `Nivel 49.5`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `15 min 03 seg`\n🕒 **Hora exacta:** <t:1792660345:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Piracicaba, São Paulo, Brazil • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-22.719667,-47.663665)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n-22.719667,-47.663665\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T08:57:23.000972+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 08:57:23"
-  },
   "ultra:7866921211715202617": {
     "canal": "ultra",
     "pokemon": "Chimecho",
@@ -2115,7 +2018,7 @@
       },
       "timestamp": "2026-10-22T09:54:15.369532+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 09:54:15"
   },
   "ultra:-3519273496823374391": {
