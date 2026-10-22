@@ -2035,15 +2035,16 @@
     "coords": "-41.309145,174.793034",
     "ts": 1792660106,
     "despawn_unix": 1792661069,
-    "discord_msg_id": "1562754496520523811",
+    "discord_msg_id": "1562755871031951413",
     "discord_msg_ids": [
-      "1562754496520523811"
+      "1562754496520523811",
+      "1562755871031951413"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Skwovet! (CP 431 • Nivel 16.0)",
       "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
       "url": "https://www.google.com/maps?q=-41.309145,174.793034",
-      "color": 16766720,
+      "color": 16347926,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm819.s.icon.png"
       },
@@ -2055,7 +2056,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `16 min 03 seg`\n🕒 **Hora exacta:** <t:1792661069:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `10 min 35 seg`\n🕒 **Hora exacta:** <t:1792661069:T>",
           "inline": true
         },
         {
@@ -2072,7 +2073,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T09:08:26.344050+00:00"
+      "timestamp": "2026-10-22T09:13:54.170700+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 09:08:26"
@@ -2083,15 +2084,16 @@
     "coords": "60.506232,5.308950",
     "ts": 1792660106,
     "despawn_unix": 1792661119,
-    "discord_msg_id": "1562754496520523811",
+    "discord_msg_id": "1562755871031951413",
     "discord_msg_ids": [
-      "1562754496520523811"
+      "1562754496520523811",
+      "1562755871031951413"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Snover! (CP 191 • Nivel 6.0)",
       "description": "✨ **SHUNDO 100% IV**",
       "url": "https://www.google.com/maps?q=60.506232,5.308950",
-      "color": 16766720,
+      "color": 16347926,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm459.s.icon.png"
       },
@@ -2103,7 +2105,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `16 min 52 seg`\n🕒 **Hora exacta:** <t:1792661119:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 25 seg`\n🕒 **Hora exacta:** <t:1792661119:T>",
           "inline": true
         },
         {
@@ -2120,7 +2122,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T09:08:26.344073+00:00"
+      "timestamp": "2026-10-22T09:13:54.170716+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 09:08:26"
@@ -2220,5 +2222,53 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 09:08:27"
+  },
+  "shundo:-2640531189645692112": {
+    "canal": "shundo",
+    "pokemon": "Teddiursa",
+    "coords": "48.243918,16.285958",
+    "ts": 1792660433,
+    "despawn_unix": 1792662105,
+    "discord_msg_id": "1562755871031951413",
+    "discord_msg_ids": [
+      "1562755871031951413"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Teddiursa! (CP 1025 • Nivel 27.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=48.243918,16.285958",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm216.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1025` | **Nivel:** `27.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `27 min 51 seg`\n🕒 **Hora exacta:** <t:1792662105:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Hernals, Wien, Austria • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=48.243918,16.285958)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n48.243918,16.285958\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T09:13:54.170673+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 09:13:54"
   }
 }
