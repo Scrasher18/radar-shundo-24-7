@@ -54,201 +54,6 @@
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 03:09:23"
   },
-  "shundo:-7354570919761778708": {
-    "canal": "shundo",
-    "pokemon": "Fuecoco",
-    "coords": "48.811508,9.265468",
-    "ts": 1792638896,
-    "despawn_unix": 1792639499,
-    "discord_msg_id": "1562667067872776421",
-    "discord_msg_ids": [
-      "1562665563392843817",
-      "1562667067872776421"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Fuecoco! (CP 186 • Nivel 6.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=48.811508,9.265468",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm909.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `186` | **Nivel:** `6.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 57 seg`\n🕒 **Hora exacta:** <t:1792639499:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Fellbach, Baden-Württemberg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=48.811508,9.265468)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n48.811508,9.265468\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T03:21:01.829271+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:15:03"
-  },
-  "great:-5966895930983074134": {
-    "canal": "great",
-    "pokemon": "Geodude",
-    "coords": "-37.881021,144.685700",
-    "ts": 1792638896,
-    "despawn_unix": 1792640255,
-    "discord_msg_id": "1562665597605519487",
-    "discord_msg_ids": [
-      "1562665597605519487"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Geodude ➔ Graveler!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Graveler** (`CP 1498` a Nivel `30.5`)",
-      "url": "https://www.google.com/maps?q=-37.881021,144.685700",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm75.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/14/15`\n**Salvaje:** `CP 760` | `Nivel 23.0` (M, Male)\n**Final en Liga:** `CP 1498` | `Nivel 30.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `22 min 38 seg`\n🕒 **Hora exacta:** <t:1792640255:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Oceanía (Australia y Nueva Zelanda) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-37.881021,144.685700)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n-37.881021,144.685700\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T03:15:11.232603+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:15:11"
-  },
-  "great:2512065886367171685": {
-    "canal": "great",
-    "pokemon": "Starly",
-    "coords": "51.425658,-0.015068",
-    "ts": 1792638896,
-    "despawn_unix": 1792639387,
-    "discord_msg_id": "1562667101653696659",
-    "discord_msg_ids": [
-      "1562665597605519487",
-      "1562667101653696659"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Starly ➔ Staraptor!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Staraptor** (`CP 1500` a Nivel `20.0`)",
-      "url": "https://www.google.com/maps?q=51.425658,-0.015068",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm398.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/13/13`\n**Salvaje:** `CP 138` | `Nivel 8.0` (M, Male)\n**Final en Liga:** `CP 1500` | `Nivel 20.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `2 min 05 seg`\n🕒 **Hora exacta:** <t:1792639387:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Beckenham, Lewisham, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.425658,-0.015068)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.425658,-0.015068\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T03:21:09.881982+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:15:11"
-  },
-  "great:6750074444076760293": {
-    "canal": "great",
-    "pokemon": "Pineco",
-    "coords": "47.594776,7.664611",
-    "ts": 1792638896,
-    "despawn_unix": 1792639650,
-    "discord_msg_id": "1562667101653696659",
-    "discord_msg_ids": [
-      "1562665597605519487",
-      "1562667101653696659"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #2: Pineco ➔ Forretress!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.88%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Forretress** (`CP 1500` a Nivel `25.0`)",
-      "url": "https://www.google.com/maps?q=47.594776,7.664611",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm205.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.88%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 251` | `Nivel 9.0` (M, Female)\n**Final en Liga:** `CP 1500` | `Nivel 25.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 28 seg`\n🕒 **Hora exacta:** <t:1792639650:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Riehen, Baden-Württemberg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=47.594776,7.664611)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n47.594776,7.664611\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T03:21:09.882038+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:15:11"
-  },
   "shundo:7650652132171565785": {
     "canal": "shundo",
     "pokemon": "Pidove",
@@ -1826,7 +1631,7 @@
       },
       "timestamp": "2026-10-22T04:13:41.690358+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 03:49:59"
   },
   "great:-5944461669403669155": {
@@ -2020,7 +1825,7 @@
       },
       "timestamp": "2026-10-22T04:08:03.060498+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 03:55:39"
   },
   "shundo:-7332271378120487728": {
@@ -2507,7 +2312,7 @@
       },
       "timestamp": "2026-10-22T04:08:03.060565+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:08:03"
   },
   "shundo:-5353386855987335296": {
@@ -2555,7 +2360,7 @@
       },
       "timestamp": "2026-10-22T04:08:03.060581+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:08:03"
   },
   "great:7971635282992396908": {
