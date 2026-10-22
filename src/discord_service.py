@@ -16,6 +16,8 @@ import requests
 
 from src.config import (
     BOT_NOMBRES_POR_CANAL,
+    DISCORD_BOT_TOKEN,
+    DISCORD_EVENTO_CHANNEL_ID,
     DISCORD_USER_ID_MENCION,
     DISCORD_WEBHOOK_URL,
     NOTIFICADOS_FILE,
@@ -117,6 +119,39 @@ def construir_encabezado_lote(spawns_nuevos: List[Dict[str, Any]], total_activos
         return f"⚔️ {mencion}¡Nuevo **SHINY {liga_tag} RANK #{rank} ({nombre} ➔ {pvp_name})** detectado!"
 
 
+def limpiar_mensajes_huerfanos_canal(canal_tipo: str, mid_activo_valido: Optional[str] = None) -> None:
+    """
+    Usa DISCORD_BOT_TOKEN para asegurar que NINGÚN mensaje viejo o huérfano quede en el chat.
+    Conserva únicamente el mid_activo_valido (si existe) y el panel de control en #🎉-evento-cd.
+    """
+    if not DISCORD_BOT_TOKEN.strip():
+        return
+    channel_id_map = {
+        "shundo": "1562146985996193873",
+        "great": "1562157246425858139",
+        "ultra": "1562157292168810576",
+        "evento": DISCORD_EVENTO_CHANNEL_ID,
+    }
+    cid = channel_id_map.get(canal_tipo)
+    if not cid:
+        return
+    headers_bot = {"Authorization": f"Bot {DISCORD_BOT_TOKEN.strip()}"}
+    try:
+        r = requests.get(f"https://discord.com/api/v10/channels/{cid}/messages?limit=15", headers=headers_bot, timeout=6)
+        if r.status_code == 200:
+            msgs = r.json()
+            for m in msgs:
+                mid = str(m.get("id"))
+                if mid_activo_valido and mid == str(mid_activo_valido):
+                    continue
+                if canal_tipo == "evento" and m.get("embeds") and "PANEL DE CONTROL" in str(m["embeds"][0].get("title", "")):
+                    continue
+                if m.get("webhook_id"):
+                    requests.delete(f"https://discord.com/api/v10/channels/{cid}/messages/{mid}", headers=headers_bot, timeout=5)
+    except Exception:
+        pass
+
+
 def _eliminar_mensaje_webhook_seguro(sesion: requests.Session, base_webhook: str, mid: str) -> bool:
     """Elimina un mensaje de webhook manejando automáticamente HTTP 429 (Rate Limit)."""
     url_del = f"{base_webhook}/messages/{mid}"
@@ -193,8 +228,9 @@ def publicar_panel_consolidado_canal(
             if msg_data and "id" in msg_data:
                 nuevo_mid = str(msg_data["id"])
                 print(
-                    f"   ✅ [Discord-{canal_tipo.upper()}] Panel enviado ({len(seleccionados)} Pokémon activos en 1 mensaje • reloj 1s exacto)."
+                    f"   ✅ [Discord-{canal_tipo.upper()}] Panel enviado ({len(seleccionados)} Pokémon activos en 1 mensaje • reloj dinámico)."
                 )
+                limpiar_mensajes_huerfanos_canal(canal_tipo, mid_activo_valido=nuevo_mid)
                 return nuevo_mid
         else:
             print(f"   ⚠️ [Discord-{canal_tipo.upper()}] Error HTTP {r.status_code}: {r.text[:150]}")
@@ -295,11 +331,11 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                 hubo_cambios_estado = True
             continue
 
-        # Caso B y C: Siguen quedando Pokémon vivos en el mensaje -> Actualizar con PATCH cada 1s
+        # Caso B y C: Siguen quedando Pokémon vivos en el mensaje -> Actualizar con PATCH
         # (y si alguno expiró en este segundo, el PATCH quita su tarjeta del mensaje inmediatamente)
         if actualizar_tiempo_real or expirados_en_mid:
             ahora_sec = int(time.time())
-            if _ULTIMO_TICK_CANAL.get(mid) == ahora_sec and not expirados_en_mid:
+            if not expirados_en_mid and (ahora_sec - _ULTIMO_TICK_CANAL.get(mid, 0) < 6):
                 continue
 
             embeds_actualizados: List[Dict[str, Any]] = []
@@ -389,6 +425,22 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                         except Exception:
                             retry_after = 1.0
                         time.sleep(min(retry_after, 2.0))
+                        r_retry = sesion.patch(
+                            f"{base_webhook}/messages/{mid}",
+                            json={"content": contenido_patch, "embeds": embeds_actualizados},
+                            timeout=5,
+                        )
+                        if r_retry.status_code in (200, 204):
+                            _ULTIMO_TICK_CANAL[mid] = int(time.time())
+                            if expirados_en_mid:
+                                for clave_e, info_e in expirados_en_mid:
+                                    claves_recien_expiradas.append(clave_e)
+                                    _MEM_EMBEDS_POR_CLAVE.pop(clave_e, None)
+                                    eliminados += 1
+                                    print(
+                                        f"   🗑️ [Discord-{canal_tipo.upper()}] Tarjeta de {info_e.get('pokemon', clave_e)} retirada del panel (tras reintento)."
+                                    )
+                                hubo_cambios_estado = True
                 except Exception:
                     pass
 
@@ -405,7 +457,7 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
 
 
 def _worker_reloj_canal(canal_tipo: str) -> None:
-    """Bucle dedicado que corre cada 1.0 segundo en su propio hilo para actualizar el canal."""
+    """Bucle dedicado que corre en su propio hilo para vigilar despawns y actualizar el reloj."""
     while True:
         inicio_tick = time.time()
         try:
@@ -413,7 +465,7 @@ def _worker_reloj_canal(canal_tipo: str) -> None:
         except Exception:
             pass
         transcurrido = time.time() - inicio_tick
-        pausa = max(0.10, 1.0 - transcurrido)
+        pausa = max(0.5, 2.0 - transcurrido)
         time.sleep(pausa)
 
 

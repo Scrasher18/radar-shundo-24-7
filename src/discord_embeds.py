@@ -44,9 +44,10 @@ def construir_estado_despawn(mon: Dict[str, Any]) -> Tuple[str, int]:
         semaforo = "🔴 **¡SALTAR YA!**"
         color_urgencia = 0xEF4444
 
-    estado_tiempo = f"{semaforo}\n⏱️ **Desaparece en:** `{ttl_con_segundos}`"
     if despawn_unix:
-        estado_tiempo += f"\n🕒 **Hora exacta:** <t:{despawn_unix}:T>"
+        estado_tiempo = f"{semaforo}\n⏱️ **Desaparece:** <t:{despawn_unix}:R> (`{ttl_con_segundos}`)\n🕒 **Hora exacta:** <t:{despawn_unix}:T>"
+    else:
+        estado_tiempo = f"{semaforo}\n⏱️ **Desaparece en:** `{ttl_con_segundos}`"
     return estado_tiempo, color_urgencia
 
 

@@ -116,6 +116,8 @@ def resolver_jwt_mas_reciente() -> str:
 
 
 JWT_TOKEN: str = resolver_jwt_mas_reciente()
+JWT_TOKEN_2: str = os.environ.get("JWT_TOKEN_2") or _cfg.get("JWT_TOKEN_2", "")
+JWT_TOKENS: List[str] = [t.strip() for t in [JWT_TOKEN, JWT_TOKEN_2] if t and t.strip().startswith("eyJ")]
 
 ES_MODO_NUBE: bool = os.environ.get("CLOUD_MODE") == "1" or sys.platform != "win32"
 AUTO_COPIAR_PORTAPAPELES: bool = not ES_MODO_NUBE
@@ -140,13 +142,14 @@ LNG_ORIGEN: float = -77.036896
 
 # Parámetros operativos del motor 24/7
 MODO_VIGILANTE_CONTINUO: bool = True
-INTERVALO_SEGUNDOS: int = 480              # Escaneo de nuevos spawns cada 8 minutos (480s)
+INTERVALO_SEGUNDOS: int = 300              # Escaneo de nuevos spawns cada 5 minutos (300s)
 MIN_SEGUNDOS_VIDA: int = 90                # Ignorar spawns con menos de 90s restantes
 PVP_TOP_RANK_MAX: int = 5                  # Filtrar Rank #1 al #5 en Great League y Ultra League
+PVP_REVEAL_MAX_RANK: int = 2              # Coordenadas exactas garantizadas en PvP Rank #1 y #2
 PVP_MIN_CP_GL: int = 1200                  # CP mínimo competitivo en Great League (en filtro local Python)
 PVP_MIN_CP_UL: int = 2100                  # CP mínimo competitivo en Ultra League (en filtro local Python)
 TTL_LIMPIEZA_CACHE_SEGUNDOS: int = 7200    # Limpiar registros ya expirados después de 2 horas
-MAX_REVEALS_POR_EJECUCION: int = 0         # 0 para no consumir los 10 créditos de reveal de la cuenta en la web
+MAX_REVEALS_POR_EJECUCION: int = 12        # Presupuesto dinámico multi-cuenta para revelar coordenadas exactas
 
 # Endpoints y cabeceras HTTP
 API_BASE: str = "https://coordinates-api.pokemongopro.com"

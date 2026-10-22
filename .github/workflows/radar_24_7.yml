@@ -32,9 +32,10 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests
 
-      - name: Ejecutar Radar Shundo + PvP GL/UL + Eventos en bucle (escaneo cada 8 minutos)
+      - name: Ejecutar Radar Shundo + PvP GL/UL + Eventos en bucle (escaneo cada 5 minutos)
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }}
+          JWT_TOKEN_2: ${{ secrets.JWT_TOKEN_2 }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DISCORD_WEBHOOK_GL: ${{ secrets.DISCORD_WEBHOOK_GL }}
           DISCORD_WEBHOOK_UL: ${{ secrets.DISCORD_WEBHOOK_UL }}

@@ -14,6 +14,7 @@ from src.api_client import (
     ejecutar_particion_search,
     ejecutar_region_mapa,
     obtener_perfil_entrenador,
+    obtener_resumen_cuentas_pool,
     preparar_lista_spawns,
 )
 from src.config import (
@@ -242,6 +243,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
             entorno = "Nube GitHub Actions 24/7 ☁️" if ES_MODO_NUBE else "PC Local 💻"
             print(f"👤 Usuario Discord : {perfil.get('display_name')} | Modo: {entorno}")
             print(f"🎮 Entrenador PoGO : {t_name} (Código: {t_code} | Equipo: {t_team} | Nivel: {t_lvl})")
+            print(f"🔑 Pool Cuentas    : {obtener_resumen_cuentas_pool()}")
             print("📡 Canales Activos : [1] 🌟 Shundos 100%  |  [2] 🔵 PvP GL (Top 1-5)  |  [3] 🟣 PvP UL (Top 1-5)")
         else:
             print("⚠️ No se pudo verificar /users/me temporalmente. Continuando escaneo...")
