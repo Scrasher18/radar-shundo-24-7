@@ -1,55 +1,4 @@
 {
-  "great:6267847751402774081": {
-    "canal": "great",
-    "pokemon": "Drilbur",
-    "coords": "1.401344,103.917314",
-    "ts": 1792625083,
-    "despawn_unix": 1792626780,
-    "discord_msg_id": "1562611904268992678",
-    "discord_msg_ids": [
-      "1562607614708289542",
-      "1562609023776194642",
-      "1562610470446309432",
-      "1562611904268992678"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #4: Drilbur ➔ Excadrill!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #4** (`99.61%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Excadrill** (`CP 1491` a Nivel `17.0`)",
-      "url": "https://www.google.com/maps?q=1.401344,103.917314",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm530.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#4` (`99.61%`)\n**IVs PvP:** `1/15/14`\n**Salvaje:** `CP 245` | `Nivel 7.0` (XS, Male)\n**Final en Liga:** `CP 1491` | `Nivel 17.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 10 seg`\n🕒 **Hora exacta:** <t:1792626780:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Sudeste Asiático e India • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=1.401344,103.917314)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n1.401344,103.917314\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-21T23:41:49.784782+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-21 23:24:47"
-  },
   "shundo:899547722845107323": {
     "canal": "shundo",
     "pokemon": "Grookey",
@@ -845,7 +794,7 @@
       },
       "timestamp": "2026-10-22T00:22:00.589330+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-21 23:47:29"
   },
   "shundo:4671984643732595875": {
@@ -1973,7 +1922,7 @@
       },
       "timestamp": "2026-10-22T00:22:00.589309+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:10:48"
   },
   "great:1654268111786325208": {
@@ -2508,7 +2457,7 @@
       },
       "timestamp": "2026-10-22T00:22:00.589277+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:22:00"
   },
   "great:6280803296532087246": {
