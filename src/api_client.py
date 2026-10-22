@@ -9,7 +9,9 @@ import requests
 
 from src.config import (
     API_BASE,
+    CONFIG_LOCAL_FILE,
     HEADERS_API,
+    JWT_TOKEN,
     LAT_ORIGEN,
     LNG_ORIGEN,
     MAX_REVEALS_POR_EJECUCION,
@@ -20,8 +22,38 @@ from src.config import (
 )
 from src.models import calcular_distancia_km, calcular_tiempo_restante
 
+_JWT_ACTIVO_MEMORIA: str = JWT_TOKEN
 _api_session = requests.Session()
 _api_session.headers.update(HEADERS_API)
+
+
+def obtener_jwt_actual() -> str:
+    """Devuelve el JWT_TOKEN actualmente activo en memoria."""
+    return _JWT_ACTIVO_MEMORIA
+
+
+def actualizar_jwt_token_en_vivo(nuevo_token: str) -> Tuple[bool, Optional[Dict[str, Any]], int]:
+    """
+    Valida un nuevo JWT_TOKEN contra /users/me y, si es válido (HTTP 200),
+    lo activa inmediatamente en la sesión HTTP en memoria.
+    """
+    global _JWT_ACTIVO_MEMORIA
+    limpio = nuevo_token.strip().replace("Bearer ", "").strip()
+    if not limpio.startswith("eyJ"):
+        return False, None, 400
+
+    headers_prueba = dict(HEADERS_API)
+    headers_prueba["Authorization"] = f"Bearer {limpio}"
+    try:
+        r = requests.get(f"{API_BASE}/users/me", headers=headers_prueba, timeout=10)
+        if r.status_code == 200:
+            _JWT_ACTIVO_MEMORIA = limpio
+            HEADERS_API["Authorization"] = f"Bearer {limpio}"
+            _api_session.headers["Authorization"] = f"Bearer {limpio}"
+            return True, r.json(), 200
+        return False, None, r.status_code
+    except Exception:
+        return False, None, 0
 
 
 def obtener_perfil_entrenador() -> Tuple[Optional[Dict[str, Any]], int]:
@@ -181,7 +213,7 @@ def preparar_lista_spawns(
             mon["precision_coords"] = "Exacta (Caché)"
         else:
             reveal_code = mon.get("reveal_code")
-            if reveal_code and not estado_cuota["agotada"] and estado_cuota["revelados"] < MAX_REVEALS_POR_EJECUCION:
+            if MAX_REVEALS_POR_EJECUCION > 0 and reveal_code and not estado_cuota["agotada"] and estado_cuota["revelados"] < MAX_REVEALS_POR_EJECUCION:
                 try:
                     rev_res = _api_session.get(f"{API_BASE}/reveal/{reveal_code}", timeout=8)
                     if rev_res.status_code == 200:

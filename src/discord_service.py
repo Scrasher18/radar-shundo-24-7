@@ -70,10 +70,10 @@ def enviar_alerta_token_vencido() -> None:
                 "color": 0xEF4444,
                 "description": (
                     "El servidor devolvió **HTTP 401 (Unauthorized)**.\n\n"
-                    "**Cómo renovarlo:**\n"
-                    "1. Abre `coordinates.pokemongopro.com` en tu navegador.\n"
+                    "**Cómo renovarlo en 10 segundos desde Discord:**\n"
+                    "1. Abre `coordinates.pokemongopro.com` e inicia sesión.\n"
                     "2. Copia el nuevo `jwt` desde *Local Storage*.\n"
-                    "3. Actualízalo en `config_local.json` / Secret `JWT_TOKEN` en GitHub."
+                    "3. Pega **`token eyJ...`** en tu canal **`#🎉-evento-cd`** *(el bot borrará tu mensaje por privacidad y lo activará en vivo al instante)*."
                 ),
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             }

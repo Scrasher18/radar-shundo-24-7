@@ -1,9 +1,9 @@
 """
 Módulo escalable para Eventos Especiales y Community Days (CD):
-- Panel de Control interactivo en el canal #🎉-evento-cd
+- Panel de Control interactivo único en el canal #🎉-evento-cd
 - Lector en tiempo real de comandos escritos en Discord mediante ScrasherBOT
-- Traductor automático de nombres de Pokémon a IDs de Pokédex y familias evolutivas
-- Escaneo instantáneo al cambiar la configuración desde el celular o PC
+- Soporte de Presets de 1 palabra (preset master, preset mega, preset meta, preset iniciales)
+- Renovación segura en caliente del JWT_TOKEN directamente desde Discord (token eyJ...)
 """
 
 from datetime import datetime, timezone
@@ -12,15 +12,25 @@ import os
 import re
 import threading
 import time
-from typing import Any, Callable, Dict, List, Optional, Tuple
+from typing import Any, Callable, Dict, List, Optional
 import requests
 
+from src.api_client import actualizar_jwt_token_en_vivo, obtener_jwt_actual
 from src.config import (
+    CONFIG_LOCAL_FILE,
     DISCORD_BOT_TOKEN,
     DISCORD_EVENTO_CHANNEL_ID,
     DISCORD_WEBHOOK_EVENTO,
     EVENTO_CONFIG_FILE,
     NOTIFICADOS_FILE,
+    cifrar_jwt_con_secreto,
+    extraer_exp_jwt,
+)
+from src.presets_catalog import (
+    FAMILIAS_POKEDEX,
+    PRESETS_EVENTO,
+    obtener_preset,
+    resolver_nombres_e_ids,
 )
 from src.state_manager import (
     _LOCK_ESTADO,
@@ -34,135 +44,6 @@ _SESION_BOT = requests.Session()
 _SESION_WEBHOOK_EV = requests.Session()
 _HILO_BOT_INICIADO = False
 _CALLBACK_ESCANEO_INMEDIATO: Optional[Callable[[], None]] = None
-
-# Diccionario de especies frecuentes, Community Days, iniciales y Meta PvP (Nombre -> Familia de IDs Pokédex)
-FAMILIAS_POKEDEX: Dict[str, List[int]] = {
-    "bulbasaur": [1, 2, 3], "ivysaur": [1, 2, 3], "venusaur": [1, 2, 3],
-    "charmander": [4, 5, 6], "charmeleon": [4, 5, 6], "charizard": [4, 5, 6],
-    "squirtle": [7, 8, 9], "wartortle": [7, 8, 9], "blastoise": [7, 8, 9],
-    "caterpie": [10, 11, 12], "weedle": [13, 14, 15], "beedrill": [13, 14, 15],
-    "pidgey": [16, 17, 18], "pidgeot": [16, 17, 18],
-    "pikachu": [25, 26, 172], "raichu": [25, 26, 172],
-    "sandshrew": [27, 28], "sandslash": [27, 28],
-    "nidoran": [29, 30, 31, 32, 33, 34], "nidoking": [32, 33, 34], "nidoqueen": [29, 30, 31],
-    "clefairy": [35, 36, 173], "clefable": [35, 36, 173],
-    "vulpix": [37, 38], "ninetales": [37, 38],
-    "jigglypuff": [39, 40, 174], "wigglytuff": [39, 40, 174],
-    "zubat": [41, 42, 169], "oddish": [43, 44, 45, 182],
-    "diglett": [50, 51], "meowth": [52, 53, 863], "persian": [52, 53, 863],
-    "psyduck": [54, 55], "mankey": [56, 57, 979], "primeape": [56, 57, 979], "annihilape": [56, 57, 979],
-    "growlithe": [58, 59], "arcanine": [58, 59],
-    "poliwag": [60, 61, 62, 186], "poliwrath": [60, 61, 62, 186], "politoed": [60, 61, 62, 186],
-    "abra": [63, 64, 65], "alakazam": [63, 64, 65],
-    "machop": [66, 67, 68], "machamp": [66, 67, 68],
-    "bellsprout": [69, 70, 71], "victreebel": [69, 70, 71],
-    "tentacool": [72, 73], "tentacruel": [72, 73],
-    "geodude": [74, 75, 76], "golem": [74, 75, 76],
-    "ponyta": [77, 78], "rapidash": [77, 78],
-    "slowpoke": [79, 80, 199], "slowbro": [79, 80, 199], "slowking": [79, 80, 199],
-    "magnemite": [81, 82, 462], "magnezone": [81, 82, 462],
-    "seel": [86, 87], "dewgong": [86, 87],
-    "grimer": [88, 89], "muk": [88, 89],
-    "gastly": [92, 93, 94], "haunter": [92, 93, 94], "gengar": [92, 93, 94],
-    "onix": [95, 208], "steelix": [95, 208],
-    "cubone": [104, 105], "marowak": [104, 105],
-    "hitmonlee": [106, 236], "hitmonchan": [107, 236],
-    "lickitung": [108, 463], "lickilicky": [108, 463],
-    "koffing": [109, 110], "weezing": [109, 110],
-    "rhyhorn": [111, 112, 464], "rhyperior": [111, 112, 464],
-    "chansey": [113, 242, 440], "blissey": [113, 242, 440],
-    "horsea": [116, 117, 230], "kingdra": [116, 117, 230],
-    "scyther": [123, 212, 900], "scizor": [123, 212, 900],
-    "electabuzz": [125, 239, 466], "electivire": [125, 239, 466],
-    "magmar": [126, 240, 467], "magmortar": [126, 240, 467],
-    "magikarp": [129, 130], "gyarados": [129, 130],
-    "lapras": [131], "eevee": [133, 134, 135, 136, 196, 197, 470, 471, 700],
-    "umbreon": [133, 197], "sylveon": [133, 700],
-    "porygon": [137, 233, 474], "snorlax": [143, 446],
-    "dratini": [147, 148, 149], "dragonair": [147, 148, 149], "dragonite": [147, 148, 149],
-    "chikorita": [152, 153, 154], "meganium": [152, 153, 154],
-    "cyndaquil": [155, 156, 157], "typhlosion": [155, 156, 157],
-    "totodile": [158, 159, 160], "feraligatr": [158, 159, 160],
-    "sentret": [161, 162], "hoothoot": [163, 164], "noctowl": [163, 164],
-    "chinchou": [170, 171], "lanturn": [170, 171],
-    "togetic": [175, 176, 468], "togekiss": [175, 176, 468],
-    "mareep": [179, 180, 181], "ampharos": [179, 180, 181],
-    "marill": [183, 184, 298], "azumarill": [183, 184, 298],
-    "hoppip": [187, 188, 189], "jumpluff": [187, 188, 189],
-    "wooper": [194, 195, 980], "quagsire": [194, 195, 980], "clodsire": [194, 195, 980],
-    "gligar": [207, 472], "gliscor": [207, 472],
-    "sneasel": [215, 461, 903], "weavile": [215, 461], "sneasler": [215, 903],
-    "teddiursa": [216, 217, 901], "ursaluna": [216, 217, 901],
-    "swinub": [220, 221, 473], "mamoswine": [220, 221, 473],
-    "skarmory": [227], "larvitar": [246, 247, 248], "tyranitar": [246, 247, 248],
-    "treecko": [252, 253, 254], "sceptile": [252, 253, 254],
-    "torchic": [255, 256, 257], "blaziken": [255, 256, 257],
-    "mudkip": [258, 259, 260], "swampert": [258, 259, 260],
-    "zigzagoon": [263, 264, 862], "obstagoon": [263, 264, 862],
-    "lotad": [270, 271, 272], "seedot": [273, 274, 275], "wingull": [278, 279], "pelipper": [278, 279],
-    "ralts": [280, 281, 282, 475], "gardevoir": [280, 281, 282, 475], "gallade": [280, 281, 282, 475],
-    "slakoth": [287, 288, 289], "vigoroth": [287, 288, 289],
-    "whismur": [293, 294, 295], "exploud": [293, 294, 295],
-    "makuhita": [296, 297], "hariyama": [296, 297],
-    "sableye": [302], "aron": [304, 305, 306], "meditite": [307, 308], "medicham": [307, 308],
-    "roselia": [315, 406, 407], "roserade": [315, 406, 407],
-    "trapinch": [328, 329, 330], "flygon": [328, 329, 330],
-    "swablu": [333, 334], "altaria": [333, 334],
-    "barboach": [339, 340], "whiscash": [339, 340],
-    "feebas": [349, 350], "milotic": [349, 350],
-    "shuppet": [353, 354], "banette": [353, 354],
-    "duskull": [355, 356, 477], "dusknoir": [355, 356, 477],
-    "spheal": [363, 364, 365], "walrein": [363, 364, 365],
-    "bagon": [371, 372, 373], "salamence": [371, 372, 373],
-    "beldum": [374, 375, 376], "metang": [374, 375, 376], "metagross": [374, 375, 376],
-    "turtwig": [387, 388, 389], "torterra": [387, 388, 389],
-    "chimchar": [390, 391, 392], "infernape": [390, 391, 392],
-    "piplup": [393, 394, 395], "empoleon": [393, 394, 395],
-    "starly": [396, 397, 398], "shinx": [403, 404, 405], "luxray": [403, 404, 405],
-    "cranidos": [408, 409], "shieldon": [410, 411], "bastiodon": [410, 411],
-    "drifloon": [425, 426], "drifblim": [425, 426],
-    "buneary": [427, 428], "lopunny": [427, 428],
-    "gible": [443, 444, 445], "garchomp": [443, 444, 445],
-    "riolu": [447, 448], "lucario": [447, 448],
-    "snover": [459, 460], "abomasnow": [459, 460],
-    "snivy": [495, 496, 497], "serperior": [495, 496, 497],
-    "tepig": [498, 499, 500], "emboar": [498, 499, 500],
-    "oshawott": [501, 502, 503], "samurott": [501, 502, 503],
-    "lillipup": [506, 507, 508], "roggenrola": [524, 525, 526], "gigalith": [524, 525, 526],
-    "timburr": [532, 533, 534], "conkeldurr": [532, 533, 534],
-    "tympole": [535, 536, 537], "seismitoad": [535, 536, 537],
-    "sewaddle": [540, 541, 542], "leavanny": [540, 541, 542],
-    "venipede": [543, 544, 545], "cottonee": [546, 547], "whimsicott": [546, 547],
-    "sandile": [551, 552, 553], "scraggy": [559, 560], "scrafty": [559, 560],
-    "yamask": [562, 563, 867], "cofagrigus": [562, 563, 867], "runerigus": [562, 563, 867],
-    "frillish": [592, 593], "jellicent": [592, 593],
-    "ferroseed": [597, 598], "ferrothorn": [597, 598],
-    "tynamo": [602, 603, 604], "litwick": [607, 608, 609], "chandelure": [607, 608, 609],
-    "axew": [610, 611, 612], "haxorus": [610, 611, 612],
-    "shelmet": [616, 617], "accelgor": [616, 617],
-    "stunfisk": [618], "mienfoo": [619, 620], "mienshao": [619, 620],
-    "deino": [633, 634, 635], "hydreigon": [633, 634, 635],
-    "chespin": [650, 651, 652], "chesnaught": [650, 651, 652],
-    "fennekin": [653, 654, 655], "delphox": [653, 654, 655],
-    "froakie": [656, 657, 658], "greninja": [656, 657, 658],
-    "bunnelby": [659, 660], "diggersby": [659, 660],
-    "fletchling": [661, 662, 663], "talonflame": [661, 662, 663],
-    "phantump": [708, 709], "trevenant": [708, 709],
-    "goomy": [704, 705, 706], "goodra": [704, 705, 706],
-    "noibat": [714, 715], "noivern": [714, 715],
-    "rowlet": [722, 723, 724], "decidueye": [722, 723, 724],
-    "litten": [725, 726, 727], "incineroar": [725, 726, 727],
-    "popplio": [728, 729, 730], "primarina": [728, 729, 730],
-    "grubbin": [736, 737, 738], "charjabug": [736, 737, 738], "vikavolt": [736, 737, 738],
-    "mareanie": [747, 748], "toxapex": [747, 748],
-    "stufful": [759, 760], "bewear": [759, 760],
-    "bounsweet": [761, 762, 763], "tsareena": [761, 762, 763],
-    "jangmo-o": [782, 783, 784], "kommo-o": [782, 783, 784],
-    "rookidee": [821, 822, 823], "corviknight": [821, 822, 823],
-    "dreepy": [885, 886, 887], "dragapult": [885, 886, 887],
-    "sprigatito": [906, 907, 908], "fuecoco": [909, 910, 911], "quaxly": [912, 913, 914],
-    "lechonk": [915, 916], "smoliv": [928, 929, 930], "frigibax": [996, 997, 998],
-}
 
 
 def cargar_config_evento() -> Dict[str, Any]:
@@ -200,48 +81,28 @@ def guardar_config_evento(cfg: Dict[str, Any]) -> None:
             pass
 
 
-def resolver_nombres_e_ids(entradas_crudas: List[str]) -> Tuple[List[str], List[int]]:
-    """Convierte una lista de nombres o IDs (ej. ['Mankey', '374']) en nombres limpios e IDs de Pokédex."""
-    nombres_finales: List[str] = []
-    ids_finales: List[int] = []
+def _enviar_aviso_temporal_evento(texto: str, segundos_visible: float = 8.0) -> None:
+    """Envía una confirmación breve en #🎉-evento-cd y la auto-elimina para no ensuciar el canal."""
+    if not DISCORD_WEBHOOK_EVENTO.strip():
+        return
+    base_wh = DISCORD_WEBHOOK_EVENTO.strip().split("?")[0].rstrip("/")
 
-    for item in entradas_crudas:
-        limpio = item.strip().lower()
-        if not limpio:
-            continue
-        if limpio.isdigit():
-            pid = int(limpio)
-            if pid not in ids_finales:
-                ids_finales.append(pid)
-            etiqueta = f"#{pid}"
-            for nom_k, fam_ids in FAMILIAS_POKEDEX.items():
-                if pid == fam_ids[0]:
-                    etiqueta = nom_k.capitalize()
-                    for fid in fam_ids:
-                        if fid not in ids_finales:
-                            ids_finales.append(fid)
-                    break
-            if etiqueta not in nombres_finales:
-                nombres_finales.append(etiqueta)
-        else:
-            nom_cap = limpio.capitalize()
-            if nom_cap not in nombres_finales:
-                nombres_finales.append(nom_cap)
-            if limpio in FAMILIAS_POKEDEX:
-                for fid in FAMILIAS_POKEDEX[limpio]:
-                    if fid not in ids_finales:
-                        ids_finales.append(fid)
-            else:
-                try:
-                    r_poke = requests.get(f"https://pokeapi.co/api/v2/pokemon/{limpio}", timeout=4)
-                    if r_poke.status_code == 200:
-                        pid_api = int(r_poke.json().get("id") or 0)
-                        if pid_api > 0 and pid_api not in ids_finales:
-                            ids_finales.append(pid_api)
-                except Exception:
-                    pass
+    def _tarea() -> None:
+        try:
+            r = _SESION_WEBHOOK_EV.post(
+                f"{base_wh}?wait=true",
+                json={"username": "ScrasherBOT 🎛️", "content": texto},
+                timeout=6,
+            )
+            if r.status_code in (200, 204):
+                mid_temp = r.json().get("id")
+                if mid_temp:
+                    time.sleep(segundos_visible)
+                    _SESION_WEBHOOK_EV.delete(f"{base_wh}/messages/{mid_temp}", timeout=6)
+        except Exception:
+            pass
 
-    return nombres_finales, ids_finales
+    threading.Thread(target=_tarea, daemon=True).start()
 
 
 def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = False) -> Dict[str, Any]:
@@ -249,61 +110,82 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
     activo = bool(cfg.get("activo"))
     nombres = cfg.get("pokemon_nombres") or []
     ids = cfg.get("pokemon_ids") or []
+    titulo_evento = cfg.get("nombre_evento") or "Community Day / Evento Especial"
 
-    estado_str = "🟢 **ACTIVO — ESCANEANDO EN VIVO**" if activo and (nombres or ids) else "⏸️ **EN ESPERA (Sin Pokémon asignados)**"
+    estado_str = f"🟢 **ACTIVO** ({titulo_evento})" if activo and (nombres or ids) else "⏸️ **EN ESPERA (Sin Pokémon asignados)**"
     color = 0x10B981 if (activo and (nombres or ids)) else 0x6366F1
 
     if nombres:
-        lista_pokes_str = ", ".join(f"**{n}**" for n in nombres)
+        mostrados = ", ".join(f"**{n}**" for n in nombres[:24])
+        if len(nombres) > 24:
+            mostrados += f" *(+{len(nombres) - 24} más)*"
+        lista_pokes_str = mostrados
         if ids:
-            lista_pokes_str += f"\n*(IDs Pokédex incluidos con evoluciones: `{', '.join(map(str, ids[:18]))}`)*"
+            lista_pokes_str += f"\n*(Total familia evolutiva rastreada: `{len(ids)} especies de Pokédex`)*"
     elif ids:
-        lista_pokes_str = ", ".join(f"`#{i}`" for i in ids)
+        lista_pokes_str = ", ".join(f"`#{i}`" for i in ids[:25])
     else:
-        lista_pokes_str = "*Ninguno configurado actualmente. Escribe los nombres en este canal para empezar.*"
+        lista_pokes_str = "*Ninguno configurado actualmente. Escribe un comando o un preset en este canal para empezar.*"
 
     modos = []
     if cfg.get("incluir_shundos_100", True):
-        modos.append("🌟 `100% Shundo IV`")
+        modos.append("🌟 `100% Shundo`")
     if cfg.get("incluir_pvp_gl", True):
-        modos.append("🔵 `Great League (Top 1-5 Shiny)`")
+        modos.append("🔵 `Great League`")
     if cfg.get("incluir_pvp_ul", True):
-        modos.append("🟣 `Ultra League (Top 1-5 Shiny)`")
+        modos.append("🟣 `Ultra League`")
     modos_str = " • ".join(modos) if modos else "Ninguno"
 
+    # Estado de expiración del JWT_TOKEN en tiempo real
+    exp_ts = extraer_exp_jwt(obtener_jwt_actual())
+    ahora = int(time.time())
+    if exp_ts > ahora:
+        estado_jwt = f"🟢 **Válido** • Expira <t:{exp_ts}:R>"
+    elif exp_ts > 0:
+        estado_jwt = f"🔴 **Expirado** (<t:{exp_ts}:R>) • Escribe `token eyJ...`"
+    else:
+        estado_jwt = "🟢 **Activo**"
+
+    guia_presets = (
+        "• **`preset master`** ➔ 👑 Top Master League, Raids y Pseudo-Legendarios *(100% Shundo)*\n"
+        "• **`preset mega`** ➔ 🧬 Todos los Pokémon con Mega Evolución *(100% Shundo)*\n"
+        "• **`preset meta`** ➔ 🔥 Top Meta GBL competitivo *(Great & Ultra League)*\n"
+        "• **`preset iniciales`** ➔ 🌱🔥💧 Todos los Iniciales Gen 1 a Gen 9"
+    )
+
     guia_comandos = (
-        "Escribe directamente en este canal cualquiera de estos comandos:\n"
-        "• **`Mankey, Beldum, Ralts`** ➔ Activa la búsqueda de esos Pokémon (y sus evoluciones)\n"
-        "• **`+Bagon`** o **`-Bagon`** ➔ Agrega o quita un Pokémon sin borrar los demás\n"
-        "• **`modo todo`** ➔ Busca 100% Shundo + GL + UL *(por defecto)*\n"
-        "• **`modo shundo`** | **`modo pvp`** | **`modo gl`** | **`modo ul`** ➔ Cambia el filtro\n"
+        "• **`Mankey, Beldum, Ralts`** ➔ Busca esos Pokémon y sus evoluciones\n"
+        "• **`+Bagon`** o **`-Bagon`** ➔ Agrega o quita un Pokémon de la lista\n"
+        "• **`modo todo`** | **`modo shundo`** | **`modo pvp`** | **`modo gl`** | **`modo ul`**\n"
+        "• **`token eyJ...`** ➔ Renueva tu `JWT_TOKEN` directo desde Discord sin abrir GitHub\n"
         "• **`off`** o **`apagar`** ➔ Detiene el evento y limpia las alertas"
     )
 
     fields = [
         {"name": "📡 Estado del Evento / CD", "value": estado_str, "inline": True},
         {"name": "⚙️ Filtros Activos", "value": modos_str, "inline": True},
-        {"name": "🎯 Pokémon del Evento / CD", "value": lista_pokes_str, "inline": False},
-        {"name": "⌨️ Cómo Configurar desde tu Celular o PC", "value": guia_comandos, "inline": False},
+        {"name": "🔑 Sesión API (JWT)", "value": estado_jwt, "inline": True},
+        {"name": "🎯 Pokémon Rastreados", "value": lista_pokes_str, "inline": False},
+        {"name": "⚡ Presets Rápidos de 1 Palabra", "value": guia_presets, "inline": False},
+        {"name": "⌨️ Comandos desde Celular o PC", "value": guia_comandos, "inline": False},
     ]
 
     if aviso_permisos:
         fields.append({
             "name": "🔑 Nota única para activar lectura en este canal privado",
             "value": (
-                "Como la categoría **Pogo** es privada, haz clic derecho en **`#🎉-evento-cd`** ➔ "
-                "**Editar canal** ➔ **Permisos** ➔ **Añadir miembros o roles** ➔ agrega a **`ScrasherBOT`** "
-                "*(mientras tanto también puedes escribir tus comandos en `#general`)*."
+                "Haz clic derecho en **`#🎉-evento-cd`** ➔ **Editar canal** ➔ **Permisos** ➔ "
+                "**Añadir miembros o roles** ➔ agrega a **`ScrasherBOT`**."
             ),
             "inline": False,
         })
 
     return {
         "title": "🎛️ PANEL DE CONTROL — EVENTOS Y COMMUNITY DAY",
-        "description": "Configura en tiempo real qué Pokémon de **Evento o Community Day** quieres rastrear en **100% Shundo, Great League y Ultra League**.",
+        "description": "Controla en tiempo real tus **Eventos, Community Days, Presets y Sesión JWT** desde Discord.",
         "color": color,
         "fields": fields,
-        "footer": {"text": "ScrasherBOT • Radar Eventos & CD 24/7 (☁️ Nube)"},
+        "footer": {"text": "ScrasherBOT • Radar Eventos & CD 24/7 (☁️ Nube • Escaneo cada 8m)"},
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -332,7 +214,6 @@ def publicar_o_actualizar_panel_control(aviso_permisos: bool = False, permitir_c
                 )
                 if r_patch.status_code == 200:
                     return str(panel_mid)
-                # Si no fue borrado (ej. rate limit o timeout temporal), NO crear otro mensaje
                 if r_patch.status_code != 404 or not permitir_crear:
                     return str(panel_mid)
             except Exception:
@@ -362,7 +243,7 @@ def publicar_o_actualizar_panel_control(aviso_permisos: bool = False, permitir_c
 
 
 def limpiar_alertas_evento_discord() -> None:
-    """Elimina del canal #🎉-evento-cd los mensajes de spawns cuando se apaga el evento."""
+    """Elimina del canal #🎉-evento-cd los mensajes de spawns cuando se apaga o cambia el evento."""
     if not DISCORD_WEBHOOK_EVENTO.strip():
         return
     base_webhook = DISCORD_WEBHOOK_EVENTO.strip().split("?")[0].rstrip("/")
@@ -385,6 +266,47 @@ def limpiar_alertas_evento_discord() -> None:
             pass
 
 
+def _procesar_renovacion_token_discord(candidato_jwt: str) -> bool:
+    """Valida, activa en caliente y persiste cifrado el nuevo JWT_TOKEN enviado por Discord."""
+    ok, perfil, status = actualizar_jwt_token_en_vivo(candidato_jwt)
+    if not ok:
+        _enviar_aviso_temporal_evento(
+            f"❌ **No se pudo actualizar el `JWT_TOKEN`** ( el servidor devolvió `HTTP {status}`). Verifica que hayas copiado el token completo.",
+            segundos_visible=12.0,
+        )
+        return False
+
+    jwt_limpio = obtener_jwt_actual()
+    cfg = cargar_config_evento()
+    if DISCORD_BOT_TOKEN:
+        cfg["jwt_cifrado"] = cifrar_jwt_con_secreto(jwt_limpio, DISCORD_BOT_TOKEN)
+    guardar_config_evento(cfg)
+
+    # Si existe config_local.json en entorno local, actualizarlo también
+    if os.path.exists(CONFIG_LOCAL_FILE):
+        try:
+            with open(CONFIG_LOCAL_FILE, "r", encoding="utf-8") as f:
+                local_data = json.load(f)
+            local_data["JWT_TOKEN"] = jwt_limpio
+            with open(CONFIG_LOCAL_FILE, "w", encoding="utf-8") as f:
+                json.dump(local_data, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+
+    publicar_o_actualizar_panel_control()
+    sincronizar_estado_remoto_push(asincrono=True)
+
+    trainer = (perfil or {}).get("trainer") or {}
+    t_name = trainer.get("trainer_name") or (perfil or {}).get("display_name") or "Entrenador"
+    exp_ts = extraer_exp_jwt(jwt_limpio)
+    exp_txt = f" (vence <t:{exp_ts}:R>)" if exp_ts > 0 else ""
+    _enviar_aviso_temporal_evento(
+        f"✅ **`JWT_TOKEN` renovado y activado en vivo** para **{t_name}**{exp_txt}. *(Este mensaje se auto-eliminará)*",
+        segundos_visible=10.0,
+    )
+    return True
+
+
 def procesar_comando_texto_evento(texto: str) -> bool:
     """
     Interpreta el mensaje escrito por el usuario en Discord y actualiza evento_config.json.
@@ -402,11 +324,18 @@ def procesar_comando_texto_evento(texto: str) -> bool:
         limpio = limpio[7:].strip()
         low = limpio.lower()
 
+    # 0. Renovación de JWT_TOKEN ("token eyJ..." o pegar directamente "eyJ...")
+    if low.startswith(("token ", "jwt ")) or (limpio.startswith("eyJ") and limpio.count(".") >= 2 and len(limpio) > 60):
+        cand = re.sub(r"^(token|jwt)\s+", "", limpio, flags=re.IGNORECASE).strip()
+        _procesar_renovacion_token_discord(cand)
+        return False
+
     cfg = cargar_config_evento()
 
     # 1. Comando de apagado
     if low in ("off", "apagar", "stop", "desactivar", "limpiar", "none", "ninguno"):
         cfg["activo"] = False
+        cfg["nombre_evento"] = "Community Day / Evento Especial"
         cfg["pokemon_nombres"] = []
         cfg["pokemon_ids"] = []
         guardar_config_evento(cfg)
@@ -420,7 +349,25 @@ def procesar_comando_texto_evento(texto: str) -> bool:
         publicar_o_actualizar_panel_control(permitir_crear=True)
         return False
 
-    # 3. Comando de cambio de modo
+    # 3. Comandos de Presets ("preset master", "preset mega", "preset meta", "preset iniciales" o directo "master", "mega", "meta")
+    posible_preset = re.sub(r"^preset\s+", "", low).strip() if low.startswith("preset ") else low
+    datos_preset = obtener_preset(posible_preset)
+    if datos_preset:
+        nombres_res, ids_res = resolver_nombres_e_ids(datos_preset["pokemones"])
+        cfg["nombre_evento"] = datos_preset["titulo"]
+        cfg["pokemon_nombres"] = nombres_res
+        cfg["pokemon_ids"] = ids_res
+        cfg["incluir_shundos_100"] = bool(datos_preset.get("incluir_shundos_100", True))
+        cfg["incluir_pvp_gl"] = bool(datos_preset.get("incluir_pvp_gl", True))
+        cfg["incluir_pvp_ul"] = bool(datos_preset.get("incluir_pvp_ul", True))
+        cfg["activo"] = True
+        guardar_config_evento(cfg)
+        limpiar_alertas_evento_discord()
+        publicar_o_actualizar_panel_control()
+        sincronizar_estado_remoto_push(asincrono=True)
+        return True
+
+    # 4. Comando de cambio de modo
     if low.startswith("modo "):
         sub = low.replace("modo ", "").strip()
         if sub in ("todo", "all", "todos", "completo"):
@@ -448,7 +395,7 @@ def procesar_comando_texto_evento(texto: str) -> bool:
         sincronizar_estado_remoto_push(asincrono=True)
         return bool(cfg.get("activo"))
 
-    # 4. Agregar Pokémon (+Nombre o agregar Nombre)
+    # 5. Agregar Pokémon (+Nombre o agregar Nombre)
     if low.startswith("+") or low.startswith("agregar ") or low.startswith("add "):
         resto = re.sub(r"^(\+|agregar\s+|add\s+)", "", limpio, flags=re.IGNORECASE)
         partes = [p.strip() for p in re.split(r"[,;\s]+", resto) if p.strip()]
@@ -469,7 +416,7 @@ def procesar_comando_texto_evento(texto: str) -> bool:
         sincronizar_estado_remoto_push(asincrono=True)
         return bool(cfg["activo"])
 
-    # 5. Quitar Pokémon (-Nombre o quitar Nombre)
+    # 6. Quitar Pokémon (-Nombre o quitar Nombre)
     if low.startswith("-") or low.startswith("quitar ") or low.startswith("remove "):
         resto = re.sub(r"^(-|quitar\s+|remove\s+)", "", limpio, flags=re.IGNORECASE)
         partes = [p.strip() for p in re.split(r"[,;\s]+", resto) if p.strip()]
@@ -482,11 +429,12 @@ def procesar_comando_texto_evento(texto: str) -> bool:
         sincronizar_estado_remoto_push(asincrono=True)
         return bool(cfg["activo"])
 
-    # 6. Lista directa de Pokémon (ej. "Mankey, Beldum, Ralts" o "Pikachu")
+    # 7. Lista directa de Pokémon (ej. "Mankey, Beldum, Ralts" o "Pikachu")
     partes = [p.strip() for p in re.split(r"[,;\s]+", limpio) if p.strip()]
     if partes:
         nombres_res, ids_res = resolver_nombres_e_ids(partes)
         if nombres_res or ids_res:
+            cfg["nombre_evento"] = "Community Day / Evento Personalizado"
             cfg["pokemon_nombres"] = nombres_res
             cfg["pokemon_ids"] = ids_res
             cfg["activo"] = True
@@ -529,7 +477,7 @@ def coincide_con_evento(mon: Dict[str, Any], cfg_evento: Dict[str, Any]) -> bool
 def _worker_lector_comandos_discord() -> None:
     """
     Hilo en segundo plano que escucha cada 2.5s los mensajes enviados por el usuario
-    en el canal #🎉-evento-cd (o #general si aún no se dio permiso al bot en la categoría privada).
+    en el canal #🎉-evento-cd.
     """
     if not DISCORD_BOT_TOKEN.strip():
         return
@@ -539,7 +487,6 @@ def _worker_lector_comandos_discord() -> None:
     canal_general_fallback = "929565903325126717"
     ultimos_vistos: Dict[str, str] = {}
 
-    # Verificar si ScrasherBOT ya tiene acceso al canal #🎉-evento-cd (sin reenviar ni tocar el panel al iniciar)
     r_test = _SESION_BOT.get(f"https://discord.com/api/v10/channels/{canal_evento}/messages?limit=1", headers=headers_bot, timeout=6)
     sin_permiso_canal_privado = r_test.status_code == 403
 
@@ -564,7 +511,6 @@ def _worker_lector_comandos_discord() -> None:
                     if not isinstance(mensajes, list) or not mensajes:
                         continue
 
-                    # En la primera lectura de este canal, registrar el último ID sin re-ejecutar historial viejo
                     if ch_id not in ultimos_vistos:
                         ultimos_vistos[ch_id] = str(mensajes[0]["id"])
                         continue
@@ -582,14 +528,10 @@ def _worker_lector_comandos_discord() -> None:
                         contenido = str(m.get("content") or "").strip()
                         if not contenido:
                             continue
-                        # En #general solo procesar si empieza con !evento o /evento para no interferir con charlas
                         if ch_id == canal_general_fallback and not contenido.lower().startswith(("!evento", "/evento")):
                             continue
 
-                        print(f"   🎛️ [Bot-Evento] Comando recibido en Discord: '{contenido}'")
-                        disparar_escaneo = procesar_comando_texto_evento(contenido)
-
-                        # Borrar el mensaje de comando del usuario para mantener limpio el canal #🎉-evento-cd
+                        # Borrar primero el mensaje del usuario (especialmente importante si envió un token JWT)
                         if ch_id == canal_evento:
                             try:
                                 _SESION_BOT.delete(
@@ -599,6 +541,11 @@ def _worker_lector_comandos_discord() -> None:
                                 )
                             except Exception:
                                 pass
+
+                        es_token = contenido.lower().startswith(("token ", "jwt ")) or contenido.startswith("eyJ")
+                        log_txt = "token JWT (oculto por seguridad)" if es_token else contenido
+                        print(f"   🎛️ [Bot-Evento] Comando recibido en Discord: '{log_txt}'")
+                        disparar_escaneo = procesar_comando_texto_evento(contenido)
 
                         if disparar_escaneo and _CALLBACK_ESCANEO_INMEDIATO:
                             threading.Thread(target=_CALLBACK_ESCANEO_INMEDIATO, daemon=True).start()

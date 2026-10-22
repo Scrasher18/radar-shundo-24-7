@@ -3,10 +3,12 @@ Configuración centralizada del proyecto, constantes globales, ligas PvP y crede
 Separa completamente la configuración de la lógica de negocio.
 """
 
+from base64 import urlsafe_b64decode, urlsafe_b64encode
+import hashlib
 import json
 import os
 import sys
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_LOCAL_FILE = os.path.join(BASE_DIR, "config_local.json")
@@ -26,10 +28,66 @@ def cargar_config_local() -> Dict[str, Any]:
     return {}
 
 
+def extraer_exp_jwt(token_str: str) -> int:
+    """Extrae el timestamp Unix de expiración ('exp') de un JWT sin verificar firma."""
+    try:
+        partes = token_str.strip().split(".")
+        if len(partes) < 2:
+            return 0
+        payload_b64 = partes[1] + "=" * (-len(partes[1]) % 4)
+        data = json.loads(urlsafe_b64decode(payload_b64.encode("utf-8")).decode("utf-8"))
+        return int(data.get("exp") or 0)
+    except Exception:
+        return 0
+
+
+def cifrar_jwt_con_secreto(jwt_str: str, secreto: str) -> str:
+    """Cifra simétricamente el JWT usando DISCORD_BOT_TOKEN para guardarlo seguro en evento_config.json."""
+    if not jwt_str or not secreto:
+        return ""
+    raw = jwt_str.encode("utf-8")
+    out = bytearray(len(raw))
+    key_bytes = secreto.encode("utf-8")
+    bloque_idx = 0
+    pos = 0
+    while pos < len(raw):
+        digest = hashlib.sha256(key_bytes + f":{bloque_idx}".encode("utf-8")).digest()
+        for b in digest:
+            if pos >= len(raw):
+                break
+            out[pos] = raw[pos] ^ b
+            pos += 1
+        bloque_idx += 1
+    return urlsafe_b64encode(bytes(out)).decode("utf-8")
+
+
+def descifrar_jwt_con_secreto(cifrado_b64: str, secreto: str) -> str:
+    """Descifra el JWT guardado en evento_config.json usando DISCORD_BOT_TOKEN."""
+    if not cifrado_b64 or not secreto:
+        return ""
+    try:
+        enc = urlsafe_b64decode(cifrado_b64.encode("utf-8"))
+        out = bytearray(len(enc))
+        key_bytes = secreto.encode("utf-8")
+        bloque_idx = 0
+        pos = 0
+        while pos < len(enc):
+            digest = hashlib.sha256(key_bytes + f":{bloque_idx}".encode("utf-8")).digest()
+            for b in digest:
+                if pos >= len(enc):
+                    break
+                out[pos] = enc[pos] ^ b
+                pos += 1
+            bloque_idx += 1
+        texto = bytes(out).decode("utf-8")
+        return texto if texto.startswith("eyJ") else ""
+    except Exception:
+        return ""
+
+
 _cfg = cargar_config_local()
 
 # Credenciales y Webhooks por canal
-JWT_TOKEN: str = os.environ.get("JWT_TOKEN") or _cfg.get("JWT_TOKEN", "")
 DISCORD_WEBHOOK_URL: str = os.environ.get("DISCORD_WEBHOOK_URL") or _cfg.get("DISCORD_WEBHOOK_URL", "")
 DISCORD_WEBHOOK_GL: str = os.environ.get("DISCORD_WEBHOOK_GL") or _cfg.get("DISCORD_WEBHOOK_GL", "")
 DISCORD_WEBHOOK_UL: str = os.environ.get("DISCORD_WEBHOOK_UL") or _cfg.get("DISCORD_WEBHOOK_UL", "")
@@ -37,6 +95,27 @@ DISCORD_WEBHOOK_EVENTO: str = os.environ.get("DISCORD_WEBHOOK_EVENTO") or _cfg.g
 DISCORD_EVENTO_CHANNEL_ID: str = os.environ.get("DISCORD_EVENTO_CHANNEL_ID") or _cfg.get("DISCORD_EVENTO_CHANNEL_ID", "1562344305606262846")
 DISCORD_BOT_TOKEN: str = os.environ.get("DISCORD_BOT_TOKEN") or _cfg.get("DISCORD_BOT_TOKEN", "")
 DISCORD_USER_ID_MENCION: str = os.environ.get("DISCORD_USER_ID_MENCION") or _cfg.get("DISCORD_USER_ID_MENCION", "924392800534011935")
+
+
+def resolver_jwt_mas_reciente() -> str:
+    """Selecciona automáticamente el JWT más reciente entre variables de entorno, config_local y el renovado por Discord."""
+    candidato_base = os.environ.get("JWT_TOKEN") or _cfg.get("JWT_TOKEN", "")
+    exp_base = extraer_exp_jwt(candidato_base)
+    if os.path.exists(EVENTO_CONFIG_FILE) and DISCORD_BOT_TOKEN:
+        try:
+            with open(EVENTO_CONFIG_FILE, "r", encoding="utf-8") as f:
+                ev_data = json.load(f)
+            jwt_cif = ev_data.get("jwt_cifrado", "")
+            if jwt_cif:
+                jwt_desc = descifrar_jwt_con_secreto(jwt_cif, DISCORD_BOT_TOKEN)
+                if extraer_exp_jwt(jwt_desc) > exp_base:
+                    return jwt_desc
+        except Exception:
+            pass
+    return candidato_base
+
+
+JWT_TOKEN: str = resolver_jwt_mas_reciente()
 
 ES_MODO_NUBE: bool = os.environ.get("CLOUD_MODE") == "1" or sys.platform != "win32"
 AUTO_COPIAR_PORTAPAPELES: bool = not ES_MODO_NUBE
@@ -61,13 +140,13 @@ LNG_ORIGEN: float = -77.036896
 
 # Parámetros operativos del motor 24/7
 MODO_VIGILANTE_CONTINUO: bool = True
-INTERVALO_SEGUNDOS: int = 300              # Escaneo de nuevos spawns cada 5 minutos (300s)
+INTERVALO_SEGUNDOS: int = 480              # Escaneo de nuevos spawns cada 8 minutos (480s)
 MIN_SEGUNDOS_VIDA: int = 90                # Ignorar spawns con menos de 90s restantes
 PVP_TOP_RANK_MAX: int = 5                  # Filtrar Rank #1 al #5 en Great League y Ultra League
 PVP_MIN_CP_GL: int = 1200                  # CP mínimo competitivo en Great League (en filtro local Python)
 PVP_MIN_CP_UL: int = 2100                  # CP mínimo competitivo en Ultra League (en filtro local Python)
 TTL_LIMPIEZA_CACHE_SEGUNDOS: int = 7200    # Limpiar registros ya expirados después de 2 horas
-MAX_REVEALS_POR_EJECUCION: int = 65
+MAX_REVEALS_POR_EJECUCION: int = 0         # 0 para no consumir los 10 créditos de reveal de la cuenta en la web
 
 # Endpoints y cabeceras HTTP
 API_BASE: str = "https://coordinates-api.pokemongopro.com"
