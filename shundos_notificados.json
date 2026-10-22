@@ -55,249 +55,6 @@
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 03:09:23"
   },
-  "shundo:6531447586221948046": {
-    "canal": "shundo",
-    "pokemon": "Shelmet",
-    "coords": "32.841006,-96.789000",
-    "ts": 1792640666,
-    "despawn_unix": 1792641301,
-    "discord_msg_id": "1562672967551418406",
-    "discord_msg_ids": [
-      "1562672967551418406"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Shelmet! (CP 667 • Nivel 28.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=32.841006,-96.789000",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm616.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `667` | **Nivel:** `28.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `10 min 34 seg`\n🕒 **Hora exacta:** <t:1792641301:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Highland Park, Texas, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=32.841006,-96.789000)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n32.841006,-96.789000\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T03:44:28.397622+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:44:28"
-  },
-  "great:-2992103217561613122": {
-    "canal": "great",
-    "pokemon": "Woobat",
-    "coords": "44.455517,11.272223",
-    "ts": 1792640666,
-    "despawn_unix": 1792642074,
-    "discord_msg_id": "1562677461261488154",
-    "discord_msg_ids": [
-      "1562677241085952148",
-      "1562677461261488154"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Woobat ➔ Swoobat!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Swoobat** (`CP 1500` a Nivel `38.0`)",
-      "url": "https://www.google.com/maps?q=44.455517,11.272223",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm528.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/9`\n**Salvaje:** `CP 144` | `Nivel 6.0` (M, Female)\n**Final en Liga:** `CP 1500` | `Nivel 38.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `5 min 34 seg`\n🕒 **Hora exacta:** <t:1792642074:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Casalecchio di Reno, Bologna, Italy • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=44.455517,11.272223)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n44.455517,11.272223\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T04:02:19.855232+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:44:29"
-  },
-  "great:4315025061191766372": {
-    "canal": "great",
-    "pokemon": "Geodude (Alola)",
-    "coords": "52.420619,13.204432",
-    "ts": 1792640666,
-    "despawn_unix": 1792642180,
-    "discord_msg_id": "1562678903087169564",
-    "discord_msg_ids": [
-      "1562672971485675566",
-      "1562674354343649296",
-      "1562678903087169564"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #2: Geodude (Alola) ➔ Graveler!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.71%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Graveler** (`CP 1498` a Nivel `30.5`)",
-      "url": "https://www.google.com/maps?q=52.420619,13.204432",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm75.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.71%`)\n**IVs PvP:** `0/15/14`\n**Salvaje:** `CP 260` | `Nivel 8.0` (M, Female)\n**Final en Liga:** `CP 1498` | `Nivel 30.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `1 min 36 seg`\n🕒 **Hora exacta:** <t:1792642180:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Nikolassee, Berlin, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.420619,13.204432)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.420619,13.204432\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T04:08:03.597886+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:44:29"
-  },
-  "great:-3126492425666327223": {
-    "canal": "great",
-    "pokemon": "Dedenne",
-    "coords": "50.763791,6.071058",
-    "ts": 1792640666,
-    "despawn_unix": 1792640848,
-    "discord_msg_id": "1562672971485675566",
-    "discord_msg_ids": [
-      "1562672971485675566"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Dedenne!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.88%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n⚔️ **En Liga:** **Dedenne** alcanza `CP 1500` en Nivel `32.5`",
-      "url": "https://www.google.com/maps?q=50.763791,6.071058",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm702.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#3` (`99.88%`)\n**IVs PvP:** `1/13/14`\n**Salvaje:** `CP 74` | `Nivel 2.0` (M, Female)\n**Final en Liga:** `CP 1500` | `Nivel 32.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 01 seg`\n🕒 **Hora exacta:** <t:1792640848:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Aachen, Nordrhein-Westfalen, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.763791,6.071058)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n50.763791,6.071058\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T03:44:29.340084+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:44:29"
-  },
-  "great:-1432978425057127075": {
-    "canal": "great",
-    "pokemon": "Snivy",
-    "coords": "51.476724,-0.875464",
-    "ts": 1792640666,
-    "despawn_unix": 1792641311,
-    "discord_msg_id": "1562672971485675566",
-    "discord_msg_ids": [
-      "1562672971485675566"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #4: Snivy ➔ Serperior!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #4** (`99.58%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Serperior** (`CP 1499` a Nivel `25.0`)",
-      "url": "https://www.google.com/maps?q=51.476724,-0.875464",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm497.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#4` (`99.58%`)\n**IVs PvP:** `2/14/14`\n**Salvaje:** `CP 231` | `Nivel 11.0` (M, Male)\n**Final en Liga:** `CP 1499` | `Nivel 25.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `10 min 44 seg`\n🕒 **Hora exacta:** <t:1792641311:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Twyford, Wokingham, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.476724,-0.875464)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.476724,-0.875464\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T03:44:29.340107+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 03:44:29"
-  },
   "great:-2039602588095927445": {
     "canal": "great",
     "pokemon": "Inkay",
@@ -1335,7 +1092,7 @@
       },
       "timestamp": "2026-10-22T04:38:35.687246+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:13:42"
   },
   "ultra:-4922644559007782670": {
@@ -1777,7 +1534,7 @@
       },
       "timestamp": "2026-10-22T04:38:35.687285+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:19:16"
   },
   "ultra:7735695753926229154": {
@@ -2022,7 +1779,7 @@
       },
       "timestamp": "2026-10-22T04:38:35.687308+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:30:33"
   },
   "ultra:-5725535211363099077": {
@@ -2072,7 +1829,7 @@
       },
       "timestamp": "2026-10-22T04:38:35.687329+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:30:33"
   },
   "ultra:853324929289866071": {
@@ -2121,7 +1878,7 @@
       },
       "timestamp": "2026-10-22T04:38:35.687345+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:37:02"
   },
   "ultra:-6306006808145787437": {
@@ -2409,7 +2166,7 @@
       },
       "timestamp": "2026-10-22T04:38:35.687362+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:38:36"
   },
   "shundo:-8250532120076284317": {
@@ -2553,7 +2310,7 @@
       },
       "timestamp": "2026-10-22T04:44:09.366566+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 04:44:09"
   },
   "shundo:8721729370297736623": {
