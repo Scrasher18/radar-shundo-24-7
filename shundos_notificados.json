@@ -2132,11 +2132,12 @@
     "coords": "27.888640,-82.660569",
     "ts": 1792652041,
     "despawn_unix": 1792653291,
-    "discord_msg_id": "1562723442745278486",
+    "discord_msg_id": "1562724844544721029",
     "discord_msg_ids": [
       "1562720679256784981",
       "1562722073737175139",
-      "1562723442745278486"
+      "1562723442745278486",
+      "1562724844544721029"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Pikachu ➔ Raichu!",
@@ -2154,7 +2155,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `9 min 52 seg`\n🕒 **Hora exacta:** <t:1792653291:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `4 min 16 seg`\n🕒 **Hora exacta:** <t:1792653291:T>",
           "inline": true
         },
         {
@@ -2171,7 +2172,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T07:05:02.612657+00:00"
+      "timestamp": "2026-10-22T07:10:36.700024+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 06:54:04"
@@ -2572,9 +2573,10 @@
     "coords": "35.330491,136.926900",
     "ts": 1792652698,
     "despawn_unix": 1792654234,
-    "discord_msg_id": "1562723442745278486",
+    "discord_msg_id": "1562724844544721029",
     "discord_msg_ids": [
-      "1562723442745278486"
+      "1562723442745278486",
+      "1562724844544721029"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Solrock!",
@@ -2592,7 +2594,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `25 min 35 seg`\n🕒 **Hora exacta:** <t:1792654234:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `19 min 59 seg`\n🕒 **Hora exacta:** <t:1792654234:T>",
           "inline": true
         },
         {
@@ -2609,7 +2611,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T07:05:02.612572+00:00"
+      "timestamp": "2026-10-22T07:10:36.699989+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 07:05:02"
@@ -2620,9 +2622,10 @@
     "coords": "46.946735,6.804746",
     "ts": 1792652698,
     "despawn_unix": 1792655226,
-    "discord_msg_id": "1562723442745278486",
+    "discord_msg_id": "1562724844544721029",
     "discord_msg_ids": [
-      "1562723442745278486"
+      "1562723442745278486",
+      "1562724844544721029"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Minccino ➔ Cinccino!",
@@ -2640,7 +2643,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `42 min 07 seg`\n🕒 **Hora exacta:** <t:1792655226:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `36 min 31 seg`\n🕒 **Hora exacta:** <t:1792655226:T>",
           "inline": true
         },
         {
@@ -2657,7 +2660,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T07:05:02.612673+00:00"
+      "timestamp": "2026-10-22T07:10:36.700045+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 07:05:02"
@@ -2803,7 +2806,7 @@
       },
       "timestamp": "2026-10-22T07:10:35.876746+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 07:10:36"
   },
   "great:7943821074335900464": {
@@ -2901,5 +2904,53 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 07:10:36"
+  },
+  "ultra:-8689410003286488409": {
+    "canal": "ultra",
+    "pokemon": "Inkay",
+    "coords": "55.722280,9.115200",
+    "ts": 1792653034,
+    "despawn_unix": 1792653572,
+    "discord_msg_id": "1562724844544721029",
+    "discord_msg_ids": [
+      "1562724844544721029"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Inkay ➔ Malamar!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #3** (`99.44%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Malamar** (`CP 2493` a Nivel `50.0`)",
+      "url": "https://www.google.com/maps?q=55.722280,9.115200",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm687.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#3` (`99.44%`)\n**IVs PvP:** `3/14/15`\n**Salvaje:** `CP 210` | `Nivel 9.0` (M, Male)\n**Final en Liga:** `CP 2493` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `8 min 57 seg`\n🕒 **Hora exacta:** <t:1792653572:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Billund, Syddanmark, Denmark • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=55.722280,9.115200)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n55.722280,9.115200\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T07:10:36.700060+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 07:10:37"
   }
 }
