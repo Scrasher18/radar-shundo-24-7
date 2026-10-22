@@ -1,52 +1,4 @@
 {
-  "ultra:-7052638940490339112": {
-    "canal": "ultra",
-    "pokemon": "Farfetchd (Galarian)",
-    "coords": "38.257288,140.896568",
-    "ts": 1792658133,
-    "despawn_unix": 1792659462,
-    "discord_msg_id": "1562746223524450384",
-    "discord_msg_ids": [
-      "1562746223524450384"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #5: Farfetchd (Galarian) ➔ Sirfetchd!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #5** (`99.49%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Sirfetchd** (`CP 2499` a Nivel `33.0`)",
-      "url": "https://www.google.com/maps?q=38.257288,140.896568",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm865.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#5` (`99.49%`)\n**IVs PvP:** `0/12/13`\n**Salvaje:** `CP 432` | `Nivel 10.0` (M, Male)\n**Final en Liga:** `CP 2499` | `Nivel 33.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `22 min 08 seg`\n🕒 **Hora exacta:** <t:1792659462:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.257288,140.896568)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n38.257288,140.896568\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T08:35:34.027026+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 08:35:34"
-  },
   "great:7360261549712539819": {
     "canal": "great",
     "pokemon": "Murkrow",
@@ -1034,7 +986,7 @@
       },
       "timestamp": "2026-10-22T09:31:16.633806+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 09:08:27"
   },
   "great:2410409164656790647": {
@@ -1670,7 +1622,7 @@
       },
       "timestamp": "2026-10-22T09:31:16.633853+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 09:25:39"
   },
   "great:-4174251638225452015": {
@@ -1719,7 +1671,7 @@
       },
       "timestamp": "2026-10-22T09:31:16.633874+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 09:25:39"
   },
   "great:-72624604954658673": {
@@ -1959,7 +1911,7 @@
       },
       "timestamp": "2026-10-22T09:31:16.633746+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 09:31:16"
   },
   "great:-6359457900998999219": {
@@ -2007,7 +1959,7 @@
       },
       "timestamp": "2026-10-22T09:31:16.633785+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 09:31:16"
   },
   "ultra:3758919855473229639": {
