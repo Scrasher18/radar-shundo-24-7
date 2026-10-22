@@ -143,7 +143,7 @@ LNG_ORIGEN: float = -77.036896
 
 # Parámetros operativos del motor 24/7
 MODO_VIGILANTE_CONTINUO: bool = True
-INTERVALO_SEGUNDOS: int = 300              # Escaneo de nuevos spawns cada 5 minutos (300s)
+INTERVALO_SEGUNDOS: int = 420              # Escaneo de nuevos spawns cada 7 minutos (420s)
 MIN_SEGUNDOS_VIDA: int = 90                # Ignorar spawns con menos de 90s restantes
 PVP_TOP_RANK_MAX: int = 5                  # Filtrar Rank #1 al #5 en Great League y Ultra League
 PVP_REVEAL_MAX_RANK: int = 2              # Coordenadas exactas garantizadas en PvP Rank #1 y #2
