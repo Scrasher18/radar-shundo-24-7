@@ -1,104 +1,4 @@
 {
-  "great:-4008823690305178395": {
-    "canal": "great",
-    "pokemon": "Purrloin",
-    "coords": "51.461517,-0.103161",
-    "ts": 1792632679,
-    "despawn_unix": 1792634188,
-    "discord_msg_id": "1562640897613631524",
-    "discord_msg_ids": [
-      "1562639461966282808",
-      "1562640897613631524"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Purrloin ➔ Liepard!",
-      "description": "✨ **SHINY GARANTIZADO** • 🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Liepard** (`CP 1497` a Nivel `31.5`)",
-      "url": "https://www.google.com/maps?q=51.461517,-0.103161",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm510.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/14`\n**Salvaje:** `CP 89` | `Nivel 5.0` (M, Female)\n**Final en Liga:** `CP 1497` | `Nivel 31.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `19 min 25 seg`\n🕒 **Hora exacta:** <t:1792634188:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.461517,-0.103161)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.461517,-0.103161\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T01:37:02.366472+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 01:31:20"
-  },
-  "great:4688389336102585452": {
-    "canal": "great",
-    "pokemon": "Taillow",
-    "coords": "41.826813,12.578453",
-    "ts": 1792632679,
-    "despawn_unix": 1792634058,
-    "discord_msg_id": "1562643746389106688",
-    "discord_msg_ids": [
-      "1562639461966282808",
-      "1562640897613631524",
-      "1562642296178999322",
-      "1562643746389106688"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #2: Taillow ➔ Swellow!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.82%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Swellow** (`CP 1499` a Nivel `29.5`)",
-      "url": "https://www.google.com/maps?q=41.826813,12.578453",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm277.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.82%`)\n**IVs PvP:** `1/14/15`\n**Salvaje:** `CP 90` | `Nivel 5.0` (M, Male)\n**Final en Liga:** `CP 1499` | `Nivel 29.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `5 min 59 seg`\n🕒 **Hora exacta:** <t:1792634058:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Ciampino, Roma, Italy • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=41.826813,12.578453)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n41.826813,12.578453\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T01:48:21.316400+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 01:31:20"
-  },
   "great:1370445783739318254": {
     "canal": "great",
     "pokemon": "Deerling (Autumn)",
@@ -2618,7 +2518,7 @@
       },
       "timestamp": "2026-10-22T02:28:39.821607+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 02:28:40"
   },
   "great:8999521046689531827": {
