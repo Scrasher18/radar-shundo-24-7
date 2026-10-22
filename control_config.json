@@ -2,10 +2,10 @@
   "pausa_global": false,
   "intervalo_minutos": 7,
   "canales": {
-    "shundo": true,
-    "great": true,
-    "ultra": true,
-    "evento": true
+    "shundo": false,
+    "great": false,
+    "ultra": false,
+    "evento": false
   },
   "pvp_top_rank": 5,
   "pvp_reveal_rank": 2,
