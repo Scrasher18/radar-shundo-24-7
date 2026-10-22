@@ -2026,11 +2026,12 @@
     "coords": "50.827862,7.951102",
     "ts": 1792630597,
     "despawn_unix": 1792632848,
-    "discord_msg_id": "1562633555627220998",
+    "discord_msg_id": "1562634930431721538",
     "discord_msg_ids": [
       "1562630735150448730",
       "1562632159997730893",
-      "1562633555627220998"
+      "1562633555627220998",
+      "1562634930431721538"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Zorua ➔ Zoroark!",
@@ -2048,7 +2049,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `26 min 17 seg`\n🕒 **Hora exacta:** <t:1792632848:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `20 min 50 seg`\n🕒 **Hora exacta:** <t:1792632848:T>",
           "inline": true
         },
         {
@@ -2065,9 +2066,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T01:07:51.879910+00:00"
+      "timestamp": "2026-10-22T01:13:19.599484+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 00:56:39"
   },
   "ultra:2035657592976538206": {
@@ -2076,11 +2077,12 @@
     "coords": "53.337178,-1.418125",
     "ts": 1792630597,
     "despawn_unix": 1792631693,
-    "discord_msg_id": "1562633555627220998",
+    "discord_msg_id": "1562634930431721538",
     "discord_msg_ids": [
       "1562630735150448730",
       "1562632159997730893",
-      "1562633555627220998"
+      "1562633555627220998",
+      "1562634930431721538"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Charmander ➔ Charizard!",
@@ -2098,7 +2100,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `7 min 02 seg`\n🕒 **Hora exacta:** <t:1792631693:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `1 min 35 seg`\n🕒 **Hora exacta:** <t:1792631693:T>",
           "inline": true
         },
         {
@@ -2115,7 +2117,7 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T01:07:51.879945+00:00"
+      "timestamp": "2026-10-22T01:13:19.599529+00:00"
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:56:39"
@@ -2617,10 +2619,11 @@
     "coords": "47.645716,-122.390757",
     "ts": 1792630931,
     "despawn_unix": 1792632145,
-    "discord_msg_id": "1562633555627220998",
+    "discord_msg_id": "1562634930431721538",
     "discord_msg_ids": [
       "1562632159997730893",
-      "1562633555627220998"
+      "1562633555627220998",
+      "1562634930431721538"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #4: Yamask (Galarian) ➔ Runerigus!",
@@ -2638,7 +2641,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `14 min 34 seg`\n🕒 **Hora exacta:** <t:1792632145:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `9 min 07 seg`\n🕒 **Hora exacta:** <t:1792632145:T>",
           "inline": true
         },
         {
@@ -2655,9 +2658,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T01:07:51.879986+00:00"
+      "timestamp": "2026-10-22T01:13:19.599567+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 01:02:19"
   },
   "ultra:4436133448079731500": {
@@ -3007,9 +3010,10 @@
     "coords": "51.290708,9.505087",
     "ts": 1792631270,
     "despawn_unix": 1792631939,
-    "discord_msg_id": "1562633555627220998",
+    "discord_msg_id": "1562634930431721538",
     "discord_msg_ids": [
-      "1562633555627220998"
+      "1562633555627220998",
+      "1562634930431721538"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #5: Venipede ➔ Scolipede!",
@@ -3027,7 +3031,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 08 seg`\n🕒 **Hora exacta:** <t:1792631939:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `5 min 41 seg`\n🕒 **Hora exacta:** <t:1792631939:T>",
           "inline": true
         },
         {
@@ -3044,9 +3048,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T01:07:51.880020+00:00"
+      "timestamp": "2026-10-22T01:13:19.599596+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 01:07:52"
   },
   "shundo:-8510401122769809076": {
@@ -3237,6 +3241,54 @@
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
       "timestamp": "2026-10-22T01:13:18.815846+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 01:13:19"
+  },
+  "ultra:-3441680339581559015": {
+    "canal": "ultra",
+    "pokemon": "Yamask (Galarian)",
+    "coords": "43.602523,1.473364",
+    "ts": 1792631597,
+    "despawn_unix": 1792632330,
+    "discord_msg_id": "1562634930431721538",
+    "discord_msg_ids": [
+      "1562634930431721538"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #5: Yamask (Galarian) ➔ Runerigus!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #5** (`99.46%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Runerigus** (`CP 2500` a Nivel `50.0`)",
+      "url": "https://www.google.com/maps?q=43.602523,1.473364",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm867.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#5` (`99.46%`)\n**IVs PvP:** `11/14/14`\n**Salvaje:** `CP 778` | `Nivel 29.0` (M, Female)\n**Final en Liga:** `CP 2500` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `12 min 12 seg`\n🕒 **Hora exacta:** <t:1792632330:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Toulouse, Haute-Garonne, France • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=43.602523,1.473364)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n43.602523,1.473364\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T01:13:19.599624+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 01:13:19"
