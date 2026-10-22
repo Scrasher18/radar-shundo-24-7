@@ -2180,19 +2180,20 @@
   "shundo:38571534246093597": {
     "canal": "shundo",
     "pokemon": "Electabuzz",
-    "coords": "40.742752,-73.974572",
+    "coords": "40.742751,-73.974572",
     "ts": 1792670289,
     "despawn_unix": 1792673559,
-    "discord_msg_id": "1562799945159938102",
+    "discord_msg_id": "1562801365053349903",
     "discord_msg_ids": [
       "1562797207785181233",
       "1562798615246803075",
-      "1562799945159938102"
+      "1562799945159938102",
+      "1562801365053349903"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Electabuzz! (CP 800 • Nivel 12.0)",
       "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=40.742752,-73.974572",
+      "url": "https://www.google.com/maps?q=40.742751,-73.974572",
       "color": 16766720,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm125.s.icon.png"
@@ -2205,24 +2206,24 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `43 min 36 seg`\n🕒 **Hora exacta:** <t:1792673559:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `37 min 58 seg`\n🕒 **Hora exacta:** <t:1792673559:T>",
           "inline": true
         },
         {
           "name": "📍 Ubicación",
-          "value": "Gramercy Park, New York, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.742752,-73.974572)",
+          "value": "Gramercy Park, New York, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.742751,-73.974572)",
           "inline": false
         },
         {
           "name": "🎯 Coordenadas Exactas",
-          "value": "```\n40.742752,-73.974572\n```",
+          "value": "```\n40.742751,-73.974572\n```",
           "inline": false
         }
       ],
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T12:09:02.234632+00:00"
+      "timestamp": "2026-10-22T12:14:40.758755+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 11:58:09"
@@ -2479,10 +2480,11 @@
     "coords": "51.810063,4.714954",
     "ts": 1792670624,
     "despawn_unix": 1792671829,
-    "discord_msg_id": "1562799945159938102",
+    "discord_msg_id": "1562801365053349903",
     "discord_msg_ids": [
       "1562798615246803075",
-      "1562799945159938102"
+      "1562799945159938102",
+      "1562801365053349903"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Pikipek! (CP 150 • Nivel 6.0)",
@@ -2500,7 +2502,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `14 min 46 seg`\n🕒 **Hora exacta:** <t:1792671829:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `9 min 08 seg`\n🕒 **Hora exacta:** <t:1792671829:T>",
           "inline": true
         },
         {
@@ -2517,7 +2519,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T12:09:02.234662+00:00"
+      "timestamp": "2026-10-22T12:14:40.758791+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 12:03:45"
@@ -2816,9 +2818,10 @@
     "coords": "-33.391392,-70.632164",
     "ts": 1792670942,
     "despawn_unix": 1792673772,
-    "discord_msg_id": "1562799945159938102",
+    "discord_msg_id": "1562801365053349903",
     "discord_msg_ids": [
-      "1562799945159938102"
+      "1562799945159938102",
+      "1562801365053349903"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Tepig! (CP 178 • Nivel 6.0)",
@@ -2836,7 +2839,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `47 min 10 seg`\n🕒 **Hora exacta:** <t:1792673772:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `41 min 32 seg`\n🕒 **Hora exacta:** <t:1792673772:T>",
           "inline": true
         },
         {
@@ -2853,7 +2856,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T12:09:02.234650+00:00"
+      "timestamp": "2026-10-22T12:14:40.758774+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 12:09:02"
@@ -2905,5 +2908,101 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 12:09:05"
+  },
+  "shundo:-8049058543692880473": {
+    "canal": "shundo",
+    "pokemon": "Ponyta (Galarian)",
+    "coords": "48.149139,16.401914",
+    "ts": 1792671280,
+    "despawn_unix": 1792672133,
+    "discord_msg_id": "1562801365053349903",
+    "discord_msg_ids": [
+      "1562801365053349903"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Ponyta (Galarian)! (CP 969 • Nivel 20.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=48.149139,16.401914",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm77.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `969` | **Nivel:** `20.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `14 min 12 seg`\n🕒 **Hora exacta:** <t:1792672133:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Favoriten, Wien, Austria • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=48.149139,16.401914)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n48.149139,16.401914\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T12:14:40.758714+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 12:14:41"
+  },
+  "shundo:4032887693519061376": {
+    "canal": "shundo",
+    "pokemon": "Jigglypuff",
+    "coords": "40.744903,-111.829443",
+    "ts": 1792671280,
+    "despawn_unix": 1792672744,
+    "discord_msg_id": "1562801365053349903",
+    "discord_msg_ids": [
+      "1562801365053349903"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Jigglypuff! (CP 269 • Nivel 13.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=40.744903,-111.829443",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm39.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `269` | **Nivel:** `13.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `24 min 23 seg`\n🕒 **Hora exacta:** <t:1792672744:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Canyon Rim, Utah, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.744903,-111.829443)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n40.744903,-111.829443\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T12:14:40.758741+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 12:14:41"
   }
 }
