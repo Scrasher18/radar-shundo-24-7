@@ -1396,14 +1396,15 @@
     "coords": "59.445406,24.682865",
     "ts": 1792658085,
     "despawn_unix": 1792660791,
-    "discord_msg_id": "1562753107606241401",
+    "discord_msg_id": "1562754504837828651",
     "discord_msg_ids": [
       "1562746027235221505",
       "1562746223524450384",
       "1562747587587473495",
       "1562748968922779705",
       "1562751714052939776",
-      "1562753107606241401"
+      "1562753107606241401",
+      "1562754504837828651"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Electabuzz ➔ Electivire!",
@@ -1421,7 +1422,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `17 min 06 seg`\n🕒 **Hora exacta:** <t:1792660791:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 24 seg`\n🕒 **Hora exacta:** <t:1792660791:T>",
           "inline": true
         },
         {
@@ -1438,9 +1439,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T09:02:55.100674+00:00"
+      "timestamp": "2026-10-22T09:08:28.435046+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 08:34:48"
   },
   "ultra:8862905586381299909": {
@@ -1449,11 +1450,12 @@
     "coords": "51.455877,7.295961",
     "ts": 1792658085,
     "despawn_unix": 1792660690,
-    "discord_msg_id": "1562747587587473495",
+    "discord_msg_id": "1562754504837828651",
     "discord_msg_ids": [
       "1562746027235221505",
       "1562746223524450384",
-      "1562747587587473495"
+      "1562747587587473495",
+      "1562754504837828651"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Lillipup ➔ Stoutland!",
@@ -1471,7 +1473,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `37 min 12 seg`\n🕒 **Hora exacta:** <t:1792660690:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `9 min 43 seg`\n🕒 **Hora exacta:** <t:1792660690:T>",
           "inline": true
         },
         {
@@ -1488,9 +1490,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T08:40:59.247514+00:00"
+      "timestamp": "2026-10-22T09:08:28.435083+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 08:34:48"
   },
   "ultra:1550895520115323716": {
@@ -1938,10 +1940,11 @@
     "coords": "33.210942,-87.545346",
     "ts": 1792658786,
     "despawn_unix": 1792660220,
-    "discord_msg_id": "1562750315785093166",
+    "discord_msg_id": "1562754504837828651",
     "discord_msg_ids": [
       "1562748968922779705",
-      "1562750315785093166"
+      "1562750315785093166",
+      "1562754504837828651"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Oshawott ➔ Samurott!",
@@ -1959,7 +1962,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `18 min 32 seg`\n🕒 **Hora exacta:** <t:1792660220:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `1 min 53 seg`\n🕒 **Hora exacta:** <t:1792660220:T>",
           "inline": true
         },
         {
@@ -1976,9 +1979,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T08:51:49.497047+00:00"
+      "timestamp": "2026-10-22T09:08:28.435066+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 08:46:29"
   },
   "shundo:-4841610212217303520": {
@@ -2075,7 +2078,7 @@
       },
       "timestamp": "2026-10-22T09:08:26.875895+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 08:51:49"
   },
   "great:4853534786999303055": {
@@ -2181,10 +2184,11 @@
     "coords": "47.880311,1.940274",
     "ts": 1792659107,
     "despawn_unix": 1792662192,
-    "discord_msg_id": "1562753107606241401",
+    "discord_msg_id": "1562754504837828651",
     "discord_msg_ids": [
       "1562751714052939776",
-      "1562753107606241401"
+      "1562753107606241401",
+      "1562754504837828651"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Heatmor!",
@@ -2202,7 +2206,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `40 min 27 seg`\n🕒 **Hora exacta:** <t:1792662192:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `34 min 45 seg`\n🕒 **Hora exacta:** <t:1792662192:T>",
           "inline": true
         },
         {
@@ -2219,9 +2223,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T09:02:55.100633+00:00"
+      "timestamp": "2026-10-22T09:08:28.435003+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 08:51:50"
   },
   "ultra:-8560020558176949289": {
@@ -2327,9 +2331,10 @@
     "coords": "50.262173,19.069308",
     "ts": 1792659764,
     "despawn_unix": 1792661153,
-    "discord_msg_id": "1562753107606241401",
+    "discord_msg_id": "1562754504837828651",
     "discord_msg_ids": [
-      "1562753107606241401"
+      "1562753107606241401",
+      "1562754504837828651"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Chimecho!",
@@ -2347,7 +2352,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `23 min 08 seg`\n🕒 **Hora exacta:** <t:1792661153:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `17 min 26 seg`\n🕒 **Hora exacta:** <t:1792661153:T>",
           "inline": true
         },
         {
@@ -2364,9 +2369,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T09:02:55.100547+00:00"
+      "timestamp": "2026-10-22T09:08:28.434967+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 09:02:55"
   },
   "ultra:3813712964139035250": {
@@ -2375,9 +2380,10 @@
     "coords": "50.787471,4.417356",
     "ts": 1792659764,
     "despawn_unix": 1792660493,
-    "discord_msg_id": "1562753107606241401",
+    "discord_msg_id": "1562754504837828651",
     "discord_msg_ids": [
-      "1562753107606241401"
+      "1562753107606241401",
+      "1562754504837828651"
     ],
     "embed_base": {
       "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #3: Poliwag ➔ Poliwrath!",
@@ -2395,7 +2401,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `12 min 08 seg`\n🕒 **Hora exacta:** <t:1792660493:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 26 seg`\n🕒 **Hora exacta:** <t:1792660493:T>",
           "inline": true
         },
         {
@@ -2412,9 +2418,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T09:02:55.100654+00:00"
+      "timestamp": "2026-10-22T09:08:28.435025+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 09:02:55"
   },
   "shundo:-7955626753841116675": {
