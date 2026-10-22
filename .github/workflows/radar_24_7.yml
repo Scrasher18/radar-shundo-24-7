@@ -36,6 +36,7 @@ jobs:
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }}
           JWT_TOKEN_2: ${{ secrets.JWT_TOKEN_2 }}
+          JWT_TOKEN_3: ${{ secrets.JWT_TOKEN_3 }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DISCORD_WEBHOOK_GL: ${{ secrets.DISCORD_WEBHOOK_GL }}
           DISCORD_WEBHOOK_UL: ${{ secrets.DISCORD_WEBHOOK_UL }}

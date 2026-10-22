@@ -117,7 +117,8 @@ def resolver_jwt_mas_reciente() -> str:
 
 JWT_TOKEN: str = resolver_jwt_mas_reciente()
 JWT_TOKEN_2: str = os.environ.get("JWT_TOKEN_2") or _cfg.get("JWT_TOKEN_2", "")
-JWT_TOKENS: List[str] = [t.strip() for t in [JWT_TOKEN, JWT_TOKEN_2] if t and t.strip().startswith("eyJ")]
+JWT_TOKEN_3: str = os.environ.get("JWT_TOKEN_3") or _cfg.get("JWT_TOKEN_3", "")
+JWT_TOKENS: List[str] = [t.strip() for t in [JWT_TOKEN, JWT_TOKEN_2, JWT_TOKEN_3] if t and t.strip().startswith("eyJ")]
 
 ES_MODO_NUBE: bool = os.environ.get("CLOUD_MODE") == "1" or sys.platform != "win32"
 AUTO_COPIAR_PORTAPAPELES: bool = not ES_MODO_NUBE
