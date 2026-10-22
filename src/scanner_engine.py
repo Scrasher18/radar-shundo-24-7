@@ -44,6 +44,11 @@ from src.discord_service import (
     iniciar_hilos_reloj_tiempo_real,
     publicar_panel_consolidado_canal,
 )
+from src.control_panel import (
+    cargar_config_control,
+    iniciar_hilo_panel_control,
+    publicar_o_actualizar_panel_maestro,
+)
 from src.event_manager import (
     cargar_config_evento,
     coincide_con_evento,
@@ -150,6 +155,12 @@ def _recolectar_spawns_evento(
     return evento_por_id
 
 
+def ejecutar_escaneo_global_inmediato() -> None:
+    """Se dispara inmediatamente al escribir 'scan' o 'buscar' en #🎛️-panel-control."""
+    print("⚡ [Control] Escaneo global forzado inmediato iniciado...")
+    ejecutar_ciclo_radar(mostrar_cabecera=False)
+
+
 def ejecutar_escaneo_evento_inmediato() -> None:
     """Se dispara automáticamente cuando el usuario escribe nuevos Pokémon en #🎉-evento-cd."""
     cfg_evento = cargar_config_evento()
@@ -220,6 +231,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
     inicio = time.time()
     iniciar_hilos_reloj_tiempo_real()
     iniciar_hilo_bot_eventos(callback_escaneo_inmediato=ejecutar_escaneo_evento_inmediato)
+    iniciar_hilo_panel_control(callback_escaneo_inmediato=ejecutar_escaneo_global_inmediato)
     sincronizar_estado_remoto_pull()
 
     perfil, status_perfil = obtener_perfil_entrenador()
@@ -249,88 +261,101 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
             print("⚠️ No se pudo verificar /users/me temporalmente. Continuando escaneo...")
         print("-" * 78)
 
+    cfg_control = cargar_config_control()
+    if cfg_control.get("pausa_global"):
+        print("⏸️ [Control] Radar pausado globalmente desde #🎛️-panel-control. Saltando escaneo...")
+        return
+
+    canales = cfg_control.get("canales", {})
+    pvp_top_rank = int(cfg_control.get("pvp_top_rank", PVP_TOP_RANK_MAX))
+
     shundos_por_id: Dict[str, Dict[str, Any]] = {}
     gl_por_id: Dict[str, Dict[str, Any]] = {}
     ul_por_id: Dict[str, Dict[str, Any]] = {}
 
     # Oleada 1: Shundos 100% IV
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        fut_shundos = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_SHUNDOS]
-        fut_mapa_shundos = [executor.submit(ejecutar_region_mapa, r, "shundo") for r in REGIONES_GLOBALES]
-        for fut in as_completed(fut_shundos):
-            for mon in fut.result():
-                if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
-                    eid = str(mon.get("encounter_id"))
-                    shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
-        for fut in as_completed(fut_mapa_shundos):
-            _, items = fut.result()
-            for mon in items:
-                if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
-                    eid = str(mon.get("encounter_id"))
-                    shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
+    if canales.get("shundo", True):
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            fut_shundos = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_SHUNDOS]
+            fut_mapa_shundos = [executor.submit(ejecutar_region_mapa, r, "shundo") for r in REGIONES_GLOBALES]
+            for fut in as_completed(fut_shundos):
+                for mon in fut.result():
+                    if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
+                        eid = str(mon.get("encounter_id"))
+                        shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
+            for fut in as_completed(fut_mapa_shundos):
+                _, items = fut.result()
+                for mon in items:
+                    if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
+                        eid = str(mon.get("encounter_id"))
+                        shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
 
     time.sleep(1.0)
 
-    # Oleada 2: PvP Great League (Rank #1 al #5 Shiny, CP mínimo competitivo >= 1400)
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        fut_gl = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_GL]
-        fut_mapa_gl = [executor.submit(ejecutar_region_mapa, r, "great") for r in REGIONES_GLOBALES]
-        for fut in as_completed(fut_gl):
-            for mon in fut.result():
-                pvp = mon.get("pvp") or {}
-                if (
-                    mon.get("shiny")
-                    and pvp.get("league") == "great"
-                    and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
-                    and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
-                ):
-                    eid = str(mon.get("encounter_id"))
-                    gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
-        for fut in as_completed(fut_mapa_gl):
-            _, items = fut.result()
-            for mon in items:
-                pvp = mon.get("pvp") or {}
-                if (
-                    mon.get("shiny")
-                    and pvp.get("league") == "great"
-                    and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
-                    and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
-                ):
-                    eid = str(mon.get("encounter_id"))
-                    gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
+    # Oleada 2: PvP Great League
+    if canales.get("great", True):
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            fut_gl = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_GL]
+            fut_mapa_gl = [executor.submit(ejecutar_region_mapa, r, "great") for r in REGIONES_GLOBALES]
+            for fut in as_completed(fut_gl):
+                for mon in fut.result():
+                    pvp = mon.get("pvp") or {}
+                    if (
+                        mon.get("shiny")
+                        and pvp.get("league") == "great"
+                        and int(pvp.get("rank", 99)) <= pvp_top_rank
+                        and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
+                    ):
+                        eid = str(mon.get("encounter_id"))
+                        gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
+            for fut in as_completed(fut_mapa_gl):
+                _, items = fut.result()
+                for mon in items:
+                    pvp = mon.get("pvp") or {}
+                    if (
+                        mon.get("shiny")
+                        and pvp.get("league") == "great"
+                        and int(pvp.get("rank", 99)) <= pvp_top_rank
+                        and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
+                    ):
+                        eid = str(mon.get("encounter_id"))
+                        gl_por_id[eid] = normalizar_spawn(gl_por_id.get(eid), mon)
 
     time.sleep(1.0)
 
-    # Oleada 3: PvP Ultra League (Rank #1 al #5 Shiny, CP mínimo competitivo >= 2350)
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        fut_ul = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_UL]
-        fut_mapa_ul = [executor.submit(ejecutar_region_mapa, r, "ultra") for r in REGIONES_GLOBALES]
-        for fut in as_completed(fut_ul):
-            for mon in fut.result():
-                pvp = mon.get("pvp") or {}
-                if (
-                    mon.get("shiny")
-                    and pvp.get("league") == "ultra"
-                    and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
-                    and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
-                ):
-                    eid = str(mon.get("encounter_id"))
-                    ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
-        for fut in as_completed(fut_mapa_ul):
-            _, items = fut.result()
-            for mon in items:
-                pvp = mon.get("pvp") or {}
-                if (
-                    mon.get("shiny")
-                    and pvp.get("league") == "ultra"
-                    and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
-                    and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
-                ):
-                    eid = str(mon.get("encounter_id"))
-                    ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
+    # Oleada 3: PvP Ultra League
+    if canales.get("ultra", True):
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            fut_ul = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_PVP_UL]
+            fut_mapa_ul = [executor.submit(ejecutar_region_mapa, r, "ultra") for r in REGIONES_GLOBALES]
+            for fut in as_completed(fut_ul):
+                for mon in fut.result():
+                    pvp = mon.get("pvp") or {}
+                    if (
+                        mon.get("shiny")
+                        and pvp.get("league") == "ultra"
+                        and int(pvp.get("rank", 99)) <= pvp_top_rank
+                        and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
+                    ):
+                        eid = str(mon.get("encounter_id"))
+                        ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
+            for fut in as_completed(fut_mapa_ul):
+                _, items = fut.result()
+                for mon in items:
+                    pvp = mon.get("pvp") or {}
+                    if (
+                        mon.get("shiny")
+                        and pvp.get("league") == "ultra"
+                        and int(pvp.get("rank", 99)) <= pvp_top_rank
+                        and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
+                    ):
+                        eid = str(mon.get("encounter_id"))
+                        ul_por_id[eid] = normalizar_spawn(ul_por_id.get(eid), mon)
 
-    cfg_evento = cargar_config_evento()
-    evento_por_id = _recolectar_spawns_evento(cfg_evento, shundos_por_id, gl_por_id, ul_por_id)
+    evento_por_id = {}
+    if canales.get("evento", True):
+        cfg_evento = cargar_config_evento()
+        evento_por_id = _recolectar_spawns_evento(cfg_evento, shundos_por_id, gl_por_id, ul_por_id)
 
     with _LOCK_ESTADO:
         cache_coords = cargar_json(CACHE_FILE)
@@ -496,9 +521,11 @@ def iniciar_radar() -> None:
     try:
         while True:
             ejecutar_ciclo_radar(mostrar_cabecera=(ciclo == 1))
+            cfg_c = cargar_config_control()
+            intervalo_actual = int(cfg_c.get("intervalo_minutos", 7)) * 60
             if duracion_minutos is not None:
                 transcurrido_min = (time.time() - inicio_bucle) / 60.0
-                if transcurrido_min + (INTERVALO_SEGUNDOS / 60.0) >= duracion_minutos:
+                if transcurrido_min + (intervalo_actual / 60.0) >= duracion_minutos:
                     eliminar_mensajes_expirados_discord(actualizar_tiempo_real=True)
                     sincronizar_estado_remoto_push(asincrono=False)
                     print(
@@ -506,9 +533,9 @@ def iniciar_radar() -> None:
                     )
                     break
             print(
-                f"⏳ Vigilante activo: próximo escaneo en {INTERVALO_SEGUNDOS // 60} min (reloj 1s en vivo y auto-delete activos en 3 hilos)..."
+                f"⏳ Vigilante activo: próximo escaneo en {intervalo_actual // 60} min (reloj dinámico y control interactivo activos)..."
             )
-            esperar_con_limpieza_despawn(INTERVALO_SEGUNDOS)
+            esperar_con_limpieza_despawn(intervalo_actual)
             ciclo += 1
     except KeyboardInterrupt:
         print("\n👋 Vigilante detenido por el usuario.")

@@ -1,0 +1,13 @@
+{
+  "pausa_global": false,
+  "intervalo_minutos": 7,
+  "canales": {
+    "shundo": true,
+    "great": true,
+    "ultra": true,
+    "evento": true
+  },
+  "pvp_top_rank": 5,
+  "pvp_reveal_rank": 2,
+  "panel_msg_id": "1562872818234822699"
+}

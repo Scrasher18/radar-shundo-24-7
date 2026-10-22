@@ -15,6 +15,7 @@ CONFIG_LOCAL_FILE = os.path.join(BASE_DIR, "config_local.json")
 CACHE_FILE = os.path.join(BASE_DIR, "cache_coordenadas.json")
 NOTIFICADOS_FILE = os.path.join(BASE_DIR, "shundos_notificados.json")
 EVENTO_CONFIG_FILE = os.path.join(BASE_DIR, "evento_config.json")
+CONTROL_CONFIG_FILE = os.path.join(BASE_DIR, "control_config.json")
 
 
 def cargar_config_local() -> Dict[str, Any]:
@@ -93,6 +94,8 @@ DISCORD_WEBHOOK_GL: str = os.environ.get("DISCORD_WEBHOOK_GL") or _cfg.get("DISC
 DISCORD_WEBHOOK_UL: str = os.environ.get("DISCORD_WEBHOOK_UL") or _cfg.get("DISCORD_WEBHOOK_UL", "")
 DISCORD_WEBHOOK_EVENTO: str = os.environ.get("DISCORD_WEBHOOK_EVENTO") or _cfg.get("DISCORD_WEBHOOK_EVENTO", "")
 DISCORD_EVENTO_CHANNEL_ID: str = os.environ.get("DISCORD_EVENTO_CHANNEL_ID") or _cfg.get("DISCORD_EVENTO_CHANNEL_ID", "1562344305606262846")
+DISCORD_WEBHOOK_CONTROL: str = os.environ.get("DISCORD_WEBHOOK_CONTROL") or _cfg.get("DISCORD_WEBHOOK_CONTROL", "")
+DISCORD_CONTROL_CHANNEL_ID: str = os.environ.get("DISCORD_CONTROL_CHANNEL_ID") or _cfg.get("DISCORD_CONTROL_CHANNEL_ID", "1562872060487794788")
 DISCORD_BOT_TOKEN: str = os.environ.get("DISCORD_BOT_TOKEN") or _cfg.get("DISCORD_BOT_TOKEN", "")
 DISCORD_USER_ID_MENCION: str = os.environ.get("DISCORD_USER_ID_MENCION") or _cfg.get("DISCORD_USER_ID_MENCION", "924392800534011935")
 
