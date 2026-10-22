@@ -1186,7 +1186,7 @@
       },
       "timestamp": "2026-10-22T13:17:39.413970+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 12:54:28"
   },
   "great:4107289914837587919": {
@@ -1781,7 +1781,7 @@
       },
       "timestamp": "2026-10-22T13:17:40.277058+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 13:05:32"
   },
   "great:-874188413293187575": {
@@ -2230,9 +2230,10 @@
     "coords": "48.756464,9.234212",
     "ts": 1792675058,
     "despawn_unix": 1792677961,
-    "discord_msg_id": "1562817213805756458",
+    "discord_msg_id": "1562818652103778448",
     "discord_msg_ids": [
-      "1562817213805756458"
+      "1562817213805756458",
+      "1562818652103778448"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Spearow! (CP 661 • Nivel 29.0)",
@@ -2250,7 +2251,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `48 min 22 seg`\n🕒 **Hora exacta:** <t:1792677961:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `42 min 39 seg`\n🕒 **Hora exacta:** <t:1792677961:T>",
           "inline": true
         },
         {
@@ -2267,7 +2268,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T13:17:39.413943+00:00"
+      "timestamp": "2026-10-22T13:23:22.326054+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 13:17:39"
@@ -2317,7 +2318,7 @@
       },
       "timestamp": "2026-10-22T13:17:40.277010+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 13:17:40"
   },
   "great:1346227853945194463": {
@@ -2365,7 +2366,7 @@
       },
       "timestamp": "2026-10-22T13:17:40.277041+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 13:17:40"
   },
   "great:7172466918854806246": {
@@ -2413,7 +2414,7 @@
       },
       "timestamp": "2026-10-22T13:17:40.277072+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 13:17:40"
   },
   "great:8033419842295289663": {
@@ -2461,7 +2462,7 @@
       },
       "timestamp": "2026-10-22T13:17:40.277097+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 13:17:40"
   },
   "ultra:-3290027107837601064": {
@@ -2607,5 +2608,101 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 13:17:41"
+  },
+  "shundo:-6505305058050190365": {
+    "canal": "shundo",
+    "pokemon": "Pawmi",
+    "coords": "36.806704,-119.706750",
+    "ts": 1792675401,
+    "despawn_unix": 1792677024,
+    "discord_msg_id": "1562818652103778448",
+    "discord_msg_ids": [
+      "1562818652103778448"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Pawmi! (CP 509 • Nivel 28.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=36.806704,-119.706750",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm921.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `509` | **Nivel:** `28.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `27 min 02 seg`\n🕒 **Hora exacta:** <t:1792677024:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Clovis, California, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=36.806704,-119.706750)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n36.806704,-119.706750\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T13:23:22.326082+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 13:23:22"
+  },
+  "shundo:-790842933131039420": {
+    "canal": "shundo",
+    "pokemon": "Sandshrew",
+    "coords": "38.805817,-90.510890",
+    "ts": 1792675401,
+    "despawn_unix": 1792675969,
+    "discord_msg_id": "1562818652103778448",
+    "discord_msg_ids": [
+      "1562818652103778448"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Sandshrew! (CP 540 • Nivel 15.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=38.805817,-90.510890",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm27.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `540` | **Nivel:** `15.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `9 min 27 seg`\n🕒 **Hora exacta:** <t:1792675969:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Saint Charles, Missouri, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.805817,-90.510890)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n38.805817,-90.510890\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T13:23:22.326091+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 13:23:22"
   }
 }
