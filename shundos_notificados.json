@@ -54,107 +54,6 @@
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 10:06:12"
   },
-  "shundo:-6726540730561378526": {
-    "canal": "shundo",
-    "pokemon": "Tynamo",
-    "coords": "51.561550,-1.785037",
-    "ts": 1792679497,
-    "despawn_unix": 1792680580,
-    "discord_msg_id": "1562838974194786342",
-    "discord_msg_ids": [
-      "1562835831285088262",
-      "1562837490346496125",
-      "1562838974194786342"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Tynamo! (CP 207 • Nivel 9.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=51.561550,-1.785037",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm602.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `207` | **Nivel:** `9.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `5 min 32 seg`\n🕒 **Hora exacta:** <t:1792680580:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Swindon, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.561550,-1.785037)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.561550,-1.785037\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T14:44:07.497521+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 14:31:38"
-  },
-  "ultra:706487342485912611": {
-    "canal": "ultra",
-    "pokemon": "Jynx",
-    "coords": "52.512321,13.616200",
-    "ts": 1792679497,
-    "despawn_unix": 1792680913,
-    "discord_msg_id": "1562838980024729759",
-    "discord_msg_ids": [
-      "1562835841074602150",
-      "1562836074479362054",
-      "1562837509946474696",
-      "1562838980024729759"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Jynx!",
-      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #2** (`99.92%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Jynx** alcanza `CP 2498` en Nivel `43.5`",
-      "url": "https://www.google.com/maps?q=52.512321,13.616200",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm124.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.92%`)\n**IVs PvP:** `1/15/13`\n**Salvaje:** `CP 1913` | `Nivel 28.0` (M, Female)\n**Final en Liga:** `CP 2498` | `Nivel 43.5`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `11 min 05 seg`\n🕒 **Hora exacta:** <t:1792680913:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Mahlsdorf, Berlin, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.512321,13.616200)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.512321,13.616200\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T14:44:08.867624+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 14:31:40"
-  },
   "great:-7628399778151301976": {
     "canal": "great",
     "pokemon": "Stantler",
@@ -998,7 +897,7 @@
       },
       "timestamp": "2026-10-22T15:25:05.571443+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 14:44:09"
   },
   "shundo:-6274929672364854523": {
