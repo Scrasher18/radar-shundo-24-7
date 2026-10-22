@@ -1,104 +1,4 @@
 {
-  "shundo:8023493383087286321": {
-    "canal": "shundo",
-    "pokemon": "Diglett",
-    "coords": "40.919021,14.357800",
-    "ts": 1792654061,
-    "despawn_unix": 1792654721,
-    "discord_msg_id": "1562729148106018840",
-    "discord_msg_ids": [
-      "1562729148106018840"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Diglett! (CP 521 • Nivel 27.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=40.919021,14.357800",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm50.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `521` | **Nivel:** `27.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `10 min 59 seg`\n🕒 **Hora exacta:** <t:1792654721:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Casalnuovo di Napoli, Napoli, Italy • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.919021,14.357800)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n40.919021,14.357800\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T07:27:42.759028+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 07:27:43"
-  },
-  "shundo:-3804304962652634009": {
-    "canal": "shundo",
-    "pokemon": "Spoink",
-    "coords": "32.809658,-109.705454",
-    "ts": 1792654061,
-    "despawn_unix": 1792656672,
-    "discord_msg_id": "1562739122471182403",
-    "discord_msg_ids": [
-      "1562729148106018840",
-      "1562734746138705956",
-      "1562736130774933581",
-      "1562737723406815332",
-      "1562739122471182403"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Spoink! (CP 260 • Nivel 7.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=32.809658,-109.705454",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm325.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `260` | **Nivel:** `7.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece en:** `3 min 51 seg`\n🕒 **Hora exacta:** <t:1792656672:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Safford, Arizona, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=32.809658,-109.705454)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n32.809658,-109.705454\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-22T08:07:20.937707+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-22 07:27:43"
-  },
   "great:-3804304962652634009": {
     "canal": "great",
     "pokemon": "Spoink",
@@ -1699,7 +1599,7 @@
       },
       "timestamp": "2026-10-22T08:18:28.112585+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 08:07:21"
   },
   "ultra:1381633529846991016": {
