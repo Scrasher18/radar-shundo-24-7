@@ -1672,7 +1672,7 @@
       },
       "timestamp": "2026-10-22T00:44:31.977439+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:16:31"
   },
   "ultra:6171516137958373235": {
@@ -2265,7 +2265,7 @@
       },
       "timestamp": "2026-10-22T00:44:31.977302+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:27:37"
   },
   "ultra:-1746558808764921304": {
@@ -2316,7 +2316,7 @@
       },
       "timestamp": "2026-10-22T00:44:31.977408+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:27:37"
   },
   "ultra:5600329951912117620": {
@@ -2520,10 +2520,11 @@
     "coords": "35.312202,136.858425",
     "ts": 1792629526,
     "despawn_unix": 1792630280,
-    "discord_msg_id": "1562627681017667620",
+    "discord_msg_id": "1562627878057943114",
     "discord_msg_ids": [
       "1562626279935844358",
-      "1562627681017667620"
+      "1562627681017667620",
+      "1562627878057943114"
     ],
     "embed_base": {
       "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Weedle ➔ Beedrill!",
@@ -2541,7 +2542,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 49 seg`\n🕒 **Hora exacta:** <t:1792630280:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `6 min 03 seg`\n🕒 **Hora exacta:** <t:1792630280:T>",
           "inline": true
         },
         {
@@ -2558,9 +2559,9 @@
       "footer": {
         "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-22T00:44:31.290639+00:00"
+      "timestamp": "2026-10-22T00:45:18.256042+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-10-22 00:38:57"
   },
   "great:-2982851412417716527": {
@@ -2657,7 +2658,7 @@
       },
       "timestamp": "2026-10-22T00:44:31.977369+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:38:58"
   },
   "ultra:2236035872121917221": {
@@ -2706,7 +2707,7 @@
       },
       "timestamp": "2026-10-22T00:44:31.977470+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:38:58"
   },
   "shundo:5386448910548364628": {
@@ -2946,7 +2947,103 @@
       },
       "timestamp": "2026-10-22T00:44:31.977502+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-22 00:44:32"
+  },
+  "great:22333815758039830": {
+    "canal": "great",
+    "pokemon": "Litwick",
+    "coords": "42.754441,23.325795",
+    "ts": 1792629916,
+    "despawn_unix": 1792632122,
+    "discord_msg_id": "1562627878057943114",
+    "discord_msg_ids": [
+      "1562627878057943114"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #5: Litwick ➔ Lampent!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #5** (`99.96%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Lampent** (`CP 1497` a Nivel `37.5`)",
+      "url": "https://www.google.com/maps?q=42.754441,23.325795",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm608.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#5` (`99.96%`)\n**IVs PvP:** `0/13/14`\n**Salvaje:** `CP 144` | `Nivel 6.0` (M, Male)\n**Final en Liga:** `CP 1497` | `Nivel 37.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece en:** `36 min 45 seg`\n🕒 **Hora exacta:** <t:1792632122:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sofia, Grad Sofiya, Bulgaria • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=42.754441,23.325795)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n42.754441,23.325795\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T00:45:18.256144+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 00:45:18"
+  },
+  "great:7184826109855175317": {
+    "canal": "great",
+    "pokemon": "Diglett (Alola)",
+    "coords": "49.220393,16.662203",
+    "ts": 1792629916,
+    "despawn_unix": 1792630525,
+    "discord_msg_id": "1562627878057943114",
+    "discord_msg_ids": [
+      "1562627878057943114"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #5: Diglett (Alola) ➔ Dugtrio!",
+      "description": "✨ **SHINY GARANTIZADO** • 🏆 **RANK #5** (`99.51%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Dugtrio** (`CP 1498` a Nivel `29.5`)",
+      "url": "https://www.google.com/maps?q=49.220393,16.662203",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm51.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#5` (`99.51%`)\n**IVs PvP:** `2/14/15`\n**Salvaje:** `CP 63` | `Nivel 4.0` (M, Male)\n**Final en Liga:** `CP 1498` | `Nivel 29.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece en:** `10 min 08 seg`\n🕒 **Hora exacta:** <t:1792630525:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Maloměřice, Jihomoravský, Czech Republic • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=49.220393,16.662203)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n49.220393,16.662203\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-22T00:45:18.256170+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-22 00:45:18"
   }
 }
