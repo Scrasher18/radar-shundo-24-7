@@ -348,10 +348,11 @@
     "coords": "1.3484831,103.7907913",
     "ts": 1792765678,
     "despawn_unix": 1792769016,
-    "discord_msg_id": "1563201057754980502",
+    "discord_msg_id": "1563202851671511103",
     "discord_msg_ids": [
       "1563197297301389367",
-      "1563201057754980502"
+      "1563201057754980502",
+      "1563202851671511103"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Roselia! (CP 478 • Nivel 9.0)",
@@ -369,7 +370,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792769016:R> (`40 min 41 seg`)\n🕒 **Hora exacta:** <t:1792769016:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792769016:R> (`33 min 33 seg`)\n🕒 **Hora exacta:** <t:1792769016:T>",
           "inline": true
         },
         {
@@ -386,7 +387,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-23T14:42:54.896205+00:00"
+      "timestamp": "2026-10-23T14:50:02.581416+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-23 14:27:58"
@@ -436,7 +437,103 @@
       },
       "timestamp": "2026-10-23T14:42:54.896236+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-23 14:42:55"
+  },
+  "shundo:-1488731435183986177": {
+    "canal": "shundo",
+    "pokemon": "Zigzagoon (Galarian)",
+    "coords": "-27.2504974,152.9794866",
+    "ts": 1792767002,
+    "despawn_unix": 1792770122,
+    "discord_msg_id": "1563202851671511103",
+    "discord_msg_ids": [
+      "1563202851671511103"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Zigzagoon (Galarian)! (CP 421 • Nivel 29.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=-27.2504974,152.9794866",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm263.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `421` | **Nivel:** `29.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792770122:R> (`52 min 00 seg`)\n🕒 **Hora exacta:** <t:1792770122:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Kallangur, Queensland, Australia • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-27.2504974,152.9794866)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n-27.2504974,152.9794866\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T14:50:02.581391+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 14:50:03"
+  },
+  "shundo:4322006111602171548": {
+    "canal": "shundo",
+    "pokemon": "Starly",
+    "coords": "40.7828307,-73.6000361",
+    "ts": 1792767002,
+    "despawn_unix": 1792767455,
+    "discord_msg_id": "1563202851671511103",
+    "discord_msg_ids": [
+      "1563202851671511103"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Starly! (CP 31 • Nivel 2.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=40.7828307,-73.6000361",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm396.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `31` | **Nivel:** `2.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792767455:R> (`7 min 32 seg`)\n🕒 **Hora exacta:** <t:1792767455:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "East Hills, New York, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.7828307,-73.6000361)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n40.7828307,-73.6000361\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T14:50:02.581429+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 14:50:03"
   }
 }
