@@ -1,9 +1,15 @@
 {
-  "activo": false,
-  "nombre_evento": "Community Day / Evento Especial",
+  "activo": true,
+  "nombre_evento": "Community Day / Evento Personalizado",
   "webhook_evento": "",
-  "pokemon_ids": [],
-  "pokemon_nombres": [],
+  "pokemon_ids": [
+    304,
+    305,
+    306
+  ],
+  "pokemon_nombres": [
+    "Aron"
+  ],
   "incluir_shundos_100": true,
   "incluir_pvp_gl": true,
   "incluir_pvp_ul": true,
