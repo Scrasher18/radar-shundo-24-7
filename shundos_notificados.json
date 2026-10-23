@@ -1,100 +1,4 @@
 {
-  "shundo:-2141797508018239486": {
-    "canal": "shundo",
-    "pokemon": "Bidoof",
-    "coords": "49.470507,8.548925",
-    "ts": 1792723330,
-    "despawn_unix": 1792723597,
-    "discord_msg_id": "1563019679679647774",
-    "discord_msg_ids": [
-      "1563019679679647774"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Bidoof! (CP 494 • Nivel 24.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=49.470507,8.548925",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm399.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `494` | **Nivel:** `24.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792723597:R> (`4 min 26 seg`)\n🕒 **Hora exacta:** <t:1792723597:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Ilvesheim, Baden-Württemberg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=49.470507,8.548925)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n49.470507,8.548925\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-23T02:42:11.013269+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-23 02:42:11"
-  },
-  "shundo:8946249138407487431": {
-    "canal": "shundo",
-    "pokemon": "Lechonk",
-    "coords": "24.3294594,55.800357",
-    "ts": 1792723330,
-    "despawn_unix": 1792724109,
-    "discord_msg_id": "1563019679679647774",
-    "discord_msg_ids": [
-      "1563019679679647774"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Lechonk! (CP 76 • Nivel 4.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=24.3294594,55.800357",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm915.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `76` | **Nivel:** `4.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792724109:R> (`12 min 58 seg`)\n🕒 **Hora exacta:** <t:1792724109:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Al Buraymī, Abu Dhabi, United Arab Emirates • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=24.3294594,55.800357)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n24.3294594,55.800357\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-23T02:42:11.013305+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-23 02:42:11"
-  },
   "shundo:-5273975704363320562": {
     "canal": "shundo",
     "pokemon": "Zigzagoon",
@@ -587,7 +491,7 @@
       },
       "timestamp": "2026-10-23T03:33:28.959813+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-23 03:11:09"
   },
   "shundo:-3059050434119013044": {
