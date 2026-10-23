@@ -348,9 +348,10 @@
     "coords": "1.3484831,103.7907913",
     "ts": 1792765678,
     "despawn_unix": 1792769016,
-    "discord_msg_id": "1563197297301389367",
+    "discord_msg_id": "1563201057754980502",
     "discord_msg_ids": [
-      "1563197297301389367"
+      "1563197297301389367",
+      "1563201057754980502"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Roselia! (CP 478 • Nivel 9.0)",
@@ -368,7 +369,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792769016:R> (`55 min 38 seg`)\n🕒 **Hora exacta:** <t:1792769016:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792769016:R> (`40 min 41 seg`)\n🕒 **Hora exacta:** <t:1792769016:T>",
           "inline": true
         },
         {
@@ -385,9 +386,57 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-23T14:27:58.363363+00:00"
+      "timestamp": "2026-10-23T14:42:54.896205+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-23 14:27:58"
+  },
+  "shundo:-8653455055671213144": {
+    "canal": "shundo",
+    "pokemon": "Zorua",
+    "coords": "29.5127649,-98.5696551",
+    "ts": 1792766574,
+    "despawn_unix": 1792767091,
+    "discord_msg_id": "1563201057754980502",
+    "discord_msg_ids": [
+      "1563201057754980502"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Zorua! (CP 123 • Nivel 4.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=29.5127649,-98.5696551",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm570.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `123` | **Nivel:** `4.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792767091:R> (`8 min 36 seg`)\n🕒 **Hora exacta:** <t:1792767091:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Leon Valley, Texas, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=29.5127649,-98.5696551)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n29.5127649,-98.5696551\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T14:42:54.896236+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 14:42:55"
   }
 }
