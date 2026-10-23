@@ -1,12 +1,14 @@
 {
   "activo": true,
-  "nombre_evento": "Community Day / Evento Personalizado",
+  "nombre_evento": "Community Day / Evento (Lucario)",
   "webhook_evento": "",
   "pokemon_ids": [
-    957
+    447,
+    448
   ],
   "pokemon_nombres": [
-    "Tinkatink"
+    "Riolu",
+    "Lucario"
   ],
   "incluir_shundos_100": true,
   "incluir_pvp_gl": true,
