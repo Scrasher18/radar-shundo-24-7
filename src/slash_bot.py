@@ -106,6 +106,7 @@ async def autocomplete_presets(
     pokemon_3="Tercera especie opcional (con autocompletado)",
     pokemon_4="Cuarta especie opcional (con autocompletado)",
     pokemon_5="Quinta especie opcional (con autocompletado)",
+    acumular="Si es True, suma estos Pokémon a la lista actual sin borrar nada",
     incluir_familia="Si es True, incluye evoluciones de cada especie (recomendado para CD)",
     shundo="Si es True, rastrea 100% IV Shundos de estas especies",
     pvp_gl="Si es True, rastrea Top Ranks para Great League (1500 CP)",
@@ -125,6 +126,7 @@ async def cmd_pokemon(
     pokemon_3: Optional[str] = None,
     pokemon_4: Optional[str] = None,
     pokemon_5: Optional[str] = None,
+    acumular: bool = False,
     incluir_familia: bool = True,
     shundo: bool = True,
     pvp_gl: bool = True,
@@ -155,6 +157,19 @@ async def cmd_pokemon(
     titulo_evento = res["titulo_evento"]
 
     cfg_ev = cargar_config_evento()
+    if acumular and cfg_ev.get("activo"):
+        act_ids = list(cfg_ev.get("pokemon_ids") or [])
+        act_noms = list(cfg_ev.get("pokemon_nombres") or [])
+        for i in ids_totales:
+            if i not in act_ids:
+                act_ids.append(i)
+        for n in nombres_completos:
+            if n not in act_noms:
+                act_noms.append(n)
+        ids_totales = act_ids
+        nombres_completos = act_noms
+        titulo_evento = f"Evento ({len(ids_totales)} especies activas)"
+
     cfg_ev["nombre_evento"] = titulo_evento
     cfg_ev["pokemon_nombres"] = nombres_completos
     cfg_ev["pokemon_ids"] = ids_totales
@@ -184,6 +199,127 @@ async def cmd_pokemon(
     )
 
 
+
+
+@bot.tree.command(
+    name="agregar",
+    description="➕ Suma una o varias especies a la lista activa de Eventos sin borrar las existentes."
+)
+@app_commands.describe(
+    nombre="Especie o lista separada por comas a agregar (ej: Beldum, Larvitar, #705)",
+    pokemon_2="Segunda especie opcional a agregar",
+    pokemon_3="Tercera especie opcional a agregar",
+    incluir_familia="Si es True, incluye evoluciones de las nuevas especies"
+)
+@app_commands.autocomplete(
+    nombre=autocomplete_pokemon,
+    pokemon_2=autocomplete_pokemon,
+    pokemon_3=autocomplete_pokemon,
+)
+async def cmd_agregar(
+    interaction: discord.Interaction,
+    nombre: str,
+    pokemon_2: Optional[str] = None,
+    pokemon_3: Optional[str] = None,
+    incluir_familia: bool = True,
+):
+    entradas = [nombre]
+    for extra in (pokemon_2, pokemon_3):
+        if extra:
+            entradas.append(extra)
+
+    res = resolver_cadena_pokemon(entradas, incluir_familia=incluir_familia, familias_dict=FAMILIAS_POKEDEX)
+    if not res["exito"]:
+        await interaction.response.send_message(
+            f"❌ No se reconoció ningún Pokémon válido en `{nombre}`.",
+            ephemeral=True
+        )
+        return
+
+    nuevos_ids = res["ids_totales"]
+    nuevos_noms = res["nombres_completos"]
+    nombres_agregados = res["nombres_principales"]
+
+    cfg_ev = cargar_config_evento()
+    act_ids = list(cfg_ev.get("pokemon_ids") or [])
+    act_noms = list(cfg_ev.get("pokemon_nombres") or [])
+
+    for i in nuevos_ids:
+        if i not in act_ids:
+            act_ids.append(i)
+    for n in nuevos_noms:
+        if n not in act_noms:
+            act_noms.append(n)
+
+    cfg_ev["pokemon_ids"] = act_ids
+    cfg_ev["pokemon_nombres"] = act_noms
+    cfg_ev["activo"] = True
+    guardar_config_evento(cfg_ev)
+
+    limpiar_alertas_evento_discord()
+    publicar_o_actualizar_panel_control()
+    publicar_o_actualizar_panel_maestro()
+    sincronizar_estado_remoto_push(asincrono=True)
+
+    if _CALLBACK_ESCANEO_EVENTO:
+        threading.Thread(target=_CALLBACK_ESCANEO_EVENTO, daemon=True).start()
+
+    lista_agregada = ", ".join(nombres_agregados)
+    await interaction.response.send_message(
+        f"➕ **Agregado con éxito sin borrar lo anterior:**\n"
+        f"• 📋 **Nuevas especies sumadas:** **{lista_agregada}**\n"
+        f"• 🎯 **Total especies activas ahora:** {len(act_ids)} Pokémon en `#🎉-evento-cd`\n"
+        f"• ⚡ **Escaneo prioritario disparado de inmediato.**",
+        ephemeral=True
+    )
+
+
+@bot.tree.command(
+    name="quitar",
+    description="➖ Quita una o varias especies de la lista activa de Eventos sin tocar las demás."
+)
+@app_commands.describe(
+    nombre="Especie o lista a quitar (ej: Deino, Aron, Beldum)",
+    pokemon_2="Segunda especie opcional a quitar"
+)
+@app_commands.autocomplete(
+    nombre=autocomplete_pokemon,
+    pokemon_2=autocomplete_pokemon,
+)
+async def cmd_quitar(
+    interaction: discord.Interaction,
+    nombre: str,
+    pokemon_2: Optional[str] = None,
+):
+    entradas = [nombre]
+    if pokemon_2:
+        entradas.append(pokemon_2)
+
+    res = resolver_cadena_pokemon(entradas, incluir_familia=True, familias_dict=FAMILIAS_POKEDEX)
+    quitar_ids = set(res["ids_totales"])
+    quitar_noms = set(res["nombres_completos"])
+
+    cfg_ev = cargar_config_evento()
+    act_ids = [i for i in (cfg_ev.get("pokemon_ids") or []) if i not in quitar_ids]
+    act_noms = [n for n in (cfg_ev.get("pokemon_nombres") or []) if n not in quitar_noms]
+
+    cfg_ev["pokemon_ids"] = act_ids
+    cfg_ev["pokemon_nombres"] = act_noms
+    cfg_ev["activo"] = bool(act_ids)
+    guardar_config_evento(cfg_ev)
+
+    limpiar_alertas_evento_discord()
+    publicar_o_actualizar_panel_control()
+    publicar_o_actualizar_panel_maestro()
+    sincronizar_estado_remoto_push(asincrono=True)
+
+    lista_quitada = ", ".join(res["nombres_principales"])
+    await interaction.response.send_message(
+        f"➖ **Eliminado de la lista activa:**\n"
+        f"• 📋 **Especies quitadas:** **{lista_quitada}**\n"
+        f"• 🎯 **Total especies que quedan:** {len(act_ids)} Pokémon en `#🎉-evento-cd`",
+        ephemeral=True
+    )
 @bot.tree.command(
     name="preset",
     description="📦 Activa un paquete temático preconfigurado de Pokémon populares o del Meta."
