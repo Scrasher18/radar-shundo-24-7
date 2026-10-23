@@ -112,8 +112,28 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
     ids = cfg.get("pokemon_ids") or []
     titulo_evento = cfg.get("nombre_evento") or "Community Day / Evento Especial"
 
-    estado_str = f"🟢 **ACTIVO** ({titulo_evento})" if activo and (nombres or ids) else "⏸️ **EN ESPERA (Sin Pokémon asignados)**"
-    color = 0x10B981 if (activo and (nombres or ids)) else 0x6366F1
+    # Sincronización en tiempo real con el Panel Maestro de Control
+    try:
+        from src.control_panel import cargar_config_control
+        cfg_ctrl = cargar_config_control()
+        pausa_global = bool(cfg_ctrl.get("pausa_global", False))
+        canal_evento_on = bool(cfg_ctrl.get("canales", {}).get("evento", True))
+    except Exception:
+        pausa_global = False
+        canal_evento_on = True
+
+    if pausa_global:
+        estado_str = "🔴 **PAUSADO GLOBALMENTE (Radar en pausa)**"
+        color = 0xEF4444
+    elif not canal_evento_on or not activo:
+        estado_str = "🔴 **PAUSADO / APAGADO (Canal detenido)**"
+        color = 0xEF4444
+    elif not (nombres or ids):
+        estado_str = "⏸️ **EN ESPERA (Sin Pokémon asignados)**"
+        color = 0x6366F1
+    else:
+        estado_str = f"🟢 **ACTIVO** ({titulo_evento})"
+        color = 0x10B981
 
     if nombres:
         mostrados = ", ".join(f"**{n}**" for n in nombres[:24])

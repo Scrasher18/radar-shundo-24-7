@@ -120,7 +120,20 @@ def construir_embed_panel_maestro(cfg: Dict[str, Any]) -> Dict[str, Any]:
     tag_shundo = "🟢 ACTIVO" if shundo_on else "🔴 PAUSADO"
     tag_gl = "🟢 ACTIVO" if gl_on else "🔴 PAUSADO"
     tag_ul = "🟢 ACTIVO" if ul_on else "🔴 PAUSADO"
-    tag_evento = "🟢 ACTIVO" if evento_on else "🔴 PAUSADO"
+
+    try:
+        from src.event_manager import cargar_config_evento
+        cfg_ev = cargar_config_evento()
+        ev_activo = bool(cfg_ev.get("activo")) and bool(cfg_ev.get("pokemon_ids") or cfg_ev.get("pokemon_nombres"))
+    except Exception:
+        ev_activo = True
+
+    if not evento_on:
+        tag_evento = "🔴 PAUSADO"
+    elif not ev_activo:
+        tag_evento = "⏸️ EN ESPERA (Sin Pokémon)"
+    else:
+        tag_evento = "🟢 ACTIVO"
 
     resumen_pool = obtener_resumen_cuentas_pool()
 
@@ -308,10 +321,26 @@ def procesar_comando_control(contenido: str) -> bool:
 
     elif low in ("evento off", "cd off"):
         canales["evento"] = False
+        try:
+            from src.event_manager import cargar_config_evento, guardar_config_evento, publicar_o_actualizar_panel_control
+            cfg_ev = cargar_config_evento()
+            cfg_ev["activo"] = False
+            guardar_config_evento(cfg_ev)
+            publicar_o_actualizar_panel_control()
+        except Exception:
+            pass
         aviso = "🔴 Canal **Eventos & CD** pausado."
         cambio = True
     elif low in ("evento on", "cd on"):
         canales["evento"] = True
+        try:
+            from src.event_manager import cargar_config_evento, guardar_config_evento, publicar_o_actualizar_panel_control
+            cfg_ev = cargar_config_evento()
+            cfg_ev["activo"] = True
+            guardar_config_evento(cfg_ev)
+            publicar_o_actualizar_panel_control()
+        except Exception:
+            pass
         aviso = "🟢 Canal **Eventos & CD** activado."
         cambio = True
 

@@ -511,6 +511,16 @@ async def cmd_canal(interaction: discord.Interaction, canal: str, estado: str):
     activar = (estado == "on")
     canales[canal] = activar
     guardar_config_control(cfg_ctrl)
+
+    if canal == "evento":
+        try:
+            cfg_ev = cargar_config_evento()
+            cfg_ev["activo"] = activar
+            guardar_config_evento(cfg_ev)
+            publicar_o_actualizar_panel_control()
+        except Exception:
+            pass
+
     publicar_o_actualizar_panel_maestro()
     sincronizar_estado_remoto_push(asincrono=True)
 
