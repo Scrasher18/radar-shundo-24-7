@@ -10,6 +10,7 @@ import asyncio
 from datetime import datetime, timezone
 import os
 import threading
+import time
 from typing import Any, Callable, Dict, List, Optional
 import discord
 from discord import app_commands
@@ -603,16 +604,31 @@ async def on_ready():
         print(f"   ⚠️ [SlashBot] Error al sincronizar slash commands: {e}")
 
 
+@bot.tree.error
+async def on_app_command_error(interaction: discord.Interaction, error: app_commands.AppCommandError):
+    print(f"   ⚠️ [SlashBot] Error en comando slash: {error}")
+    try:
+        msg = f"⚠️ No se pudo procesar el comando: `{error}`"
+        if interaction.response.is_done():
+            await interaction.followup.send(msg, ephemeral=True)
+        else:
+            await interaction.response.send_message(msg, ephemeral=True)
+    except Exception:
+        pass
+
+
 def _ejecutar_loop_slash_bot() -> None:
-    """Ejecuta el bot en un bucle asyncio dedicado dentro de su propio hilo."""
+    """Ejecuta el bot en un bucle asyncio dedicado con auto-reconexión permanente."""
     if not DISCORD_BOT_TOKEN.strip():
         return
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    try:
-        loop.run_until_complete(bot.start(DISCORD_BOT_TOKEN.strip()))
-    except Exception as e:
-        print(f"   ⚠️ [SlashBot] Error en bucle asyncio: {e}")
+    while True:
+        try:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(bot.start(DISCORD_BOT_TOKEN.strip()))
+        except Exception as e:
+            print(f"   ⚠️ [SlashBot] Desconexión de Gateway: {e}. Reconectando en 5s...")
+            time.sleep(5)
 
 
 def iniciar_hilo_slash_bot(

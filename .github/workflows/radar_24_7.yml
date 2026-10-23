@@ -2,6 +2,12 @@ name: Radar Shundo & PvP 24/7 (Cloud)
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'src/**'
+      - '.github/workflows/**'
+      - 'radar.py'
+      - 'requirements.txt'
   schedule:
     - cron: '*/20 * * * *'
 
@@ -11,7 +17,7 @@ permissions:
 
 concurrency:
   group: radar-shundo-singleton
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   radar-24-7:
