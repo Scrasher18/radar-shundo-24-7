@@ -1,101 +1,4 @@
 {
-  "shundo:8805249611776124301": {
-    "canal": "shundo",
-    "pokemon": "Fletchling",
-    "coords": "52.074806,5.088997",
-    "ts": 1792769635,
-    "despawn_unix": 1792770739,
-    "discord_msg_id": "1563215809524797485",
-    "discord_msg_ids": [
-      "1563213898004434950",
-      "1563215809524797485"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Fletchling! (CP 388 • Nivel 17.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=52.074806,5.088997",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm661.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `388` | **Nivel:** `17.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792770739:R> (`10 min 47 seg`)\n🕒 **Hora exacta:** <t:1792770739:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Utrecht, Netherlands • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.074806,5.088997)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.074806,5.088997\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-23T15:41:31.976662+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-23 15:33:56"
-  },
-  "shundo:-1960491037137037764": {
-    "canal": "shundo",
-    "pokemon": "Croagunk",
-    "coords": "1.29876,103.8994913",
-    "ts": 1792769635,
-    "despawn_unix": 1792770273,
-    "discord_msg_id": "1563213898004434950",
-    "discord_msg_ids": [
-      "1563213898004434950"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Croagunk! (CP 157 • Nivel 6.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=1.29876,103.8994913",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm453.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `157` | **Nivel:** `6.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792770273:R> (`10 min 37 seg`)\n🕒 **Hora exacta:** <t:1792770273:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Marine Parade, Central Singapore, Singapore • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=1.29876,103.8994913)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n1.29876,103.8994913\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-23T15:33:56.301472+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-23 15:33:56"
-  },
   "shundo:-2006255198828758838": {
     "canal": "shundo",
     "pokemon": "Surskit",
@@ -484,7 +387,7 @@
       },
       "timestamp": "2026-10-23T16:32:39.659207+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-23 16:17:40"
   },
   "shundo:2008186814813826056": {
