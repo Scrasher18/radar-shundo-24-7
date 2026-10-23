@@ -92,52 +92,97 @@ async def autocomplete_presets(
 
 @bot.tree.command(
     name="pokemon",
-    description="🎯 Configura el radar de Eventos/CD para buscar una especie de la Pokédex (1025 Pokémon)."
+    description="🎯 Configura el radar de Eventos/CD para buscar una o varias especies (lista o hasta 5 a la vez)."
 )
 @app_commands.describe(
-    nombre="Escribe el nombre o número Pokédex (ej. Charmander, Beldum, Lucario, #1025)",
-    incluir_familia="Si es True, incluye toda su línea evolutiva (recomendado para CD)",
-    shundo="Si es True, rastrea 100% IV Shundos de esta especie",
+    nombre="Especie o lista separada por comas (ej: Charmander, Squirtle, Bulbasaur)",
+    pokemon_2="Segunda especie opcional (con autocompletado)",
+    pokemon_3="Tercera especie opcional (con autocompletado)",
+    pokemon_4="Cuarta especie opcional (con autocompletado)",
+    pokemon_5="Quinta especie opcional (con autocompletado)",
+    incluir_familia="Si es True, incluye evoluciones de cada especie (recomendado para CD)",
+    shundo="Si es True, rastrea 100% IV Shundos de estas especies",
     pvp_gl="Si es True, rastrea Top Ranks para Great League (1500 CP)",
     pvp_ul="Si es True, rastrea Top Ranks para Ultra League (2500 CP)"
 )
-@app_commands.autocomplete(nombre=autocomplete_pokemon)
+@app_commands.autocomplete(
+    nombre=autocomplete_pokemon,
+    pokemon_2=autocomplete_pokemon,
+    pokemon_3=autocomplete_pokemon,
+    pokemon_4=autocomplete_pokemon,
+    pokemon_5=autocomplete_pokemon,
+)
 async def cmd_pokemon(
     interaction: discord.Interaction,
     nombre: str,
+    pokemon_2: Optional[str] = None,
+    pokemon_3: Optional[str] = None,
+    pokemon_4: Optional[str] = None,
+    pokemon_5: Optional[str] = None,
     incluir_familia: bool = True,
     shundo: bool = True,
     pvp_gl: bool = True,
     pvp_ul: bool = True,
 ):
-    slug = nombre.strip().lower()
-    poke_id = SLUG_TO_ID.get(slug)
-    if not poke_id:
+    import re
+    # 1. Recolectar todos los candidatos
+    entradas = [nombre]
+    for extra in (pokemon_2, pokemon_3, pokemon_4, pokemon_5):
+        if extra:
+            entradas.append(extra)
+
+    slugs_limpios = []
+    for item in entradas:
+        partes = [p.strip().lower() for p in re.split(r"[,;]+", item) if p.strip()]
+        slugs_limpios.extend(partes)
+
+    ids_totales = []
+    nombres_oficiales = []
+
+    for s in slugs_limpios:
+        s_norm = s.replace(" ", "-")
+        poke_id = SLUG_TO_ID.get(s_norm) or SLUG_TO_ID.get(s)
+        if not poke_id and s.isdigit():
+            poke_id = int(s)
+
+        if not poke_id:
+            continue
+
+        nom = ID_TO_NAME.get(poke_id, s.capitalize())
+        if nom not in nombres_oficiales:
+            nombres_oficiales.append(nom)
+
+        fam_ids = [poke_id]
+        if incluir_familia:
+            if s in FAMILIAS_POKEDEX:
+                fam_ids = FAMILIAS_POKEDEX[s]
+            elif s_norm in FAMILIAS_POKEDEX:
+                fam_ids = FAMILIAS_POKEDEX[s_norm]
+            else:
+                for f_slug, f_ids in FAMILIAS_POKEDEX.items():
+                    if poke_id in f_ids:
+                        fam_ids = f_ids
+                        break
+        for fid in fam_ids:
+            if fid not in ids_totales:
+                ids_totales.append(fid)
+
+    if not ids_totales:
         await interaction.response.send_message(
-            f"❌ No se encontró ningún Pokémon con el nombre `{nombre}` en la Pokédex Nacional.",
+            f"❌ No se reconoció ningún Pokémon válido en `{nombre}`. Puedes usar nombres de la Pokédex (ej. Charmander, Beldum, Ralts).",
             ephemeral=True
         )
         return
 
-    nombre_oficial = ID_TO_NAME.get(poke_id, slug.capitalize())
-
-    # Resolver IDs
-    ids_buscar = [poke_id]
-    if incluir_familia and slug in FAMILIAS_POKEDEX:
-        ids_buscar = FAMILIAS_POKEDEX[slug]
-    elif incluir_familia:
-        # Si no está en diccionario rápido de familias, buscar si alguna familia lo contiene
-        for fam_slug, fam_ids in FAMILIAS_POKEDEX.items():
-            if poke_id in fam_ids:
-                ids_buscar = fam_ids
-                break
-
-    nombres_lista = [ID_TO_NAME.get(i, f"#{i}") for i in ids_buscar]
+    nombres_completos = [ID_TO_NAME.get(i, f"#{i}") for i in ids_totales]
+    titulo_evento = "Evento: " + ", ".join(nombres_oficiales[:3])
+    if len(nombres_oficiales) > 3:
+        titulo_evento += f" (+{len(nombres_oficiales) - 3})"
 
     cfg_ev = cargar_config_evento()
-    cfg_ev["nombre_evento"] = f"Community Day / Evento ({nombre_oficial})"
-    cfg_ev["pokemon_nombres"] = nombres_lista
-    cfg_ev["pokemon_ids"] = ids_buscar
+    cfg_ev["nombre_evento"] = titulo_evento
+    cfg_ev["pokemon_nombres"] = nombres_completos
+    cfg_ev["pokemon_ids"] = ids_totales
     cfg_ev["incluir_shundos_100"] = shundo
     cfg_ev["incluir_pvp_gl"] = pvp_gl
     cfg_ev["incluir_pvp_ul"] = pvp_ul
@@ -149,18 +194,17 @@ async def cmd_pokemon(
     publicar_o_actualizar_panel_maestro()
     sincronizar_estado_remoto_push(asincrono=True)
 
-    # Disparar escaneo inmediato si está configurado
     if _CALLBACK_ESCANEO_EVENTO:
         threading.Thread(target=_CALLBACK_ESCANEO_EVENTO, daemon=True).start()
 
-    lista_txt = ", ".join(nombres_lista)
-    fases_txt = "Toda la familia evolutiva" if len(ids_buscar) > 1 else "Solo esta especie"
+    resumen_pokes = ", ".join(nombres_oficiales)
+    fases_txt = "con toda su línea evolutiva" if incluir_familia else "solo especies seleccionadas"
 
     await interaction.response.send_message(
-        f"✅ **Radar de Eventos configurado para:** **{nombre_oficial}**\n"
-        f"• 📋 **Especies activas:** `{lista_txt}` ({fases_txt})\n"
+        f"✅ **Radar de Eventos configurado para {len(nombres_oficiales)} Pokémon:**\n"
+        f"• 📋 **Especies seleccionadas:** **{resumen_pokes}** ({fases_txt} • {len(ids_totales)} IDs)\n"
         f"• 🎯 **Ligas:** Shundo 100% (`{shundo}`) | Great League (`{pvp_gl}`) | Ultra League (`{pvp_ul}`)\n"
-        f"• ⚡ **Escaneo inmediato iniciado en `#🎉-evento-cd`...**",
+        f"• ⚡ **Escaneo forzado iniciado de inmediato en `#🎉-evento-cd`...**",
         ephemeral=True
     )
 
