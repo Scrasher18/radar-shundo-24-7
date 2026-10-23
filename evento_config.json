@@ -1,14 +1,24 @@
 {
   "activo": true,
-  "nombre_evento": "Community Day / Evento (Lucario)",
+  "nombre_evento": "Evento: Lucario, Drilbur, Tinkatink (+1)",
   "webhook_evento": "",
   "pokemon_ids": [
     447,
-    448
+    448,
+    529,
+    957,
+    610,
+    611,
+    612
   ],
   "pokemon_nombres": [
     "Riolu",
-    "Lucario"
+    "Lucario",
+    "Drilbur",
+    "Tinkatink",
+    "Axew",
+    "Fraxure",
+    "Haxorus"
   ],
   "incluir_shundos_100": true,
   "incluir_pvp_gl": true,
