@@ -334,7 +334,7 @@ def procesar_comando_control(contenido: str) -> bool:
     # 7. Limpiar chat
     if low in ("limpiar", "clean", "cls"):
         _enviar_aviso_temporal("🧹 **Limpiando mensajes huérfanos del canal...**")
-        _limpiar_mensajes_canal_control(cfg.get("panel_msg_id"))
+        limpiar_mensajes_canal_control(cfg.get("panel_msg_id"))
         publicar_o_actualizar_panel_maestro()
         return True
 
@@ -355,7 +355,7 @@ def procesar_comando_control(contenido: str) -> bool:
     return False
 
 
-def _limpiar_mensajes_canal_control(panel_mid: Optional[str]) -> None:
+def limpiar_mensajes_canal_control(panel_mid: Optional[str]) -> None:
     """Elimina los mensajes que no sean el panel principal del canal de control."""
     if not DISCORD_BOT_TOKEN.strip() or not DISCORD_CONTROL_CHANNEL_ID.strip():
         return

@@ -362,6 +362,54 @@ async def cmd_preset(interaction: discord.Interaction, opcion: str):
     )
 
 
+
+
+@bot.tree.command(
+    name="limpiar",
+    description="🧹 Limpia a cero la lista de especies de Eventos o limpia mensajes huérfanos del canal."
+)
+@app_commands.describe(
+    objetivo="Qué deseas limpiar: la lista de Pokémon de eventos, el chat de control, o todo"
+)
+@app_commands.choices(objetivo=[
+    app_commands.Choice(name="🎯 Lista de Pokémon de Eventos (dejar en cero para empezar de nuevo)", value="evento"),
+    app_commands.Choice(name="💬 Mensajes huérfanos del chat de Control", value="chat"),
+    app_commands.Choice(name="🧹 Limpieza Total (Lista a cero + alertas + chat)", value="todo"),
+])
+async def cmd_limpiar(interaction: discord.Interaction, objetivo: str = "evento"):
+    if objetivo in ("evento", "todo"):
+        cfg_ev = cargar_config_evento()
+        cfg_ev["activo"] = False
+        cfg_ev["nombre_evento"] = "Community Day / Evento Especial"
+        cfg_ev["pokemon_nombres"] = []
+        cfg_ev["pokemon_ids"] = []
+        guardar_config_evento(cfg_ev)
+        limpiar_alertas_evento_discord()
+        publicar_o_actualizar_panel_control()
+
+    if objetivo in ("chat", "todo"):
+        cfg_ctrl = cargar_config_control()
+        from src.control_panel import limpiar_mensajes_canal_control
+        limpiar_mensajes_canal_control(cfg_ctrl.get("panel_msg_id"))
+
+    publicar_o_actualizar_panel_maestro()
+    sincronizar_estado_remoto_push(asincrono=True)
+
+    if objetivo == "evento":
+        await interaction.response.send_message(
+            "🧹 **Lista de Pokémon de Eventos reseteada a cero.** El radar está listo para recibir nuevas especies cuando gustes.",
+            ephemeral=True
+        )
+    elif objetivo == "chat":
+        await interaction.response.send_message(
+            "🧹 **Canal limpiado.** Se eliminaron los mensajes sueltos y quedó el panel maestro visible.",
+            ephemeral=True
+        )
+    else:
+        await interaction.response.send_message(
+            "🧹 **Limpieza total completada:** Lista de eventos reseteada a cero, alertas anteriores eliminadas y chat limpio.",
+            ephemeral=True
+        )
 @bot.tree.command(
     name="apagar",
     description="🛑 Apaga el filtro de Eventos/CD o pausa el radar completo."
