@@ -1,55 +1,4 @@
 {
-  "shundo:-3401148501907135987": {
-    "canal": "shundo",
-    "pokemon": "Roselia",
-    "coords": "1.3484831,103.7907913",
-    "ts": 1792765678,
-    "despawn_unix": 1792769016,
-    "discord_msg_id": "1563210270187196473",
-    "discord_msg_ids": [
-      "1563206512715894894",
-      "1563206626507366567",
-      "1563208453034614852",
-      "1563210270187196473"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Roselia! (CP 478 • Nivel 9.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=1.3484831,103.7907913",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm315.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `478` | **Nivel:** `9.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792769016:R> (`4 min 05 seg`)\n🕒 **Hora exacta:** <t:1792769016:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Anak Bukit, North West, Singapore • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=1.3484831,103.7907913)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n1.3484831,103.7907913\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-23T15:19:31.360210+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-23 14:27:58"
-  },
   "shundo:-8653455055671213144": {
     "canal": "shundo",
     "pokemon": "Zorua",
@@ -544,7 +493,7 @@
       },
       "timestamp": "2026-10-23T15:26:42.513878+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-23 15:12:18"
   },
   "shundo:6293904885596496460": {
