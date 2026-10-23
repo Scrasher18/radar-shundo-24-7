@@ -1,109 +1,4 @@
 {
-  "shundo:1115948027590915613": {
-    "canal": "shundo",
-    "pokemon": "Oricorio (Pompom)",
-    "coords": "32.6640808,-83.6283166",
-    "ts": 1792767874,
-    "despawn_unix": 1792771210,
-    "discord_msg_id": "1563215809524797485",
-    "discord_msg_ids": [
-      "1563206512715894894",
-      "1563206626507366567",
-      "1563210270187196473",
-      "1563212078926270474",
-      "1563213898004434950",
-      "1563215809524797485"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Oricorio (Pompom)! (CP 1867 • Nivel 28.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=32.6640808,-83.6283166",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm741.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1867` | **Nivel:** `28.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792771210:R> (`18 min 38 seg`)\n🕒 **Hora exacta:** <t:1792771210:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Warner Robins, Georgia, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=32.6640808,-83.6283166)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n32.6640808,-83.6283166\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-23T15:41:31.976602+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-23 15:04:35"
-  },
-  "shundo:8411282833250814583": {
-    "canal": "shundo",
-    "pokemon": "Taillow",
-    "coords": "34.9333744,135.7507288",
-    "ts": 1792767874,
-    "despawn_unix": 1792769464,
-    "discord_msg_id": "1563212078926270474",
-    "discord_msg_ids": [
-      "1563206512715894894",
-      "1563206626507366567",
-      "1563208453034614852",
-      "1563210270187196473",
-      "1563212078926270474"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Taillow! (CP 415 • Nivel 19.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=34.9333744,135.7507288",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm276.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `415` | **Nivel:** `19.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792769464:R> (`4 min 21 seg`)\n🕒 **Hora exacta:** <t:1792769464:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Kōtari, Kyōto, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=34.9333744,135.7507288)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n34.9333744,135.7507288\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-23T15:26:42.513859+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-23 15:04:35"
-  },
   "shundo:507164603447838244": {
     "canal": "shundo",
     "pokemon": "Torchic",
@@ -540,7 +435,7 @@
       },
       "timestamp": "2026-10-23T16:03:09.440322+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-23 16:03:12"
   },
   "shundo:-2222072212628485226": {
@@ -588,7 +483,7 @@
       },
       "timestamp": "2026-10-23T16:03:09.440352+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-23 16:03:12"
   }
 }
