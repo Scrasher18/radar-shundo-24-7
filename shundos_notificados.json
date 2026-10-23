@@ -94,5 +94,101 @@
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-23 22:53:56"
+  },
+  "shundo:-5577478616420704167": {
+    "canal": "shundo",
+    "pokemon": "Tadbulb",
+    "coords": "-41.214087,174.8754",
+    "ts": 1792796903,
+    "despawn_unix": 1792798107,
+    "discord_msg_id": "1563328263839948822",
+    "discord_msg_ids": [
+      "1563328263839948822"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Tadbulb! (CP 547 • Nivel 21.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=-41.214087,174.8754",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm938.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `547` | **Nivel:** `21.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792798107:R> (`20 min 04 seg`)\n🕒 **Hora exacta:** <t:1792798107:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Petone, Wellington, New Zealand • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-41.214087,174.8754)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n-41.214087,174.8754\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T23:08:23.232141+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 23:08:23"
+  },
+  "shundo:-4787481164726203243": {
+    "canal": "shundo",
+    "pokemon": "Lechonk",
+    "coords": "29.997381,-81.515282",
+    "ts": 1792796903,
+    "despawn_unix": 1792797878,
+    "discord_msg_id": "1563328263839948822",
+    "discord_msg_ids": [
+      "1563328263839948822"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Lechonk! (CP 76 • Nivel 4.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=29.997381,-81.515282",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm915.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `76` | **Nivel:** `4.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792797878:R> (`16 min 14 seg`)\n🕒 **Hora exacta:** <t:1792797878:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "St. Johns, Florida, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=29.997381,-81.515282)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n29.997381,-81.515282\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T23:08:23.232161+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 23:08:23"
   }
 }
