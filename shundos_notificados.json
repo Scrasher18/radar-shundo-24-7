@@ -348,11 +348,12 @@
     "coords": "1.3484831,103.7907913",
     "ts": 1792765678,
     "despawn_unix": 1792769016,
-    "discord_msg_id": "1563202851671511103",
+    "discord_msg_id": "1563204680308494499",
     "discord_msg_ids": [
       "1563197297301389367",
       "1563201057754980502",
-      "1563202851671511103"
+      "1563202851671511103",
+      "1563204680308494499"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Roselia! (CP 478 • Nivel 9.0)",
@@ -370,7 +371,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792769016:R> (`33 min 33 seg`)\n🕒 **Hora exacta:** <t:1792769016:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792769016:R> (`26 min 18 seg`)\n🕒 **Hora exacta:** <t:1792769016:T>",
           "inline": true
         },
         {
@@ -387,7 +388,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-23T14:50:02.581416+00:00"
+      "timestamp": "2026-10-23T14:57:18.569002+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-23 14:27:58"
@@ -446,9 +447,10 @@
     "coords": "-27.2504974,152.9794866",
     "ts": 1792767002,
     "despawn_unix": 1792770122,
-    "discord_msg_id": "1563202851671511103",
+    "discord_msg_id": "1563204680308494499",
     "discord_msg_ids": [
-      "1563202851671511103"
+      "1563202851671511103",
+      "1563204680308494499"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Zigzagoon (Galarian)! (CP 421 • Nivel 29.0)",
@@ -466,7 +468,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792770122:R> (`52 min 00 seg`)\n🕒 **Hora exacta:** <t:1792770122:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792770122:R> (`44 min 44 seg`)\n🕒 **Hora exacta:** <t:1792770122:T>",
           "inline": true
         },
         {
@@ -483,7 +485,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-23T14:50:02.581391+00:00"
+      "timestamp": "2026-10-23T14:57:18.568979+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-23 14:50:03"
@@ -533,7 +535,199 @@
       },
       "timestamp": "2026-10-23T14:50:02.581429+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-23 14:50:03"
+  },
+  "shundo:7284498482396359234": {
+    "canal": "shundo",
+    "pokemon": "Weedle",
+    "coords": "34.6658136,135.166082",
+    "ts": 1792767438,
+    "despawn_unix": 1792768456,
+    "discord_msg_id": "1563204680308494499",
+    "discord_msg_ids": [
+      "1563204680308494499"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Weedle! (CP 404 • Nivel 32.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=34.6658136,135.166082",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm13.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `404` | **Nivel:** `32.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792768456:R> (`16 min 58 seg`)\n🕒 **Hora exacta:** <t:1792768456:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Kobe, Hyōgo, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=34.6658136,135.166082)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n34.6658136,135.166082\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T14:57:18.568954+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 14:57:19"
+  },
+  "shundo:-7437723057998746605": {
+    "canal": "shundo",
+    "pokemon": "Rookidee",
+    "coords": "52.506894,-1.938524",
+    "ts": 1792767438,
+    "despawn_unix": 1792767900,
+    "discord_msg_id": "1563204680308494499",
+    "discord_msg_ids": [
+      "1563204680308494499"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Rookidee! (CP 228 • Nivel 12.0)",
+      "description": "✨ **SHUNDO 100% IV** • 📏 **TALLA RARA (XXS)**",
+      "url": "https://www.google.com/maps?q=52.506894,-1.938524",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm821.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `228` | **Nivel:** `12.0`\n**Talla:** `XXS` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792767900:R> (`7 min 42 seg`)\n🕒 **Hora exacta:** <t:1792767900:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Hockley, Birmingham, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.506894,-1.938524)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n52.506894,-1.938524\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T14:57:18.568993+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 14:57:19"
+  },
+  "shundo:-3844045599460856379": {
+    "canal": "shundo",
+    "pokemon": "Quaxly",
+    "coords": "44.8974602,-123.0017563",
+    "ts": 1792767438,
+    "despawn_unix": 1792768491,
+    "discord_msg_id": "1563204680308494499",
+    "discord_msg_ids": [
+      "1563204680308494499"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Quaxly! (CP 242 • Nivel 8.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=44.8974602,-123.0017563",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm912.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `242` | **Nivel:** `8.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792768491:R> (`17 min 33 seg`)\n🕒 **Hora exacta:** <t:1792768491:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Four Corners, Oregon, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=44.8974602,-123.0017563)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n44.8974602,-123.0017563\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T14:57:18.569012+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 14:57:19"
+  },
+  "shundo:-8654636617502429963": {
+    "canal": "shundo",
+    "pokemon": "Skorupi",
+    "coords": "51.606909,4.830811",
+    "ts": 1792767438,
+    "despawn_unix": 1792768218,
+    "discord_msg_id": "1563204680308494499",
+    "discord_msg_ids": [
+      "1563204680308494499"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Skorupi! (CP 227 • Nivel 8.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=51.606909,4.830811",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm451.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `227` | **Nivel:** `8.0`\n**Talla:** `XS` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792768218:R> (`13 min 00 seg`)\n🕒 **Hora exacta:** <t:1792768218:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Teteringen, Noord-Brabant, Netherlands • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.606909,4.830811)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n51.606909,4.830811\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-23T14:57:18.569022+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-23 14:57:19"
   }
 }
