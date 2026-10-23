@@ -30,7 +30,7 @@ jobs:
           python-version: '3.12'
 
       - name: Instalar dependencias
-        run: pip install requests
+        run: pip install -r requirements.txt
 
       - name: Ejecutar Radar Shundo + PvP GL/UL + Eventos en bucle (escaneo cada 7 minutos)
         env:

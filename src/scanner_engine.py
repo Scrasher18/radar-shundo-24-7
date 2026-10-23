@@ -44,6 +44,7 @@ from src.discord_service import (
     iniciar_hilos_reloj_tiempo_real,
     publicar_panel_consolidado_canal,
 )
+from src.slash_bot import iniciar_hilo_slash_bot
 from src.control_panel import (
     cargar_config_control,
     iniciar_hilo_panel_control,
@@ -232,6 +233,10 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
     iniciar_hilos_reloj_tiempo_real()
     iniciar_hilo_bot_eventos(callback_escaneo_inmediato=ejecutar_escaneo_evento_inmediato)
     iniciar_hilo_panel_control(callback_escaneo_inmediato=ejecutar_escaneo_global_inmediato)
+    iniciar_hilo_slash_bot(
+        callback_escaneo_evento=ejecutar_escaneo_evento_inmediato,
+        callback_escaneo_global=ejecutar_escaneo_global_inmediato,
+    )
     sincronizar_estado_remoto_pull()
 
     perfil, status_perfil = obtener_perfil_entrenador()
