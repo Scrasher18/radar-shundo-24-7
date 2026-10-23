@@ -34,7 +34,13 @@ from src.event_manager import (
     limpiar_alertas_evento_discord,
     publicar_o_actualizar_panel_control,
 )
-from src.pokedex_data import ID_TO_NAME, POKEDEX_1025, SLUG_TO_ID, buscar_pokemon_autocomplete
+from src.pokedex_data import (
+    ID_TO_NAME,
+    POKEDEX_1025,
+    SLUG_TO_ID,
+    buscar_pokemon_autocomplete,
+    resolver_cadena_pokemon,
+)
 from src.presets_catalog import FAMILIAS_POKEDEX, PRESETS_EVENTO, obtener_preset, resolver_nombres_e_ids
 from src.state_manager import sincronizar_estado_remoto_push
 
@@ -57,11 +63,11 @@ async def autocomplete_pokemon(
     interaction: discord.Interaction,
     current: str
 ) -> List[app_commands.Choice[str]]:
-    """Devuelve los 25 Pokémon que mejor coinciden con lo que el usuario está escribiendo."""
+    """Devuelve los 25 Pokémon (oficiales + regionales) que mejor coinciden con lo que el usuario está escribiendo."""
     coincidencias = buscar_pokemon_autocomplete(current, limite=25)
     return [
-        app_commands.Choice(name=label, value=slug)
-        for label, slug in coincidencias
+        app_commands.Choice(name=label, value=label)
+        for label, _val in coincidencias
     ]
 
 
@@ -124,60 +130,29 @@ async def cmd_pokemon(
     pvp_gl: bool = True,
     pvp_ul: bool = True,
 ):
-    import re
-    # 1. Recolectar todos los candidatos
+    # Recolectar todas las entradas de Pokémon
     entradas = [nombre]
     for extra in (pokemon_2, pokemon_3, pokemon_4, pokemon_5):
         if extra:
             entradas.append(extra)
 
-    slugs_limpios = []
-    for item in entradas:
-        partes = [p.strip().lower() for p in re.split(r"[,;]+", item) if p.strip()]
-        slugs_limpios.extend(partes)
-
-    ids_totales = []
-    nombres_oficiales = []
-
-    for s in slugs_limpios:
-        s_norm = s.replace(" ", "-")
-        poke_id = SLUG_TO_ID.get(s_norm) or SLUG_TO_ID.get(s)
-        if not poke_id and s.isdigit():
-            poke_id = int(s)
-
-        if not poke_id:
-            continue
-
-        nom = ID_TO_NAME.get(poke_id, s.capitalize())
-        if nom not in nombres_oficiales:
-            nombres_oficiales.append(nom)
-
-        fam_ids = [poke_id]
-        if incluir_familia:
-            if s in FAMILIAS_POKEDEX:
-                fam_ids = FAMILIAS_POKEDEX[s]
-            elif s_norm in FAMILIAS_POKEDEX:
-                fam_ids = FAMILIAS_POKEDEX[s_norm]
-            else:
-                for f_slug, f_ids in FAMILIAS_POKEDEX.items():
-                    if poke_id in f_ids:
-                        fam_ids = f_ids
-                        break
-        for fid in fam_ids:
-            if fid not in ids_totales:
-                ids_totales.append(fid)
-
-    if not ids_totales:
+    res = resolver_cadena_pokemon(entradas, incluir_familia=incluir_familia, familias_dict=FAMILIAS_POKEDEX)
+    if not res["exito"]:
         await interaction.response.send_message(
-            f"❌ No se reconoció ningún Pokémon válido en `{nombre}`. Puedes usar nombres de la Pokédex (ej. Charmander, Beldum, Ralts).",
+            f"❌ No se reconoció ningún Pokémon válido en `{nombre}`.\n"
+            f"💡 **Opciones válidas:**\n"
+            f"• Selección de lista: `#704 Goomy`, `#705 Sliggoo (Hisui)`, `#004 Charmander`\n"
+            f"• Formas regionales: `Sliggoo Hisui`, `Goodra de Hisui`, `Vulpix Alola`, `Zigzagoon Galar`\n"
+            f"• Nombres y números: `Charmander`, `Beldum`, `#704`, `704`\n"
+            f"• Listas combinadas: `Goomy de Hisui, Charmander, Squirtle`",
             ephemeral=True
         )
         return
 
-    nombres_completos = [ID_TO_NAME.get(i, f"#{i}") for i in ids_totales]
-    titulo_evento = "Evento: " + ", ".join(nombres_oficiales[:3])
-    if len(nombres_oficiales) > 3:
-        titulo_evento += f" (+{len(nombres_oficiales) - 3})"
+    nombres_oficiales = res["nombres_principales"]
+    ids_totales = res["ids_totales"]
+    nombres_completos = res["nombres_completos"]
+    titulo_evento = res["titulo_evento"]
 
     cfg_ev = cargar_config_evento()
     cfg_ev["nombre_evento"] = titulo_evento
@@ -198,13 +173,13 @@ async def cmd_pokemon(
         threading.Thread(target=_CALLBACK_ESCANEO_EVENTO, daemon=True).start()
 
     resumen_pokes = ", ".join(nombres_oficiales)
-    fases_txt = "con toda su línea evolutiva" if incluir_familia else "solo especies seleccionadas"
+    fases_txt = f"con su línea evolutiva completa ({len(ids_totales)} IDs)" if incluir_familia else f"solo especie exacta ({len(ids_totales)} IDs)"
 
     await interaction.response.send_message(
         f"✅ **Radar de Eventos configurado para {len(nombres_oficiales)} Pokémon:**\n"
-        f"• 📋 **Especies seleccionadas:** **{resumen_pokes}** ({fases_txt} • {len(ids_totales)} IDs)\n"
-        f"• 🎯 **Ligas:** Shundo 100% (`{shundo}`) | Great League (`{pvp_gl}`) | Ultra League (`{pvp_ul}`)\n"
-        f"• ⚡ **Escaneo forzado iniciado de inmediato en `#🎉-evento-cd`...**",
+        f"• 📋 **Especies activas:** **{resumen_pokes}** ({fases_txt})\n"
+        f"• 🎯 **Filtros:** Shundo 100% (`{shundo}`) | Great League (`{pvp_gl}`) | Ultra League (`{pvp_ul}`)\n"
+        f"• ⚡ **Escaneo prioritario iniciado de inmediato en `#🎉-evento-cd`...**",
         ephemeral=True
     )
 

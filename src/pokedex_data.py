@@ -3,7 +3,8 @@ Catálogo completo de la Pokédex Nacional (Gen 1 a Gen 9 - 1025 especies)
 para Autocompletado de Slash Commands en Discord.
 """
 
-from typing import List, Tuple
+import re
+from typing import Any, Dict, List, Optional, Tuple
 
 POKEDEX_1025 = [
   {
@@ -5136,22 +5137,265 @@ POKEDEX_1025 = [
 SLUG_TO_ID = {p["slug"]: p["id"] for p in POKEDEX_1025}
 ID_TO_NAME = {p["id"]: p["name"] for p in POKEDEX_1025}
 
+FORMAS_REGIONALES: List[Dict[str, Any]] = [
+    # --- HISUI ---
+    {"id": 704, "name": "Goomy (Hisui)", "slug": "goomy-hisui", "region": "Hisui", "family": [704, 705, 706]},
+    {"id": 705, "name": "Sliggoo (Hisui)", "slug": "sliggoo-hisui", "region": "Hisui", "family": [704, 705, 706]},
+    {"id": 706, "name": "Goodra (Hisui)", "slug": "goodra-hisui", "region": "Hisui", "family": [704, 705, 706]},
+    {"id": 58, "name": "Growlithe (Hisui)", "slug": "growlithe-hisui", "region": "Hisui", "family": [58, 59]},
+    {"id": 59, "name": "Arcanine (Hisui)", "slug": "arcanine-hisui", "region": "Hisui", "family": [58, 59]},
+    {"id": 100, "name": "Voltorb (Hisui)", "slug": "voltorb-hisui", "region": "Hisui", "family": [100, 101]},
+    {"id": 101, "name": "Electrode (Hisui)", "slug": "electrode-hisui", "region": "Hisui", "family": [100, 101]},
+    {"id": 157, "name": "Typhlosion (Hisui)", "slug": "typhlosion-hisui", "region": "Hisui", "family": [155, 156, 157]},
+    {"id": 211, "name": "Qwilfish (Hisui)", "slug": "qwilfish-hisui", "region": "Hisui", "family": [211, 904]},
+    {"id": 215, "name": "Sneasel (Hisui)", "slug": "sneasel-hisui", "region": "Hisui", "family": [215, 903]},
+    {"id": 503, "name": "Samurott (Hisui)", "slug": "samurott-hisui", "region": "Hisui", "family": [501, 502, 503]},
+    {"id": 549, "name": "Lilligant (Hisui)", "slug": "lilligant-hisui", "region": "Hisui", "family": [548, 549]},
+    {"id": 570, "name": "Zorua (Hisui)", "slug": "zorua-hisui", "region": "Hisui", "family": [570, 571]},
+    {"id": 571, "name": "Zoroark (Hisui)", "slug": "zoroark-hisui", "region": "Hisui", "family": [570, 571]},
+    {"id": 628, "name": "Braviary (Hisui)", "slug": "braviary-hisui", "region": "Hisui", "family": [627, 628]},
+    {"id": 713, "name": "Avalugg (Hisui)", "slug": "avalugg-hisui", "region": "Hisui", "family": [712, 713]},
+    {"id": 724, "name": "Decidueye (Hisui)", "slug": "decidueye-hisui", "region": "Hisui", "family": [722, 723, 724]},
+    {"id": 901, "name": "Ursaluna (Hisui)", "slug": "ursaluna-hisui", "region": "Hisui", "family": [216, 217, 901]},
+    {"id": 900, "name": "Kleavor", "slug": "kleavor", "region": "Hisui", "family": [123, 212, 900]},
+    {"id": 904, "name": "Overqwil", "slug": "overqwil", "region": "Hisui", "family": [211, 904]},
+    {"id": 903, "name": "Sneasler", "slug": "sneasler", "region": "Hisui", "family": [215, 903]},
+    {"id": 899, "name": "Wyrdeer", "slug": "wyrdeer", "region": "Hisui", "family": [234, 899]},
+    {"id": 902, "name": "Basculegion", "slug": "basculegion", "region": "Hisui", "family": [550, 902]},
+
+    # --- ALOLA ---
+    {"id": 19, "name": "Rattata (Alola)", "slug": "rattata-alola", "region": "Alola", "family": [19, 20]},
+    {"id": 20, "name": "Raticate (Alola)", "slug": "raticate-alola", "region": "Alola", "family": [19, 20]},
+    {"id": 26, "name": "Raichu (Alola)", "slug": "raichu-alola", "region": "Alola", "family": [172, 25, 26]},
+    {"id": 27, "name": "Sandshrew (Alola)", "slug": "sandshrew-alola", "region": "Alola", "family": [27, 28]},
+    {"id": 28, "name": "Sandslash (Alola)", "slug": "sandslash-alola", "region": "Alola", "family": [27, 28]},
+    {"id": 37, "name": "Vulpix (Alola)", "slug": "vulpix-alola", "region": "Alola", "family": [37, 38]},
+    {"id": 38, "name": "Ninetales (Alola)", "slug": "ninetales-alola", "region": "Alola", "family": [37, 38]},
+    {"id": 50, "name": "Diglett (Alola)", "slug": "diglett-alola", "region": "Alola", "family": [50, 51]},
+    {"id": 51, "name": "Dugtrio (Alola)", "slug": "dugtrio-alola", "region": "Alola", "family": [50, 51]},
+    {"id": 52, "name": "Meowth (Alola)", "slug": "meowth-alola", "region": "Alola", "family": [52, 53]},
+    {"id": 53, "name": "Persian (Alola)", "slug": "persian-alola", "region": "Alola", "family": [52, 53]},
+    {"id": 74, "name": "Geodude (Alola)", "slug": "geodude-alola", "region": "Alola", "family": [74, 75, 76]},
+    {"id": 75, "name": "Graveler (Alola)", "slug": "graveler-alola", "region": "Alola", "family": [74, 75, 76]},
+    {"id": 76, "name": "Golem (Alola)", "slug": "golem-alola", "region": "Alola", "family": [74, 75, 76]},
+    {"id": 88, "name": "Grimer (Alola)", "slug": "grimer-alola", "region": "Alola", "family": [88, 89]},
+    {"id": 89, "name": "Muk (Alola)", "slug": "muk-alola", "region": "Alola", "family": [88, 89]},
+    {"id": 103, "name": "Exeggutor (Alola)", "slug": "exeggutor-alola", "region": "Alola", "family": [102, 103]},
+    {"id": 105, "name": "Marowak (Alola)", "slug": "marowak-alola", "region": "Alola", "family": [104, 105]},
+
+    # --- GALAR ---
+    {"id": 52, "name": "Meowth (Galar)", "slug": "meowth-galar", "region": "Galar", "family": [52, 863]},
+    {"id": 863, "name": "Perrserker", "slug": "perrserker", "region": "Galar", "family": [52, 863]},
+    {"id": 77, "name": "Ponyta (Galar)", "slug": "ponyta-galar", "region": "Galar", "family": [77, 78]},
+    {"id": 78, "name": "Rapidash (Galar)", "slug": "rapidash-galar", "region": "Galar", "family": [77, 78]},
+    {"id": 79, "name": "Slowpoke (Galar)", "slug": "slowpoke-galar", "region": "Galar", "family": [79, 80, 199]},
+    {"id": 80, "name": "Slowbro (Galar)", "slug": "slowbro-galar", "region": "Galar", "family": [79, 80, 199]},
+    {"id": 199, "name": "Slowking (Galar)", "slug": "slowking-galar", "region": "Galar", "family": [79, 80, 199]},
+    {"id": 83, "name": "Farfetch'd (Galar)", "slug": "farfetchd-galar", "region": "Galar", "family": [83, 865]},
+    {"id": 865, "name": "Sirfetch'd", "slug": "sirfetchd", "region": "Galar", "family": [83, 865]},
+    {"id": 110, "name": "Weezing (Galar)", "slug": "weezing-galar", "region": "Galar", "family": [109, 110]},
+    {"id": 122, "name": "Mr. Mime (Galar)", "slug": "mr-mime-galar", "region": "Galar", "family": [439, 122, 866]},
+    {"id": 866, "name": "Mr. Rime", "slug": "mr-rime", "region": "Galar", "family": [439, 122, 866]},
+    {"id": 144, "name": "Articuno (Galar)", "slug": "articuno-galar", "region": "Galar", "family": [144]},
+    {"id": 145, "name": "Zapdos (Galar)", "slug": "zapdos-galar", "region": "Galar", "family": [145]},
+    {"id": 146, "name": "Moltres (Galar)", "slug": "moltres-galar", "region": "Galar", "family": [146]},
+    {"id": 222, "name": "Corsola (Galar)", "slug": "corsola-galar", "region": "Galar", "family": [222, 864]},
+    {"id": 864, "name": "Cursola", "slug": "cursola", "region": "Galar", "family": [222, 864]},
+    {"id": 263, "name": "Zigzagoon (Galar)", "slug": "zigzagoon-galar", "region": "Galar", "family": [263, 264, 862]},
+    {"id": 264, "name": "Linoone (Galar)", "slug": "linoone-galar", "region": "Galar", "family": [263, 264, 862]},
+    {"id": 862, "name": "Obstagoon", "slug": "obstagoon", "region": "Galar", "family": [263, 264, 862]},
+    {"id": 554, "name": "Darumaka (Galar)", "slug": "darumaka-galar", "region": "Galar", "family": [554, 555]},
+    {"id": 555, "name": "Darmanitan (Galar)", "slug": "darmanitan-galar", "region": "Galar", "family": [554, 555]},
+    {"id": 562, "name": "Yamask (Galar)", "slug": "yamask-galar", "region": "Galar", "family": [562, 867]},
+    {"id": 867, "name": "Runerigus", "slug": "runerigus", "region": "Galar", "family": [562, 867]},
+    {"id": 618, "name": "Stunfisk (Galar)", "slug": "stunfisk-galar", "region": "Galar", "family": [618]},
+
+    # --- PALDEA ---
+    {"id": 194, "name": "Wooper (Paldea)", "slug": "wooper-paldea", "region": "Paldea", "family": [194, 195, 980]},
+    {"id": 980, "name": "Clodsire", "slug": "clodsire", "region": "Paldea", "family": [194, 195, 980]},
+    {"id": 128, "name": "Tauros (Paldea)", "slug": "tauros-paldea", "region": "Paldea", "family": [128]},
+]
+
+LOOKUP_REGIONAL_NORMALIZADO: Dict[str, Dict[str, Any]] = {}
+for _r in FORMAS_REGIONALES:
+    def _add_lk(k: str, obj: Dict[str, Any]) -> None:
+        c = re.sub(r"[^a-z0-9]", "", k.lower())
+        if c:
+            LOOKUP_REGIONAL_NORMALIZADO[c] = obj
+
+    _add_lk(_r["slug"], _r)
+    _add_lk(_r["name"], _r)
+    _base = re.sub(r"\(.*?\)", "", _r["name"]).strip()
+    _reg = _r["region"]
+    _add_lk(f"{_base} {_reg}", _r)
+    _add_lk(f"{_base} de {_reg}", _r)
+    _add_lk(f"{_reg} {_base}", _r)
+    _add_lk(f"{_reg}an {_base}", _r)
+
+
 def buscar_pokemon_autocomplete(query: str, limite: int = 25) -> List[Tuple[str, str]]:
-    """Busca en tiempo real entre los 1025 Pokémon para el dropdown interactivo de Discord."""
-    q = (query or "").strip().lower().replace(" ", "-")
+    """
+    Busca en tiempo real entre los 1025 Pokémon oficiales y las formas regionales (Hisui, Alola, Galar, Paldea)
+    para el dropdown interactivo de Discord.
+    Devuelve tuplas (etiqueta_visible, valor_a_enviar).
+    """
+    q = (query or "").strip().lower()
+    q_slug = q.replace(" ", "-")
+    q_num = re.sub(r"[^\d]", "", q)
+
+    # Catálogo unificado
+    catalogo = []
+    for p in POKEDEX_1025:
+        catalogo.append({
+            "id": p["id"],
+            "name": p["name"],
+            "slug": p["slug"],
+            "label": f"#{p['id']:03d} {p['name']}",
+            "region": ""
+        })
+    for r in FORMAS_REGIONALES:
+        catalogo.append({
+            "id": r["id"],
+            "name": r["name"],
+            "slug": r["slug"],
+            "label": f"#{r['id']:03d} {r['name']}",
+            "region": r["region"].lower()
+        })
+
     if not q:
-        return [(f"#{p['id']:03d} {p['name']}", p["slug"]) for p in POKEDEX_1025[:limite]]
+        return [(x["label"], x["label"]) for x in catalogo[:limite]]
+
+    coincidencias_exactas = []
     coincidencias_inicio = []
     coincidencias_contiene = []
-    for p in POKEDEX_1025:
-        slug = p["slug"]
-        name = p["name"]
-        label = f"#{p['id']:03d} {name}"
-        if slug.startswith(q) or name.lower().startswith(q) or str(p["id"]) == q:
-            coincidencias_inicio.append((label, slug))
-        elif q in slug or q in name.lower():
-            coincidencias_contiene.append((label, slug))
-        if len(coincidencias_inicio) >= limite:
+
+    for item in catalogo:
+        label = item["label"]
+        name_low = item["name"].lower()
+        slug = item["slug"]
+        num_str = str(item["id"])
+        reg = item["region"]
+
+        if q_num and q_num == num_str:
+            coincidencias_exactas.append((label, label))
+        elif name_low.startswith(q) or slug.startswith(q_slug) or (reg and reg.startswith(q)):
+            coincidencias_inicio.append((label, label))
+        elif q in name_low or q in slug or (reg and q in reg):
+            coincidencias_contiene.append((label, label))
+
+    resultado = coincidencias_exactas + coincidencias_inicio + coincidencias_contiene
+    vistos = set()
+    dedup = []
+    for l, val in resultado:
+        if l not in vistos:
+            vistos.add(l)
+            dedup.append((l, val))
+        if len(dedup) >= limite:
             break
-    res = coincidencias_inicio + coincidencias_contiene
-    return res[:limite]
+    return dedup
+
+
+def resolver_cadena_pokemon(
+    entradas: Any,
+    incluir_familia: bool = True,
+    familias_dict: Optional[Dict[str, List[int]]] = None
+) -> Dict[str, Any]:
+    """
+    Motor universal ultra-robusto para interpretar cualquier entrada de Pokémon:
+    - Selección de autocomplete ('#704 Goomy', '#705 Sliggoo (Hisui)')
+    - ID numérico ('#704', '704', '4', '#004')
+    - Formas regionales ('Sliggoo Hisui', 'Goodra de Hisui', 'Goomy Hisui', 'Vulpix Alola', 'Zigzagoon Galar')
+    - Nombres en texto simple ('Charmander', 'Beldum', 'Ralts')
+    - Múltiples especies separadas por coma ('#705 Sliggoo (Hisui), Charmander, Squirtle')
+    """
+    if isinstance(entradas, str):
+        entradas = [entradas]
+    elif not isinstance(entradas, (list, tuple)):
+        entradas = [str(entradas)]
+
+    items: List[str] = []
+    for e in entradas:
+        if not e:
+            continue
+        parts = [p.strip() for p in re.split(r"[,;]+", str(e)) if p.strip()]
+        items.extend(parts)
+
+    nombres_elegidos: List[str] = []
+    ids_totales: List[int] = []
+
+    fams = familias_dict or {}
+
+    for item in items:
+        s = item.strip()
+        if not s:
+            continue
+        clean_key = re.sub(r"[^a-z0-9]", "", s.lower())
+
+        # 1. Búsqueda directa en Formas Regionales
+        if clean_key in LOOKUP_REGIONAL_NORMALIZADO:
+            reg = LOOKUP_REGIONAL_NORMALIZADO[clean_key]
+            nom = reg["name"]
+            if nom not in nombres_elegidos:
+                nombres_elegidos.append(nom)
+            fam = reg["family"] if incluir_familia else [reg["id"]]
+            for fid in fam:
+                if fid not in ids_totales:
+                    ids_totales.append(fid)
+            continue
+
+        # 2. Coincidencia con formato '#704 Goomy' o '#705 Sliggoo (Hisui)' o '#704' o '704'
+        m = re.match(r"^#?(\d+)(?:\s+(.*))?$", s)
+        num = None
+        if m:
+            cand = int(m.group(1))
+            resto = (m.group(2) or "").strip().lower()
+            if 1 <= cand <= 1025:
+                # Comprobar si el resto indica una variante regional
+                matched_regional = False
+                for reg_name in ("hisui", "alola", "galar", "paldea"):
+                    if reg_name in resto:
+                        for r in FORMAS_REGIONALES:
+                            if r["id"] == cand and r["region"].lower() == reg_name:
+                                nom = r["name"]
+                                if nom not in nombres_elegidos:
+                                    nombres_elegidos.append(nom)
+                                fam = r["family"] if incluir_familia else [cand]
+                                for fid in fam:
+                                    if fid not in ids_totales:
+                                        ids_totales.append(fid)
+                                matched_regional = True
+                                break
+                        if matched_regional:
+                            break
+                if not matched_regional:
+                    num = cand
+
+        # 3. Búsqueda por slug o nombre exacto
+        if num is None and clean_key not in LOOKUP_REGIONAL_NORMALIZADO:
+            clean_slug = s.lower().replace(" ", "-")
+            if clean_slug in SLUG_TO_ID:
+                num = SLUG_TO_ID[clean_slug]
+            elif clean_key in SLUG_TO_ID:
+                num = SLUG_TO_ID[clean_key]
+
+        if num:
+            nom_base = ID_TO_NAME.get(num, f"#{num}")
+            if nom_base not in nombres_elegidos:
+                nombres_elegidos.append(nom_base)
+            fam = fams.get(nom_base.lower(), [num]) if incluir_familia else [num]
+            for fid in fam:
+                if fid not in ids_totales:
+                    ids_totales.append(fid)
+
+    nombres_completos = [ID_TO_NAME.get(i, f"#{i}") for i in ids_totales]
+    titulo = "Evento: " + ", ".join(nombres_elegidos[:3])
+    if len(nombres_elegidos) > 3:
+        titulo += f" (+{len(nombres_elegidos) - 3})"
+
+    return {
+        "nombres_principales": nombres_elegidos,
+        "nombres_completos": nombres_completos,
+        "ids_totales": ids_totales,
+        "titulo_evento": titulo,
+        "exito": bool(ids_totales),
+    }

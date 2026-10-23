@@ -147,6 +147,17 @@ FAMILIAS_POKEDEX: Dict[str, List[int]] = {
     "lechonk": [915, 916], "smoliv": [928, 929, 930], "frigibax": [996, 997, 998],
 }
 
+# Auto-completar todas las familias bidireccionalmente con la Pokédex oficial
+try:
+    from src.pokedex_data import ID_TO_NAME
+    for _fam_k, _ids in list(FAMILIAS_POKEDEX.items()):
+        for _pid in _ids:
+            _nom = ID_TO_NAME.get(_pid, "").lower()
+            if _nom and _nom not in FAMILIAS_POKEDEX:
+                FAMILIAS_POKEDEX[_nom] = _ids
+except Exception:
+    pass
+
 # Catálogo de Presets de 1 comando para #🎉-evento-cd
 PRESETS_EVENTO: Dict[str, Dict[str, Any]] = {
     "master": {
@@ -221,44 +232,8 @@ def obtener_preset(nombre_clave: str) -> Optional[Dict[str, Any]]:
 
 
 def resolver_nombres_e_ids(entradas_crudas: List[str]) -> Tuple[List[str], List[int]]:
-    """Convierte una lista de nombres o IDs (ej. ['Mankey', '374']) en nombres limpios e IDs de Pokédex."""
-    nombres_finales: List[str] = []
-    ids_finales: List[int] = []
+    """Convierte una lista de nombres o IDs (ej. ['Mankey', '374'], '#705 Sliggoo (Hisui)') en nombres limpios e IDs."""
+    from src.pokedex_data import resolver_cadena_pokemon
+    res = resolver_cadena_pokemon(entradas_crudas, incluir_familia=True, familias_dict=FAMILIAS_POKEDEX)
+    return res["nombres_completos"], res["ids_totales"]
 
-    for item in entradas_crudas:
-        limpio = item.strip().lower()
-        if not limpio:
-            continue
-        if limpio.isdigit():
-            pid = int(limpio)
-            if pid not in ids_finales:
-                ids_finales.append(pid)
-            etiqueta = f"#{pid}"
-            for nom_k, fam_ids in FAMILIAS_POKEDEX.items():
-                if pid == fam_ids[0]:
-                    etiqueta = nom_k.capitalize()
-                    for fid in fam_ids:
-                        if fid not in ids_finales:
-                            ids_finales.append(fid)
-                    break
-            if etiqueta not in nombres_finales:
-                nombres_finales.append(etiqueta)
-        else:
-            nom_cap = limpio.capitalize()
-            if nom_cap not in nombres_finales:
-                nombres_finales.append(nom_cap)
-            if limpio in FAMILIAS_POKEDEX:
-                for fid in FAMILIAS_POKEDEX[limpio]:
-                    if fid not in ids_finales:
-                        ids_finales.append(fid)
-            else:
-                try:
-                    r_poke = requests.get(f"https://pokeapi.co/api/v2/pokemon/{limpio}", timeout=4)
-                    if r_poke.status_code == 200:
-                        pid_api = int(r_poke.json().get("id") or 0)
-                        if pid_api > 0 and pid_api not in ids_finales:
-                            ids_finales.append(pid_api)
-                except Exception:
-                    pass
-
-    return nombres_finales, ids_finales

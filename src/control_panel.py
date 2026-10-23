@@ -439,7 +439,15 @@ def _worker_escucha_control() -> None:
                                 pass
 
                             if contenido:
-                                procesar_comando_control(contenido)
+                                ejecutado = procesar_comando_control(contenido)
+                                if not ejecutado:
+                                    try:
+                                        from src.event_manager import procesar_comando_texto_evento
+                                        disparar_scan = procesar_comando_texto_evento(contenido)
+                                        if disparar_scan and _CALLBACK_ESCANEO_INMEDIATO:
+                                            threading.Thread(target=_CALLBACK_ESCANEO_INMEDIATO, daemon=True).start()
+                                    except Exception:
+                                        pass
 
         except Exception:
             pass
