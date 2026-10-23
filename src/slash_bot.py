@@ -132,6 +132,7 @@ async def cmd_pokemon(
     pvp_gl: bool = True,
     pvp_ul: bool = True,
 ):
+    await interaction.response.defer(ephemeral=True)
     # Recolectar todas las entradas de Pokémon
     entradas = [nombre]
     for extra in (pokemon_2, pokemon_3, pokemon_4, pokemon_5):
@@ -140,7 +141,7 @@ async def cmd_pokemon(
 
     res = resolver_cadena_pokemon(entradas, incluir_familia=incluir_familia, familias_dict=FAMILIAS_POKEDEX)
     if not res["exito"]:
-        await interaction.response.send_message(
+        await interaction.followup.send(
             f"❌ No se reconoció ningún Pokémon válido en `{nombre}`.\n"
             f"💡 **Opciones válidas:**\n"
             f"• Selección de lista: `#704 Goomy`, `#705 Sliggoo (Hisui)`, `#004 Charmander`\n"
@@ -190,7 +191,7 @@ async def cmd_pokemon(
     resumen_pokes = ", ".join(nombres_oficiales)
     fases_txt = f"con su línea evolutiva completa ({len(ids_totales)} IDs)" if incluir_familia else f"solo especie exacta ({len(ids_totales)} IDs)"
 
-    await interaction.response.send_message(
+    await interaction.followup.send(
         f"✅ **Radar de Eventos configurado para {len(nombres_oficiales)} Pokémon:**\n"
         f"• 📋 **Especies activas:** **{resumen_pokes}** ({fases_txt})\n"
         f"• 🎯 **Filtros:** Shundo 100% (`{shundo}`) | Great League (`{pvp_gl}`) | Ultra League (`{pvp_ul}`)\n"
@@ -223,6 +224,7 @@ async def cmd_agregar(
     pokemon_3: Optional[str] = None,
     incluir_familia: bool = True,
 ):
+    await interaction.response.defer(ephemeral=True)
     entradas = [nombre]
     for extra in (pokemon_2, pokemon_3):
         if extra:
@@ -230,7 +232,7 @@ async def cmd_agregar(
 
     res = resolver_cadena_pokemon(entradas, incluir_familia=incluir_familia, familias_dict=FAMILIAS_POKEDEX)
     if not res["exito"]:
-        await interaction.response.send_message(
+        await interaction.followup.send(
             f"❌ No se reconoció ningún Pokémon válido en `{nombre}`.",
             ephemeral=True
         )
@@ -265,7 +267,7 @@ async def cmd_agregar(
         threading.Thread(target=_CALLBACK_ESCANEO_EVENTO, daemon=True).start()
 
     lista_agregada = ", ".join(nombres_agregados)
-    await interaction.response.send_message(
+    await interaction.followup.send(
         f"➕ **Agregado con éxito sin borrar lo anterior:**\n"
         f"• 📋 **Nuevas especies sumadas:** **{lista_agregada}**\n"
         f"• 🎯 **Total especies activas ahora:** {len(act_ids)} Pokémon en `#🎉-evento-cd`\n"
@@ -291,6 +293,7 @@ async def cmd_quitar(
     nombre: str,
     pokemon_2: Optional[str] = None,
 ):
+    await interaction.response.defer(ephemeral=True)
     entradas = [nombre]
     if pokemon_2:
         entradas.append(pokemon_2)
@@ -314,7 +317,7 @@ async def cmd_quitar(
     sincronizar_estado_remoto_push(asincrono=True)
 
     lista_quitada = ", ".join(res["nombres_principales"])
-    await interaction.response.send_message(
+    await interaction.followup.send(
         f"➖ **Eliminado de la lista activa:**\n"
         f"• 📋 **Especies quitadas:** **{lista_quitada}**\n"
         f"• 🎯 **Total especies que quedan:** {len(act_ids)} Pokémon en `#🎉-evento-cd`",
@@ -327,9 +330,10 @@ async def cmd_quitar(
 @app_commands.describe(opcion="Elige el paquete temático que deseas activar")
 @app_commands.autocomplete(opcion=autocomplete_presets)
 async def cmd_preset(interaction: discord.Interaction, opcion: str):
+    await interaction.response.defer(ephemeral=True)
     datos_preset = obtener_preset(opcion)
     if not datos_preset:
-        await interaction.response.send_message(
+        await interaction.followup.send(
             f"❌ El preset `{opcion}` no existe. Opciones: `master`, `mega`, `meta`, `iniciales`, `dragones`, `fantasmas`.",
             ephemeral=True
         )
@@ -354,7 +358,7 @@ async def cmd_preset(interaction: discord.Interaction, opcion: str):
     if _CALLBACK_ESCANEO_EVENTO:
         threading.Thread(target=_CALLBACK_ESCANEO_EVENTO, daemon=True).start()
 
-    await interaction.response.send_message(
+    await interaction.followup.send(
         f"✅ **Preset Activado:** **{datos_preset['titulo']}**\n"
         f"• 📋 **Pokémon rastreados:** `{len(ids_res)} especies`\n"
         f"• ⚡ **Escaneo inmediato iniciado en `#🎉-evento-cd`...**",
@@ -377,6 +381,7 @@ async def cmd_preset(interaction: discord.Interaction, opcion: str):
     app_commands.Choice(name="🧹 Limpieza Total (Lista a cero + alertas + chat)", value="todo"),
 ])
 async def cmd_limpiar(interaction: discord.Interaction, objetivo: str = "evento"):
+    await interaction.response.defer(ephemeral=True)
     if objetivo in ("evento", "todo"):
         cfg_ev = cargar_config_evento()
         cfg_ev["activo"] = False
@@ -396,17 +401,17 @@ async def cmd_limpiar(interaction: discord.Interaction, objetivo: str = "evento"
     sincronizar_estado_remoto_push(asincrono=True)
 
     if objetivo == "evento":
-        await interaction.response.send_message(
+        await interaction.followup.send(
             "🧹 **Lista de Pokémon de Eventos reseteada a cero.** El radar está listo para recibir nuevas especies cuando gustes.",
             ephemeral=True
         )
     elif objetivo == "chat":
-        await interaction.response.send_message(
+        await interaction.followup.send(
             "🧹 **Canal limpiado.** Se eliminaron los mensajes sueltos y quedó el panel maestro visible.",
             ephemeral=True
         )
     else:
-        await interaction.response.send_message(
+        await interaction.followup.send(
             "🧹 **Limpieza total completada:** Lista de eventos reseteada a cero, alertas anteriores eliminadas y chat limpio.",
             ephemeral=True
         )
@@ -420,6 +425,7 @@ async def cmd_limpiar(interaction: discord.Interaction, objetivo: str = "evento"
     app_commands.Choice(name="⏸️ Pausar todo el radar globalmente", value="todo"),
 ])
 async def cmd_apagar(interaction: discord.Interaction, objetivo: str):
+    await interaction.response.defer(ephemeral=True)
     if objetivo == "evento":
         cfg_ev = cargar_config_evento()
         cfg_ev["activo"] = False
@@ -431,14 +437,14 @@ async def cmd_apagar(interaction: discord.Interaction, objetivo: str):
         publicar_o_actualizar_panel_control()
         publicar_o_actualizar_panel_maestro()
         sincronizar_estado_remoto_push(asincrono=True)
-        await interaction.response.send_message("🛑 **Canal de Eventos & CD apagado.** No se enviarán alertas hasta activar una especie.", ephemeral=True)
+        await interaction.followup.send("🛑 **Canal de Eventos & CD apagado.** No se enviarán alertas hasta activar una especie.", ephemeral=True)
     else:
         cfg_ctrl = cargar_config_control()
         cfg_ctrl["pausa_global"] = True
         guardar_config_control(cfg_ctrl)
         publicar_o_actualizar_panel_maestro()
         sincronizar_estado_remoto_push(asincrono=True)
-        await interaction.response.send_message("⏸️ **Radar pausado globalmente.** No se enviarán alertas en ningún canal.", ephemeral=True)
+        await interaction.followup.send("⏸️ **Radar pausado globalmente.** No se enviarán alertas en ningún canal.", ephemeral=True)
 
 
 @bot.tree.command(
@@ -446,12 +452,13 @@ async def cmd_apagar(interaction: discord.Interaction, objetivo: str):
     description="▶️ Reanuda el radar si estaba pausado globalmente."
 )
 async def cmd_reanudar(interaction: discord.Interaction):
+    await interaction.response.defer(ephemeral=True)
     cfg_ctrl = cargar_config_control()
     cfg_ctrl["pausa_global"] = False
     guardar_config_control(cfg_ctrl)
     publicar_o_actualizar_panel_maestro()
     sincronizar_estado_remoto_push(asincrono=True)
-    await interaction.response.send_message("▶️ **Radar reanudado.** El escaneo 24/7 en todos los canales activos continúa normalmente.", ephemeral=True)
+    await interaction.followup.send("▶️ **Radar reanudado.** El escaneo 24/7 en todos los canales activos continúa normalmente.", ephemeral=True)
 
 
 @bot.tree.command(
@@ -468,12 +475,13 @@ async def cmd_reanudar(interaction: discord.Interaction):
     app_commands.Choice(name="🐢 20 minutos (Muy espaciado)", value=20),
 ])
 async def cmd_tiempo(interaction: discord.Interaction, minutos: int):
+    await interaction.response.defer(ephemeral=True)
     cfg_ctrl = cargar_config_control()
     cfg_ctrl["intervalo_minutos"] = minutos
     guardar_config_control(cfg_ctrl)
     publicar_o_actualizar_panel_maestro()
     sincronizar_estado_remoto_push(asincrono=True)
-    await interaction.response.send_message(f"⏱️ **Intervalo de escaneo actualizado:** `{minutos} minutos`.", ephemeral=True)
+    await interaction.followup.send(f"⏱️ **Intervalo de escaneo actualizado:** `{minutos} minutos`.", ephemeral=True)
 
 
 @bot.tree.command(
@@ -497,6 +505,7 @@ async def cmd_tiempo(interaction: discord.Interaction, minutos: int):
     ]
 )
 async def cmd_canal(interaction: discord.Interaction, canal: str, estado: str):
+    await interaction.response.defer(ephemeral=True)
     cfg_ctrl = cargar_config_control()
     canales = cfg_ctrl.setdefault("canales", {"shundo": True, "great": True, "ultra": True, "evento": True})
     activar = (estado == "on")
@@ -507,7 +516,7 @@ async def cmd_canal(interaction: discord.Interaction, canal: str, estado: str):
 
     nombres = {"shundo": "Shundos 100% IV", "great": "Great League", "ultra": "Ultra League", "evento": "Eventos & CD"}
     tag = "🟢 Activado" if activar else "🔴 Pausado"
-    await interaction.response.send_message(f"{tag}: Canal **{nombres.get(canal, canal)}**.", ephemeral=True)
+    await interaction.followup.send(f"{tag}: Canal **{nombres.get(canal, canal)}**.", ephemeral=True)
 
 
 @bot.tree.command(
@@ -523,12 +532,13 @@ async def cmd_canal(interaction: discord.Interaction, canal: str, estado: str):
     app_commands.Choice(name="🎖️ Top 10 (Rank #1 al #10 - Amplio)", value=10),
 ])
 async def cmd_pvp_rank(interaction: discord.Interaction, top: int):
+    await interaction.response.defer(ephemeral=True)
     cfg_ctrl = cargar_config_control()
     cfg_ctrl["pvp_top_rank"] = top
     guardar_config_control(cfg_ctrl)
     publicar_o_actualizar_panel_maestro()
     sincronizar_estado_remoto_push(asincrono=True)
-    await interaction.response.send_message(f"🏆 **Filtro PvP actualizado:** Recibirás spawns de `Rank #1 al #{top}`.", ephemeral=True)
+    await interaction.followup.send(f"🏆 **Filtro PvP actualizado:** Recibirás spawns de `Rank #1 al #{top}`.", ephemeral=True)
 
 
 @bot.tree.command(
@@ -536,7 +546,8 @@ async def cmd_pvp_rank(interaction: discord.Interaction, top: int):
     description="⚡ Dispara un escaneo global forzado en todos los canales en este segundo."
 )
 async def cmd_scan(interaction: discord.Interaction):
-    await interaction.response.send_message("⚡ **Escaneo global forzado iniciado.** Buscando nuevos spawns en los 5 continentes...", ephemeral=True)
+    await interaction.response.defer(ephemeral=True)
+    await interaction.followup.send("⚡ **Escaneo global forzado iniciado.** Buscando nuevos spawns en los 5 continentes...", ephemeral=True)
     if _CALLBACK_ESCANEO_GLOBAL:
         threading.Thread(target=_CALLBACK_ESCANEO_GLOBAL, daemon=True).start()
 
@@ -546,8 +557,9 @@ async def cmd_scan(interaction: discord.Interaction):
     description="🎛️ Muestra o refresca el Panel Maestro de Control en #🎛️-panel-control."
 )
 async def cmd_panel(interaction: discord.Interaction):
+    await interaction.response.defer(ephemeral=True)
     mid = publicar_o_actualizar_panel_maestro()
-    await interaction.response.send_message("✅ **Panel Maestro de Control actualizado en `#🎛️-panel-control`**.", ephemeral=True)
+    await interaction.followup.send("✅ **Panel Maestro de Control actualizado en `#🎛️-panel-control`**.", ephemeral=True)
 
 
 @bot.tree.command(
@@ -555,6 +567,7 @@ async def cmd_panel(interaction: discord.Interaction):
     description="📊 Muestra el estado en vivo de tus 3 cuentas del Pool de reveals exactos."
 )
 async def cmd_cuotas(interaction: discord.Interaction):
+    await interaction.response.defer(ephemeral=True)
     resumen = obtener_resumen_cuentas_pool()
     embed = discord.Embed(
         title="🔑 Estado del Pool de Cuentas (3 Cuentas)",
@@ -562,7 +575,7 @@ async def cmd_cuotas(interaction: discord.Interaction):
         color=0x2563EB,
         timestamp=datetime.now(timezone.utc)
     )
-    await interaction.response.send_message(embed=embed, ephemeral=True)
+    await interaction.followup.send(embed=embed, ephemeral=True)
 
 
 # ==============================================================================
