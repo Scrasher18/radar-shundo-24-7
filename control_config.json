@@ -2,7 +2,7 @@
   "pausa_global": false,
   "intervalo_minutos": 7,
   "canales": {
-    "shundo": true,
+    "shundo": false,
     "great": false,
     "ultra": false,
     "evento": true
