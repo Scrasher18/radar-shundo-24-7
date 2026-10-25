@@ -253,11 +253,12 @@
     "coords": "33.248712,-97.150704",
     "ts": 1792962518,
     "despawn_unix": 1792963752,
-    "discord_msg_id": "1564024821568774243",
+    "discord_msg_id": "1564026622154383568",
     "discord_msg_ids": [
       "1564022906298695787",
       "1564024714580590679",
-      "1564024821568774243"
+      "1564024821568774243",
+      "1564026622154383568"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Rhyhorn! (CP 1132 • Nivel 24.0)",
@@ -275,7 +276,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792963752:R> (`12 min 56 seg`)\n🕒 **Hora exacta:** <t:1792963752:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792963752:R> (`5 min 48 seg`)\n🕒 **Hora exacta:** <t:1792963752:T>",
           "inline": true
         },
         {
@@ -292,7 +293,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-25T21:16:15.609900+00:00"
+      "timestamp": "2026-10-25T21:23:24.746986+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-25 21:08:39"
@@ -401,10 +402,11 @@
     "coords": "44.913072,-0.640666",
     "ts": 1792962949,
     "despawn_unix": 1792963797,
-    "discord_msg_id": "1564024821568774243",
+    "discord_msg_id": "1564026622154383568",
     "discord_msg_ids": [
       "1564024714580590679",
-      "1564024821568774243"
+      "1564024821568774243",
+      "1564026622154383568"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Oshawott! (CP 657 • Nivel 22.0)",
@@ -422,7 +424,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792963797:R> (`13 min 41 seg`)\n🕒 **Hora exacta:** <t:1792963797:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792963797:R> (`6 min 33 seg`)\n🕒 **Hora exacta:** <t:1792963797:T>",
           "inline": true
         },
         {
@@ -439,7 +441,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-25T21:16:15.609945+00:00"
+      "timestamp": "2026-10-25T21:23:24.747005+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-25 21:15:50"
@@ -450,9 +452,10 @@
     "coords": "48.842294,9.209717",
     "ts": 1792962975,
     "despawn_unix": 1792964463,
-    "discord_msg_id": "1564024821568774243",
+    "discord_msg_id": "1564026622154383568",
     "discord_msg_ids": [
-      "1564024821568774243"
+      "1564024821568774243",
+      "1564026622154383568"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Gothita! (CP 652 • Nivel 24.0)",
@@ -470,7 +473,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792964463:R> (`24 min 48 seg`)\n🕒 **Hora exacta:** <t:1792964463:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792964463:R> (`17 min 38 seg`)\n🕒 **Hora exacta:** <t:1792964463:T>",
           "inline": true
         },
         {
@@ -487,9 +490,153 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-25T21:16:15.609934+00:00"
+      "timestamp": "2026-10-25T21:23:24.746996+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-25 21:16:16"
+  },
+  "shundo:-5845921406248405450": {
+    "canal": "shundo",
+    "pokemon": "Taillow",
+    "coords": "41.8231831,12.57781",
+    "ts": 1792963404,
+    "despawn_unix": 1792966202,
+    "discord_msg_id": "1564026622154383568",
+    "discord_msg_ids": [
+      "1564026622154383568"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Taillow! (CP 656 • Nivel 30.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=41.8231831,12.57781",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm276.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `656` | **Nivel:** `30.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792966202:R> (`46 min 38 seg`)\n🕒 **Hora exacta:** <t:1792966202:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Ciampino, Roma, Italy • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=41.8231831,12.57781)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n41.8231831,12.57781\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T21:23:24.746960+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-25 21:23:25"
+  },
+  "shundo:-5894996270413240958": {
+    "canal": "shundo",
+    "pokemon": "Minccino",
+    "coords": "43.566619,1.296666",
+    "ts": 1792963404,
+    "despawn_unix": 1792966875,
+    "discord_msg_id": "1564026622154383568",
+    "discord_msg_ids": [
+      "1564026622154383568"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Minccino! (CP 473 • Nivel 19.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=43.566619,1.296666",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm572.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `473` | **Nivel:** `19.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792966875:R> (`57 min 50 seg`)\n🕒 **Hora exacta:** <t:1792966875:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Plaisance-du-Touch, Haute-Garonne, France • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=43.566619,1.296666)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n43.566619,1.296666\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T21:23:24.747013+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-25 21:23:25"
+  },
+  "shundo:-6634745317487506112": {
+    "canal": "shundo",
+    "pokemon": "Venonat",
+    "coords": "24.7577689,46.6288681",
+    "ts": 1792963404,
+    "despawn_unix": 1792963786,
+    "discord_msg_id": "1564026622154383568",
+    "discord_msg_ids": [
+      "1564026622154383568"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Venonat! (CP 196 • Nivel 7.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=24.7577689,46.6288681",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm48.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `196` | **Nivel:** `7.0`\n**Talla:** `L` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792963786:R> (`6 min 21 seg`)\n🕒 **Hora exacta:** <t:1792963786:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "‘Irqah, Ar Riyad, Saudi Arabia • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=24.7577689,46.6288681)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n24.7577689,46.6288681\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T21:23:24.747021+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-25 21:23:25"
   }
 }
