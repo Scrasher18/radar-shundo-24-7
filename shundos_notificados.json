@@ -1,105 +1,4 @@
 {
-  "shundo:1702279660068031657": {
-    "canal": "shundo",
-    "pokemon": "Oshawott",
-    "coords": "44.913072,-0.640666",
-    "ts": 1792962949,
-    "despawn_unix": 1792963797,
-    "discord_msg_id": "1564026622154383568",
-    "discord_msg_ids": [
-      "1564024714580590679",
-      "1564024821568774243",
-      "1564026622154383568"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Oshawott! (CP 657 • Nivel 22.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=44.913072,-0.640666",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm501.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `657` | **Nivel:** `22.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792963797:R> (`6 min 33 seg`)\n🕒 **Hora exacta:** <t:1792963797:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Blanquefort, Gironde, France • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=44.913072,-0.640666)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n44.913072,-0.640666\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-25T21:23:24.747005+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-25 21:15:50"
-  },
-  "shundo:-6296300857910130803": {
-    "canal": "shundo",
-    "pokemon": "Gothita",
-    "coords": "48.842294,9.209717",
-    "ts": 1792962975,
-    "despawn_unix": 1792964463,
-    "discord_msg_id": "1564030257189757094",
-    "discord_msg_ids": [
-      "1564024821568774243",
-      "1564026622154383568",
-      "1564028427013722201",
-      "1564030257189757094"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Gothita! (CP 652 • Nivel 24.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=48.842294,9.209717",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm574.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `652` | **Nivel:** `24.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792964463:R> (`3 min 11 seg`)\n🕒 **Hora exacta:** <t:1792964463:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Stuttgart Mühlhausen, Baden-Württemberg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=48.842294,9.209717)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n48.842294,9.209717\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-25T21:37:51.503469+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-25 21:16:16"
-  },
   "shundo:-5845921406248405450": {
     "canal": "shundo",
     "pokemon": "Taillow",
@@ -199,7 +98,7 @@
       },
       "timestamp": "2026-10-25T21:45:03.721245+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-25 21:23:25"
   },
   "shundo:-6634745317487506112": {
