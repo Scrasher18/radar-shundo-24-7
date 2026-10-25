@@ -1,54 +1,4 @@
 {
-  "shundo:-1254338465142377863": {
-    "canal": "shundo",
-    "pokemon": "Volbeat",
-    "coords": "52.340283,12.999014",
-    "ts": 1792901268,
-    "despawn_unix": 1792902975,
-    "discord_msg_id": "1563769595737935968",
-    "discord_msg_ids": [
-      "1563766002259599382",
-      "1563767803096334351",
-      "1563769595737935968"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Volbeat! (CP 1568 • Nivel 32.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=52.340283,12.999014",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm313.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1568` | **Nivel:** `32.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792902975:R> (`14 min 10 seg`)\n🕒 **Hora exacta:** <t:1792902975:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Michendorf, Brandenburg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.340283,12.999014)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.340283,12.999014\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-25T04:22:04.949654+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-25 04:07:48"
-  },
   "shundo:-3235034862643865772": {
     "canal": "shundo",
     "pokemon": "Pawmi",
@@ -540,9 +490,10 @@
     "coords": "44.529146,11.278338",
     "ts": 1792904299,
     "despawn_unix": 1792905112,
-    "discord_msg_id": "1563778717308690448",
+    "discord_msg_id": "1563780544116953183",
     "discord_msg_ids": [
-      "1563778717308690448"
+      "1563778717308690448",
+      "1563780544116953183"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Nidoran_female! (CP 606 • Nivel 26.0)",
@@ -560,7 +511,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792905112:R> (`13 min 32 seg`)\n🕒 **Hora exacta:** <t:1792905112:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792905112:R> (`6 min 16 seg`)\n🕒 **Hora exacta:** <t:1792905112:T>",
           "inline": true
         },
         {
@@ -577,7 +528,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-25T04:58:19.681734+00:00"
+      "timestamp": "2026-10-25T05:05:35.214368+00:00"
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-25 04:58:20"
@@ -629,5 +580,53 @@
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-25 04:58:20"
+  },
+  "shundo:3460426264882880824": {
+    "canal": "shundo",
+    "pokemon": "Geodude (Alola)",
+    "coords": "10.862378,106.6775357",
+    "ts": 1792904735,
+    "despawn_unix": 1792905669,
+    "discord_msg_id": "1563780544116953183",
+    "discord_msg_ids": [
+      "1563780544116953183"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Geodude (Alola)! (CP 849 • Nivel 23.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=10.862378,106.6775357",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm74.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `849` | **Nivel:** `23.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792905669:R> (`15 min 34 seg`)\n🕒 **Hora exacta:** <t:1792905669:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Gò Vấp, Hồ Chí Minh city, Vietnam • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=10.862378,106.6775357)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n10.862378,106.6775357\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T05:05:35.214394+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-25 05:05:35"
   }
 }
