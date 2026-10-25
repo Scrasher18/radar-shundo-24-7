@@ -1,5 +1,5 @@
 {
-  "activo": false,
+  "activo": true,
   "nombre_evento": "Evento: Aron, Lucario, Drilbur (+7)",
   "webhook_evento": "",
   "pokemon_ids": [
@@ -8,7 +8,6 @@
     306,
     447,
     448,
-    529,
     957,
     610,
     611,
@@ -34,7 +33,6 @@
     "Aggron",
     "Riolu",
     "Lucario",
-    "Drilbur",
     "Tinkatink",
     "Axew",
     "Fraxure",
