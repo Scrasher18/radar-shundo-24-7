@@ -53,15 +53,16 @@
     "coords": "59.2294424,10.9522241",
     "ts": 1792900372,
     "despawn_unix": 1792901524,
-    "discord_msg_id": "1563762246927130750",
+    "discord_msg_id": "1563766002259599382",
     "discord_msg_ids": [
-      "1563762246927130750"
+      "1563762246927130750",
+      "1563766002259599382"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Helioptile! (CP 813 • Nivel 31.0)",
       "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
       "url": "https://www.google.com/maps?q=59.2294424,10.9522241",
-      "color": 16766720,
+      "color": 15680580,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm694.s.icon.png"
       },
@@ -73,7 +74,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792901524:R> (`19 min 12 seg`)\n🕒 **Hora exacta:** <t:1792901524:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792901524:R> (`4 min 15 seg`)\n🕒 **Hora exacta:** <t:1792901524:T>",
           "inline": true
         },
         {
@@ -90,7 +91,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-25T03:52:52.759589+00:00"
+      "timestamp": "2026-10-25T04:07:48.172812+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-25 03:52:53"
@@ -238,5 +239,53 @@
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-25 03:52:53"
+  },
+  "shundo:-1254338465142377863": {
+    "canal": "shundo",
+    "pokemon": "Volbeat",
+    "coords": "52.340283,12.999014",
+    "ts": 1792901268,
+    "despawn_unix": 1792902975,
+    "discord_msg_id": "1563766002259599382",
+    "discord_msg_ids": [
+      "1563766002259599382"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Volbeat! (CP 1568 • Nivel 32.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=52.340283,12.999014",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm313.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1568` | **Nivel:** `32.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792902975:R> (`28 min 27 seg`)\n🕒 **Hora exacta:** <t:1792902975:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Michendorf, Brandenburg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.340283,12.999014)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n52.340283,12.999014\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T04:07:48.172781+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-25 04:07:48"
   }
 }
