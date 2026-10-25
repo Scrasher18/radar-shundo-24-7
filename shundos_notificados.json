@@ -246,9 +246,10 @@
     "coords": "52.340283,12.999014",
     "ts": 1792901268,
     "despawn_unix": 1792902975,
-    "discord_msg_id": "1563766002259599382",
+    "discord_msg_id": "1563767803096334351",
     "discord_msg_ids": [
-      "1563766002259599382"
+      "1563766002259599382",
+      "1563767803096334351"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Volbeat! (CP 1568 • Nivel 32.0)",
@@ -266,7 +267,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792902975:R> (`28 min 27 seg`)\n🕒 **Hora exacta:** <t:1792902975:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792902975:R> (`21 min 20 seg`)\n🕒 **Hora exacta:** <t:1792902975:T>",
           "inline": true
         },
         {
@@ -283,9 +284,201 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-25T04:07:48.172781+00:00"
+      "timestamp": "2026-10-25T04:14:55.357391+00:00"
+    },
+    "eliminado_de_discord": true,
+    "notificado_en": "2026-10-25 04:07:48"
+  },
+  "shundo:-3235034862643865772": {
+    "canal": "shundo",
+    "pokemon": "Pawmi",
+    "coords": "51.739142,19.378874",
+    "ts": 1792901695,
+    "despawn_unix": 1792902142,
+    "discord_msg_id": "1563767803096334351",
+    "discord_msg_ids": [
+      "1563767803096334351"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Pawmi! (CP 381 • Nivel 21.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=51.739142,19.378874",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm921.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `381` | **Nivel:** `21.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792902142:R> (`7 min 27 seg`)\n🕒 **Hora exacta:** <t:1792902142:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Konstantynów Łódzki, Łódź, Poland • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.739142,19.378874)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n51.739142,19.378874\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T04:14:55.357421+00:00"
     },
     "eliminado_de_discord": false,
-    "notificado_en": "2026-10-25 04:07:48"
+    "notificado_en": "2026-10-25 04:14:58"
+  },
+  "shundo:2742430283470454457": {
+    "canal": "shundo",
+    "pokemon": "Dewpider",
+    "coords": "47.301888,8.523431",
+    "ts": 1792901695,
+    "despawn_unix": 1792902787,
+    "discord_msg_id": "1563767803096334351",
+    "discord_msg_ids": [
+      "1563767803096334351"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Dewpider! (CP 285 • Nivel 14.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=47.301888,8.523431",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm751.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `285` | **Nivel:** `14.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792902787:R> (`18 min 12 seg`)\n🕒 **Hora exacta:** <t:1792902787:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Adliswil, Zürich, Switzerland • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=47.301888,8.523431)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n47.301888,8.523431\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T04:14:55.357434+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-25 04:14:58"
+  },
+  "shundo:-8317695129541363678": {
+    "canal": "shundo",
+    "pokemon": "Hatenna",
+    "coords": "53.374672,-6.303247",
+    "ts": 1792901695,
+    "despawn_unix": 1792902030,
+    "discord_msg_id": "1563767803096334351",
+    "discord_msg_ids": [
+      "1563767803096334351"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Hatenna! (CP 320 • Nivel 13.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=53.374672,-6.303247",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm856.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `320` | **Nivel:** `13.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792902030:R> (`5 min 35 seg`)\n🕒 **Hora exacta:** <t:1792902030:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Finglas, Dublin, Ireland • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.374672,-6.303247)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n53.374672,-6.303247\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T04:14:55.357447+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-25 04:14:58"
+  },
+  "shundo:-6361573533620201877": {
+    "canal": "shundo",
+    "pokemon": "Wooper",
+    "coords": "24.2124648,120.7600037",
+    "ts": 1792901695,
+    "despawn_unix": 1792902809,
+    "discord_msg_id": "1563767803096334351",
+    "discord_msg_ids": [
+      "1563767803096334351"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Wooper! (CP 86 • Nivel 5.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=24.2124648,120.7600037",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm194.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `86` | **Nivel:** `5.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792902809:R> (`18 min 34 seg`)\n🕒 **Hora exacta:** <t:1792902809:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Xizhou, Taichung City, Taiwan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=24.2124648,120.7600037)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n24.2124648,120.7600037\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-25T04:14:55.357458+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-25 04:14:58"
   }
 }
