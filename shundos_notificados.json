@@ -1,102 +1,4 @@
 {
-  "shundo:4094861453077295402": {
-    "canal": "shundo",
-    "pokemon": "Eevee",
-    "coords": "45.371931,9.169349",
-    "ts": 1792944255,
-    "despawn_unix": 1792944687,
-    "discord_msg_id": "1563946307838804046",
-    "discord_msg_ids": [
-      "1563946307838804046"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Eevee! (CP 948 • Nivel 32.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=45.371931,9.169349",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm133.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `948` | **Nivel:** `32.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792944687:R> (`7 min 12 seg`)\n🕒 **Hora exacta:** <t:1792944687:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Rozzano, Milano, Italy • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=45.371931,9.169349)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n45.371931,9.169349\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-25T16:04:16.409889+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-25 16:04:17"
-  },
-  "shundo:8051215856562538540": {
-    "canal": "shundo",
-    "pokemon": "Combee",
-    "coords": "42.681873,23.3379411",
-    "ts": 1792944255,
-    "despawn_unix": 1792945390,
-    "discord_msg_id": "1563949970904846362",
-    "discord_msg_ids": [
-      "1563946307838804046",
-      "1563948135389339689",
-      "1563949970904846362"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Combee! (CP 254 • Nivel 18.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=42.681873,23.3379411",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm415.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `254` | **Nivel:** `18.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792945390:R> (`4 min 20 seg`)\n🕒 **Hora exacta:** <t:1792945390:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Sofia, Grad Sofiya, Bulgaria • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=42.681873,23.3379411)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n42.681873,23.3379411\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-25T16:18:49.742780+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-25 16:04:17"
-  },
   "shundo:-714486432743044342": {
     "canal": "shundo",
     "pokemon": "Sprigatito",
@@ -830,7 +732,7 @@
       },
       "timestamp": "2026-10-25T17:03:29.648514+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-25 16:49:11"
   },
   "shundo:-5759934351761895875": {
