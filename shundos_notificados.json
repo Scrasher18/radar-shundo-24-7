@@ -1,53 +1,4 @@
 {
-  "shundo:-2704891984152848372": {
-    "canal": "shundo",
-    "pokemon": "Fletchling",
-    "coords": "49.492159,11.087513",
-    "ts": 1792903013,
-    "despawn_unix": 1792904200,
-    "discord_msg_id": "1563775115496390749",
-    "discord_msg_ids": [
-      "1563773323656302635",
-      "1563775115496390749"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Fletchling! (CP 686 • Nivel 30.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=49.492159,11.087513",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm661.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `686` | **Nivel:** `30.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792904200:R> (`12 min 39 seg`)\n🕒 **Hora exacta:** <t:1792904200:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Nuremberg, Bayern, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=49.492159,11.087513)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n49.492159,11.087513\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-25T04:44:00.953129+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-25 04:36:54"
-  },
   "shundo:-7999297253939801278": {
     "canal": "shundo",
     "pokemon": "Treecko",
@@ -437,7 +388,7 @@
       },
       "timestamp": "2026-10-25T05:34:45.904308+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-25 05:20:22"
   },
   "shundo:-7707954154093052960": {
