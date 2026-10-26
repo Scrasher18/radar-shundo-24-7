@@ -1,100 +1,4 @@
 {
-  "shundo:-8484920451352632425": {
-    "canal": "shundo",
-    "pokemon": "Shroomish",
-    "coords": "30.0037716,-95.5745683",
-    "ts": 1792978402,
-    "despawn_unix": 1792978945,
-    "discord_msg_id": "1564091323269648528",
-    "discord_msg_ids": [
-      "1564091323269648528"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Shroomish! (CP 729 • Nivel 33.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=30.0037716,-95.5745683",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm285.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `729` | **Nivel:** `33.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792978945:R> (`1 min 55 seg`)\n🕒 **Hora exacta:** <t:1792978945:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Tomball, Texas, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=30.0037716,-95.5745683)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n30.0037716,-95.5745683\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T01:40:30.756919+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 01:33:23"
-  },
-  "shundo:-1696028024730048202": {
-    "canal": "shundo",
-    "pokemon": "Drifloon",
-    "coords": "45.546797,10.19792",
-    "ts": 1792978402,
-    "despawn_unix": 1792978651,
-    "discord_msg_id": "1564089526887120936",
-    "discord_msg_ids": [
-      "1564089526887120936"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Drifloon! (CP 513 • Nivel 15.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=45.546797,10.19792",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm425.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `513` | **Nivel:** `15.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792978651:R> (`4 min 09 seg`)\n🕒 **Hora exacta:** <t:1792978651:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Brescia, Italy • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=45.546797,10.19792)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n45.546797,10.19792\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T01:33:22.331019+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 01:33:23"
-  },
   "shundo:1591351209137024630": {
     "canal": "shundo",
     "pokemon": "Meowth (Galarian)",
@@ -837,7 +741,7 @@
       },
       "timestamp": "2026-10-26T02:31:44.144948+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 02:24:30"
   },
   "shundo:-6320771016387826761": {
