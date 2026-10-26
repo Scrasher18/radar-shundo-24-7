@@ -1,53 +1,4 @@
 {
-  "shundo:2955890586750555213": {
-    "canal": "shundo",
-    "pokemon": "Litleo",
-    "coords": "48.269369,16.456868",
-    "ts": 1792974491,
-    "despawn_unix": 1792975212,
-    "discord_msg_id": "1564074915143884905",
-    "discord_msg_ids": [
-      "1564073122687099034",
-      "1564074915143884905"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Litleo! (CP 321 • Nivel 8.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=48.269369,16.456868",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm667.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `321` | **Nivel:** `8.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792975212:R> (`4 min 53 seg`)\n🕒 **Hora exacta:** <t:1792975212:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Gerasdorf bei Wien, Wien, Austria • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=48.269369,16.456868)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n48.269369,16.456868\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T00:35:18.778173+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 00:28:12"
-  },
   "shundo:1784312140556431260": {
     "canal": "shundo",
     "pokemon": "Growlithe",
@@ -972,7 +923,7 @@
       },
       "timestamp": "2026-10-26T01:26:12.870764+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 01:26:13"
   }
 }
