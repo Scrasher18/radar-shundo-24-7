@@ -1,53 +1,4 @@
 {
-  "shundo:-1536256389520459127": {
-    "canal": "shundo",
-    "pokemon": "Misdreavus",
-    "coords": "51.578558,-0.045441",
-    "ts": 1793040901,
-    "despawn_unix": 1793041748,
-    "discord_msg_id": "1564353473795850297",
-    "discord_msg_ids": [
-      "1564351670169640997",
-      "1564353473795850297"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Misdreavus! (CP 1321 • Nivel 24.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=51.578558,-0.045441",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm200.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1321` | **Nivel:** `24.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1793041748:R> (`6 min 56 seg`)\n🕒 **Hora exacta:** <t:1793041748:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Tottenham Hale, Waltham Forest, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.578558,-0.045441)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.578558,-0.045441\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T19:02:12.331454+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 18:55:02"
-  },
   "shundo:4138288706122388994": {
     "canal": "shundo",
     "pokemon": "Stufful",
@@ -482,7 +433,7 @@
       },
       "timestamp": "2026-10-26T19:31:28.507860+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 19:31:29"
   },
   "shundo:9168222074094125752": {
