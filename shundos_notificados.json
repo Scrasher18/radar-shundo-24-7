@@ -5,10 +5,11 @@
     "coords": "52.61685,13.502023",
     "ts": 1792974295,
     "despawn_unix": 1792975278,
-    "discord_msg_id": "1564073122687099034",
+    "discord_msg_id": "1564074915143884905",
     "discord_msg_ids": [
       "1564072300771278991",
-      "1564073122687099034"
+      "1564073122687099034",
+      "1564074915143884905"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Emolga! (CP 1493 • Nivel 34.0)",
@@ -26,7 +27,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792975278:R> (`13 min 06 seg`)\n🕒 **Hora exacta:** <t:1792975278:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792975278:R> (`5 min 59 seg`)\n🕒 **Hora exacta:** <t:1792975278:T>",
           "inline": true
         },
         {
@@ -43,7 +44,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-26T00:28:11.424941+00:00"
+      "timestamp": "2026-10-26T00:35:18.778141+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-26 00:24:56"
@@ -142,7 +143,7 @@
       },
       "timestamp": "2026-10-26T00:28:11.424981+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 00:24:56"
   },
   "shundo:2955890586750555213": {
@@ -151,15 +152,16 @@
     "coords": "48.269369,16.456868",
     "ts": 1792974491,
     "despawn_unix": 1792975212,
-    "discord_msg_id": "1564073122687099034",
+    "discord_msg_id": "1564074915143884905",
     "discord_msg_ids": [
-      "1564073122687099034"
+      "1564073122687099034",
+      "1564074915143884905"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Litleo! (CP 321 • Nivel 8.0)",
       "description": "✨ **SHUNDO 100% IV**",
       "url": "https://www.google.com/maps?q=48.269369,16.456868",
-      "color": 16347926,
+      "color": 15680580,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm667.s.icon.png"
       },
@@ -171,7 +173,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792975212:R> (`12 min 00 seg`)\n🕒 **Hora exacta:** <t:1792975212:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792975212:R> (`4 min 53 seg`)\n🕒 **Hora exacta:** <t:1792975212:T>",
           "inline": true
         },
         {
@@ -188,9 +190,57 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-26T00:28:11.424971+00:00"
+      "timestamp": "2026-10-26T00:35:18.778173+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-26 00:28:12"
+  },
+  "shundo:1784312140556431260": {
+    "canal": "shundo",
+    "pokemon": "Growlithe",
+    "coords": "45.577249,8.956703",
+    "ts": 1792974918,
+    "despawn_unix": 1792975639,
+    "discord_msg_id": "1564074915143884905",
+    "discord_msg_ids": [
+      "1564074915143884905"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Growlithe! (CP 888 • Nivel 25.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=45.577249,8.956703",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm58.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `888` | **Nivel:** `25.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792975639:R> (`12 min 00 seg`)\n🕒 **Hora exacta:** <t:1792975639:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Cerro Maggiore, Milano, Italy • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=45.577249,8.956703)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n45.577249,8.956703\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-26T00:35:18.778165+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-26 00:35:19"
   }
 }
