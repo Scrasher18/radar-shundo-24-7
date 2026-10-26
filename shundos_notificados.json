@@ -887,15 +887,15 @@
     "coords": "30.0037716,-95.5745683",
     "ts": 1792978402,
     "despawn_unix": 1792978945,
-    "discord_msg_id": "1564089526887120936",
+    "discord_msg_id": "1564091323269648528",
     "discord_msg_ids": [
-      "1564089526887120936"
+      "1564091323269648528"
     ],
     "embed_base": {
       "title": "🌟 ¡SHUNDO 100% IV: Shroomish! (CP 729 • Nivel 33.0)",
       "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
       "url": "https://www.google.com/maps?q=30.0037716,-95.5745683",
-      "color": 16347926,
+      "color": 15680580,
       "thumbnail": {
         "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm285.s.icon.png"
       },
@@ -907,7 +907,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792978945:R> (`9 min 03 seg`)\n🕒 **Hora exacta:** <t:1792978945:T>",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792978945:R> (`1 min 55 seg`)\n🕒 **Hora exacta:** <t:1792978945:T>",
           "inline": true
         },
         {
@@ -924,7 +924,7 @@
       "footer": {
         "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-10-26T01:33:22.330987+00:00"
+      "timestamp": "2026-10-26T01:40:30.756919+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-10-26 01:33:23"
@@ -976,5 +976,101 @@
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 01:33:23"
+  },
+  "shundo:1591351209137024630": {
+    "canal": "shundo",
+    "pokemon": "Meowth (Galarian)",
+    "coords": "40.394331,-3.606545",
+    "ts": 1792978830,
+    "despawn_unix": 1792980078,
+    "discord_msg_id": "1564091323269648528",
+    "discord_msg_ids": [
+      "1564091323269648528"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Meowth (Galarian)! (CP 170 • Nivel 6.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=40.394331,-3.606545",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm52.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `170` | **Nivel:** `6.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792980078:R> (`20 min 48 seg`)\n🕒 **Hora exacta:** <t:1792980078:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Vicálvaro, Madrid, Spain • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.394331,-3.606545)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n40.394331,-3.606545\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-26T01:40:30.756946+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-26 01:40:31"
+  },
+  "shundo:-3969352089571582956": {
+    "canal": "shundo",
+    "pokemon": "Duskull",
+    "coords": "38.782087,-9.167454",
+    "ts": 1792978830,
+    "despawn_unix": 1792979753,
+    "discord_msg_id": "1564091323269648528",
+    "discord_msg_ids": [
+      "1564091323269648528"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Duskull! (CP 31 • Nivel 2.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=38.782087,-9.167454",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm355.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `31` | **Nivel:** `2.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792979753:R> (`15 min 22 seg`)\n🕒 **Hora exacta:** <t:1792979753:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Olival Basto, Lisboa, Portugal • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.782087,-9.167454)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n38.782087,-9.167454\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-26T01:40:30.756955+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-26 01:40:31"
   }
 }
