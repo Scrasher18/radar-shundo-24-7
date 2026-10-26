@@ -1,102 +1,4 @@
 {
-  "shundo:4664619792776697394": {
-    "canal": "shundo",
-    "pokemon": "Trubbish",
-    "coords": "45.4829151,-73.4884345",
-    "ts": 1792985870,
-    "despawn_unix": 1792986348,
-    "discord_msg_id": "1564120850494521441",
-    "discord_msg_ids": [
-      "1564120850494521441"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Trubbish! (CP 165 • Nivel 6.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=45.4829151,-73.4884345",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm568.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `165` | **Nivel:** `6.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792986348:R> (`7 min 57 seg`)\n🕒 **Hora exacta:** <t:1792986348:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Greenfield Park, Québec, Canada • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=45.4829151,-73.4884345)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n45.4829151,-73.4884345\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T03:37:50.603203+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 03:37:51"
-  },
-  "shundo:-3641897767326129727": {
-    "canal": "shundo",
-    "pokemon": "Nidoran_male",
-    "coords": "25.0465612,121.4503941",
-    "ts": 1792985870,
-    "despawn_unix": 1792986869,
-    "discord_msg_id": "1564124468861730842",
-    "discord_msg_ids": [
-      "1564120850494521441",
-      "1564122644960514064",
-      "1564124468861730842"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Nidoran_male! (CP 64 • Nivel 3.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=25.0465612,121.4503941",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm32.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `64` | **Nivel:** `3.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792986869:R> (`2 min 16 seg`)\n🕒 **Hora exacta:** <t:1792986869:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "New Taipei City, Taiwan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=25.0465612,121.4503941)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n25.0465612,121.4503941\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T03:52:13.325204+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 03:37:51"
-  },
   "shundo:4916745115263418018": {
     "canal": "shundo",
     "pokemon": "Pidgey",
@@ -538,7 +440,7 @@
       },
       "timestamp": "2026-10-26T04:14:24.044479+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 04:07:12"
   },
   "shundo:8581414424714765765": {
