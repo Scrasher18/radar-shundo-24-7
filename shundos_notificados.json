@@ -1,58 +1,4 @@
 {
-  "shundo:4671769610242987668": {
-    "canal": "shundo",
-    "pokemon": "Electrike",
-    "coords": "10.77261,106.642716",
-    "ts": 1793035681,
-    "despawn_unix": 1793039146,
-    "discord_msg_id": "1564342560032297021",
-    "discord_msg_ids": [
-      "1564329773927370853",
-      "1564331584902008843",
-      "1564333413907959952",
-      "1564337016747991156",
-      "1564338808512848008",
-      "1564340755231674440",
-      "1564342560032297021"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Electrike! (CP 662 • Nivel 24.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=10.77261,106.642716",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm309.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `662` | **Nivel:** `24.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1793039146:R> (`6 min 56 seg`)\n🕒 **Hora exacta:** <t:1793039146:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Quận Mười Một, Hồ Chí Minh city, Vietnam • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=10.77261,106.642716)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n10.77261,106.642716\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T18:18:50.274633+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 17:28:02"
-  },
   "shundo:7605793717612991693": {
     "canal": "shundo",
     "pokemon": "Hoppip",
@@ -345,7 +291,7 @@
       },
       "timestamp": "2026-10-26T18:18:50.274665+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 18:11:40"
   },
   "shundo:-4894452470020912863": {
