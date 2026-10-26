@@ -1,54 +1,4 @@
 {
-  "shundo:-3807007877329359698": {
-    "canal": "shundo",
-    "pokemon": "Grimer (Alola)",
-    "coords": "37.5740858,127.0204491",
-    "ts": 1793035425,
-    "despawn_unix": 1793036236,
-    "discord_msg_id": "1564331584902008843",
-    "discord_msg_ids": [
-      "1564328699862458474",
-      "1564329773927370853",
-      "1564331584902008843"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Grimer (Alola)! (CP 1178 • Nivel 30.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=37.5740858,127.0204491",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm88.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1178` | **Nivel:** `30.0`\n**Talla:** `L` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1793036236:R> (`2 min 02 seg`)\n🕒 **Hora exacta:** <t:1793036236:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Seoul, South Korea • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=37.5740858,127.0204491)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n37.5740858,127.0204491\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T17:35:13.561078+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 17:23:46"
-  },
   "shundo:4671769610242987668": {
     "canal": "shundo",
     "pokemon": "Electrike",
@@ -100,7 +50,7 @@
       },
       "timestamp": "2026-10-26T18:18:50.274633+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 17:28:02"
   },
   "shundo:7605793717612991693": {
