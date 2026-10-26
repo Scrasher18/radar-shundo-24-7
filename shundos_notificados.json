@@ -1,1 +1,146 @@
-{}
+{
+  "shundo:370135065998981391": {
+    "canal": "shundo",
+    "pokemon": "Emolga",
+    "coords": "52.61685,13.502023",
+    "ts": 1792974295,
+    "despawn_unix": 1792975278,
+    "discord_msg_id": "1564072300771278991",
+    "discord_msg_ids": [
+      "1564072300771278991"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Emolga! (CP 1493 • Nivel 34.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=52.61685,13.502023",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm587.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1493` | **Nivel:** `34.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1792975278:R> (`16 min 23 seg`)\n🕒 **Hora exacta:** <t:1792975278:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Buch, Brandenburg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.61685,13.502023)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n52.61685,13.502023\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-26T00:24:55.405914+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-26 00:24:56"
+  },
+  "shundo:-300729830562292886": {
+    "canal": "shundo",
+    "pokemon": "Tepig",
+    "coords": "25.277305,55.7883687",
+    "ts": 1792974295,
+    "despawn_unix": 1792974429,
+    "discord_msg_id": "1564072300771278991",
+    "discord_msg_ids": [
+      "1564072300771278991"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Tepig! (CP 276 • Nivel 9.0)",
+      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
+      "url": "https://www.google.com/maps?q=25.277305,55.7883687",
+      "color": 15680580,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm498.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `276` | **Nivel:** `9.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792974429:R> (`2 min 13 seg`)\n🕒 **Hora exacta:** <t:1792974429:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Adh Dhayd, Sharjah, United Arab Emirates • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=25.277305,55.7883687)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n25.277305,55.7883687\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-26T00:24:55.405936+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-26 00:24:56"
+  },
+  "shundo:5324766172076277796": {
+    "canal": "shundo",
+    "pokemon": "Snivy",
+    "coords": "56.232345,10.201502",
+    "ts": 1792974295,
+    "despawn_unix": 1792974981,
+    "discord_msg_id": "1564072300771278991",
+    "discord_msg_ids": [
+      "1564072300771278991"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡SHUNDO 100% IV: Snivy! (CP 140 • Nivel 6.0)",
+      "description": "✨ **SHUNDO 100% IV**",
+      "url": "https://www.google.com/maps?q=56.232345,10.201502",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm495.s.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `140` | **Nivel:** `6.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792974981:R> (`11 min 25 seg`)\n🕒 **Hora exacta:** <t:1792974981:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Lystrup, Midtjylland, Denmark • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=56.232345,10.201502)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas",
+          "value": "```\n56.232345,10.201502\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-10-26T00:24:55.405945+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-10-26 00:24:56"
+  }
+}
