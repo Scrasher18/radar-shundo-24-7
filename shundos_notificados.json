@@ -1,52 +1,4 @@
 {
-  "shundo:9157420332875783688": {
-    "canal": "shundo",
-    "pokemon": "Drowzee",
-    "coords": "52.4984466,-0.7226155",
-    "ts": 1793037835,
-    "despawn_unix": 1793037964,
-    "discord_msg_id": "1564338808512848008",
-    "discord_msg_ids": [
-      "1564338808512848008"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Drowzee! (CP 654 • Nivel 22.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=52.4984466,-0.7226155",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm96.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `654` | **Nivel:** `22.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1793037964:R> (`2 min 09 seg`)\n🕒 **Hora exacta:** <t:1793037964:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Corby, Northamptonshire, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.4984466,-0.7226155)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.4984466,-0.7226155\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T18:03:55.827379+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 18:03:56"
-  },
   "shundo:6756949055373401584": {
     "canal": "shundo",
     "pokemon": "Glameow",
@@ -826,7 +778,7 @@
       },
       "timestamp": "2026-10-26T19:02:12.331497+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 19:02:12"
   }
 }
