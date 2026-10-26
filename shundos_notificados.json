@@ -1,105 +1,4 @@
 {
-  "shundo:-5958066901840808926": {
-    "canal": "shundo",
-    "pokemon": "Hoppip",
-    "coords": "48.20615,16.196369",
-    "ts": 1793037408,
-    "despawn_unix": 1793038524,
-    "discord_msg_id": "1564340755231674440",
-    "discord_msg_ids": [
-      "1564337016747991156",
-      "1564338808512848008",
-      "1564340755231674440"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Hoppip! (CP 548 • Nivel 34.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=48.20615,16.196369",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm187.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `548` | **Nivel:** `34.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1793038524:R> (`3 min 45 seg`)\n🕒 **Hora exacta:** <t:1793038524:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Purkersdorf, Niederösterreich, Austria • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=48.20615,16.196369)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n48.20615,16.196369\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T18:11:39.872374+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 17:56:49"
-  },
-  "shundo:-3416278058696159348": {
-    "canal": "shundo",
-    "pokemon": "Darumaka",
-    "coords": "52.6008951,13.2664874",
-    "ts": 1793037408,
-    "despawn_unix": 1793038838,
-    "discord_msg_id": "1564342560032297021",
-    "discord_msg_ids": [
-      "1564337016747991156",
-      "1564338808512848008",
-      "1564340755231674440",
-      "1564342560032297021"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Darumaka! (CP 412 • Nivel 10.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=52.6008951,13.2664874",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm554.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `412` | **Nivel:** `10.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1793038838:R> (`1 min 48 seg`)\n🕒 **Hora exacta:** <t:1793038838:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Heiligensee, Berlin, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.6008951,13.2664874)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.6008951,13.2664874\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T18:18:50.274710+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 17:56:49"
-  },
   "shundo:9157420332875783688": {
     "canal": "shundo",
     "pokemon": "Drowzee",
@@ -390,7 +289,7 @@
       },
       "timestamp": "2026-10-26T18:55:02.326623+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 18:33:06"
   },
   "shundo:1146664503779840565": {
