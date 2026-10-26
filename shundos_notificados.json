@@ -1,107 +1,4 @@
 {
-  "shundo:-6320771016387826761": {
-    "canal": "shundo",
-    "pokemon": "Murkrow",
-    "coords": "40.9846151,-74.1013763",
-    "ts": 1792981903,
-    "despawn_unix": 1792982896,
-    "discord_msg_id": "1564107853885735050",
-    "discord_msg_ids": [
-      "1564104214106345521",
-      "1564106039094153316",
-      "1564107853885735050"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Murkrow! (CP 1250 • Nivel 28.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=40.9846151,-74.1013763",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm198.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1250` | **Nivel:** `28.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792982896:R> (`2 min 05 seg`)\n🕒 **Hora exacta:** <t:1792982896:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Ridgewood, New Jersey, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.9846151,-74.1013763)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n40.9846151,-74.1013763\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T02:46:11.915467+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 02:31:44"
-  },
-  "shundo:-6749280285969720534": {
-    "canal": "shundo",
-    "pokemon": "Vanillite",
-    "coords": "55.676291,12.538231",
-    "ts": 1792981903,
-    "despawn_unix": 1792984334,
-    "discord_msg_id": "1564111622312562748",
-    "discord_msg_ids": [
-      "1564104214106345521",
-      "1564106039094153316",
-      "1564107853885735050",
-      "1564109673051988107",
-      "1564109802450452490",
-      "1564111622312562748"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Vanillite! (CP 443 • Nivel 15.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=55.676291,12.538231",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm582.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `443` | **Nivel:** `15.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792984334:R> (`11 min 04 seg`)\n🕒 **Hora exacta:** <t:1792984334:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Frederiksberg, Hovedstaden, Denmark • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=55.676291,12.538231)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n55.676291,12.538231\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T03:01:10.376914+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 02:31:44"
-  },
   "shundo:3566544655237578044": {
     "canal": "shundo",
     "pokemon": "Bounsweet",
@@ -788,7 +685,7 @@
       },
       "timestamp": "2026-10-26T03:30:39.457244+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 03:22:58"
   },
   "shundo:-9210833362593825359": {
