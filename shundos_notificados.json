@@ -1,55 +1,4 @@
 {
-  "shundo:2185202286347440249": {
-    "canal": "shundo",
-    "pokemon": "Oddish",
-    "coords": "25.385794,51.508232",
-    "ts": 1793040014,
-    "despawn_unix": 1793041627,
-    "discord_msg_id": "1564353473795850297",
-    "discord_msg_ids": [
-      "1564347947376836742",
-      "1564348080336281748",
-      "1564351670169640997",
-      "1564353473795850297"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Oddish! (CP 912 • Nivel 26.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=25.385794,51.508232",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm43.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `912` | **Nivel:** `26.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1793041627:R> (`4 min 55 seg`)\n🕒 **Hora exacta:** <t:1793041627:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Aţ Ţarfah, Al Daayen, Qatar • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=25.385794,51.508232)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n25.385794,51.508232\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T19:02:12.331438+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 18:40:15"
-  },
   "shundo:6265722173242218487": {
     "canal": "shundo",
     "pokemon": "Buizel",
@@ -680,7 +629,7 @@
       },
       "timestamp": "2026-10-26T19:31:28.507848+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 19:16:40"
   },
   "shundo:7783306643701569197": {
