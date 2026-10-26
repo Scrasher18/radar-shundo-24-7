@@ -1,52 +1,4 @@
 {
-  "shundo:-2530078014050197820": {
-    "canal": "shundo",
-    "pokemon": "Misdreavus",
-    "coords": "40.797934,-74.0312516",
-    "ts": 1793036548,
-    "despawn_unix": 1793037052,
-    "discord_msg_id": "1564333413907959952",
-    "discord_msg_ids": [
-      "1564333413907959952"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Misdreavus! (CP 1486 • Nivel 27.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=40.797934,-74.0312516",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm200.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1486` | **Nivel:** `27.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1793037052:R> (`8 min 23 seg`)\n🕒 **Hora exacta:** <t:1793037052:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "West New York, New Jersey, United States • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.797934,-74.0312516)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n40.797934,-74.0312516\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T17:42:29.694494+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 17:42:30"
-  },
   "shundo:-5958066901840808926": {
     "canal": "shundo",
     "pokemon": "Hoppip",
@@ -486,7 +438,7 @@
       },
       "timestamp": "2026-10-26T18:40:46.417187+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 18:33:06"
   },
   "shundo:-76318529006955986": {
