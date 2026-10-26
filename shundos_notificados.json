@@ -1,100 +1,4 @@
 {
-  "shundo:509787767017353823": {
-    "canal": "shundo",
-    "pokemon": "Paras",
-    "coords": "47.481723,8.49684",
-    "ts": 1793038729,
-    "despawn_unix": 1793039538,
-    "discord_msg_id": "1564342560032297021",
-    "discord_msg_ids": [
-      "1564342560032297021"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Paras! (CP 581 • Nivel 20.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=47.481723,8.49684",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm46.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `581` | **Nivel:** `20.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1793039538:R> (`13 min 29 seg`)\n🕒 **Hora exacta:** <t:1793039538:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Rümlang, Zürich, Switzerland • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=47.481723,8.49684)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n47.481723,8.49684\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T18:18:50.274679+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 18:18:50"
-  },
-  "shundo:-1944891613742615426": {
-    "canal": "shundo",
-    "pokemon": "Chikorita",
-    "coords": "18.477646,-69.921115",
-    "ts": 1793038729,
-    "despawn_unix": 1793039506,
-    "discord_msg_id": "1564342560032297021",
-    "discord_msg_ids": [
-      "1564342560032297021"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Chikorita! (CP 400 • Nivel 15.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=18.477646,-69.921115",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm152.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `400` | **Nivel:** `15.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1793039506:R> (`12 min 56 seg`)\n🕒 **Hora exacta:** <t:1793039506:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "La Julia, Distrito Nacional, Dominican Republic • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=18.477646,-69.921115)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n18.477646,-69.921115\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T18:18:50.274700+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 18:18:50"
-  },
   "shundo:-5252901715441334879": {
     "canal": "shundo",
     "pokemon": "Oddish",
@@ -632,7 +536,7 @@
       },
       "timestamp": "2026-10-26T19:16:39.517287+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 19:02:12"
   },
   "shundo:-2673056690737080520": {
