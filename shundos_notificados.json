@@ -1,52 +1,4 @@
 {
-  "shundo:-1237633858603764376": {
-    "canal": "shundo",
-    "pokemon": "Nidoran_female",
-    "coords": "53.542481,10.169839",
-    "ts": 1792977972,
-    "despawn_unix": 1792978307,
-    "discord_msg_id": "1564087725018325057",
-    "discord_msg_ids": [
-      "1564087725018325057"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Nidoran_female! (CP 419 • Nivel 18.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=53.542481,10.169839",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm29.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `419` | **Nivel:** `18.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792978307:R> (`5 min 34 seg`)\n🕒 **Hora exacta:** <t:1792978307:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Oststeinbek, Hamburg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.542481,10.169839)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n53.542481,10.169839\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T01:26:12.870764+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 01:26:13"
-  },
   "shundo:-8484920451352632425": {
     "canal": "shundo",
     "pokemon": "Shroomish",
@@ -833,7 +785,7 @@
       },
       "timestamp": "2026-10-26T02:24:30.045020+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 02:24:30"
   },
   "shundo:-1988727263490799679": {
