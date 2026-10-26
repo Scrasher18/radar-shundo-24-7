@@ -1,104 +1,4 @@
 {
-  "shundo:-8324318249891993741": {
-    "canal": "shundo",
-    "pokemon": "Nidoran_female",
-    "coords": "13.02055,80.205595",
-    "ts": 1792979724,
-    "despawn_unix": 1792981429,
-    "discord_msg_id": "1564100599291576326",
-    "discord_msg_ids": [
-      "1564095070792192075",
-      "1564096858702225552",
-      "1564098669391908910",
-      "1564100496409628739",
-      "1564100599291576326"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Nidoran_female! (CP 536 • Nivel 23.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=13.02055,80.205595",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm29.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `536` | **Nivel:** `23.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792981429:R> (`6 min 27 seg`)\n🕒 **Hora exacta:** <t:1792981429:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Alandur, Tamil Nadu, India • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=13.02055,80.205595)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n13.02055,80.205595\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T02:17:22.312762+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 01:55:24"
-  },
-  "shundo:-4232783935537465578": {
-    "canal": "shundo",
-    "pokemon": "Electrike",
-    "coords": "26.2262296,127.650096",
-    "ts": 1792979724,
-    "despawn_unix": 1792980177,
-    "discord_msg_id": "1564095070792192075",
-    "discord_msg_ids": [
-      "1564095070792192075"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Electrike! (CP 469 • Nivel 17.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=26.2262296,127.650096",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm309.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `469` | **Nivel:** `17.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1792980177:R> (`7 min 33 seg`)\n🕒 **Hora exacta:** <t:1792980177:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Naha, Okinawa, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=26.2262296,127.650096)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n26.2262296,127.650096\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T01:55:24.287118+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 01:55:24"
-  },
   "shundo:1505448078491239808": {
     "canal": "shundo",
     "pokemon": "Sewaddle",
@@ -747,7 +647,7 @@
       },
       "timestamp": "2026-10-26T02:53:56.530346+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 02:38:59"
   },
   "shundo:-4834442818772062623": {
