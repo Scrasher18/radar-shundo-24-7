@@ -1,53 +1,4 @@
 {
-  "shundo:3348996633681198389": {
-    "canal": "shundo",
-    "pokemon": "Scorbunny",
-    "coords": "24.7832974,46.6551834",
-    "ts": 1792979296,
-    "despawn_unix": 1792979954,
-    "discord_msg_id": "1564095070792192075",
-    "discord_msg_ids": [
-      "1564093275915423807",
-      "1564095070792192075"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Scorbunny! (CP 470 • Nivel 15.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=24.7832974,46.6551834",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm813.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `470` | **Nivel:** `15.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792979954:R> (`3 min 50 seg`)\n🕒 **Hora exacta:** <t:1792979954:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "‘Irqah, Ar Riyad, Saudi Arabia • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=24.7832974,46.6551834)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n24.7832974,46.6551834\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T01:55:24.287132+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 01:48:16"
-  },
   "shundo:-8324318249891993741": {
     "canal": "shundo",
     "pokemon": "Nidoran_female",
@@ -693,7 +644,7 @@
       },
       "timestamp": "2026-10-26T02:46:11.915467+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 02:31:44"
   },
   "shundo:-6749280285969720534": {
