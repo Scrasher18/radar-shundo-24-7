@@ -1,53 +1,4 @@
 {
-  "shundo:7605793717612991693": {
-    "canal": "shundo",
-    "pokemon": "Hoppip",
-    "coords": "51.476342,-3.163376",
-    "ts": 1793036113,
-    "despawn_unix": 1793036905,
-    "discord_msg_id": "1564333413907959952",
-    "discord_msg_ids": [
-      "1564331584902008843",
-      "1564333413907959952"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Hoppip! (CP 557 • Nivel 35.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=51.476342,-3.163376",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm187.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `557` | **Nivel:** `35.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1793036905:R> (`5 min 56 seg`)\n🕒 **Hora exacta:** <t:1793036905:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Cardiff, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.476342,-3.163376)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.476342,-3.163376\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T17:42:29.694464+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 17:35:14"
-  },
   "shundo:-2530078014050197820": {
     "canal": "shundo",
     "pokemon": "Misdreavus",
@@ -341,7 +292,7 @@
       },
       "timestamp": "2026-10-26T18:33:05.459688+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 18:11:40"
   },
   "shundo:509787767017353823": {
