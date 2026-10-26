@@ -1,101 +1,4 @@
 {
-  "shundo:56540479278897550": {
-    "canal": "shundo",
-    "pokemon": "Raticate",
-    "coords": "49.498682,8.409797",
-    "ts": 1793030202,
-    "despawn_unix": 1793031460,
-    "discord_msg_id": "1564306791410700322",
-    "discord_msg_ids": [
-      "1564306791410700322"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Raticate! (CP 1483 • Nivel 30.0)",
-      "description": "✨ **SHUNDO 100% IV** • ☁️ **CLIMA BOOSTEADO**",
-      "url": "https://www.google.com/maps?q=49.498682,8.409797",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm20.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1483` | **Nivel:** `30.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1793031460:R> (`20 min 58 seg`)\n🕒 **Hora exacta:** <t:1793031460:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Gartenstadt, Rheinland-Pfalz, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=49.498682,8.409797)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n49.498682,8.409797\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T15:56:42.389257+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 15:56:43"
-  },
-  "shundo:2026226807111115213": {
-    "canal": "shundo",
-    "pokemon": "Makuhita",
-    "coords": "22.6271276,120.2763763",
-    "ts": 1793030202,
-    "despawn_unix": 1793031150,
-    "discord_msg_id": "1564308617732165717",
-    "discord_msg_ids": [
-      "1564306791410700322",
-      "1564308617732165717"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Makuhita! (CP 208 • Nivel 9.0)",
-      "description": "✨ **SHUNDO 100% IV**",
-      "url": "https://www.google.com/maps?q=22.6271276,120.2763763",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm296.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `208` | **Nivel:** `9.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1793031150:R> (`8 min 32 seg`)\n🕒 **Hora exacta:** <t:1793031150:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Kaohsiung, Kaohsiung City, Taiwan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=22.6271276,120.2763763)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n22.6271276,120.2763763\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T16:03:57.553235+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 15:56:43"
-  },
   "shundo:6212455986442990613": {
     "canal": "shundo",
     "pokemon": "Oshawott",
@@ -289,7 +192,7 @@
       },
       "timestamp": "2026-10-26T16:54:38.679638+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 16:39:47"
   },
   "shundo:7206062444746358299": {
