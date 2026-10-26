@@ -1,52 +1,4 @@
 {
-  "shundo:-5391612908439731348": {
-    "canal": "shundo",
-    "pokemon": "Mienfoo",
-    "coords": "53.494366,-2.116607",
-    "ts": 1792977103,
-    "despawn_unix": 1792977242,
-    "discord_msg_id": "1564084081212264484",
-    "discord_msg_ids": [
-      "1564084081212264484"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡SHUNDO 100% IV: Mienfoo! (CP 61 • Nivel 2.0)",
-      "description": "✨ **SHUNDO 100% IV** • 📏 **TALLA RARA (XXS)**",
-      "url": "https://www.google.com/maps?q=53.494366,-2.116607",
-      "color": 15680580,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm619.s.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `61` | **Nivel:** `2.0`\n**Talla:** `XXS` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1792977242:R> (`2 min 18 seg`)\n🕒 **Hora exacta:** <t:1792977242:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Ashton-under-Lyne, Tameside, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.494366,-2.116607)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n53.494366,-2.116607\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-10-26T01:11:44.125882+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-10-26 01:11:44"
-  },
   "shundo:-6867104218022118425": {
     "canal": "shundo",
     "pokemon": "Skwovet",
@@ -876,7 +828,7 @@
       },
       "timestamp": "2026-10-26T02:09:42.256075+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-10-26 02:09:42"
   }
 }
