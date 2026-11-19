@@ -52,7 +52,7 @@ def construir_estado_despawn(mon: Dict[str, Any]) -> Tuple[str, int]:
 
 
 def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
-    """Construye el Embed de Discord para un Pokémon Shundo 100% IV."""
+    """Construye el Embed de Discord para un Pokémon Hundo / Shundo 100% IV."""
     origen_txt = "☁️ Nube 24/7"
     poke_id = mon.get("pokemon_id") or 1
     nombre = mon.get("nombre_completo") or mon.get("pokemon_name") or f"#{poke_id}"
@@ -63,13 +63,17 @@ def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
     nivel = mon.get("level") or "?"
     size = mon.get("size") or "-"
     gender = mon.get("gender") or "-"
-    icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{poke_id}.s.icon.png"
+    es_shiny = bool(mon.get("shiny"))
+    icon_type = "s." if es_shiny else ""
+    icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{poke_id}.{icon_type}icon.png"
 
     estado_tiempo, color_embed = construir_estado_despawn(mon)
-    rareza_txt = obtener_etiquetas_rareza(mon, "✨ **SHUNDO 100% IV**")
+    etiqueta_tipo = "✨ **SHUNDO 100% IV**" if es_shiny else "🌟 **100% IV HUNDO**"
+    rareza_txt = obtener_etiquetas_rareza(mon, etiqueta_tipo)
+    titulo_txt = f"✨ ¡SHUNDO 100% IV: {nombre}! (CP {cp} • Nivel {nivel})" if es_shiny else f"🌟 ¡100% IV HUNDO: {nombre}! (CP {cp} • Nivel {nivel})"
 
     return {
-        "title": f"🌟 ¡SHUNDO 100% IV: {nombre}! (CP {cp} • Nivel {nivel})",
+        "title": titulo_txt,
         "description": rareza_txt,
         "url": maps_url,
         "color": color_embed,
@@ -129,9 +133,12 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
         else f"⚔️ **En Liga:** **{pvp_poke_name}** alcanza `CP {pvp_cp}` en Nivel `{pvp_lvl}`"
     )
 
-    icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{pvp_poke_id}.s.icon.png"
+    es_shiny = bool(mon.get("shiny"))
+    icon_type = "s." if es_shiny else ""
+    icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{pvp_poke_id}.{icon_type}icon.png"
     estado_tiempo, _ = construir_estado_despawn(mon)
-    rareza_txt = obtener_etiquetas_rareza(mon, f"✨ **SHINY GARANTIZADO** • {medalla_rank} • {etiqueta_xl}")
+    etiqueta_shiny = "✨ **SHINY GARANTIZADO** • " if es_shiny else ""
+    rareza_txt = obtener_etiquetas_rareza(mon, f"{etiqueta_shiny}{medalla_rank} • {etiqueta_xl}")
 
     titulo_especie = f"{nombre_salvaje} ➔ {pvp_poke_name}" if int(pvp_poke_id) != int(poke_id) else nombre_salvaje
 

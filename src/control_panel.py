@@ -149,7 +149,7 @@ def construir_embed_panel_maestro(cfg: Dict[str, Any]) -> Dict[str, Any]:
             {
                 "name": "📡 Estado de los Canales",
                 "value": (
-                    f"• 🌟 **Shundos 100% IV:** `{tag_shundo}`\n"
+                    f"• 🌟 **100% IV (Hundo/Shundo):** `{tag_shundo}`\n"
                     f"• 🔵 **Great League (1500 CP):** `{tag_gl}`\n"
                     f"• 🟣 **Ultra League (2500 CP):** `{tag_ul}`\n"
                     f"• 🎉 **Eventos / CD:** `{tag_evento}`"

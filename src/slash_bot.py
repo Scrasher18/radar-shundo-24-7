@@ -495,7 +495,7 @@ async def cmd_tiempo(interaction: discord.Interaction, minutos: int):
 )
 @app_commands.choices(
     canal=[
-        app_commands.Choice(name="🌟 Shundos 100% IV", value="shundo"),
+        app_commands.Choice(name="🌟 100% IV (Hundos / Shundos)", value="shundo"),
         app_commands.Choice(name="🔵 Great League (1500 CP)", value="great"),
         app_commands.Choice(name="🟣 Ultra League (2500 CP)", value="ultra"),
         app_commands.Choice(name="🎉 Eventos / CD", value="evento"),
@@ -525,7 +525,7 @@ async def cmd_canal(interaction: discord.Interaction, canal: str, estado: str):
     publicar_o_actualizar_panel_maestro()
     sincronizar_estado_remoto_push(asincrono=True)
 
-    nombres = {"shundo": "Shundos 100% IV", "great": "Great League", "ultra": "Ultra League", "evento": "Eventos & CD"}
+    nombres = {"shundo": "100% IV (Hundos / Shundos)", "great": "Great League", "ultra": "Ultra League", "evento": "Eventos & CD"}
     tag = "🟢 Activado" if activar else "🔴 Pausado"
     await interaction.followup.send(f"{tag}: Canal **{nombres.get(canal, canal)}**.", ephemeral=True)
 

@@ -223,7 +223,7 @@ def obtener_perfil_entrenador() -> Tuple[Optional[Dict[str, Any]], int]:
 def construir_payload_search(overrides: Dict[str, Any]) -> Dict[str, Any]:
     """Construye el cuerpo estándar para el endpoint /search aplicando los filtros indicados."""
     p: Dict[str, Any] = {
-        "shiny_only": True,
+        "shiny_only": False,
         "shiny_account": None,
         "background_only": False,
         "pvp_mode": False,
@@ -314,7 +314,7 @@ def ejecutar_region_mapa(
             "pvp_top_rank": PVP_TOP_RANK_MAX if es_pvp else None,
             "pvp_include_pre_evolutions": True,
             "pvp_min_cp": None,
-            "shiny_only": True,
+            "shiny_only": False,
             "shiny_account": None,
             "background_only": False,
             "always_show": [],

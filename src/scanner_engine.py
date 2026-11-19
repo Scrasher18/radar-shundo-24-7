@@ -137,7 +137,7 @@ def _recolectar_spawns_evento(
             for fut in as_completed(futs):
                 modo = futs[fut]
                 for mon in fut.result():
-                    if not mon.get("shiny") or not coincide_con_evento(mon, cfg_evento):
+                    if not coincide_con_evento(mon, cfg_evento):
                         continue
                     if modo == "shundo" and float(mon.get("iv_percent") or 0.0) == 100.0:
                         eid = str(mon.get("encounter_id"))
@@ -278,20 +278,20 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
     gl_por_id: Dict[str, Dict[str, Any]] = {}
     ul_por_id: Dict[str, Dict[str, Any]] = {}
 
-    # Oleada 1: Shundos 100% IV
+    # Oleada 1: Hundos / Shundos 100% IV
     if canales.get("shundo", True):
         with ThreadPoolExecutor(max_workers=2) as executor:
             fut_shundos = [executor.submit(ejecutar_particion_search, p) for p in PARTICIONES_SHUNDOS]
             fut_mapa_shundos = [executor.submit(ejecutar_region_mapa, r, "shundo") for r in REGIONES_GLOBALES]
             for fut in as_completed(fut_shundos):
                 for mon in fut.result():
-                    if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
+                    if float(mon.get("iv_percent") or 0.0) == 100.0:
                         eid = str(mon.get("encounter_id"))
                         shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
             for fut in as_completed(fut_mapa_shundos):
                 _, items = fut.result()
                 for mon in items:
-                    if float(mon.get("iv_percent") or 0.0) == 100.0 and mon.get("shiny"):
+                    if float(mon.get("iv_percent") or 0.0) == 100.0:
                         eid = str(mon.get("encounter_id"))
                         shundos_por_id[eid] = normalizar_spawn(shundos_por_id.get(eid), mon)
 
@@ -306,8 +306,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
                 for mon in fut.result():
                     pvp = mon.get("pvp") or {}
                     if (
-                        mon.get("shiny")
-                        and pvp.get("league") == "great"
+                        pvp.get("league") == "great"
                         and int(pvp.get("rank", 99)) <= pvp_top_rank
                         and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
                     ):
@@ -318,8 +317,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
                 for mon in items:
                     pvp = mon.get("pvp") or {}
                     if (
-                        mon.get("shiny")
-                        and pvp.get("league") == "great"
+                        pvp.get("league") == "great"
                         and int(pvp.get("rank", 99)) <= pvp_top_rank
                         and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
                     ):
@@ -337,8 +335,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
                 for mon in fut.result():
                     pvp = mon.get("pvp") or {}
                     if (
-                        mon.get("shiny")
-                        and pvp.get("league") == "ultra"
+                        pvp.get("league") == "ultra"
                         and int(pvp.get("rank", 99)) <= pvp_top_rank
                         and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
                     ):
@@ -349,8 +346,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
                 for mon in items:
                     pvp = mon.get("pvp") or {}
                     if (
-                        mon.get("shiny")
-                        and pvp.get("league") == "ultra"
+                        pvp.get("league") == "ultra"
                         and int(pvp.get("rank", 99)) <= pvp_top_rank
                         and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
                     ):
