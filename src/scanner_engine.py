@@ -56,7 +56,12 @@ from src.event_manager import (
     iniciar_hilo_bot_eventos,
     publicar_o_actualizar_panel_control,
 )
-from src.models import copiar_al_portapapeles, normalizar_spawn
+from src.models import (
+    calcular_distancia_km,
+    copiar_al_portapapeles,
+    formatear_distancia_y_cooldown,
+    normalizar_spawn,
+)
 from src.state_manager import (
     _LOCK_ESTADO,
     cargar_json,
@@ -84,59 +89,87 @@ def _recolectar_spawns_evento(
     inc_ul = bool(cfg_evento.get("incluir_pvp_ul", True))
     ids_evento = [int(x) for x in (cfg_evento.get("pokemon_ids") or []) if str(x).isdigit()]
 
-    # 1. Aprovechar los spawns ya capturados en las oleadas globales
-    if inc_shundo:
-        for eid, mon in shundos_base.items():
-            if coincide_con_evento(mon, cfg_evento):
-                evento_por_id[eid] = normalizar_spawn(evento_por_id.get(eid), mon)
-    if inc_gl:
-        for eid, mon in gl_base.items():
-            if coincide_con_evento(mon, cfg_evento):
-                evento_por_id[eid] = normalizar_spawn(evento_por_id.get(eid), mon)
-    if inc_ul:
-        for eid, mon in ul_base.items():
-            if coincide_con_evento(mon, cfg_evento):
-                evento_por_id[eid] = normalizar_spawn(evento_por_id.get(eid), mon)
+    lat_base = cfg_evento.get("lat_base")
+    lng_base = cfg_evento.get("lng_base")
+    radio_km = float(cfg_evento.get("radio_km") or 50.0)
+    tiene_radio = (lat_base is not None and lng_base is not None)
 
-    # 2. Consultas dedicadas por pokemon_ids para no perder ningún spawn del evento aunque haya >100 globales
+    # 1. Aprovechar los spawns ya capturados en las oleadas globales
+    for coleccion, inc in [(shundos_base, inc_shundo), (gl_base, inc_gl), (ul_base, inc_ul)]:
+        if not inc:
+            continue
+        for eid, mon in coleccion.items():
+            if not coincide_con_evento(mon, cfg_evento):
+                continue
+            if tiene_radio:
+                lat_s = mon.get("lat_final") or mon.get("lat")
+                lng_s = mon.get("lng_final") or mon.get("lng")
+                if lat_s is not None and lng_s is not None:
+                    d = calcular_distancia_km(float(lat_base), float(lng_base), float(lat_s), float(lng_s))
+                    if d > radio_km * 1.15:
+                        continue
+            evento_por_id[eid] = normalizar_spawn(evento_por_id.get(eid), mon)
+
+    # 2. Consultas dedicadas por pokemon_ids (optimizadas para el radio base si está configurado)
     if ids_evento:
         particiones_ev = []
-        if inc_shundo:
-            particiones_ev.append(
-                ("shundo", {"iv_percent_min": 100, "iv_percent_max": 100, "pokemon_ids": ids_evento, "sort": "DSP"})
-            )
-        if inc_gl:
-            particiones_ev.append(
-                (
-                    "great",
-                    {
-                        "pvp_mode": True,
-                        "pvp_league": "great",
-                        "pvp_top_rank": PVP_TOP_RANK_MAX,
-                        "pokemon_ids": ids_evento,
-                        "sort": "DSP",
-                    },
-                )
-            )
-        if inc_ul:
-            particiones_ev.append(
-                (
-                    "ultra",
-                    {
-                        "pvp_mode": True,
-                        "pvp_league": "ultra",
-                        "pvp_top_rank": PVP_TOP_RANK_MAX,
-                        "pokemon_ids": ids_evento,
-                        "sort": "DSP",
-                    },
-                )
-            )
+        extra_geo = {}
+        if tiene_radio:
+            extra_geo = {
+                "center_lat": float(lat_base),
+                "center_lng": float(lng_base),
+                "radius_km": float(radio_km),
+            }
 
-        with ThreadPoolExecutor(max_workers=2) as executor:
+        if inc_shundo:
+            p_sh = {"iv_percent_min": 100, "iv_percent_max": 100, "pokemon_ids": ids_evento, "sort": "DSP"}
+            p_sh.update(extra_geo)
+            particiones_ev.append(("shundo", p_sh))
+        if inc_gl:
+            p_gl = {
+                "pvp_mode": True,
+                "pvp_league": "great",
+                "pvp_top_rank": PVP_TOP_RANK_MAX,
+                "pokemon_ids": ids_evento,
+                "sort": "DSP",
+            }
+            p_gl.update(extra_geo)
+            particiones_ev.append(("great", p_gl))
+        if inc_ul:
+            p_ul = {
+                "pvp_mode": True,
+                "pvp_league": "ultra",
+                "pvp_top_rank": PVP_TOP_RANK_MAX,
+                "pokemon_ids": ids_evento,
+                "sort": "DSP",
+            }
+            p_ul.update(extra_geo)
+            particiones_ev.append(("ultra", p_ul))
+
+        with ThreadPoolExecutor(max_workers=3) as executor:
             futs = {executor.submit(ejecutar_particion_search, p): modo for modo, p in particiones_ev}
+
+            if tiene_radio:
+                import math
+                delta_lat = float(radio_km) / 111.0
+                delta_lng = float(radio_km) / (111.0 * max(0.01, math.cos(math.radians(float(lat_base)))))
+                n_lat = min(90.0, float(lat_base) + delta_lat)
+                s_lat = max(-90.0, float(lat_base) - delta_lat)
+                w_lng = max(-180.0, float(lng_base) - delta_lng)
+                e_lng = min(180.0, float(lng_base) + delta_lng)
+                reg_bb = (f"Base ({radio_km}km)", n_lat, w_lng, s_lat, e_lng)
+                if inc_shundo:
+                    futs[executor.submit(ejecutar_region_mapa, reg_bb, "shundo", ids_evento)] = "shundo"
+                if inc_gl:
+                    futs[executor.submit(ejecutar_region_mapa, reg_bb, "great", ids_evento)] = "great"
+                if inc_ul:
+                    futs[executor.submit(ejecutar_region_mapa, reg_bb, "ultra", ids_evento)] = "ultra"
+
             for fut in as_completed(futs):
                 modo = futs[fut]
-                for mon in fut.result():
+                res = fut.result()
+                items = res[1] if isinstance(res, tuple) else res
+                for mon in items:
                     if not coincide_con_evento(mon, cfg_evento):
                         continue
                     if modo == "shundo" and float(mon.get("iv_percent") or 0.0) == 100.0:
@@ -154,6 +187,60 @@ def _recolectar_spawns_evento(
                             evento_por_id[eid] = normalizar_spawn(evento_por_id.get(eid), mon)
 
     return evento_por_id
+
+
+def _filtrar_y_enriquecer_evento_por_radio(
+    evento_activos: List[Dict[str, Any]],
+    cfg_evento: Dict[str, Any]
+) -> List[Dict[str, Any]]:
+    """Filtra y calcula distancia/cooldown para los spawns del evento según el radio base."""
+    lat_base = cfg_evento.get("lat_base")
+    lng_base = cfg_evento.get("lng_base")
+    radio_km = float(cfg_evento.get("radio_km") or 50.0)
+
+    if lat_base is None or lng_base is None:
+        return evento_activos
+
+    lat_b = float(lat_base)
+    lng_b = float(lng_base)
+    resultado = []
+    tolerancia_km = radio_km * 1.15
+
+    for mon in evento_activos:
+        lat_s = mon.get("lat_final") or mon.get("lat")
+        lng_s = mon.get("lng_final") or mon.get("lng")
+        if lat_s is None or lng_s is None:
+            c_str = str(mon.get("coords_final") or "")
+            if "," in c_str:
+                try:
+                    p1, p2 = c_str.split(",", 1)
+                    lat_s, lng_s = float(p1.strip()), float(p2.strip())
+                except Exception:
+                    pass
+
+        if lat_s is not None and lng_s is not None:
+            dist = calcular_distancia_km(lat_b, lng_b, float(lat_s), float(lng_s))
+            if dist <= tolerancia_km:
+                dist_txt, cd_txt = formatear_distancia_y_cooldown(dist)
+                mon["distancia_base_km"] = dist
+                mon["distancia_base_txt"] = dist_txt
+                mon["cooldown_estimado_txt"] = cd_txt
+                resultado.append(mon)
+            else:
+                nom = mon.get("nombre_completo") or "Spawn"
+                print(f"      ⏭️ [Evento/CD] {nom} fuera de radio ({dist:.1f}km > {radio_km}km). Omitido para evitar cooldown.")
+        else:
+            resultado.append(mon)
+
+    resultado.sort(
+        key=lambda x: (
+            0 if float(x.get("iv_percent") or 0.0) == 100.0 else int((x.get("pvp") or {}).get("rank", 99)),
+            float(x.get("distancia_base_km", 99999.0)),
+            -float(x.get("level") or 0.0),
+            -int(x.get("ttl_segundos") or 0),
+        )
+    )
+    return resultado
 
 
 def ejecutar_escaneo_global_inmediato() -> None:
@@ -179,6 +266,7 @@ def ejecutar_escaneo_evento_inmediato() -> None:
     estado_cuota = {"revelados": 0, "agotada": False}
     evento_activos = preparar_lista_spawns(evento_por_id, cache_coords, estado_cuota)
     guardar_json(CACHE_FILE, cache_coords)
+    evento_activos = _filtrar_y_enriquecer_evento_por_radio(evento_activos, cfg_evento)
 
     if not evento_activos:
         return
@@ -371,6 +459,8 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
     evento_activos = preparar_lista_spawns(evento_por_id, cache_coords, estado_cuota) if evento_por_id else []
 
     guardar_json(CACHE_FILE, cache_coords)
+    if canales.get("evento", True):
+        evento_activos = _filtrar_y_enriquecer_evento_por_radio(evento_activos, cfg_evento)
 
     shundos_activos.sort(
         key=lambda x: (float(x.get("level") or 0.0), int(x.get("cp") or 0), int(x.get("ttl_segundos") or 0)),

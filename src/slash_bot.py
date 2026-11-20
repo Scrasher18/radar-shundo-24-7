@@ -35,6 +35,7 @@ from src.event_manager import (
     limpiar_alertas_evento_discord,
     publicar_o_actualizar_panel_control,
 )
+from src.models import calcular_cooldown_minutos, resolver_coordenadas_y_radio
 from src.pokedex_data import (
     ID_TO_NAME,
     POKEDEX_1025,
@@ -107,6 +108,8 @@ async def autocomplete_presets(
     pokemon_3="Tercera especie opcional (con autocompletado)",
     pokemon_4="Cuarta especie opcional (con autocompletado)",
     pokemon_5="Quinta especie opcional (con autocompletado)",
+    coords_base="Zona/coordenadas base para limitar búsqueda (ej: 41.6616,-0.8928 o Zaragoza)",
+    radio_km="Radio en km para buscar alrededor de la base (ej: 10, 25, 50, 100). Evita cooldowns.",
     acumular="Si es True, suma estos Pokémon a la lista actual sin borrar nada",
     incluir_familia="Si es True, incluye evoluciones de cada especie (recomendado para CD)",
     shundo="Si es True, rastrea 100% IV Shundos de estas especies",
@@ -127,6 +130,8 @@ async def cmd_pokemon(
     pokemon_3: Optional[str] = None,
     pokemon_4: Optional[str] = None,
     pokemon_5: Optional[str] = None,
+    coords_base: Optional[str] = None,
+    radio_km: Optional[int] = None,
     acumular: bool = False,
     incluir_familia: bool = True,
     shundo: bool = True,
@@ -180,6 +185,27 @@ async def cmd_pokemon(
     cfg_ev["incluir_pvp_ul"] = pvp_ul
     cfg_ev["activo"] = True
 
+    texto_geo_aviso = ""
+    if coords_base:
+        if coords_base.strip().lower() in ("global", "mundo", "reset", "sin radio"):
+            cfg_ev["coords_base"] = None
+            cfg_ev["lat_base"] = None
+            cfg_ev["lng_base"] = None
+            cfg_ev["nombre_ubicacion"] = "Global"
+            texto_geo_aviso = "• 📍 **Zona:** 🌍 Global (Todo el mundo)\n"
+        else:
+            res_geo = resolver_coordenadas_y_radio(f"{coords_base} radio {radio_km or 50}")
+            if res_geo:
+                lat_g, lng_g, r_km_g, nom_g = res_geo
+                r_final_g = radio_km or r_km_g or 50
+                cfg_ev["lat_base"] = lat_g
+                cfg_ev["lng_base"] = lng_g
+                cfg_ev["coords_base"] = f"{lat_g:.6f},{lng_g:.6f}"
+                cfg_ev["radio_km"] = r_final_g
+                cfg_ev["nombre_ubicacion"] = nom_g
+                cd_m = calcular_cooldown_minutos(float(r_final_g))
+                texto_geo_aviso = f"• 📍 **Zona Base:** {nom_g} (`{lat_g:.4f}, {lng_g:.4f}`) | Radio `{r_final_g} km` (Cooldown máx: `~{cd_m}m`)\n"
+
     guardar_config_evento(cfg_ev)
     limpiar_alertas_evento_discord()
     publicar_o_actualizar_panel_control()
@@ -195,8 +221,96 @@ async def cmd_pokemon(
     await interaction.followup.send(
         f"✅ **Radar de Eventos configurado para {len(nombres_oficiales)} Pokémon:**\n"
         f"• 📋 **Especies activas:** **{resumen_pokes}** ({fases_txt})\n"
+        f"{texto_geo_aviso}"
         f"• 🎯 **Filtros:** Shundo 100% (`{shundo}`) | Great League (`{pvp_gl}`) | Ultra League (`{pvp_ul}`)\n"
         f"• ⚡ **Escaneo prioritario iniciado de inmediato en `#🎉-evento-cd`...**",
+        ephemeral=True
+    )
+
+
+
+
+@bot.tree.command(
+    name="ubicacion",
+    description="📍 Configura las coordenadas base y el radio para el canal de Eventos y CD (evita cooldown)."
+)
+@app_commands.describe(
+    coordenadas="Coordenadas 'lat, lng' (ej: 41.6616, -0.8928), ciudad/spot (ej: Zaragoza, Pier 39), o 'global'",
+    radio_km="Radio máximo de búsqueda en kilómetros (ej: 10, 25, 50, 100). Por defecto 50 km."
+)
+@app_commands.choices(radio_km=[
+    app_commands.Choice(name="🏙️ 5 km (Barrio / Cooldown ~2-4 min)", value=5),
+    app_commands.Choice(name="⚡ 10 km (Ciudad cercana / Cooldown ~7 min)", value=10),
+    app_commands.Choice(name="🚗 25 km (Área metropolitana / Cooldown ~19 min)", value=25),
+    app_commands.Choice(name="🟢 50 km (Regional recomendado / Cooldown ~30 min)", value=50),
+    app_commands.Choice(name="🚄 100 km (Zona amplia / Cooldown ~45 min)", value=100),
+    app_commands.Choice(name="✈️ 200 km (Provincial / Cooldown ~60 min)", value=200),
+])
+async def cmd_ubicacion(
+    interaction: discord.Interaction,
+    coordenadas: str,
+    radio_km: Optional[int] = 50,
+):
+    await interaction.response.defer(ephemeral=True)
+    limpio = coordenadas.strip()
+    cfg_ev = cargar_config_evento()
+
+    if limpio.lower() in ("global", "mundo", "mundial", "sin radio", "reset", "ninguno"):
+        cfg_ev["coords_base"] = None
+        cfg_ev["lat_base"] = None
+        cfg_ev["lng_base"] = None
+        cfg_ev["nombre_ubicacion"] = "Global"
+        guardar_config_evento(cfg_ev)
+        limpiar_alertas_evento_discord()
+        publicar_o_actualizar_panel_control()
+        publicar_o_actualizar_panel_maestro()
+        sincronizar_estado_remoto_push(asincrono=True)
+
+        if _CALLBACK_ESCANEO_EVENTO:
+            threading.Thread(target=_CALLBACK_ESCANEO_EVENTO, daemon=True).start()
+
+        await interaction.followup.send(
+            "🌍 **Ubicación de Eventos reestablecida a Global.** El radar volverá a buscar en todo el mundo sin límite de distancia.",
+            ephemeral=True
+        )
+        return
+
+    res = resolver_coordenadas_y_radio(f"{limpio} radio {radio_km or 50}")
+    if not res:
+        await interaction.followup.send(
+            f"❌ No se reconocieron las coordenadas o lugar en `{coordenadas}`.\n"
+            f"💡 **Ejemplos válidos:**\n"
+            f"• Coordenadas numéricas: `41.6616, -0.8928` o `-12.0527, -76.9984`\n"
+            f"• Lugares conocidos: `Zaragoza`, `Pier 39`, `Central Park`, `Tokio`, `Lima`, `Sydney`, `Sao Paulo`\n"
+            f"• Para quitar límite: `global`",
+            ephemeral=True
+        )
+        return
+
+    lat, lng, r_km_res, nombre_lugar = res
+    r_final = radio_km or r_km_res or 50
+    cfg_ev["lat_base"] = lat
+    cfg_ev["lng_base"] = lng
+    cfg_ev["coords_base"] = f"{lat:.6f},{lng:.6f}"
+    cfg_ev["radio_km"] = r_final
+    cfg_ev["nombre_ubicacion"] = nombre_lugar
+    guardar_config_evento(cfg_ev)
+
+    limpiar_alertas_evento_discord()
+    publicar_o_actualizar_panel_control()
+    publicar_o_actualizar_panel_maestro()
+    sincronizar_estado_remoto_push(asincrono=True)
+
+    if _CALLBACK_ESCANEO_EVENTO:
+        threading.Thread(target=_CALLBACK_ESCANEO_EVENTO, daemon=True).start()
+
+    cd_m = calcular_cooldown_minutos(float(r_final))
+    await interaction.followup.send(
+        f"📍 **Ubicación base configurada para `#🎉-evento-cd`:**\n"
+        f"• 🎯 **Lugar / Coords:** **{nombre_lugar}** (`{lat:.4f}, {lng:.4f}`)\n"
+        f"• 📏 **Radio de búsqueda:** `{r_final} km`\n"
+        f"• ⏱️ **Cooldown máximo esperado:** `~{cd_m} min` *(¡Atrapas rápido sin cooldowns de 2 horas!)*\n"
+        f"• ⚡ **Escaneo inmediato iniciado en la nueva zona...**",
         ephemeral=True
     )
 
@@ -378,8 +492,9 @@ async def cmd_preset(interaction: discord.Interaction, opcion: str):
 )
 @app_commands.choices(objetivo=[
     app_commands.Choice(name="🎯 Lista de Pokémon de Eventos (dejar en cero para empezar de nuevo)", value="evento"),
+    app_commands.Choice(name="📍 Resetear Coordenadas Base a Global (buscar en todo el mundo)", value="ubicacion"),
     app_commands.Choice(name="💬 Mensajes huérfanos del chat de Control", value="chat"),
-    app_commands.Choice(name="🧹 Limpieza Total (Lista a cero + alertas + chat)", value="todo"),
+    app_commands.Choice(name="🧹 Limpieza Total (Lista + Ubicación global + chat)", value="todo"),
 ])
 async def cmd_limpiar(interaction: discord.Interaction, objetivo: str = "evento"):
     await interaction.response.defer(ephemeral=True)
@@ -389,6 +504,16 @@ async def cmd_limpiar(interaction: discord.Interaction, objetivo: str = "evento"
         cfg_ev["nombre_evento"] = "Community Day / Evento Especial"
         cfg_ev["pokemon_nombres"] = []
         cfg_ev["pokemon_ids"] = []
+        guardar_config_evento(cfg_ev)
+        limpiar_alertas_evento_discord()
+        publicar_o_actualizar_panel_control()
+
+    if objetivo in ("ubicacion", "todo"):
+        cfg_ev = cargar_config_evento()
+        cfg_ev["coords_base"] = None
+        cfg_ev["lat_base"] = None
+        cfg_ev["lng_base"] = None
+        cfg_ev["nombre_ubicacion"] = "Global"
         guardar_config_evento(cfg_ev)
         limpiar_alertas_evento_discord()
         publicar_o_actualizar_panel_control()
@@ -406,6 +531,11 @@ async def cmd_limpiar(interaction: discord.Interaction, objetivo: str = "evento"
             "🧹 **Lista de Pokémon de Eventos reseteada a cero.** El radar está listo para recibir nuevas especies cuando gustes.",
             ephemeral=True
         )
+    elif objetivo == "ubicacion":
+        await interaction.followup.send(
+            "📍 **Ubicación base reseteada a Global.** Ahora el canal de eventos buscará en todo el mundo sin límite de radio.",
+            ephemeral=True
+        )
     elif objetivo == "chat":
         await interaction.followup.send(
             "🧹 **Canal limpiado.** Se eliminaron los mensajes sueltos y quedó el panel maestro visible.",
@@ -413,7 +543,7 @@ async def cmd_limpiar(interaction: discord.Interaction, objetivo: str = "evento"
         )
     else:
         await interaction.followup.send(
-            "🧹 **Limpieza total completada:** Lista de eventos reseteada a cero, alertas anteriores eliminadas y chat limpio.",
+            "🧹 **Limpieza total completada:** Lista de eventos reseteada a cero, ubicación devuelta a global y chat limpio.",
             ephemeral=True
         )
 @bot.tree.command(

@@ -72,22 +72,36 @@ def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
     rareza_txt = obtener_etiquetas_rareza(mon, etiqueta_tipo)
     titulo_txt = f"✨ ¡SHUNDO 100% IV: {nombre}! (CP {cp} • Nivel {nivel})" if es_shiny else f"🌟 ¡100% IV HUNDO: {nombre}! (CP {cp} • Nivel {nivel})"
 
+    fields = [
+        {
+            "name": "📊 Estadísticas",
+            "value": f"**IV:** `100% (15/15/15)`\n**CP:** `{cp}` | **Nivel:** `{nivel}`\n**Talla:** `{size}` ({gender})",
+            "inline": True,
+        },
+        {"name": "⏳ Estado Despawn", "value": estado_tiempo, "inline": True},
+    ]
+
+    dist_txt = mon.get("distancia_base_txt")
+    cd_txt = mon.get("cooldown_estimado_txt")
+    if dist_txt and cd_txt:
+        fields.append({
+            "name": "⏱️ Cooldown & Distancia",
+            "value": f"📏 **Distancia:** `{dist_txt}`\n⏳ **Espera:** {cd_txt}",
+            "inline": False,
+        })
+
+    fields.extend([
+        {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
+        {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
+    ])
+
     return {
         "title": titulo_txt,
         "description": rareza_txt,
         "url": maps_url,
         "color": color_embed,
         "thumbnail": {"url": icon_url},
-        "fields": [
-            {
-                "name": "📊 Estadísticas",
-                "value": f"**IV:** `100% (15/15/15)`\n**CP:** `{cp}` | **Nivel:** `{nivel}`\n**Talla:** `{size}` ({gender})",
-                "inline": True,
-            },
-            {"name": "⏳ Estado Despawn", "value": estado_tiempo, "inline": True},
-            {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
-            {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
-        ],
+        "fields": fields,
         "footer": {"text": f"Radar Shundo Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
@@ -142,28 +156,42 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
 
     titulo_especie = f"{nombre_salvaje} ➔ {pvp_poke_name}" if int(pvp_poke_id) != int(poke_id) else nombre_salvaje
 
+    fields = [
+        {
+            "name": "📊 Datos de Captura y PvP",
+            "value": (
+                f"**Rank PvP:** `#{rank}` (`{pvp_pct:.2f}%`)\n"
+                f"**IVs PvP:** `{raw_iv}`\n"
+                f"**Salvaje:** `CP {cp_salvaje}` | `Nivel {nivel_salvaje}` ({size}, {gender})\n"
+                f"**Final en Liga:** `CP {pvp_cp}` | `Nivel {pvp_lvl}`\n"
+                f"**Caramelos XL:** `{coste_xl_corto}`"
+            ),
+            "inline": True,
+        },
+        {"name": "⏳ Estado Despawn", "value": estado_tiempo, "inline": True},
+    ]
+
+    dist_txt = mon.get("distancia_base_txt")
+    cd_txt = mon.get("cooldown_estimado_txt")
+    if dist_txt and cd_txt:
+        fields.append({
+            "name": "⏱️ Cooldown & Distancia",
+            "value": f"📏 **Distancia:** `{dist_txt}`\n⏳ **Espera:** {cd_txt}",
+            "inline": False,
+        })
+
+    fields.extend([
+        {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
+        {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
+    ])
+
     return {
         "title": f"⚔️ ¡{liga_nombre} — RANK #{rank}: {titulo_especie}!",
         "description": f"{rareza_txt}\n{evolucion_txt}",
         "url": maps_url,
         "color": color_liga,
         "thumbnail": {"url": icon_url},
-        "fields": [
-            {
-                "name": "📊 Datos de Captura y PvP",
-                "value": (
-                    f"**Rank PvP:** `#{rank}` (`{pvp_pct:.2f}%`)\n"
-                    f"**IVs PvP:** `{raw_iv}`\n"
-                    f"**Salvaje:** `CP {cp_salvaje}` | `Nivel {nivel_salvaje}` ({size}, {gender})\n"
-                    f"**Final en Liga:** `CP {pvp_cp}` | `Nivel {pvp_lvl}`\n"
-                    f"**Caramelos XL:** `{coste_xl_corto}`"
-                ),
-                "inline": True,
-            },
-            {"name": "⏳ Estado Despawn", "value": estado_tiempo, "inline": True},
-            {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
-            {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
-        ],
+        "fields": fields,
         "footer": {"text": f"Radar PvP Shiny Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }

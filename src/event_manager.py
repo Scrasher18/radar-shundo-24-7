@@ -26,6 +26,7 @@ from src.config import (
     cifrar_jwt_con_secreto,
     extraer_exp_jwt,
 )
+from src.models import calcular_cooldown_minutos, resolver_coordenadas_y_radio
 from src.presets_catalog import (
     FAMILIAS_POKEDEX,
     PRESETS_EVENTO,
@@ -68,6 +69,11 @@ def cargar_config_evento() -> Dict[str, Any]:
             "pvp_top_rank": 5,
             "panel_msg_id": None,
             "ultimo_cmd_msg_id": None,
+            "coords_base": None,
+            "lat_base": None,
+            "lng_base": None,
+            "radio_km": 50,
+            "nombre_ubicacion": "Global",
         }
 
 
@@ -166,6 +172,29 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
     else:
         estado_jwt = "🟢 **Activo**"
 
+    lat_base = cfg.get("lat_base")
+    lng_base = cfg.get("lng_base")
+    radio_km = cfg.get("radio_km") or 50
+    nombre_ubicacion = cfg.get("nombre_ubicacion") or "Global"
+
+    if lat_base is not None and lng_base is not None:
+        max_cd = calcular_cooldown_minutos(float(radio_km))
+        if max_cd == 0:
+            cd_info = "🟢 **0 min (Inmediato)**"
+        elif max_cd <= 15:
+            cd_info = f"🟢 **~{max_cd} min** *(Mínimo)*"
+        elif max_cd <= 35:
+            cd_info = f"🟡 **~{max_cd} min** *(Moderado)*"
+        else:
+            cd_info = f"🟠 **~{max_cd} min**"
+
+        ubicacion_str = (
+            f"🎯 **Radio {radio_km} km** • **{nombre_ubicacion}** (`{lat_base:.4f}, {lng_base:.4f}`)\n"
+            f"⏱️ **Cooldown máx. esperado:** {cd_info} *(¡Capturas sin esperar horas!)*"
+        )
+    else:
+        ubicacion_str = "🌍 **Global (5 Continentes)** • Sin límite de distancia *(Cooldown hasta 120m entre saltos lejanos)*"
+
     guia_presets = (
         "• **`preset master`** ➔ 👑 Top Master League, Raids y Pseudo-Legendarios *(100% Shundo)*\n"
         "• **`preset mega`** ➔ 🧬 Todos los Pokémon con Mega Evolución *(100% Shundo)*\n"
@@ -176,6 +205,8 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
     guia_comandos = (
         "• **`Mankey, Beldum, Ralts`** ➔ Busca esos Pokémon y sus evoluciones\n"
         "• **`+Bagon`** o **`-Bagon`** ➔ Agrega o quita un Pokémon de la lista\n"
+        "• **`coords zaragoza radio 25`** o **`coords 41.6616,-0.8928`** ➔ Fija zona base (menos cooldown)\n"
+        "• **`radio 30`** ➔ Cambia el radio en km | **`coords global`** ➔ Vuelve al radar mundial\n"
         "• **`modo todo`** | **`modo shundo`** | **`modo pvp`** | **`modo gl`** | **`modo ul`**\n"
         "• **`token eyJ...`** ➔ Renueva tu `JWT_TOKEN` directo desde Discord sin abrir GitHub\n"
         "• **`off`** o **`apagar`** ➔ Detiene el evento y limpia las alertas"
@@ -186,6 +217,7 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
         {"name": "⚙️ Filtros Activos", "value": modos_str, "inline": True},
         {"name": "🔑 Sesión API (JWT)", "value": estado_jwt, "inline": True},
         {"name": "🎯 Pokémon Rastreados", "value": lista_pokes_str, "inline": False},
+        {"name": "📍 Zona de Búsqueda & Cooldown", "value": ubicacion_str, "inline": False},
         {"name": "⚡ Presets Rápidos de 1 Palabra", "value": guia_presets, "inline": False},
         {"name": "⌨️ Comandos desde Celular o PC", "value": guia_comandos, "inline": False},
     ]
@@ -386,6 +418,55 @@ def procesar_comando_texto_evento(texto: str) -> bool:
         publicar_o_actualizar_panel_control()
         sincronizar_estado_remoto_push(asincrono=True)
         return True
+
+    # 3.5 Comandos de Coordenadas Base y Radio (Cooldown)
+    if low in ("coords global", "radio global", "sin radio", "mundial", "coords reset", "global", "coords none"):
+        cfg["coords_base"] = None
+        cfg["lat_base"] = None
+        cfg["lng_base"] = None
+        cfg["nombre_ubicacion"] = "Global"
+        guardar_config_evento(cfg)
+        publicar_o_actualizar_panel_control()
+        _enviar_aviso_temporal_evento("🌍 **Zona de Eventos reestablecida a Global (todo el mundo sin límite)**.", segundos_visible=8.0)
+        sincronizar_estado_remoto_push(asincrono=True)
+        return bool(cfg.get("activo"))
+
+    m_solo_radio = re.match(r"^radio\s*[:=]?\s*(\d+)\s*(?:km)?$", low)
+    if m_solo_radio:
+        nuevo_r = int(m_solo_radio.group(1))
+        cfg["radio_km"] = max(1, min(20000, nuevo_r))
+        guardar_config_evento(cfg)
+        publicar_o_actualizar_panel_control()
+        cd_m = calcular_cooldown_minutos(float(cfg["radio_km"]))
+        _enviar_aviso_temporal_evento(
+            f"📏 **Radio de Eventos actualizado a `{cfg['radio_km']} km`** (Cooldown máx. esperado: `~{cd_m} min`).",
+            segundos_visible=8.0
+        )
+        sincronizar_estado_remoto_push(asincrono=True)
+        return bool(cfg.get("activo"))
+
+    if low.startswith(("coords ", "coordenadas ", "ubicacion ", "base ", "spot ")) or re.search(r"(-?\d{1,3}\.\d+)[,\s]+(-?\d{1,3}\.\d+)", low):
+        res_c = resolver_coordenadas_y_radio(limpio)
+        if res_c:
+            lat, lng, r_km, nombre_lugar = res_c
+            cfg["lat_base"] = lat
+            cfg["lng_base"] = lng
+            cfg["coords_base"] = f"{lat:.6f},{lng:.6f}"
+            cfg["nombre_ubicacion"] = nombre_lugar
+            if r_km:
+                cfg["radio_km"] = r_km
+            elif not cfg.get("radio_km"):
+                cfg["radio_km"] = 50
+            guardar_config_evento(cfg)
+            publicar_o_actualizar_panel_control()
+            cd_m = calcular_cooldown_minutos(float(cfg["radio_km"]))
+            _enviar_aviso_temporal_evento(
+                f"📍 **Zona Base de Eventos fijada en {nombre_lugar}** (`{lat:.4f}, {lng:.4f}`).\n"
+                f"📏 **Radio:** `{cfg['radio_km']} km` • ⏱️ **Cooldown máx:** `~{cd_m} min` *(¡Sin esperas largas!)*",
+                segundos_visible=10.0
+            )
+            sincronizar_estado_remoto_push(asincrono=True)
+            return bool(cfg.get("activo"))
 
     # 4. Comando de cambio de modo
     if low.startswith("modo "):
