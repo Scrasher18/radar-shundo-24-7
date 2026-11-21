@@ -54,58 +54,5 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 19:36:35"
-  },
-  "evento:-2217731802484032716": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "-12.048665,-77.049565",
-    "ts": 1795291622,
-    "despawn_unix": 1795292594,
-    "discord_msg_id": "1573791877726208111",
-    "discord_msg_ids": [
-      "1573791877726208111"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #2: Pawniard ➔ Kingambit!",
-      "description": "🏆 **RANK #2** (`99.86%` PvP) • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Kingambit** (`CP 2497` a Nivel `26.0`)",
-      "url": "https://www.google.com/maps?q=-12.048665,-77.049565",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm983.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#2` (`99.86%`)\n**IVs PvP:** `0/12/13`\n**Salvaje:** `CP 659` | `Nivel 18.0` (M, Female)\n**Final en Liga:** `CP 2497` | `Nivel 26.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795292594:R> (`16 min 11 seg`)\n🕒 **Hora exacta:** <t:1795292594:T>",
-          "inline": true
-        },
-        {
-          "name": "⏱️ Cooldown & Distancia",
-          "value": "📏 **Distancia:** `1.8 km`\n⏳ **Espera:** 🟢 **~2 min** *(Cooldown mínimo)*",
-          "inline": false
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Breña, Lima Province, Peru • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.048665,-77.049565)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas (🎉 Evento PvP Ultra League)",
-          "value": "```\n🎉 -12.048665,-77.049565\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T20:07:03.198447+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 20:07:03"
   }
 }
