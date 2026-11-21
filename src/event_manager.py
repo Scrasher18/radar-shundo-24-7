@@ -131,12 +131,15 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
     if pausa_global:
         estado_str = "🔴 **PAUSADO GLOBALMENTE (Radar en pausa)**"
         color = 0xEF4444
-    elif not canal_evento_on or not activo:
-        estado_str = "🔴 **PAUSADO / APAGADO (Canal detenido)**"
+    elif not canal_evento_on:
+        estado_str = "🔴 **APAGADO / PAUSADO (Canal desactivado)**"
+        color = 0xEF4444
+    elif not activo:
+        estado_str = "🔴 **APAGADO (Canal detenido)**"
         color = 0xEF4444
     elif not (nombres or ids):
-        estado_str = "⏸️ **EN ESPERA (Sin Pokémon asignados)**"
-        color = 0x6366F1
+        estado_str = "🔴 **APAGADO / DETENIDO (Sin Pokémon asignados)**"
+        color = 0xEF4444
     else:
         estado_str = f"🟢 **ACTIVO** ({titulo_evento})"
         color = 0x10B981
@@ -232,8 +235,11 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
             "inline": False,
         })
 
+    esta_activo = bool(activo and canal_evento_on and not pausa_global and (nombres or ids))
+    tag_titulo = "🟢 ACTIVO" if esta_activo else "🔴 APAGADO"
+
     return {
-        "title": "🎛️ PANEL DE CONTROL — EVENTOS Y COMMUNITY DAY",
+        "title": f"🎛️ PANEL DE CONTROL — EVENTOS Y COMMUNITY DAY ({tag_titulo})",
         "description": "Controla en tiempo real tus **Eventos, Community Days, Presets y Sesión JWT** desde Discord.",
         "color": color,
         "fields": fields,
@@ -394,6 +400,11 @@ def procesar_comando_texto_evento(texto: str) -> bool:
         guardar_config_evento(cfg)
         limpiar_alertas_evento_discord()
         publicar_o_actualizar_panel_control()
+        try:
+            from src.control_panel import publicar_o_actualizar_panel_maestro
+            publicar_o_actualizar_panel_maestro()
+        except Exception:
+            pass
         sincronizar_estado_remoto_push(asincrono=True)
         return False
 

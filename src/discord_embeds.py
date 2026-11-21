@@ -51,7 +51,7 @@ def construir_estado_despawn(mon: Dict[str, Any]) -> Tuple[str, int]:
     return estado_tiempo, color_urgencia
 
 
-def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
+def construir_embed_shundo(mon: Dict[str, Any], es_evento: bool = False) -> Dict[str, Any]:
     """Construye el Embed de Discord para un Pokémon Hundo / Shundo 100% IV."""
     origen_txt = "☁️ Nube 24/7"
     poke_id = mon.get("pokemon_id") or 1
@@ -90,9 +90,11 @@ def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
             "inline": False,
         })
 
+    emoji_coord = "🎉" if es_evento else "🌟"
+    titulo_coord = "🎯 Coordenadas Exactas (🎉 Evento / CD)" if es_evento else "🎯 Coordenadas Exactas (🌟 Hundo 100%)"
     fields.extend([
         {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
-        {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
+        {"name": titulo_coord, "value": f"```\n{emoji_coord} {coords}\n```", "inline": False},
     ])
 
     return {
@@ -107,8 +109,8 @@ def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
-    """Construye el Embed de Discord para un Pokémon Shiny Top 1-5 de Great League o Ultra League."""
+def construir_embed_pvp(mon: Dict[str, Any], league: str, es_evento: bool = False) -> Dict[str, Any]:
+    """Construye el Embed de Discord para un Pokémon Top 1-5 de Great League o Ultra League."""
     origen_txt = "☁️ Nube 24/7"
     poke_id = mon.get("pokemon_id") or 1
     nombre_salvaje = mon.get("nombre_completo") or mon.get("pokemon_name") or f"#{poke_id}"
@@ -130,7 +132,9 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
     pvp_pct = float(pvp.get("percent") or 100.0)
 
     es_gl = league == "great"
-    liga_nombre = "🔵 GREAT LEAGUE (1500 CP)" if es_gl else "🟣 ULTRA LEAGUE (2500 CP)"
+    emoji_liga = "🔵" if es_gl else "🟣"
+    nombre_corta = "Great League" if es_gl else "Ultra League"
+    liga_nombre = f"{emoji_liga} GREAT LEAGUE (1500 CP)" if es_gl else f"{emoji_liga} ULTRA LEAGUE (2500 CP)"
     color_liga = 0x3B82F6 if es_gl else 0xA855F7
     medalla_rank = "🥇 **RANK #1 (100% STAT PRODUCT)**" if rank == 1 else f"🏆 **RANK #{rank}** (`{pvp_pct:.2f}%` PvP)"
 
@@ -179,9 +183,11 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
             "inline": False,
         })
 
+    emoji_coord = "🎉" if es_evento else emoji_liga
+    titulo_coord = f"🎯 Coordenadas Exactas (🎉 Evento PvP {nombre_corta})" if es_evento else f"🎯 Coordenadas Exactas ({emoji_liga} {nombre_corta})"
     fields.extend([
         {"name": "📍 Ubicación", "value": f"{ubicacion} • [🗺️ Ver en Google Maps]({maps_url})", "inline": False},
-        {"name": "🎯 Coordenadas Exactas", "value": f"```\n{coords}\n```", "inline": False},
+        {"name": titulo_coord, "value": f"```\n{emoji_coord} {coords}\n```", "inline": False},
     ])
 
     return {

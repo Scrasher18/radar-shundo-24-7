@@ -98,8 +98,8 @@ def construir_embed_seguro(mon: Dict[str, Any], canal_tipo: str) -> Dict[str, An
     if canal_tipo == "evento":
         pvp = mon.get("pvp") or {}
         if pvp.get("league") in ("great", "ultra"):
-            return construir_embed_pvp(mon, str(pvp.get("league")))
-        return construir_embed_shundo(mon)
+            return construir_embed_pvp(mon, str(pvp.get("league")), es_evento=True)
+        return construir_embed_shundo(mon, es_evento=True)
     return construir_embed_pvp(mon, canal_tipo)
 
 

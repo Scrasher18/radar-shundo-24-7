@@ -117,9 +117,9 @@ def construir_embed_panel_maestro(cfg: Dict[str, Any]) -> Dict[str, Any]:
     color_embed = 0xEF4444 if pausado else 0x2563EB
 
     estado_radar = "🔴 **PAUSADO GLOBALMENTE**" if pausado else "🟢 **ACTIVO Y ESCANEANDO EN LA NUBE 24/7**"
-    tag_shundo = "🟢 ACTIVO" if shundo_on else "🔴 PAUSADO"
-    tag_gl = "🟢 ACTIVO" if gl_on else "🔴 PAUSADO"
-    tag_ul = "🟢 ACTIVO" if ul_on else "🔴 PAUSADO"
+    tag_shundo = "🟢 ACTIVO" if shundo_on else "🔴 APAGADO"
+    tag_gl = "🟢 ACTIVO" if gl_on else "🔴 APAGADO"
+    tag_ul = "🟢 ACTIVO" if ul_on else "🔴 APAGADO"
 
     try:
         from src.event_manager import cargar_config_evento
@@ -129,16 +129,17 @@ def construir_embed_panel_maestro(cfg: Dict[str, Any]) -> Dict[str, Any]:
         ev_activo = True
 
     if not evento_on:
-        tag_evento = "🔴 PAUSADO"
+        tag_evento = "🔴 APAGADO"
     elif not ev_activo:
-        tag_evento = "⏸️ EN ESPERA (Sin Pokémon)"
+        tag_evento = "🔴 APAGADO (Sin Pokémon)"
     else:
         tag_evento = "🟢 ACTIVO"
 
     resumen_pool = obtener_resumen_cuentas_pool()
 
+    tag_panel = "🔴 PAUSADO" if pausado else "🟢 ACTIVO"
     return {
-        "title": "🎛️ PANEL MAESTRO DE CONTROL — RADAR POKÉMON GO PRO",
+        "title": f"🎛️ PANEL MAESTRO DE CONTROL — RADAR POKÉMON GO PRO ({tag_panel})",
         "description": (
             f"**Estado del Radar:** {estado_radar}\n\n"
             "Controla todos los canales, frecuencias y ligas directamente desde este chat.\n"
@@ -278,6 +279,11 @@ def procesar_comando_control(contenido: str) -> bool:
         guardar_config_control(cfg)
         _enviar_aviso_temporal("⏸️ **Radar pausado globalmente.** No se enviarán nuevas alertas hasta reanudar.")
         publicar_o_actualizar_panel_maestro()
+        try:
+            from src.event_manager import publicar_o_actualizar_panel_control
+            publicar_o_actualizar_panel_control()
+        except Exception:
+            pass
         sincronizar_estado_remoto_push(asincrono=True)
         return True
 
@@ -286,6 +292,11 @@ def procesar_comando_control(contenido: str) -> bool:
         guardar_config_control(cfg)
         _enviar_aviso_temporal("▶️ **Radar reanudado.** El escaneo 24/7 vuelve a estar en marcha.")
         publicar_o_actualizar_panel_maestro()
+        try:
+            from src.event_manager import publicar_o_actualizar_panel_control
+            publicar_o_actualizar_panel_control()
+        except Exception:
+            pass
         sincronizar_estado_remoto_push(asincrono=True)
         return True
 

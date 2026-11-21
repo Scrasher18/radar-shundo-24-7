@@ -571,14 +571,15 @@ async def cmd_apagar(interaction: discord.Interaction, objetivo: str):
         publicar_o_actualizar_panel_control()
         publicar_o_actualizar_panel_maestro()
         sincronizar_estado_remoto_push(asincrono=True)
-        await interaction.followup.send("🛑 **Canal de Eventos & CD apagado.** No se enviarán alertas hasta activar una especie.", ephemeral=True)
+        await interaction.followup.send("🛑 **Canal de Eventos & CD apagado (🔴).** No se enviarán alertas hasta activar una especie.", ephemeral=True)
     else:
         cfg_ctrl = cargar_config_control()
         cfg_ctrl["pausa_global"] = True
         guardar_config_control(cfg_ctrl)
         publicar_o_actualizar_panel_maestro()
+        publicar_o_actualizar_panel_control()
         sincronizar_estado_remoto_push(asincrono=True)
-        await interaction.followup.send("⏸️ **Radar pausado globalmente.** No se enviarán alertas en ningún canal.", ephemeral=True)
+        await interaction.followup.send("⏸️ **Radar pausado globalmente (🔴).** No se enviarán alertas en ningún canal.", ephemeral=True)
 
 
 @bot.tree.command(
@@ -591,8 +592,9 @@ async def cmd_reanudar(interaction: discord.Interaction):
     cfg_ctrl["pausa_global"] = False
     guardar_config_control(cfg_ctrl)
     publicar_o_actualizar_panel_maestro()
+    publicar_o_actualizar_panel_control()
     sincronizar_estado_remoto_push(asincrono=True)
-    await interaction.followup.send("▶️ **Radar reanudado.** El escaneo 24/7 en todos los canales activos continúa normalmente.", ephemeral=True)
+    await interaction.followup.send("▶️ **Radar reanudado (🟢).** El escaneo 24/7 en todos los canales activos continúa normalmente.", ephemeral=True)
 
 
 @bot.tree.command(
@@ -651,10 +653,10 @@ async def cmd_canal(interaction: discord.Interaction, canal: str, estado: str):
             cfg_ev = cargar_config_evento()
             cfg_ev["activo"] = activar
             guardar_config_evento(cfg_ev)
-            publicar_o_actualizar_panel_control()
         except Exception:
             pass
 
+    publicar_o_actualizar_panel_control()
     publicar_o_actualizar_panel_maestro()
     sincronizar_estado_remoto_push(asincrono=True)
 
