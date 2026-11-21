@@ -54,6 +54,7 @@ jobs:
           DISCORD_USER_ID_MENCION: "924392800534011935"
           CLOUD_MODE: "1"
         run: |
+          set -o pipefail
           git config --global --add safe.directory "$GITHUB_WORKSPACE" || true
           git config --global user.name "radar-shundo-bot" || true
           git config --global user.email "radar-bot@users.noreply.github.com" || true

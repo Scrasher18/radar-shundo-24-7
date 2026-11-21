@@ -3,12 +3,14 @@ Motor principal de escaneo multi-canal (Shundos 100%, Great League y Ultra Leagu
 y orquestador de ciclos 24/7.
 """
 
+from __future__ import annotations
+
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 import os
 import sys
 import time
-from typing import Any, Dict
+from typing import Any, Dict, List, Optional, Tuple
 
 from src.api_client import (
     ejecutar_particion_search,
