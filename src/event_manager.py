@@ -369,12 +369,13 @@ def procesar_comando_texto_evento(texto: str) -> bool:
         return False
 
     low = limpio.lower()
-    if low.startswith("!evento"):
-        limpio = limpio[7:].strip()
+    # Si el usuario escribe comandos como /ubicacion, /coords, /radio, !preset, etc.
+    if low.startswith(("/", "!")):
+        limpio = re.sub(r"^[!/]+", "", limpio).strip()
         low = limpio.lower()
-    elif low.startswith("/evento"):
-        limpio = limpio[7:].strip()
-        low = limpio.lower()
+        if low.startswith("evento "):
+            limpio = limpio[7:].strip()
+            low = limpio.lower()
 
     # 0. Renovación de JWT_TOKEN ("token eyJ..." o pegar directamente "eyJ...")
     if low.startswith(("token ", "jwt ")) or (limpio.startswith("eyJ") and limpio.count(".") >= 2 and len(limpio) > 60):
