@@ -3,10 +3,12 @@
   "nombre_evento": "Evento: Pawniard",
   "webhook_evento": "",
   "pokemon_ids": [
-    624
+    624,
+    625
   ],
   "pokemon_nombres": [
-    "Pawniard"
+    "Pawniard",
+    "Bisharp"
   ],
   "incluir_shundos_100": true,
   "incluir_pvp_gl": true,
