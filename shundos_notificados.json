@@ -378,9 +378,10 @@
     "coords": "-12.038358,-76.965453",
     "ts": 1795289826,
     "despawn_unix": 1795290746,
-    "discord_msg_id": "1573784343489552485",
+    "discord_msg_id": "1573786528528736282",
     "discord_msg_ids": [
-      "1573784343489552485"
+      "1573784343489552485",
+      "1573786528528736282"
     ],
     "embed_base": {
       "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Pawniard!",
@@ -398,7 +399,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795290746:R> (`15 min 19 seg`)\n🕒 **Hora exacta:** <t:1795290746:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795290746:R> (`6 min 38 seg`)\n🕒 **Hora exacta:** <t:1795290746:T>",
           "inline": true
         },
         {
@@ -420,9 +421,9 @@
       "footer": {
         "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T19:37:06.850579+00:00"
+      "timestamp": "2026-11-21T19:45:47.864404+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 19:37:07"
   },
   "evento:-2498567918101377088": {
@@ -431,9 +432,10 @@
     "coords": "-12.050498,-76.941391",
     "ts": 1795289826,
     "despawn_unix": 1795291116,
-    "discord_msg_id": "1573784343489552485",
+    "discord_msg_id": "1573786528528736282",
     "discord_msg_ids": [
-      "1573784343489552485"
+      "1573784343489552485",
+      "1573786528528736282"
     ],
     "embed_base": {
       "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #3: Pawniard!",
@@ -451,7 +453,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795291116:R> (`21 min 29 seg`)\n🕒 **Hora exacta:** <t:1795291116:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795291116:R> (`12 min 48 seg`)\n🕒 **Hora exacta:** <t:1795291116:T>",
           "inline": true
         },
         {
@@ -473,9 +475,9 @@
       "footer": {
         "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T19:37:06.850624+00:00"
+      "timestamp": "2026-11-21T19:45:47.864423+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 19:37:07"
   },
   "evento:9141496269841830117": {
@@ -530,5 +532,217 @@
     },
     "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 19:37:07"
+  },
+  "evento:-6183119867771608024": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-12.049547,-76.953279",
+    "ts": 1795290347,
+    "despawn_unix": 1795290965,
+    "discord_msg_id": "1573786528528736282",
+    "discord_msg_ids": [
+      "1573786528528736282"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1496` en Nivel `50.0`",
+      "url": "https://www.google.com/maps?q=-12.049547,-76.953279",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `2/15/15`\n**Salvaje:** `CP 718` | `Nivel 19.0` (M, Male)\n**Final en Liga:** `CP 1496` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795290965:R> (`10 min 17 seg`)\n🕒 **Hora exacta:** <t:1795290965:T>",
+          "inline": true
+        },
+        {
+          "name": "⏱️ Cooldown & Distancia",
+          "value": "📏 **Distancia:** `905 m`\n⏳ **Espera:** 🟢 **¡Sin cooldown! (0 min - Inmediato)**",
+          "inline": false
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Santa Anita - Los Ficus, Lima Province, Peru • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.049547,-76.953279)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento PvP Great League)",
+          "value": "```\n🎉 -12.049547,-76.953279\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T19:45:47.864356+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 19:45:48"
+  },
+  "evento:3677107865678643113": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-12.042086,-76.961831",
+    "ts": 1795290347,
+    "despawn_unix": 1795291452,
+    "discord_msg_id": "1573786528528736282",
+    "discord_msg_ids": [
+      "1573786528528736282"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1496` en Nivel `50.0`",
+      "url": "https://www.google.com/maps?q=-12.042086,-76.961831",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `2/15/15`\n**Salvaje:** `CP 567` | `Nivel 15.0` (M, Female)\n**Final en Liga:** `CP 1496` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795291452:R> (`18 min 24 seg`)\n🕒 **Hora exacta:** <t:1795291452:T>",
+          "inline": true
+        },
+        {
+          "name": "⏱️ Cooldown & Distancia",
+          "value": "📏 **Distancia:** `696 m`\n⏳ **Espera:** 🟢 **¡Sin cooldown! (0 min - Inmediato)**",
+          "inline": false
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Santa Anita - Los Ficus, Lima Province, Peru • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.042086,-76.961831)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento PvP Great League)",
+          "value": "```\n🎉 -12.042086,-76.961831\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T19:45:47.864386+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 19:45:48"
+  },
+  "evento:5846601028848859302": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-12.045585,-76.951379",
+    "ts": 1795290347,
+    "despawn_unix": 1795290641,
+    "discord_msg_id": "1573786528528736282",
+    "discord_msg_ids": [
+      "1573786528528736282"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #4: Pawniard!",
+      "description": "🏆 **RANK #4** (`99.36%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1486` en Nivel `50.0`",
+      "url": "https://www.google.com/maps?q=-12.045585,-76.951379",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#4` (`99.36%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 826` | `Nivel 22.0` (M, Male)\n**Final en Liga:** `CP 1486` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🔴 **¡SALTAR YA!**\n⏱️ **Desaparece:** <t:1795290641:R> (`4 min 53 seg`)\n🕒 **Hora exacta:** <t:1795290641:T>",
+          "inline": true
+        },
+        {
+          "name": "⏱️ Cooldown & Distancia",
+          "value": "📏 **Distancia:** `618 m`\n⏳ **Espera:** 🟢 **¡Sin cooldown! (0 min - Inmediato)**",
+          "inline": false
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Santa Anita - Los Ficus, Lima Province, Peru • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.045585,-76.951379)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento PvP Great League)",
+          "value": "```\n🎉 -12.045585,-76.951379\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T19:45:47.864437+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 19:45:48"
+  },
+  "evento:4617830459376416814": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-12.048100,-76.945031",
+    "ts": 1795290347,
+    "despawn_unix": 1795291458,
+    "discord_msg_id": "1573786528528736282",
+    "discord_msg_ids": [
+      "1573786528528736282"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #4: Pawniard!",
+      "description": "🏆 **RANK #4** (`99.36%` PvP) • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1486` en Nivel `50.0`",
+      "url": "https://www.google.com/maps?q=-12.048100,-76.945031",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#4` (`99.36%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 601` | `Nivel 16.0` (M, Female)\n**Final en Liga:** `CP 1486` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795291458:R> (`18 min 30 seg`)\n🕒 **Hora exacta:** <t:1795291458:T>",
+          "inline": true
+        },
+        {
+          "name": "⏱️ Cooldown & Distancia",
+          "value": "📏 **Distancia:** `1.3 km`\n⏳ **Espera:** 🟢 **~2 min** *(Cooldown mínimo)*",
+          "inline": false
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Santa Anita - Los Ficus, Lima Province, Peru • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.048100,-76.945031)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento PvP Great League)",
+          "value": "```\n🎉 -12.048100,-76.945031\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T19:45:47.864453+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 19:45:48"
   }
 }
