@@ -1,60 +1,4 @@
 {
-  "evento:3074460023460573764": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "-12.078338,-77.04102",
-    "ts": 1795289794,
-    "despawn_unix": 1795294639,
-    "discord_msg_id": "1573791877726208111",
-    "discord_msg_ids": [
-      "1573784207917060242",
-      "1573786772909981712",
-      "1573788315562279045",
-      "1573791877726208111"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 150 • Nivel 4.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=-12.078338,-77.04102",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `150` | **Nivel:** `4.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795294639:R> (`50 min 16 seg`)\n🕒 **Hora exacta:** <t:1795294639:T>",
-          "inline": true
-        },
-        {
-          "name": "⏱️ Cooldown & Distancia",
-          "value": "📏 **Distancia:** `2.2 km`\n⏳ **Espera:** 🟢 **~2 min** *(Cooldown mínimo)*",
-          "inline": false
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Jesus Maria, Lima Province, Peru • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.078338,-77.04102)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
-          "value": "```\n🎉 -12.078338,-77.04102\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T20:07:03.198401+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 19:36:35"
-  },
   "evento:-1281522130910005684": {
     "canal": "evento",
     "pokemon": "Pawniard",
@@ -105,7 +49,7 @@
       },
       "timestamp": "2026-11-21T21:13:46.688196+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 21:13:47"
   },
   "evento:-1953110368007046721": {
@@ -211,7 +155,7 @@
       },
       "timestamp": "2026-11-21T21:13:46.688260+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 21:13:47"
   },
   "evento:8792753772890656203": {
@@ -264,7 +208,7 @@
       },
       "timestamp": "2026-11-21T21:13:46.688273+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 21:13:47"
   },
   "evento:2026595741678111934": {
@@ -317,7 +261,7 @@
       },
       "timestamp": "2026-11-21T21:13:46.688301+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 21:13:47"
   },
   "evento:-6051542715772847443": {
