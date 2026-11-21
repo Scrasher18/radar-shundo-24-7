@@ -1,1307 +1,4 @@
 {
-  "evento:-5729245885415605257": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "38.09155,-3.622136",
-    "ts": 1795274114,
-    "despawn_unix": 1795277284,
-    "discord_msg_id": "1573718443750989964",
-    "discord_msg_ids": [
-      "1573718443750989964"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 573 • Nivel 14.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=38.09155,-3.622136",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `573` | **Nivel:** `14.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277284:R> (`52 min 49 seg`)\n🕒 **Hora exacta:** <t:1795277284:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Linares, Jaén, Spain • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.09155,-3.622136)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n38.09155,-3.622136\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:15.075797+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:15"
-  },
-  "evento:-3066842066680754052": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "52.010368,5.133805",
-    "ts": 1795274114,
-    "despawn_unix": 1795277481,
-    "discord_msg_id": "1573718443750989964",
-    "discord_msg_ids": [
-      "1573718443750989964"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 532 • Nivel 13.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=52.010368,5.133805",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `532` | **Nivel:** `13.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277481:R> (`56 min 06 seg`)\n🕒 **Hora exacta:** <t:1795277481:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Vianen, Utrecht, Netherlands • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.010368,5.133805)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.010368,5.133805\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:15.075826+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:15"
-  },
-  "evento:-3469894572233629783": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "49.647175,6.132543",
-    "ts": 1795274114,
-    "despawn_unix": 1795277381,
-    "discord_msg_id": "1573718443750989964",
-    "discord_msg_ids": [
-      "1573718443750989964"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 491 • Nivel 12.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=49.647175,6.132543",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `491` | **Nivel:** `12.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277381:R> (`54 min 26 seg`)\n🕒 **Hora exacta:** <t:1795277381:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Walferdange, Luxembourg • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=49.647175,6.132543)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n49.647175,6.132543\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:15.075839+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:15"
-  },
-  "evento:-9183965416081369511": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "53.257095,10.4083",
-    "ts": 1795274114,
-    "despawn_unix": 1795277285,
-    "discord_msg_id": "1573718443750989964",
-    "discord_msg_ids": [
-      "1573718443750989964"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 106 • Nivel 3.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=53.257095,10.4083",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `106` | **Nivel:** `3.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277285:R> (`52 min 50 seg`)\n🕒 **Hora exacta:** <t:1795277285:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Lüneburg, Niedersachsen, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.257095,10.4083)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n53.257095,10.4083\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:15.075852+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:15"
-  },
-  "evento:-6649783443480561310": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "43.737536,11.295916",
-    "ts": 1795274114,
-    "despawn_unix": 1795277506,
-    "discord_msg_id": "1573718443750989964",
-    "discord_msg_ids": [
-      "1573718443750989964"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1496` en Nivel `50.0`",
-      "url": "https://www.google.com/maps?q=43.737536,11.295916",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `2/15/15`\n**Salvaje:** `CP 338` | `Nivel 9.0` (M, Male)\n**Final en Liga:** `CP 1496` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277506:R> (`56 min 32 seg`)\n🕒 **Hora exacta:** <t:1795277506:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Ponte a Ema, Firenze, Italy • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=43.737536,11.295916)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n43.737536,11.295916\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:15.075877+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:15"
-  },
-  "evento:9172641964138541550": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "53.336159,-2.969309",
-    "ts": 1795274114,
-    "despawn_unix": 1795277465,
-    "discord_msg_id": "1573718443750989964",
-    "discord_msg_ids": [
-      "1573718443750989964"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1496` en Nivel `50.0`",
-      "url": "https://www.google.com/maps?q=53.336159,-2.969309",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `2/15/15`\n**Salvaje:** `CP 178` | `Nivel 5.0` (M, Male)\n**Final en Liga:** `CP 1496` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277465:R> (`55 min 50 seg`)\n🕒 **Hora exacta:** <t:1795277465:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Bromborough, Halton, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.336159,-2.969309)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n53.336159,-2.969309\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:15.075897+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:15"
-  },
-  "shundo:-2832210529782999294": {
-    "canal": "shundo",
-    "pokemon": "Emolga",
-    "coords": "-25.276794,-57.652572",
-    "ts": 1795274159,
-    "despawn_unix": 1795275188,
-    "discord_msg_id": "1573718629550391422",
-    "discord_msg_ids": [
-      "1573718629550391422"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Emolga! (CP 1517 • Nivel 35.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=-25.276794,-57.652572",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm587.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1517` | **Nivel:** `35.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795275188:R> (`17 min 08 seg`)\n🕒 **Hora exacta:** <t:1795275188:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Sudamérica • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-25.276794,-57.652572)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n-25.276794,-57.652572\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:59.461592+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:59"
-  },
-  "shundo:-4581694546722623128": {
-    "canal": "shundo",
-    "pokemon": "Stufful",
-    "coords": "-29.927253,-51.170527",
-    "ts": 1795274159,
-    "despawn_unix": 1795275109,
-    "discord_msg_id": "1573718629550391422",
-    "discord_msg_ids": [
-      "1573718629550391422"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Stufful! (CP 1256 • Nivel 35.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=-29.927253,-51.170527",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm759.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1256` | **Nivel:** `35.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795275109:R> (`15 min 49 seg`)\n🕒 **Hora exacta:** <t:1795275109:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Sudamérica • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-29.927253,-51.170527)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n-29.927253,-51.170527\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:59.461618+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:59"
-  },
-  "shundo:1972713965326983027": {
-    "canal": "shundo",
-    "pokemon": "Oddish",
-    "coords": "-22.463914,-68.933945",
-    "ts": 1795274159,
-    "despawn_unix": 1795276693,
-    "discord_msg_id": "1573724420684382308",
-    "discord_msg_ids": [
-      "1573718629550391422",
-      "1573720565003460669",
-      "1573722497696661620",
-      "1573724420684382308"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Oddish! (CP 1141 • Nivel 35.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=-22.463914,-68.933945",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm43.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1141` | **Nivel:** `35.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795276693:R> (`19 min 14 seg`)\n🕒 **Hora exacta:** <t:1795276693:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Sudamérica • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-22.463914,-68.933945)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n-22.463914,-68.933945\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:38:58.941898+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:59"
-  },
-  "shundo:-8969546686447037755": {
-    "canal": "shundo",
-    "pokemon": "Bulbasaur",
-    "coords": "40.813633,-89.608303",
-    "ts": 1795274159,
-    "despawn_unix": 1795276102,
-    "discord_msg_id": "1573718629550391422",
-    "discord_msg_ids": [
-      "1573718629550391422"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Bulbasaur! (CP 1035 • Nivel 35.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=40.813633,-89.608303",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm1.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1035` | **Nivel:** `35.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795276102:R> (`32 min 22 seg`)\n🕒 **Hora exacta:** <t:1795276102:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Norteamérica (Este) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.813633,-89.608303)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n40.813633,-89.608303\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:59.461632+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:59"
-  },
-  "shundo:-8118750196339292167": {
-    "canal": "shundo",
-    "pokemon": "Trubbish",
-    "coords": "40.611692,-73.882955",
-    "ts": 1795274159,
-    "despawn_unix": 1795276417,
-    "discord_msg_id": "1573720565003460669",
-    "discord_msg_ids": [
-      "1573718629550391422",
-      "1573720565003460669"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Trubbish! (CP 929 • Nivel 35.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=40.611692,-73.882955",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm568.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `929` | **Nivel:** `35.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795276417:R> (`29 min 56 seg`)\n🕒 **Hora exacta:** <t:1795276417:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Norteamérica (Este) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=40.611692,-73.882955)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n40.611692,-73.882955\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:23:40.729424+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:59"
-  },
-  "shundo:-2299772181825401768": {
-    "canal": "shundo",
-    "pokemon": "Snivy",
-    "coords": "41.116988,28.650244",
-    "ts": 1795274159,
-    "despawn_unix": 1795275164,
-    "discord_msg_id": "1573718629550391422",
-    "discord_msg_ids": [
-      "1573718629550391422"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Snivy! (CP 789 • Nivel 35.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=41.116988,28.650244",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm495.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `789` | **Nivel:** `35.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795275164:R> (`16 min 44 seg`)\n🕒 **Hora exacta:** <t:1795275164:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Oriental y Medio Oriente • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=41.116988,28.650244)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n41.116988,28.650244\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:15:59.461642+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:15:59"
-  },
-  "great:3239651387112373850": {
-    "canal": "great",
-    "pokemon": "Yamper",
-    "coords": "35.132452,138.869483",
-    "ts": 1795274159,
-    "despawn_unix": 1795277554,
-    "discord_msg_id": "1573718632133820532",
-    "discord_msg_ids": [
-      "1573718632133820532"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Yamper ➔ Boltund!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Boltund** (`CP 1497` a Nivel `26.0`)",
-      "url": "https://www.google.com/maps?q=35.132452,138.869483",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm836.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/14/15`\n**Salvaje:** `CP 301` | `Nivel 16.0` (M, Female)\n**Final en Liga:** `CP 1497` | `Nivel 26.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277554:R> (`56 min 34 seg`)\n🕒 **Hora exacta:** <t:1795277554:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.132452,138.869483)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n35.132452,138.869483\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.069248+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:00"
-  },
-  "great:6699584609610162031": {
-    "canal": "great",
-    "pokemon": "Pawniard",
-    "coords": "50.975659,8.081009",
-    "ts": 1795274159,
-    "despawn_unix": 1795277535,
-    "discord_msg_id": "1573718632133820532",
-    "discord_msg_ids": [
-      "1573718632133820532"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard ➔ Bisharp!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 1494` a Nivel `19.5`)",
-      "url": "https://www.google.com/maps?q=50.975659,8.081009",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 256` | `Nivel 7.0` (M, Female)\n**Final en Liga:** `CP 1494` | `Nivel 19.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277535:R> (`56 min 15 seg`)\n🕒 **Hora exacta:** <t:1795277535:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.975659,8.081009)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n50.975659,8.081009\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.069272+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:00"
-  },
-  "great:2851199499315401658": {
-    "canal": "great",
-    "pokemon": "Tynamo",
-    "coords": "36.538498,138.113361",
-    "ts": 1795274159,
-    "despawn_unix": 1795277511,
-    "discord_msg_id": "1573718632133820532",
-    "discord_msg_ids": [
-      "1573718632133820532"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Tynamo ➔ Eelektrik!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Eelektrik** (`CP 1498` a Nivel `37.5`)",
-      "url": "https://www.google.com/maps?q=36.538498,138.113361",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm603.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/13/15`\n**Salvaje:** `CP 421` | `Nivel 21.0` (M, Male)\n**Final en Liga:** `CP 1498` | `Nivel 37.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277511:R> (`55 min 51 seg`)\n🕒 **Hora exacta:** <t:1795277511:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=36.538498,138.113361)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n36.538498,138.113361\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.069283+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:00"
-  },
-  "great:-6649783443480561310": {
-    "canal": "great",
-    "pokemon": "Pawniard",
-    "coords": "43.737536,11.295916",
-    "ts": 1795274159,
-    "despawn_unix": 1795277506,
-    "discord_msg_id": "1573718632133820532",
-    "discord_msg_ids": [
-      "1573718632133820532"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1496` en Nivel `50.0`",
-      "url": "https://www.google.com/maps?q=43.737536,11.295916",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `2/15/15`\n**Salvaje:** `CP 338` | `Nivel 9.0` (M, Male)\n**Final en Liga:** `CP 1496` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277506:R> (`55 min 46 seg`)\n🕒 **Hora exacta:** <t:1795277506:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=43.737536,11.295916)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n43.737536,11.295916\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.069293+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:00"
-  },
-  "great:-3917885371211243871": {
-    "canal": "great",
-    "pokemon": "Pawniard",
-    "coords": "37.396637,-5.994518",
-    "ts": 1795274159,
-    "despawn_unix": 1795277502,
-    "discord_msg_id": "1573718632133820532",
-    "discord_msg_ids": [
-      "1573718632133820532"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard ➔ Kingambit!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Kingambit** (`CP 1499` a Nivel `15.5`)",
-      "url": "https://www.google.com/maps?q=37.396637,-5.994518",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm983.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/13`\n**Salvaje:** `CP 444` | `Nivel 12.0` (M, Female)\n**Final en Liga:** `CP 1499` | `Nivel 15.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277502:R> (`55 min 42 seg`)\n🕒 **Hora exacta:** <t:1795277502:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=37.396637,-5.994518)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n37.396637,-5.994518\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.069300+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:00"
-  },
-  "great:5179109836761646811": {
-    "canal": "great",
-    "pokemon": "Pawniard",
-    "coords": "53.589886,9.977160",
-    "ts": 1795274159,
-    "despawn_unix": 1795277473,
-    "discord_msg_id": "1573718632133820532",
-    "discord_msg_ids": [
-      "1573718632133820532"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard ➔ Bisharp!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 1494` a Nivel `19.5`)",
-      "url": "https://www.google.com/maps?q=53.589886,9.977160",
-      "color": 3900150,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 676` | `Nivel 18.0` (M, Male)\n**Final en Liga:** `CP 1494` | `Nivel 19.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277473:R> (`55 min 13 seg`)\n🕒 **Hora exacta:** <t:1795277473:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.589886,9.977160)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n53.589886,9.977160\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.069308+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:00"
-  },
-  "ultra:718245873590272975": {
-    "canal": "ultra",
-    "pokemon": "Magikarp",
-    "coords": "35.760518,139.885682",
-    "ts": 1795274159,
-    "despawn_unix": 1795277682,
-    "discord_msg_id": "1573718635573411939",
-    "discord_msg_ids": [
-      "1573718635573411939"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Magikarp ➔ Gyarados!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Gyarados** (`CP 2500` a Nivel `27.5`)",
-      "url": "https://www.google.com/maps?q=35.760518,139.885682",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm130.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/14`\n**Salvaje:** `CP 123` | `Nivel 24.0` (M, Female)\n**Final en Liga:** `CP 2500` | `Nivel 27.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277682:R> (`58 min 42 seg`)\n🕒 **Hora exacta:** <t:1795277682:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Kanamachi, Chiba, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.760518,139.885682)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n35.760518,139.885682\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.812513+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:01"
-  },
-  "ultra:6342402663494818830": {
-    "canal": "ultra",
-    "pokemon": "Pawniard",
-    "coords": "51.326342,9.506776",
-    "ts": 1795274159,
-    "despawn_unix": 1795277650,
-    "discord_msg_id": "1573718635573411939",
-    "discord_msg_ids": [
-      "1573718635573411939"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Pawniard ➔ Bisharp!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 2500` a Nivel `35.5`)",
-      "url": "https://www.google.com/maps?q=51.326342,9.506776",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 373` | `Nivel 10.0` (M, Female)\n**Final en Liga:** `CP 2500` | `Nivel 35.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277650:R> (`58 min 10 seg`)\n🕒 **Hora exacta:** <t:1795277650:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Kassel, Hessen, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.326342,9.506776)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.326342,9.506776\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.812531+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:01"
-  },
-  "ultra:1435557298667931048": {
-    "canal": "ultra",
-    "pokemon": "Pawniard",
-    "coords": "51.618492,4.849152",
-    "ts": 1795274159,
-    "despawn_unix": 1795277622,
-    "discord_msg_id": "1573718635573411939",
-    "discord_msg_ids": [
-      "1573718635573411939"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Pawniard ➔ Bisharp!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 2500` a Nivel `35.5`)",
-      "url": "https://www.google.com/maps?q=51.618492,4.849152",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 858` | `Nivel 23.0` (M, Male)\n**Final en Liga:** `CP 2500` | `Nivel 35.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277622:R> (`57 min 42 seg`)\n🕒 **Hora exacta:** <t:1795277622:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Oosterhout, Noord-Brabant, Netherlands • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.618492,4.849152)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.618492,4.849152\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.812540+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:01"
-  },
-  "ultra:8500508810095923275": {
-    "canal": "ultra",
-    "pokemon": "Helioptile",
-    "coords": "44.920570,-93.110004",
-    "ts": 1795274159,
-    "despawn_unix": 1795277620,
-    "discord_msg_id": "1573718635573411939",
-    "discord_msg_ids": [
-      "1573718635573411939"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Helioptile ➔ Heliolisk!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Heliolisk** (`CP 2497` a Nivel `42.5`)",
-      "url": "https://www.google.com/maps?q=44.920570,-93.110004",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm695.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/14/14`\n**Salvaje:** `CP 209` | `Nivel 9.0` (M, Male)\n**Final en Liga:** `CP 2497` | `Nivel 42.5`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277620:R> (`57 min 40 seg`)\n🕒 **Hora exacta:** <t:1795277620:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Norteamérica (Este) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=44.920570,-93.110004)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n44.920570,-93.110004\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.812549+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:01"
-  },
-  "ultra:-8368772207842636918": {
-    "canal": "ultra",
-    "pokemon": "Pawniard",
-    "coords": "38.693802,-7.097292",
-    "ts": 1795274159,
-    "despawn_unix": 1795277600,
-    "discord_msg_id": "1573718635573411939",
-    "discord_msg_ids": [
-      "1573718635573411939"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Pawniard ➔ Bisharp!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 2500` a Nivel `35.5`)",
-      "url": "https://www.google.com/maps?q=38.693802,-7.097292",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 136` | `Nivel 4.0` (L, Female)\n**Final en Liga:** `CP 2500` | `Nivel 35.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277600:R> (`57 min 20 seg`)\n🕒 **Hora exacta:** <t:1795277600:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.693802,-7.097292)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n38.693802,-7.097292\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.812557+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:01"
-  },
-  "ultra:-6066519094424866872": {
-    "canal": "ultra",
-    "pokemon": "Pawniard",
-    "coords": "37.376548,-6.022296",
-    "ts": 1795274159,
-    "despawn_unix": 1795277585,
-    "discord_msg_id": "1573718635573411939",
-    "discord_msg_ids": [
-      "1573718635573411939"
-    ],
-    "embed_base": {
-      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Pawniard ➔ Bisharp!",
-      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 2500` a Nivel `35.5`)",
-      "url": "https://www.google.com/maps?q=37.376548,-6.022296",
-      "color": 11032055,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Datos de Captura y PvP",
-          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 373` | `Nivel 10.0` (M, Male)\n**Final en Liga:** `CP 2500` | `Nivel 35.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795277585:R> (`57 min 05 seg`)\n🕒 **Hora exacta:** <t:1795277585:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=37.376548,-6.022296)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n37.376548,-6.022296\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:00.812566+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:01"
-  },
-  "evento:7994495546440271333": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "50.650040,5.636341",
-    "ts": 1795274159,
-    "despawn_unix": 1795276245,
-    "discord_msg_id": "1573718638374949081",
-    "discord_msg_ids": [
-      "1573718638374949081"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1228 • Nivel 30.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=50.650040,5.636341",
-      "color": 16766720,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1228` | **Nivel:** `30.0`\n**Talla:** `M` (Male)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795276245:R> (`34 min 45 seg`)\n🕒 **Hora exacta:** <t:1795276245:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.650040,5.636341)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n50.650040,5.636341\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:16:01.476094+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:02"
-  },
-  "evento:-7378751600280667832": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "52.170765,21.184863",
-    "ts": 1795274159,
-    "despawn_unix": 1795275802,
-    "discord_msg_id": "1573722508492800042",
-    "discord_msg_ids": [
-      "1573718638374949081",
-      "1573720583936417870",
-      "1573722508492800042"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1228 • Nivel 30.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=52.170765,21.184863",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1228` | **Nivel:** `30.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795275802:R> (`12 min 00 seg`)\n🕒 **Hora exacta:** <t:1795275802:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Oriental y Medio Oriente • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.170765,21.184863)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n52.170765,21.184863\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:31:24.257321+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:02"
-  },
-  "evento:-3374406006348349877": {
-    "canal": "evento",
-    "pokemon": "Pawniard",
-    "coords": "51.722716,19.439514",
-    "ts": 1795274159,
-    "despawn_unix": 1795275419,
-    "discord_msg_id": "1573720583936417870",
-    "discord_msg_ids": [
-      "1573718638374949081",
-      "1573720583936417870"
-    ],
-    "embed_base": {
-      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1228 • Nivel 30.0)",
-      "description": "🌟 **100% IV HUNDO**",
-      "url": "https://www.google.com/maps?q=51.722716,19.439514",
-      "color": 16347926,
-      "thumbnail": {
-        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
-      },
-      "fields": [
-        {
-          "name": "📊 Estadísticas",
-          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1228` | **Nivel:** `30.0`\n**Talla:** `M` (Female)",
-          "inline": true
-        },
-        {
-          "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795275419:R> (`13 min 18 seg`)\n🕒 **Hora exacta:** <t:1795275419:T>",
-          "inline": true
-        },
-        {
-          "name": "📍 Ubicación",
-          "value": "Europa Oriental y Medio Oriente • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.722716,19.439514)",
-          "inline": false
-        },
-        {
-          "name": "🎯 Coordenadas Exactas",
-          "value": "```\n51.722716,19.439514\n```",
-          "inline": false
-        }
-      ],
-      "footer": {
-        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
-      },
-      "timestamp": "2026-11-21T15:23:43.306934+00:00"
-    },
-    "eliminado_de_discord": true,
-    "notificado_en": "2026-11-21 15:16:02"
-  },
   "shundo:-6726025159908431426": {
     "canal": "shundo",
     "pokemon": "Seviper",
@@ -4787,7 +3484,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.897466+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 15:46:16"
   },
   "evento:-5986727970309809400": {
@@ -5609,7 +4306,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.897457+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 15:53:32"
   },
   "evento:8365409016777155499": {
@@ -5995,7 +4692,7 @@
       },
       "timestamp": "2026-11-21T16:08:45.953505+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:01:32"
   },
   "great:6337730578536709802": {
@@ -6620,7 +5317,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.897406+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:01:34"
   },
   "evento:-2263672179994443491": {
@@ -6629,10 +5326,11 @@
     "coords": "45.492963,10.207367",
     "ts": 1795276891,
     "despawn_unix": 1795280359,
-    "discord_msg_id": "1573731918778994885",
+    "discord_msg_id": "1573733747533156388",
     "discord_msg_ids": [
       "1573730100065730636",
-      "1573731918778994885"
+      "1573731918778994885",
+      "1573733747533156388"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1187 • Nivel 29.0)",
@@ -6650,7 +5348,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795280359:R> (`50 min 34 seg`)\n🕒 **Hora exacta:** <t:1795280359:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795280359:R> (`43 min 18 seg`)\n🕒 **Hora exacta:** <t:1795280359:T>",
           "inline": true
         },
         {
@@ -6667,7 +5365,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T16:08:47.897447+00:00"
+      "timestamp": "2026-11-21T16:16:03.904166+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 16:01:34"
@@ -6678,9 +5376,10 @@
     "coords": "46.19669,6.135242",
     "ts": 1795277324,
     "despawn_unix": 1795278123,
-    "discord_msg_id": "1573731910960685072",
+    "discord_msg_id": "1573733736401477638",
     "discord_msg_ids": [
-      "1573731910960685072"
+      "1573731910960685072",
+      "1573733736401477638"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Sawk! (CP 2588 • Nivel 35.0)",
@@ -6698,7 +5397,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795278123:R> (`13 min 18 seg`)\n🕒 **Hora exacta:** <t:1795278123:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795278123:R> (`6 min 02 seg`)\n🕒 **Hora exacta:** <t:1795278123:T>",
           "inline": true
         },
         {
@@ -6715,7 +5414,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T16:08:45.953443+00:00"
+      "timestamp": "2026-11-21T16:16:01.220269+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 16:08:46"
@@ -6765,7 +5464,7 @@
       },
       "timestamp": "2026-11-21T16:08:45.953468+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "shundo:-6529630064098601615": {
@@ -6774,9 +5473,10 @@
     "coords": "-26.244125,151.937682",
     "ts": 1795277324,
     "despawn_unix": 1795280185,
-    "discord_msg_id": "1573731910960685072",
+    "discord_msg_id": "1573733736401477638",
     "discord_msg_ids": [
-      "1573731910960685072"
+      "1573731910960685072",
+      "1573733736401477638"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Growlithe (Hisuian)! (CP 1228 • Nivel 35.0)",
@@ -6794,7 +5494,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795280185:R> (`47 min 40 seg`)\n🕒 **Hora exacta:** <t:1795280185:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795280185:R> (`40 min 24 seg`)\n🕒 **Hora exacta:** <t:1795280185:T>",
           "inline": true
         },
         {
@@ -6811,7 +5511,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T16:08:45.953479+00:00"
+      "timestamp": "2026-11-21T16:16:01.220318+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 16:08:46"
@@ -6861,7 +5561,7 @@
       },
       "timestamp": "2026-11-21T16:08:45.953487+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "shundo:2941331985454208063": {
@@ -6909,7 +5609,7 @@
       },
       "timestamp": "2026-11-21T16:08:45.953495+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "great:8835441372998039287": {
@@ -6957,7 +5657,7 @@
       },
       "timestamp": "2026-11-21T16:08:46.538614+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "great:-3394100468721306818": {
@@ -7005,7 +5705,7 @@
       },
       "timestamp": "2026-11-21T16:08:46.538643+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "great:-1412164774845338489": {
@@ -7053,7 +5753,7 @@
       },
       "timestamp": "2026-11-21T16:08:46.538657+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "great:2734491560305376706": {
@@ -7101,7 +5801,7 @@
       },
       "timestamp": "2026-11-21T16:08:46.538669+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "great:3464731868817036068": {
@@ -7149,7 +5849,7 @@
       },
       "timestamp": "2026-11-21T16:08:46.538679+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "great:3256575667707989130": {
@@ -7197,7 +5897,7 @@
       },
       "timestamp": "2026-11-21T16:08:46.538690+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:46"
   },
   "ultra:8281518195099190998": {
@@ -7245,7 +5945,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.014989+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:47"
   },
   "ultra:-1412164774845338489": {
@@ -7293,7 +5993,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.015014+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:47"
   },
   "ultra:6709003326581602267": {
@@ -7341,7 +6041,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.015027+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:47"
   },
   "ultra:-906578186133077897": {
@@ -7389,7 +6089,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.015038+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:47"
   },
   "ultra:-4329896052091716367": {
@@ -7437,7 +6137,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.015048+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:47"
   },
   "ultra:-1627048997359807904": {
@@ -7485,7 +6185,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.015059+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:47"
   },
   "evento:1929877142104671114": {
@@ -7533,7 +6233,7 @@
       },
       "timestamp": "2026-11-21T16:08:47.897437+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:48"
   },
   "evento:-6508019347707974894": {
@@ -7581,7 +6281,1015 @@
       },
       "timestamp": "2026-11-21T16:08:47.897476+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:08:48"
+  },
+  "shundo:-4777193574672646327": {
+    "canal": "shundo",
+    "pokemon": "Oricorio (Baile)",
+    "coords": "25.311499,51.516054",
+    "ts": 1795277760,
+    "despawn_unix": 1795278723,
+    "discord_msg_id": "1573733736401477638",
+    "discord_msg_ids": [
+      "1573733736401477638"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Oricorio (Baile)! (CP 2167 • Nivel 35.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=25.311499,51.516054",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm741.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `2167` | **Nivel:** `35.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795278723:R> (`16 min 02 seg`)\n🕒 **Hora exacta:** <t:1795278723:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Oriental y Medio Oriente • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=25.311499,51.516054)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🌟 Hundo 100%)",
+          "value": "```\n🌟 25.311499,51.516054\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.220299+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:01"
+  },
+  "shundo:3154058527584489343": {
+    "canal": "shundo",
+    "pokemon": "Kabuto",
+    "coords": "-37.559535,144.730841",
+    "ts": 1795277760,
+    "despawn_unix": 1795279086,
+    "discord_msg_id": "1573733736401477638",
+    "discord_msg_ids": [
+      "1573733736401477638"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Kabuto! (CP 1273 • Nivel 35.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=-37.559535,144.730841",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm140.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1273` | **Nivel:** `35.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795279086:R> (`22 min 05 seg`)\n🕒 **Hora exacta:** <t:1795279086:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Oceanía (Australia y Nueva Zelanda) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-37.559535,144.730841)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🌟 Hundo 100%)",
+          "value": "```\n🌟 -37.559535,144.730841\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.220309+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:01"
+  },
+  "shundo:5039118273918656969": {
+    "canal": "shundo",
+    "pokemon": "Trapinch",
+    "coords": "35.847080,128.471965",
+    "ts": 1795277760,
+    "despawn_unix": 1795280279,
+    "discord_msg_id": "1573733736401477638",
+    "discord_msg_ids": [
+      "1573733736401477638"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Trapinch! (CP 1183 • Nivel 35.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=35.847080,128.471965",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm328.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1183` | **Nivel:** `35.0`\n**Talla:** `XS` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795280279:R> (`41 min 58 seg`)\n🕒 **Hora exacta:** <t:1795280279:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.847080,128.471965)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🌟 Hundo 100%)",
+          "value": "```\n🌟 35.847080,128.471965\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.220329+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:01"
+  },
+  "shundo:-428520044774785000": {
+    "canal": "shundo",
+    "pokemon": "Grookey",
+    "coords": "49.239279,6.826252",
+    "ts": 1795277760,
+    "despawn_unix": 1795280776,
+    "discord_msg_id": "1573733736401477638",
+    "discord_msg_ids": [
+      "1573733736401477638"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Grookey! (CP 1008 • Nivel 35.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=49.239279,6.826252",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm810.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1008` | **Nivel:** `35.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795280776:R> (`50 min 15 seg`)\n🕒 **Hora exacta:** <t:1795280776:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=49.239279,6.826252)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🌟 Hundo 100%)",
+          "value": "```\n🌟 49.239279,6.826252\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.220370+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:01"
+  },
+  "great:-5705399961807427345": {
+    "canal": "great",
+    "pokemon": "Pawniard",
+    "coords": "53.098180,-2.444037",
+    "ts": 1795277760,
+    "despawn_unix": 1795281161,
+    "discord_msg_id": "1573733738813198362",
+    "discord_msg_ids": [
+      "1573733738813198362"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard ➔ Bisharp!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 1494` a Nivel `19.5`)",
+      "url": "https://www.google.com/maps?q=53.098180,-2.444037",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 563` | `Nivel 15.0` (XS, Female)\n**Final en Liga:** `CP 1494` | `Nivel 19.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281161:R> (`56 min 40 seg`)\n🕒 **Hora exacta:** <t:1795281161:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.098180,-2.444037)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🔵 Great League)",
+          "value": "```\n🔵 53.098180,-2.444037\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.799467+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "great:-2562991308469608814": {
+    "canal": "great",
+    "pokemon": "Drilbur",
+    "coords": "19.338350,-99.188747",
+    "ts": 1795277760,
+    "despawn_unix": 1795281151,
+    "discord_msg_id": "1573733738813198362",
+    "discord_msg_ids": [
+      "1573733738813198362"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Drilbur ➔ Excadrill!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Excadrill** (`CP 1496` a Nivel `17.0`)",
+      "url": "https://www.google.com/maps?q=19.338350,-99.188747",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm530.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `2/15/14`\n**Salvaje:** `CP 542` | `Nivel 15.0` (L, Female)\n**Final en Liga:** `CP 1496` | `Nivel 17.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281151:R> (`56 min 30 seg`)\n🕒 **Hora exacta:** <t:1795281151:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Norteamérica (Oeste y Centro) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=19.338350,-99.188747)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🔵 Great League)",
+          "value": "```\n🔵 19.338350,-99.188747\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.799498+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "great:-9058057538759191285": {
+    "canal": "great",
+    "pokemon": "Nickit",
+    "coords": "36.772888,136.990280",
+    "ts": 1795277760,
+    "despawn_unix": 1795281053,
+    "discord_msg_id": "1573733738813198362",
+    "discord_msg_ids": [
+      "1573733738813198362"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Nickit ➔ Thievul!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Thievul** (`CP 1499` a Nivel `27.0`)",
+      "url": "https://www.google.com/maps?q=36.772888,136.990280",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm828.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/11`\n**Salvaje:** `CP 62` | `Nivel 4.0` (M, Female)\n**Final en Liga:** `CP 1499` | `Nivel 27.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281053:R> (`54 min 52 seg`)\n🕒 **Hora exacta:** <t:1795281053:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=36.772888,136.990280)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🔵 Great League)",
+          "value": "```\n🔵 36.772888,136.990280\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.799512+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "great:-2609682388906348400": {
+    "canal": "great",
+    "pokemon": "Pawniard",
+    "coords": "54.626129,-5.940521",
+    "ts": 1795277760,
+    "despawn_unix": 1795281050,
+    "discord_msg_id": "1573733738813198362",
+    "discord_msg_ids": [
+      "1573733738813198362"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1496` en Nivel `50.0`",
+      "url": "https://www.google.com/maps?q=54.626129,-5.940521",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `2/15/15`\n**Salvaje:** `CP 1058` | `Nivel 28.0` (M, Female)\n**Final en Liga:** `CP 1496` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281050:R> (`54 min 49 seg`)\n🕒 **Hora exacta:** <t:1795281050:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=54.626129,-5.940521)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🔵 Great League)",
+          "value": "```\n🔵 54.626129,-5.940521\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.799526+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "great:591673382827410821": {
+    "canal": "great",
+    "pokemon": "Pawniard",
+    "coords": "53.372093,-6.300248",
+    "ts": 1795277760,
+    "despawn_unix": 1795281009,
+    "discord_msg_id": "1573733738813198362",
+    "discord_msg_ids": [
+      "1573733738813198362"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n⚔️ **En Liga:** **Pawniard** alcanza `CP 1496` en Nivel `50.0`",
+      "url": "https://www.google.com/maps?q=53.372093,-6.300248",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `2/15/15`\n**Salvaje:** `CP 567` | `Nivel 15.0` (L, Female)\n**Final en Liga:** `CP 1496` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281009:R> (`54 min 08 seg`)\n🕒 **Hora exacta:** <t:1795281009:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.372093,-6.300248)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🔵 Great League)",
+          "value": "```\n🔵 53.372093,-6.300248\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.799537+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "great:-5566363317686812328": {
+    "canal": "great",
+    "pokemon": "Eevee",
+    "coords": "-4.969240,-39.004611",
+    "ts": 1795277760,
+    "despawn_unix": 1795280992,
+    "discord_msg_id": "1573733738813198362",
+    "discord_msg_ids": [
+      "1573733738813198362"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Eevee ➔ Glaceon!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Glaceon** (`CP 1500` a Nivel `18.0`)",
+      "url": "https://www.google.com/maps?q=-4.969240,-39.004611",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm471.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/12`\n**Salvaje:** `CP 41` | `Nivel 2.0` (M, Male)\n**Final en Liga:** `CP 1500` | `Nivel 18.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795280992:R> (`53 min 51 seg`)\n🕒 **Hora exacta:** <t:1795280992:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sudamérica • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-4.969240,-39.004611)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🔵 Great League)",
+          "value": "```\n🔵 -4.969240,-39.004611\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:01.799550+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "ultra:619495216625669761": {
+    "canal": "ultra",
+    "pokemon": "Sobble",
+    "coords": "38.288403,140.853099",
+    "ts": 1795277760,
+    "despawn_unix": 1795281238,
+    "discord_msg_id": "1573733741333975297",
+    "discord_msg_ids": [
+      "1573733741333975297"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Sobble ➔ Inteleon!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Inteleon** (`CP 2499` a Nivel `32.5`)",
+      "url": "https://www.google.com/maps?q=38.288403,140.853099",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm818.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `1/15/13`\n**Salvaje:** `CP 192` | `Nivel 7.0` (M, Male)\n**Final en Liga:** `CP 2499` | `Nivel 32.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281238:R> (`57 min 57 seg`)\n🕒 **Hora exacta:** <t:1795281238:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sendai, Miyagi, Japan • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.288403,140.853099)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🟣 Ultra League)",
+          "value": "```\n🟣 38.288403,140.853099\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:02.380853+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "ultra:-703263112870516988": {
+    "canal": "ultra",
+    "pokemon": "Mareep",
+    "coords": "49.484451,8.493667",
+    "ts": 1795277760,
+    "despawn_unix": 1795281180,
+    "discord_msg_id": "1573733741333975297",
+    "discord_msg_ids": [
+      "1573733741333975297"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Mareep ➔ Ampharos!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Ampharos** (`CP 2497` a Nivel `36.0`)",
+      "url": "https://www.google.com/maps?q=49.484451,8.493667",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm181.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/13/15`\n**Salvaje:** `CP 643` | `Nivel 26.0` (M, Female)\n**Final en Liga:** `CP 2497` | `Nivel 36.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281180:R> (`56 min 59 seg`)\n🕒 **Hora exacta:** <t:1795281180:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Mannheim, Baden-Württemberg, Germany • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=49.484451,8.493667)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🟣 Ultra League)",
+          "value": "```\n🟣 49.484451,8.493667\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:02.380881+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "ultra:-4211276402481227655": {
+    "canal": "ultra",
+    "pokemon": "Turtwig",
+    "coords": "-26.827922,-65.191306",
+    "ts": 1795277760,
+    "despawn_unix": 1795281112,
+    "discord_msg_id": "1573733741333975297",
+    "discord_msg_ids": [
+      "1573733741333975297"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Turtwig ➔ Torterra!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Torterra** (`CP 2497` a Nivel `34.0`)",
+      "url": "https://www.google.com/maps?q=-26.827922,-65.191306",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm389.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 451` | `Nivel 15.0` (M, Male)\n**Final en Liga:** `CP 2497` | `Nivel 34.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281112:R> (`55 min 51 seg`)\n🕒 **Hora exacta:** <t:1795281112:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sudamérica • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-26.827922,-65.191306)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🟣 Ultra League)",
+          "value": "```\n🟣 -26.827922,-65.191306\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:02.380895+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "ultra:-1379124388841786353": {
+    "canal": "ultra",
+    "pokemon": "Turtwig",
+    "coords": "3.056936,101.438634",
+    "ts": 1795277760,
+    "despawn_unix": 1795281095,
+    "discord_msg_id": "1573733741333975297",
+    "discord_msg_ids": [
+      "1573733741333975297"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Turtwig ➔ Torterra!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Torterra** (`CP 2497` a Nivel `34.0`)",
+      "url": "https://www.google.com/maps?q=3.056936,101.438634",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm389.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 482` | `Nivel 16.0` (M, Male)\n**Final en Liga:** `CP 2497` | `Nivel 34.0`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281095:R> (`55 min 34 seg`)\n🕒 **Hora exacta:** <t:1795281095:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sudeste Asiático e India • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=3.056936,101.438634)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🟣 Ultra League)",
+          "value": "```\n🟣 3.056936,101.438634\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:02.380906+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "ultra:4547250733326450817": {
+    "canal": "ultra",
+    "pokemon": "Doduo",
+    "coords": "33.466836,130.583679",
+    "ts": 1795277760,
+    "despawn_unix": 1795281094,
+    "discord_msg_id": "1573733741333975297",
+    "discord_msg_ids": [
+      "1573733741333975297"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Doduo ➔ Dodrio!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • 🍬 **REQUIERE CARAMELOS XL**\n🔄 **Para Liga:** Evolucionar a **Dodrio** (`CP 2498` a Nivel `50.0`)",
+      "url": "https://www.google.com/maps?q=33.466836,130.583679",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm85.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 626` | `Nivel 20.0` (M, Male)\n**Final en Liga:** `CP 2498` | `Nivel 50.0`\n**Caramelos XL:** `🍬 Sí (> Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281094:R> (`55 min 33 seg`)\n🕒 **Hora exacta:** <t:1795281094:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=33.466836,130.583679)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🟣 Ultra League)",
+          "value": "```\n🟣 33.466836,130.583679\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:02.380919+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "ultra:-4845913963207327780": {
+    "canal": "ultra",
+    "pokemon": "Pawniard",
+    "coords": "52.046662,-0.723050",
+    "ts": 1795277760,
+    "despawn_unix": 1795281069,
+    "discord_msg_id": "1573733741333975297",
+    "discord_msg_ids": [
+      "1573733741333975297"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Pawniard ➔ Bisharp!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 2500` a Nivel `35.5`)",
+      "url": "https://www.google.com/maps?q=52.046662,-0.723050",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 373` | `Nivel 10.0` (M, Female)\n**Final en Liga:** `CP 2500` | `Nivel 35.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281069:R> (`55 min 08 seg`)\n🕒 **Hora exacta:** <t:1795281069:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=52.046662,-0.723050)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🟣 Ultra League)",
+          "value": "```\n🟣 52.046662,-0.723050\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:02.380931+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:02"
+  },
+  "evento:6632661632617155916": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "51.501805,-2.627211",
+    "ts": 1795277760,
+    "despawn_unix": 1795279767,
+    "discord_msg_id": "1573733747533156388",
+    "discord_msg_ids": [
+      "1573733747533156388"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1187 • Nivel 29.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=51.501805,-2.627211",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1187` | **Nivel:** `29.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795279767:R> (`33 min 26 seg`)\n🕒 **Hora exacta:** <t:1795279767:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=51.501805,-2.627211)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 51.501805,-2.627211\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:03.904194+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:04"
+  },
+  "evento:-8575237830943815375": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "53.842728,-1.706584",
+    "ts": 1795277760,
+    "despawn_unix": 1795279726,
+    "discord_msg_id": "1573733747533156388",
+    "discord_msg_ids": [
+      "1573733747533156388"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1187 • Nivel 29.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=53.842728,-1.706584",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1187` | **Nivel:** `29.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795279726:R> (`32 min 45 seg`)\n🕒 **Hora exacta:** <t:1795279726:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.842728,-1.706584)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 53.842728,-1.706584\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:03.904202+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:04"
+  },
+  "evento:4562521152332435727": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "53.323454,-1.456606",
+    "ts": 1795277760,
+    "despawn_unix": 1795280664,
+    "discord_msg_id": "1573733747533156388",
+    "discord_msg_ids": [
+      "1573733747533156388"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1146 • Nivel 28.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=53.323454,-1.456606",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1146` | **Nivel:** `28.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795280664:R> (`48 min 23 seg`)\n🕒 **Hora exacta:** <t:1795280664:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Dronfield, Sheffield, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=53.323454,-1.456606)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 53.323454,-1.456606\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:03.904212+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:04"
+  },
+  "evento:-5946467194064297502": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "38.770617,-9.165286",
+    "ts": 1795277760,
+    "despawn_unix": 1795279813,
+    "discord_msg_id": "1573733747533156388",
+    "discord_msg_ids": [
+      "1573733747533156388"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1105 • Nivel 27.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=38.770617,-9.165286",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1105` | **Nivel:** `27.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795279813:R> (`34 min 12 seg`)\n🕒 **Hora exacta:** <t:1795279813:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=38.770617,-9.165286)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 38.770617,-9.165286\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:03.904218+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:04"
+  },
+  "evento:-3747690123568099837": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "50.845233,-0.160010",
+    "ts": 1795277760,
+    "despawn_unix": 1795279454,
+    "discord_msg_id": "1573733747533156388",
+    "discord_msg_ids": [
+      "1573733747533156388"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1105 • Nivel 27.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=50.845233,-0.160010",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1105` | **Nivel:** `27.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795279454:R> (`28 min 13 seg`)\n🕒 **Hora exacta:** <t:1795279454:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.845233,-0.160010)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 50.845233,-0.160010\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T16:16:03.904226+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 16:16:04"
   }
 }
