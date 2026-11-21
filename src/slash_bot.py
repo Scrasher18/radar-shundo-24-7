@@ -66,11 +66,14 @@ async def autocomplete_pokemon(
     current: str
 ) -> List[app_commands.Choice[str]]:
     """Devuelve los 25 Pokémon (oficiales + regionales) que mejor coinciden con lo que el usuario está escribiendo."""
-    coincidencias = buscar_pokemon_autocomplete(current, limite=25)
-    return [
-        app_commands.Choice(name=label, value=label)
-        for label, _val in coincidencias
-    ]
+    try:
+        coincidencias = buscar_pokemon_autocomplete(current, limite=25)
+        return [
+            app_commands.Choice(name=label[:100], value=label[:100])
+            for label, _val in coincidencias
+        ]
+    except Exception:
+        return []
 
 
 async def autocomplete_presets(
@@ -112,7 +115,7 @@ async def autocomplete_presets(
     radio_km="Radio en km para buscar alrededor de la base (ej: 10, 25, 50, 100). Evita cooldowns.",
     acumular="Si es True, suma estos Pokémon a la lista actual sin borrar nada",
     incluir_familia="Si es True, incluye evoluciones de cada especie (recomendado para CD)",
-    shundo="Si es True, rastrea 100% IV Shundos de estas especies",
+    hundo="Si es True, rastrea 100% IV Hundos de estas especies",
     pvp_gl="Si es True, rastrea Top Ranks para Great League (1500 CP)",
     pvp_ul="Si es True, rastrea Top Ranks para Ultra League (2500 CP)"
 )
@@ -134,7 +137,7 @@ async def cmd_pokemon(
     radio_km: Optional[int] = None,
     acumular: bool = False,
     incluir_familia: bool = True,
-    shundo: bool = True,
+    hundo: bool = True,
     pvp_gl: bool = True,
     pvp_ul: bool = True,
 ):
@@ -180,7 +183,7 @@ async def cmd_pokemon(
     cfg_ev["nombre_evento"] = titulo_evento
     cfg_ev["pokemon_nombres"] = nombres_completos
     cfg_ev["pokemon_ids"] = ids_totales
-    cfg_ev["incluir_shundos_100"] = shundo
+    cfg_ev["incluir_shundos_100"] = hundo
     cfg_ev["incluir_pvp_gl"] = pvp_gl
     cfg_ev["incluir_pvp_ul"] = pvp_ul
     cfg_ev["activo"] = True
@@ -222,7 +225,7 @@ async def cmd_pokemon(
         f"✅ **Radar de Eventos configurado para {len(nombres_oficiales)} Pokémon:**\n"
         f"• 📋 **Especies activas:** **{resumen_pokes}** ({fases_txt})\n"
         f"{texto_geo_aviso}"
-        f"• 🎯 **Filtros:** Shundo 100% (`{shundo}`) | Great League (`{pvp_gl}`) | Ultra League (`{pvp_ul}`)\n"
+        f"• 🎯 **Filtros:** 100% IV Hundo (`{hundo}`) | Great League (`{pvp_gl}`) | Ultra League (`{pvp_ul}`)\n"
         f"• ⚡ **Escaneo prioritario iniciado de inmediato en `#🎉-evento-cd`...**",
         ephemeral=True
     )
@@ -625,7 +628,7 @@ async def cmd_tiempo(interaction: discord.Interaction, minutos: int):
 )
 @app_commands.choices(
     canal=[
-        app_commands.Choice(name="🌟 100% IV (Hundos / Shundos)", value="shundo"),
+        app_commands.Choice(name="🌟 100% IV (Hundos)", value="shundo"),
         app_commands.Choice(name="🔵 Great League (1500 CP)", value="great"),
         app_commands.Choice(name="🟣 Ultra League (2500 CP)", value="ultra"),
         app_commands.Choice(name="🎉 Eventos / CD", value="evento"),
@@ -655,7 +658,7 @@ async def cmd_canal(interaction: discord.Interaction, canal: str, estado: str):
     publicar_o_actualizar_panel_maestro()
     sincronizar_estado_remoto_push(asincrono=True)
 
-    nombres = {"shundo": "100% IV (Hundos / Shundos)", "great": "Great League", "ultra": "Ultra League", "evento": "Eventos & CD"}
+    nombres = {"shundo": "100% IV (Hundos)", "great": "Great League", "ultra": "Ultra League", "evento": "Eventos & CD"}
     tag = "🟢 Activado" if activar else "🔴 Pausado"
     await interaction.followup.send(f"{tag}: Canal **{nombres.get(canal, canal)}**.", ephemeral=True)
 

@@ -149,7 +149,7 @@ def construir_embed_panel_maestro(cfg: Dict[str, Any]) -> Dict[str, Any]:
             {
                 "name": "📡 Estado de los Canales",
                 "value": (
-                    f"• 🌟 **100% IV (Hundo/Shundo):** `{tag_shundo}`\n"
+                    f"• 🌟 **100% IV (Hundos):** `{tag_shundo}`\n"
                     f"• 🔵 **Great League (1500 CP):** `{tag_gl}`\n"
                     f"• 🟣 **Ultra League (2500 CP):** `{tag_ul}`\n"
                     f"• 🎉 **Eventos / CD:** `{tag_evento}`"
@@ -161,7 +161,7 @@ def construir_embed_panel_maestro(cfg: Dict[str, Any]) -> Dict[str, Any]:
                 "value": (
                     f"• ⏱️ **Intervalo:** `{intervalo_min} minutos`\n"
                     f"• 🏆 **Filtro PvP:** `Rank #1 al #{pvp_top_rank}`\n"
-                    f"• 🎯 **Coords Exactas:** `Shundos + Top #{pvp_rev_rank} PvP`\n"
+                    f"• 🎯 **Coords Exactas:** `100% IV Hundos + Top #{pvp_rev_rank} PvP`\n"
                     f"• 📍 **Origen:** `Global (5 Continentes)`"
                 ),
                 "inline": True,
@@ -175,7 +175,7 @@ def construir_embed_panel_maestro(cfg: Dict[str, Any]) -> Dict[str, Any]:
                 "name": "🎮 Comandos Rápidos Disponibles (Escríbelos aquí)",
                 "value": (
                     "• ⏱️ **Cambiar Intervalo:** `3m` • `5m` • `7m` • `10m` • `15m` *(o `tiempo 5`)*\n"
-                    "• 🔴/🟢 **Activar/Pausar Canales:** `shundo on/off` • `gl on/off` • `ul on/off` • `evento on/off`\n"
+                    "• 🔴/🟢 **Activar/Pausar Canales:** `hundo on/off` • `gl on/off` • `ul on/off` • `evento on/off`\n"
                     "• ⏸️ **Pausa Global:** `pausar` • `reanudar`\n"
                     "• 🏆 **Filtro PvP:** `rank 1-3` • `rank 1-5`\n"
                     "• ⚡ **Escaneo Forzado:** `scan` o `buscar` *(busca en este segundo)*\n"
@@ -292,13 +292,13 @@ def procesar_comando_control(contenido: str) -> bool:
     # 4. Comandos de activación / desactivación por canal
     canales = cfg.setdefault("canales", {"shundo": True, "great": True, "ultra": True, "evento": True})
 
-    if low in ("shundo off", "shundo apagar", "shundo pausar", "shundos off"):
+    if low in ("hundo off", "hundos off", "shundo off", "shundo apagar", "shundo pausar", "shundos off"):
         canales["shundo"] = False
-        aviso = "🔴 Canal **Shundos 100% IV** pausado."
+        aviso = "🔴 Canal **100% IV Hundos** pausado."
         cambio = True
-    elif low in ("shundo on", "shundo activar", "shundos on"):
+    elif low in ("hundo on", "hundos on", "shundo on", "shundo activar", "shundos on"):
         canales["shundo"] = True
-        aviso = "🟢 Canal **Shundos 100% IV** activado."
+        aviso = "🟢 Canal **100% IV Hundos** activado."
         cambio = True
 
     elif low in ("gl off", "great off", "great league off"):

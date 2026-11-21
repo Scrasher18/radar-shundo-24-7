@@ -336,7 +336,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
 
     if mostrar_cabecera:
         print("=" * 78)
-        print("🌍 RADAR PRO MULTI-CANAL v2.0: SHUNDOS 100% + PVP GREAT LEAGUE + ULTRA LEAGUE")
+        print("🌍 RADAR PRO MULTI-CANAL v2.0: 100% IV HUNDOS + PVP GREAT LEAGUE + ULTRA LEAGUE")
         print("=" * 78)
 
         if perfil:
@@ -349,7 +349,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
             print(f"👤 Usuario Discord : {perfil.get('display_name')} | Modo: {entorno}")
             print(f"🎮 Entrenador PoGO : {t_name} (Código: {t_code} | Equipo: {t_team} | Nivel: {t_lvl})")
             print(f"🔑 Pool Cuentas    : {obtener_resumen_cuentas_pool()}")
-            print("📡 Canales Activos : [1] 🌟 Shundos 100%  |  [2] 🔵 PvP GL (Top 1-5)  |  [3] 🟣 PvP UL (Top 1-5)")
+            print("📡 Canales Activos : [1] 🌟 100% IV Hundos  |  [2] 🔵 PvP GL (Top 1-5)  |  [3] 🟣 PvP UL (Top 1-5)")
         else:
             print("⚠️ No se pudo verificar /users/me temporalmente. Continuando escaneo...")
         print("-" * 78)
@@ -499,7 +499,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
     hora_actual = datetime.now().strftime("%H:%M:%S")
     print(
         f"\n[{hora_actual}] 📊 ESCANEO COMPLETADO ({duracion:.1f}s) | "
-        f"🌟 Shundos: {len(shundos_activos)} (🆕 {len(nuevos_shundos)}) | "
+        f"🌟 100% IV Hundos: {len(shundos_activos)} (🆕 {len(nuevos_shundos)}) | "
         f"🔵 GL Top 1-5: {len(gl_activos)} (🆕 {len(nuevos_gl)}) | "
         f"🟣 UL Top 1-5: {len(ul_activos)} (🆕 {len(nuevos_ul)}) | "
         f"🎉 Evento/CD: {len(evento_activos)} (🆕 {len(nuevos_evento)})"
@@ -508,7 +508,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
 
     for idx, mon in enumerate(shundos_activos, start=1):
         print(
-            f"  [SHUNDO #{idx:02d}] 🌟 {mon['nombre_completo']} 100% IV | CP {mon.get('cp')} | L{mon.get('level')} | 📍 {mon.get('location') or mon.get('region_mapa')} | 🎯 {mon.get('coords_final')} | ⏳ {mon.get('ttl_texto')}"
+            f"  [HUNDO #{idx:02d}] 🌟 {mon['nombre_completo']} 100% IV | CP {mon.get('cp')} | L{mon.get('level')} | 📍 {mon.get('location') or mon.get('region_mapa')} | 🎯 {mon.get('coords_final')} | ⏳ {mon.get('ttl_texto')}"
         )
 
     for idx, mon in enumerate(gl_activos, start=1):

@@ -64,7 +64,7 @@ def enviar_alerta_token_vencido() -> None:
 
     mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
     payload = {
-        "username": "Radar Shundo Pro ⚠️",
+        "username": "Radar 100% Hundo Pro ⚠️",
         "content": f"⚠️ {mencion}**¡Atención!** Tu `JWT_TOKEN` de Pokémon GO Pro ha expirado (`Error HTTP 401`).",
         "embeds": [
             {
@@ -108,15 +108,15 @@ def construir_encabezado_lote(spawns_nuevos: List[Dict[str, Any]], total_activos
     primero = spawns_nuevos[0]
     nombre = primero.get("nombre_completo") or primero.get("pokemon_name")
     if canal_tipo == "shundo":
-        return f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre})** detectado!"
+        return f"🚨 {mencion}¡Nuevo **100% IV HUNDO ({nombre})** detectado!"
     elif canal_tipo == "evento":
-        return f"🎉 {mencion}¡Nuevo **SHINY DE EVENTO / CD ({nombre})** detectado!"
+        return f"🎉 {mencion}¡Nuevo **POKÉMON DE EVENTO / CD ({nombre})** detectado!"
     else:
         pvp = primero.get("pvp") or {}
         rank = pvp.get("rank", "?")
         pvp_name = pvp.get("pokemon_name") or nombre
         liga_tag = "GREAT LEAGUE" if canal_tipo == "great" else "ULTRA LEAGUE"
-        return f"⚔️ {mencion}¡Nuevo **SHINY {liga_tag} RANK #{rank} ({nombre} ➔ {pvp_name})** detectado!"
+        return f"⚔️ {mencion}¡Nuevo **TOP {liga_tag} RANK #{rank} ({nombre} ➔ {pvp_name})** detectado!"
 
 
 def limpiar_mensajes_huerfanos_canal(canal_tipo: str, mid_activo_valido: Optional[str] = None) -> None:
@@ -374,17 +374,17 @@ def procesar_canal_discord(canal_tipo: str, actualizar_tiempo_real: bool = True)
                 mencion = f"<@{DISCORD_USER_ID_MENCION}> " if DISCORD_USER_ID_MENCION else ""
                 nombre_dest = vivos_en_mid[0][1].get("pokemon", "Pokémon")
                 if canal_tipo == "shundo":
-                    contenido_patch = f"🚨 {mencion}¡Nuevo **SHUNDO 100% IV ({nombre_dest})** detectado!"
-                    footer_limpio = "Radar Shundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+                    contenido_patch = f"🚨 {mencion}¡Nuevo **100% IV HUNDO ({nombre_dest})** detectado!"
+                    footer_limpio = "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
                 elif canal_tipo == "great":
-                    contenido_patch = f"⚔️ {mencion}¡Nuevo **SHINY GREAT LEAGUE ({nombre_dest})** detectado!"
-                    footer_limpio = "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+                    contenido_patch = f"⚔️ {mencion}¡Nuevo **GREAT LEAGUE ({nombre_dest})** detectado!"
+                    footer_limpio = "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
                 elif canal_tipo == "evento":
-                    contenido_patch = f"🎉 {mencion}¡Nuevo **SHINY DE EVENTO / CD ({nombre_dest})** detectado!"
+                    contenido_patch = f"🎉 {mencion}¡Nuevo **POKÉMON DE EVENTO / CD ({nombre_dest})** detectado!"
                     footer_limpio = "Radar Eventos & CD Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
                 else:
-                    contenido_patch = f"⚔️ {mencion}¡Nuevo **SHINY ULTRA LEAGUE ({nombre_dest})** detectado!"
-                    footer_limpio = "Radar PvP Shiny Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+                    contenido_patch = f"⚔️ {mencion}¡Nuevo **ULTRA LEAGUE ({nombre_dest})** detectado!"
+                    footer_limpio = "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
 
                 for emb_item in embeds_actualizados:
                     emb_item["footer"] = {"text": footer_limpio}

@@ -155,7 +155,7 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
 
     modos = []
     if cfg.get("incluir_shundos_100", True):
-        modos.append("🌟 `100% Shundo`")
+        modos.append("🌟 `100% Hundo`")
     if cfg.get("incluir_pvp_gl", True):
         modos.append("🔵 `Great League`")
     if cfg.get("incluir_pvp_ul", True):
@@ -196,8 +196,8 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
         ubicacion_str = "🌍 **Global (5 Continentes)** • Sin límite de distancia *(Cooldown hasta 120m entre saltos lejanos)*"
 
     guia_presets = (
-        "• **`preset master`** ➔ 👑 Top Master League, Raids y Pseudo-Legendarios *(100% Shundo)*\n"
-        "• **`preset mega`** ➔ 🧬 Todos los Pokémon con Mega Evolución *(100% Shundo)*\n"
+        "• **`preset master`** ➔ 👑 Top Master League, Raids y Pseudo-Legendarios *(100% Hundo)*\n"
+        "• **`preset mega`** ➔ 🧬 Todos los Pokémon con Mega Evolución *(100% Hundo)*\n"
         "• **`preset meta`** ➔ 🔥 Top Meta GBL competitivo *(Great & Ultra League)*\n"
         "• **`preset iniciales`** ➔ 🌱🔥💧 Todos los Iniciales Gen 1 a Gen 9"
     )
@@ -207,7 +207,7 @@ def construir_embed_panel_evento(cfg: Dict[str, Any], aviso_permisos: bool = Fal
         "• **`+Bagon`** o **`-Bagon`** ➔ Agrega o quita un Pokémon de la lista\n"
         "• **`coords zaragoza radio 25`** o **`coords 41.6616,-0.8928`** ➔ Fija zona base (menos cooldown)\n"
         "• **`radio 30`** ➔ Cambia el radio en km | **`coords global`** ➔ Vuelve al radar mundial\n"
-        "• **`modo todo`** | **`modo shundo`** | **`modo pvp`** | **`modo gl`** | **`modo ul`**\n"
+        "• **`modo todo`** | **`modo hundo`** | **`modo pvp`** | **`modo gl`** | **`modo ul`**\n"
         "• **`token eyJ...`** ➔ Renueva tu `JWT_TOKEN` directo desde Discord sin abrir GitHub\n"
         "• **`off`** o **`apagar`** ➔ Detiene el evento y limpia las alertas"
     )
@@ -476,7 +476,7 @@ def procesar_comando_texto_evento(texto: str) -> bool:
             cfg["incluir_shundos_100"] = True
             cfg["incluir_pvp_gl"] = True
             cfg["incluir_pvp_ul"] = True
-        elif sub in ("shundo", "shundos", "100", "100%"):
+        elif sub in ("hundo", "hundos", "shundo", "shundos", "100", "100%"):
             cfg["incluir_shundos_100"] = True
             cfg["incluir_pvp_gl"] = False
             cfg["incluir_pvp_ul"] = False

@@ -1,4 +1,4 @@
-name: Radar Shundo & PvP 24/7 (Cloud)
+name: Radar 100% Hundo & PvP 24/7 (Cloud)
 
 on:
   workflow_dispatch:
@@ -9,15 +9,15 @@ on:
       - 'radar.py'
       - 'requirements.txt'
   schedule:
-    - cron: '*/20 * * * *'
+    - cron: '*/30 * * * *'
 
 permissions:
   contents: write
   actions: write
 
 concurrency:
-  group: radar-shundo-singleton
-  cancel-in-progress: true
+  group: radar-singleton
+  cancel-in-progress: false
 
 jobs:
   radar-24-7:
@@ -38,7 +38,7 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Ejecutar Radar Shundo + PvP GL/UL + Eventos en bucle (escaneo cada 7 minutos)
+      - name: Ejecutar Radar 100% Hundo + PvP GL/UL + Eventos en bucle (escaneo cada 7 minutos)
         env:
           JWT_TOKEN: ${{ secrets.JWT_TOKEN }}
           JWT_TOKEN_2: ${{ secrets.JWT_TOKEN_2 }}
@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "radar-shundo-bot"
           git config user.email "radar-bot@users.noreply.github.com"
-          python radar.py --duracion-minutos 40
+          python -u radar.py --duracion-minutos 40
 
       - name: Guardar historial de notificados y cache
         if: ${{ !cancelled() }}
@@ -67,7 +67,7 @@ jobs:
           git diff --staged --quiet || (git commit -m "chore: actualizar cache shundos y pvp [skip ci]" && git push origin main) || true
 
       - name: Auto-encadenar siguiente ciclo 24/7
-        if: ${{ !cancelled() }}
+        if: success()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

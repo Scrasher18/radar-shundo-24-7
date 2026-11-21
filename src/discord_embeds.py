@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from typing import Any, Dict, Tuple
 
 
-def obtener_etiquetas_rareza(mon: Dict[str, Any], etiqueta_base: str = "✨ **SHUNDO 100% IV**") -> str:
+def obtener_etiquetas_rareza(mon: Dict[str, Any], etiqueta_base: str = "🌟 **100% IV HUNDO**") -> str:
     """Genera las insignias de rareza (Fondo Especial, Disfraz, Talla XXL/XXS, Clima)."""
     etiquetas = [etiqueta_base]
     if mon.get("background"):
@@ -68,9 +68,9 @@ def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
     icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{poke_id}.{icon_type}icon.png"
 
     estado_tiempo, color_embed = construir_estado_despawn(mon)
-    etiqueta_tipo = "✨ **SHUNDO 100% IV**" if es_shiny else "🌟 **100% IV HUNDO**"
+    etiqueta_tipo = "🌟 **100% IV HUNDO**"
     rareza_txt = obtener_etiquetas_rareza(mon, etiqueta_tipo)
-    titulo_txt = f"✨ ¡SHUNDO 100% IV: {nombre}! (CP {cp} • Nivel {nivel})" if es_shiny else f"🌟 ¡100% IV HUNDO: {nombre}! (CP {cp} • Nivel {nivel})"
+    titulo_txt = f"🌟 ¡100% IV HUNDO: {nombre}! (CP {cp} • Nivel {nivel})"
 
     fields = [
         {
@@ -102,7 +102,7 @@ def construir_embed_shundo(mon: Dict[str, Any]) -> Dict[str, Any]:
         "color": color_embed,
         "thumbnail": {"url": icon_url},
         "fields": fields,
-        "footer": {"text": f"Radar Shundo Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
+        "footer": {"text": f"Radar 100% Hundo Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -151,8 +151,7 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
     icon_type = "s." if es_shiny else ""
     icon_url = f"https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm{pvp_poke_id}.{icon_type}icon.png"
     estado_tiempo, _ = construir_estado_despawn(mon)
-    etiqueta_shiny = "✨ **SHINY GARANTIZADO** • " if es_shiny else ""
-    rareza_txt = obtener_etiquetas_rareza(mon, f"{etiqueta_shiny}{medalla_rank} • {etiqueta_xl}")
+    rareza_txt = obtener_etiquetas_rareza(mon, f"{medalla_rank} • {etiqueta_xl}")
 
     titulo_especie = f"{nombre_salvaje} ➔ {pvp_poke_name}" if int(pvp_poke_id) != int(poke_id) else nombre_salvaje
 
@@ -192,7 +191,7 @@ def construir_embed_pvp(mon: Dict[str, Any], league: str) -> Dict[str, Any]:
         "color": color_liga,
         "thumbnail": {"url": icon_url},
         "fields": fields,
-        "footer": {"text": f"Radar PvP Shiny Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
+        "footer": {"text": f"Radar PvP Pro ({origen_txt}) • Se eliminará automáticamente al desaparecer"},
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 

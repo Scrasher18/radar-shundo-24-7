@@ -134,10 +134,10 @@ WEBHOOKS_POR_CANAL: Dict[str, str] = {
 }
 
 BOT_NOMBRES_POR_CANAL: Dict[str, str] = {
-    "shundo": "Radar Shundo Pro ✨",
-    "great": "Radar PvP Great League 🔵✨",
-    "ultra": "Radar PvP Ultra League 🟣✨",
-    "evento": "Radar Eventos & CD 🎉✨",
+    "shundo": "Radar 100% Hundo Pro 🌟",
+    "great": "Radar PvP Great League 🔵",
+    "ultra": "Radar PvP Ultra League 🟣",
+    "evento": "Radar Eventos & CD 🎉",
 }
 
 # Coordenadas base de referencia
@@ -178,8 +178,8 @@ REGIONES_GLOBALES: List[Tuple[str, float, float, float, float]] = [
 
 # Particiones de búsqueda directa (/search)
 PARTICIONES_SHUNDOS: List[Dict[str, Any]] = [
-    {"label": "100% Shundos (DSP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "DSP"},
-    {"label": "100% Shundos (CP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "CP"},
+    {"label": "100% Hundos (DSP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "DSP"},
+    {"label": "100% Hundos (CP)", "iv_percent_min": 100, "iv_percent_max": 100, "sort": "CP"},
 ]
 
 PARTICIONES_PVP_GL: List[Dict[str, Any]] = [
