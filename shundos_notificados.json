@@ -857,7 +857,7 @@
       },
       "timestamp": "2026-11-21T19:59:58.200648+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 19:46:46"
   },
   "evento:-6180501517142684477": {
@@ -866,10 +866,11 @@
     "coords": "-12.080416,-77.046147",
     "ts": 1795290773,
     "despawn_unix": 1795292720,
-    "discord_msg_id": "1573790095365111844",
+    "discord_msg_id": "1573790567203344491",
     "discord_msg_ids": [
       "1573788315562279045",
-      "1573790095365111844"
+      "1573790095365111844",
+      "1573790567203344491"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1146 • Nivel 28.0)",
@@ -887,7 +888,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795292720:R> (`25 min 22 seg`)\n🕒 **Hora exacta:** <t:1795292720:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795292720:R> (`23 min 29 seg`)\n🕒 **Hora exacta:** <t:1795292720:T>",
           "inline": true
         },
         {
@@ -909,7 +910,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T19:59:58.200531+00:00"
+      "timestamp": "2026-11-21T20:01:50.758705+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 19:52:54"
@@ -920,10 +921,11 @@
     "coords": "-12.051033,-77.0107",
     "ts": 1795290773,
     "despawn_unix": 1795292859,
-    "discord_msg_id": "1573790095365111844",
+    "discord_msg_id": "1573790567203344491",
     "discord_msg_ids": [
       "1573788315562279045",
-      "1573790095365111844"
+      "1573790095365111844",
+      "1573790567203344491"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 942 • Nivel 23.0)",
@@ -941,7 +943,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795292859:R> (`27 min 41 seg`)\n🕒 **Hora exacta:** <t:1795292859:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795292859:R> (`25 min 48 seg`)\n🕒 **Hora exacta:** <t:1795292859:T>",
           "inline": true
         },
         {
@@ -963,7 +965,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T19:59:58.200563+00:00"
+      "timestamp": "2026-11-21T20:01:50.758736+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 19:52:54"
@@ -974,9 +976,10 @@
     "coords": "-12.046983,-77.004491",
     "ts": 1795291197,
     "despawn_unix": 1795291909,
-    "discord_msg_id": "1573790095365111844",
+    "discord_msg_id": "1573790567203344491",
     "discord_msg_ids": [
-      "1573790095365111844"
+      "1573790095365111844",
+      "1573790567203344491"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 323 • Nivel 8.0)",
@@ -994,7 +997,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795291909:R> (`11 min 51 seg`)\n🕒 **Hora exacta:** <t:1795291909:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795291909:R> (`9 min 58 seg`)\n🕒 **Hora exacta:** <t:1795291909:T>",
           "inline": true
         },
         {
@@ -1016,7 +1019,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T19:59:58.200581+00:00"
+      "timestamp": "2026-11-21T20:01:50.758753+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 19:59:58"
@@ -1071,7 +1074,7 @@
       },
       "timestamp": "2026-11-21T19:59:58.200676+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 19:59:58"
   },
   "evento:1743596693445222292": {
@@ -1124,7 +1127,166 @@
       },
       "timestamp": "2026-11-21T19:59:58.200697+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 19:59:58"
+  },
+  "evento:-7724095924773786434": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-12.087262,-77.080145",
+    "ts": 1795291310,
+    "despawn_unix": 1795291949,
+    "discord_msg_id": "1573790567203344491",
+    "discord_msg_ids": [
+      "1573790567203344491"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🟣 ULTRA LEAGUE (2500 CP) — RANK #1: Pawniard ➔ Bisharp!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 2500` a Nivel `35.5`)",
+      "url": "https://www.google.com/maps?q=-12.087262,-77.080145",
+      "color": 11032055,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `0/15/15`\n**Salvaje:** `CP 1045` | `Nivel 28.0` (M, Female)\n**Final en Liga:** `CP 2500` | `Nivel 35.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795291949:R> (`10 min 38 seg`)\n🕒 **Hora exacta:** <t:1795291949:T>",
+          "inline": true
+        },
+        {
+          "name": "⏱️ Cooldown & Distancia",
+          "value": "📏 **Distancia:** `5.7 km`\n⏳ **Espera:** 🟢 **~7 min** *(Cooldown mínimo)*",
+          "inline": false
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Base (5.0km) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.087262,-77.080145)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento PvP Ultra League)",
+          "value": "```\n🎉 -12.087262,-77.080145\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T20:01:50.758781+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 20:01:51"
+  },
+  "evento:-965062216878375920": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-12.09158,-77.067824",
+    "ts": 1795291310,
+    "despawn_unix": 1795292529,
+    "discord_msg_id": "1573790567203344491",
+    "discord_msg_ids": [
+      "1573790567203344491"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard ➔ Bisharp!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 1494` a Nivel `19.5`)",
+      "url": "https://www.google.com/maps?q=-12.09158,-77.067824",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 375` | `Nivel 10.0` (M, Female)\n**Final en Liga:** `CP 1494` | `Nivel 19.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795292529:R> (`20 min 19 seg`)\n🕒 **Hora exacta:** <t:1795292529:T>",
+          "inline": true
+        },
+        {
+          "name": "⏱️ Cooldown & Distancia",
+          "value": "📏 **Distancia:** `5.0 km`\n⏳ **Espera:** 🟢 **~4 min** *(Cooldown mínimo)*",
+          "inline": false
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "San Isidro, Lima Province, Peru • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.09158,-77.067824)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento PvP Great League)",
+          "value": "```\n🎉 -12.09158,-77.067824\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T20:01:50.758801+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 20:01:51"
+  },
+  "evento:9063681451570333671": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-12.091383,-77.065486",
+    "ts": 1795291310,
+    "despawn_unix": 1795293628,
+    "discord_msg_id": "1573790567203344491",
+    "discord_msg_ids": [
+      "1573790567203344491"
+    ],
+    "embed_base": {
+      "title": "⚔️ ¡🔵 GREAT LEAGUE (1500 CP) — RANK #1: Pawniard ➔ Bisharp!",
+      "description": "🥇 **RANK #1 (100% STAT PRODUCT)** • ✅ **SIN CARAMELOS XL (≤ Nivel 40)**\n🔄 **Para Liga:** Evolucionar a **Bisharp** (`CP 1494` a Nivel `19.5`)",
+      "url": "https://www.google.com/maps?q=-12.091383,-77.065486",
+      "color": 3900150,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm625.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Datos de Captura y PvP",
+          "value": "**Rank PvP:** `#1` (`100.00%`)\n**IVs PvP:** `1/15/15`\n**Salvaje:** `CP 296` | `Nivel 8.0` (M, Male)\n**Final en Liga:** `CP 1494` | `Nivel 19.5`\n**Caramelos XL:** `✅ No (≤ Nivel 40)`",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795293628:R> (`38 min 38 seg`)\n🕒 **Hora exacta:** <t:1795293628:T>",
+          "inline": true
+        },
+        {
+          "name": "⏱️ Cooldown & Distancia",
+          "value": "📏 **Distancia:** `4.8 km`\n⏳ **Espera:** 🟢 **~4 min** *(Cooldown mínimo)*",
+          "inline": false
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "San Isidro, Lima Province, Peru • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-12.091383,-77.065486)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento PvP Great League)",
+          "value": "```\n🎉 -12.091383,-77.065486\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar PvP Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T20:01:50.758818+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 20:01:51"
   }
 }
