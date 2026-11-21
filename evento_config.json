@@ -1,5 +1,5 @@
 {
-  "activo": true,
+  "activo": false,
   "nombre_evento": "Community Day / Evento Especial",
   "webhook_evento": "",
   "pokemon_ids": [],
@@ -11,13 +11,7 @@
   "coords_base": null,
   "lat_base": null,
   "lng_base": null,
-  "radio_km": 30,
+  "radio_km": 50,
   "nombre_ubicacion": "Global",
-  "panel_msg_id": "1562476341981610077",
-  "jwt_cifrado": "Ry9PSRnZIzA1MdnnR-ReWGYTsx3Cf-hnXQEarB1h5qhVAqcML1XY5mJ_7-aII_CcYrX2I4TZCP5LzYCF5p-Iiypnw1PlqvUwPPwFknP6P2VSodriMA1LQ8erus2uLOi8mn7n-sLxgpQtaCCw9tKFxmS_hTAZrc1VJfZQFBNoSzyGXQkdfDEbPpscyQiyYr0=",
-  "jwt_pool_cifrado": [
-    "Ry9PSRnZIzA1MdnnR-ReWGYTsx3Cf-hnXQEarB1h5qhVAqcML1XY5mJ_7-aII_CcYrX2I4TZCP5LzYCF5p-Iiypnw1PlqvUwPPwFknP6P2VSodriMA1LQ8erus2uLOi8mn7n-sLxgpQtaCCw9tKFxmS_hTAZrc1VJfZQFBNoSzyGXQkdfDEbPpscyQiyYr0=",
-    "Ry9PSRnZIzA1MdnnR-ReWGYTsx3Cf-hnXQEarB1h5qhVAqcML1XY5mJ_7-aII_CcY7XIP83OJvUXzoCFrIuhky5nw1Osq9g4PPwFlWj6L2URodrMNw1bX8KrutWvO-i0mn7n-of84L01QTHGx6ve4WO-uAVpi_JHXqNJOXd9DVWpXj5AExgjFY4V_SuyM-o=",
-    "Ry9PSRnZIzA1MdnnR-ReWGYTsx3Cf-hnXQEarB1h5qhVAqcML1XY5mJ_7-aII_CfcKLPM87ONtBO2bqEvYifiD1nw1PkvM8kPOoFr2juP2VXoKzlaQ52R8S9usGvLMa8mn7n-smY4ZE8fgbC8_TN9WejzV9NuPJyP4ooGU5BMgOrWjdvLCJjO70Y8Dmvbe4="
-  ]
+  "panel_msg_id": "1562476341981610077"
 }
