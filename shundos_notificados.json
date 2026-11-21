@@ -4873,7 +4873,7 @@
       },
       "timestamp": "2026-11-21T17:07:29.250069+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 16:45:46"
   },
   "shundo:-254352894788698306": {
@@ -4882,12 +4882,13 @@
     "coords": "-34.514383,-58.724661",
     "ts": 1795279545,
     "despawn_unix": 1795281666,
-    "discord_msg_id": "1573746688680534025",
+    "discord_msg_id": "1573746909133275288",
     "discord_msg_ids": [
       "1573741222332334168",
       "1573743041129480238",
       "1573744866129608754",
-      "1573746688680534025"
+      "1573746688680534025",
+      "1573746909133275288"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Squawkabilly (Blue)! (CP 1832 • Nivel 35.0)",
@@ -4905,7 +4906,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795281666:R> (`13 min 37 seg`)\n🕒 **Hora exacta:** <t:1795281666:T>",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795281666:R> (`12 min 44 seg`)\n🕒 **Hora exacta:** <t:1795281666:T>",
           "inline": true
         },
         {
@@ -4922,7 +4923,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T17:07:29.250105+00:00"
+      "timestamp": "2026-11-21T17:08:21.434393+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 16:45:46"
@@ -6812,10 +6813,11 @@
     "coords": "50.282108,19.137460",
     "ts": 1795280414,
     "despawn_unix": 1795281810,
-    "discord_msg_id": "1573746688680534025",
+    "discord_msg_id": "1573746909133275288",
     "discord_msg_ids": [
       "1573744866129608754",
-      "1573746688680534025"
+      "1573746688680534025",
+      "1573746909133275288"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Fletchling! (CP 743 • Nivel 35.0)",
@@ -6833,7 +6835,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281810:R> (`16 min 01 seg`)\n🕒 **Hora exacta:** <t:1795281810:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281810:R> (`15 min 08 seg`)\n🕒 **Hora exacta:** <t:1795281810:T>",
           "inline": true
         },
         {
@@ -6850,7 +6852,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T17:07:29.250143+00:00"
+      "timestamp": "2026-11-21T17:08:21.434459+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 17:00:15"
@@ -7485,9 +7487,10 @@
     "coords": "50.843992,-1.094430",
     "ts": 1795280414,
     "despawn_unix": 1795283101,
-    "discord_msg_id": "1573744881741078680",
+    "discord_msg_id": "1573746911549071561",
     "discord_msg_ids": [
-      "1573744881741078680"
+      "1573744881741078680",
+      "1573746911549071561"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1105 • Nivel 27.0)",
@@ -7505,12 +7508,12 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795283101:R> (`44 min 46 seg`)\n🕒 **Hora exacta:** <t:1795283101:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795283101:R> (`36 min 39 seg`)\n🕒 **Hora exacta:** <t:1795283101:T>",
           "inline": true
         },
         {
           "name": "📍 Ubicación",
-          "value": "Cosham, Hampshire, United Kingdom • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.843992,-1.094430)",
+          "value": "Europa Occidental • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=50.843992,-1.094430)",
           "inline": false
         },
         {
@@ -7522,9 +7525,9 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T17:00:18.394522+00:00"
+      "timestamp": "2026-11-21T17:08:22.319998+00:00"
     },
-    "eliminado_de_discord": true,
+    "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 17:00:18"
   },
   "evento:377686928099647465": {
@@ -7629,9 +7632,10 @@
     "coords": "51.795691,19.385963",
     "ts": 1795280848,
     "despawn_unix": 1795281898,
-    "discord_msg_id": "1573746688680534025",
+    "discord_msg_id": "1573746909133275288",
     "discord_msg_ids": [
-      "1573746688680534025"
+      "1573746688680534025",
+      "1573746909133275288"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Abra! (CP 1246 • Nivel 35.0)",
@@ -7649,7 +7653,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281898:R> (`17 min 29 seg`)\n🕒 **Hora exacta:** <t:1795281898:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795281898:R> (`16 min 36 seg`)\n🕒 **Hora exacta:** <t:1795281898:T>",
           "inline": true
         },
         {
@@ -7666,7 +7670,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T17:07:29.250121+00:00"
+      "timestamp": "2026-11-21T17:08:21.434429+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 17:07:29"
@@ -7677,9 +7681,10 @@
     "coords": "36.072672,-115.204969",
     "ts": 1795280848,
     "despawn_unix": 1795282505,
-    "discord_msg_id": "1573746688680534025",
+    "discord_msg_id": "1573746909133275288",
     "discord_msg_ids": [
-      "1573746688680534025"
+      "1573746688680534025",
+      "1573746909133275288"
     ],
     "embed_base": {
       "title": "🌟 ¡100% IV HUNDO: Dwebble! (CP 1137 • Nivel 35.0)",
@@ -7697,7 +7702,7 @@
         },
         {
           "name": "⏳ Estado Despawn",
-          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795282505:R> (`27 min 36 seg`)\n🕒 **Hora exacta:** <t:1795282505:T>",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795282505:R> (`26 min 43 seg`)\n🕒 **Hora exacta:** <t:1795282505:T>",
           "inline": true
         },
         {
@@ -7714,7 +7719,7 @@
       "footer": {
         "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
       },
-      "timestamp": "2026-11-21T17:07:29.250132+00:00"
+      "timestamp": "2026-11-21T17:08:21.434447+00:00"
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 17:07:29"
@@ -7764,7 +7769,7 @@
       },
       "timestamp": "2026-11-21T17:07:29.250157+00:00"
     },
-    "eliminado_de_discord": false,
+    "eliminado_de_discord": true,
     "notificado_en": "2026-11-21 17:07:29"
   },
   "great:7783126507031397024": {
@@ -8342,5 +8347,341 @@
     },
     "eliminado_de_discord": false,
     "notificado_en": "2026-11-21 17:07:32"
+  },
+  "shundo:2746402628711290606": {
+    "canal": "shundo",
+    "pokemon": "Cottonee",
+    "coords": "33.946588,-118.370388",
+    "ts": 1795280901,
+    "despawn_unix": 1795282211,
+    "discord_msg_id": "1573746909133275288",
+    "discord_msg_ids": [
+      "1573746909133275288"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Cottonee! (CP 650 • Nivel 35.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=33.946588,-118.370388",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm546.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `650` | **Nivel:** `35.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795282211:R> (`21 min 49 seg`)\n🕒 **Hora exacta:** <t:1795282211:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Norteamérica (Oeste y Centro) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=33.946588,-118.370388)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🌟 Hundo 100%)",
+          "value": "```\n🌟 33.946588,-118.370388\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T17:08:21.434471+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 17:08:22"
+  },
+  "shundo:-5490661598706862607": {
+    "canal": "shundo",
+    "pokemon": "Bronzor",
+    "coords": "35.126908,138.925911",
+    "ts": 1795280901,
+    "despawn_unix": 1795284179,
+    "discord_msg_id": "1573746909133275288",
+    "discord_msg_ids": [
+      "1573746909133275288"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Bronzor! (CP 560 • Nivel 35.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=35.126908,138.925911",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm436.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `560` | **Nivel:** `35.0`\n**Talla:** `M` (Genderless)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795284179:R> (`54 min 37 seg`)\n🕒 **Hora exacta:** <t:1795284179:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Asia Oriental (Japón, Corea, Taiwán) • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=35.126908,138.925911)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🌟 Hundo 100%)",
+          "value": "```\n🌟 35.126908,138.925911\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T17:08:21.434483+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 17:08:22"
+  },
+  "evento:-6332665174958709740": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-22.849362,-43.317800",
+    "ts": 1795280901,
+    "despawn_unix": 1795282223,
+    "discord_msg_id": "1573746911549071561",
+    "discord_msg_ids": [
+      "1573746911549071561"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1228 • Nivel 30.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=-22.849362,-43.317800",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1228` | **Nivel:** `30.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795282223:R> (`22 min 01 seg`)\n🕒 **Hora exacta:** <t:1795282223:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sudamérica • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-22.849362,-43.317800)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 -22.849362,-43.317800\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T17:08:22.319924+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 17:08:23"
+  },
+  "evento:6513528445703678503": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-23.601260,-46.763018",
+    "ts": 1795280901,
+    "despawn_unix": 1795281742,
+    "discord_msg_id": "1573746911549071561",
+    "discord_msg_ids": [
+      "1573746911549071561"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1228 • Nivel 30.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=-23.601260,-46.763018",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1228` | **Nivel:** `30.0`\n**Talla:** `M` (Female)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795281742:R> (`14 min 00 seg`)\n🕒 **Hora exacta:** <t:1795281742:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sudamérica • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-23.601260,-46.763018)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 -23.601260,-46.763018\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T17:08:22.319956+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 17:08:23"
+  },
+  "evento:-1975128568579089717": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-1.428598,-48.457554",
+    "ts": 1795280901,
+    "despawn_unix": 1795281708,
+    "discord_msg_id": "1573746911549071561",
+    "discord_msg_ids": [
+      "1573746911549071561"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1228 • Nivel 30.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=-1.428598,-48.457554",
+      "color": 16347926,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1228` | **Nivel:** `30.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟡 **Tiempo Medio**\n⏱️ **Desaparece:** <t:1795281708:R> (`13 min 26 seg`)\n🕒 **Hora exacta:** <t:1795281708:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Sudamérica • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-1.428598,-48.457554)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 -1.428598,-48.457554\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T17:08:22.319969+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 17:08:23"
+  },
+  "evento:-1228519660316048661": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-34.500798,-58.743161",
+    "ts": 1795280901,
+    "despawn_unix": 1795283352,
+    "discord_msg_id": "1573746911549071561",
+    "discord_msg_ids": [
+      "1573746911549071561"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1187 • Nivel 29.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=-34.500798,-58.743161",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1187` | **Nivel:** `29.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795283352:R> (`40 min 50 seg`)\n🕒 **Hora exacta:** <t:1795283352:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Tortuguitas, Buenos Aires, Argentina • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-34.500798,-58.743161)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 -34.500798,-58.743161\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T17:08:22.319978+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 17:08:23"
+  },
+  "evento:864015892408269342": {
+    "canal": "evento",
+    "pokemon": "Pawniard",
+    "coords": "-23.434057,-46.408583",
+    "ts": 1795280901,
+    "despawn_unix": 1795283862,
+    "discord_msg_id": "1573746911549071561",
+    "discord_msg_ids": [
+      "1573746911549071561"
+    ],
+    "embed_base": {
+      "title": "🌟 ¡100% IV HUNDO: Pawniard! (CP 1105 • Nivel 27.0)",
+      "description": "🌟 **100% IV HUNDO**",
+      "url": "https://www.google.com/maps?q=-23.434057,-46.408583",
+      "color": 16766720,
+      "thumbnail": {
+        "url": "https://raw.githubusercontent.com/PokeMiners/pogo_assets/master/Images/Pokemon/Addressable%20Assets/pm624.icon.png"
+      },
+      "fields": [
+        {
+          "name": "📊 Estadísticas",
+          "value": "**IV:** `100% (15/15/15)`\n**CP:** `1105` | **Nivel:** `27.0`\n**Talla:** `M` (Male)",
+          "inline": true
+        },
+        {
+          "name": "⏳ Estado Despawn",
+          "value": "🟢 **Tiempo Seguro**\n⏱️ **Desaparece:** <t:1795283862:R> (`49 min 20 seg`)\n🕒 **Hora exacta:** <t:1795283862:T>",
+          "inline": true
+        },
+        {
+          "name": "📍 Ubicación",
+          "value": "Jardim Helena, São Paulo, Brazil • [🗺️ Ver en Google Maps](https://www.google.com/maps?q=-23.434057,-46.408583)",
+          "inline": false
+        },
+        {
+          "name": "🎯 Coordenadas Exactas (🎉 Evento / CD)",
+          "value": "```\n🎉 -23.434057,-46.408583\n```",
+          "inline": false
+        }
+      ],
+      "footer": {
+        "text": "Radar 100% Hundo Pro (☁️ Nube 24/7) • Se eliminará automáticamente al desaparecer"
+      },
+      "timestamp": "2026-11-21T17:08:22.319987+00:00"
+    },
+    "eliminado_de_discord": false,
+    "notificado_en": "2026-11-21 17:08:23"
   }
 }
