@@ -180,7 +180,7 @@ def _recolectar_spawns_evento(
                         min_cp = PVP_MIN_CP_GL if modo == "great" else PVP_MIN_CP_UL
                         if (
                             pvp.get("league") == modo
-                            and int(pvp.get("rank", 99)) <= PVP_TOP_RANK_MAX
+                            and int(pvp.get("rank") or 99) <= PVP_TOP_RANK_MAX
                             and int(pvp.get("cp") or 0) >= min_cp
                         ):
                             eid = str(mon.get("encounter_id"))
@@ -234,8 +234,8 @@ def _filtrar_y_enriquecer_evento_por_radio(
 
     resultado.sort(
         key=lambda x: (
-            0 if float(x.get("iv_percent") or 0.0) == 100.0 else int((x.get("pvp") or {}).get("rank", 99)),
-            float(x.get("distancia_base_km", 99999.0)),
+            0 if float(x.get("iv_percent") or 0.0) == 100.0 else int((x.get("pvp") or {}).get("rank") or 99),
+            float(x.get("distancia_base_km") or 99999.0),
             -float(x.get("level") or 0.0),
             -int(x.get("ttl_segundos") or 0),
         )
@@ -273,7 +273,7 @@ def ejecutar_escaneo_evento_inmediato() -> None:
 
     evento_activos.sort(
         key=lambda x: (
-            0 if float(x.get("iv_percent") or 0.0) == 100.0 else int((x.get("pvp") or {}).get("rank", 99)),
+            0 if float(x.get("iv_percent") or 0.0) == 100.0 else int((x.get("pvp") or {}).get("rank") or 99),
             -float(x.get("level") or 0.0),
             -int(x.get("ttl_segundos") or 0),
         )
@@ -395,7 +395,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
                     pvp = mon.get("pvp") or {}
                     if (
                         pvp.get("league") == "great"
-                        and int(pvp.get("rank", 99)) <= pvp_top_rank
+                        and int(pvp.get("rank") or 99) <= pvp_top_rank
                         and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
                     ):
                         eid = str(mon.get("encounter_id"))
@@ -406,7 +406,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
                     pvp = mon.get("pvp") or {}
                     if (
                         pvp.get("league") == "great"
-                        and int(pvp.get("rank", 99)) <= pvp_top_rank
+                        and int(pvp.get("rank") or 99) <= pvp_top_rank
                         and int(pvp.get("cp") or 0) >= PVP_MIN_CP_GL
                     ):
                         eid = str(mon.get("encounter_id"))
@@ -424,7 +424,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
                     pvp = mon.get("pvp") or {}
                     if (
                         pvp.get("league") == "ultra"
-                        and int(pvp.get("rank", 99)) <= pvp_top_rank
+                        and int(pvp.get("rank") or 99) <= pvp_top_rank
                         and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
                     ):
                         eid = str(mon.get("encounter_id"))
@@ -435,7 +435,7 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
                     pvp = mon.get("pvp") or {}
                     if (
                         pvp.get("league") == "ultra"
-                        and int(pvp.get("rank", 99)) <= pvp_top_rank
+                        and int(pvp.get("rank") or 99) <= pvp_top_rank
                         and int(pvp.get("cp") or 0) >= PVP_MIN_CP_UL
                     ):
                         eid = str(mon.get("encounter_id"))
@@ -468,21 +468,21 @@ def ejecutar_ciclo_radar(mostrar_cabecera: bool = True) -> None:
     )
     gl_activos.sort(
         key=lambda x: (
-            int((x.get("pvp") or {}).get("rank", 99)),
-            -float((x.get("pvp") or {}).get("percent", 0.0)),
+            int((x.get("pvp") or {}).get("rank") or 99),
+            -float((x.get("pvp") or {}).get("percent") or 0.0),
             -int(x.get("ttl_segundos") or 0),
         )
     )
     ul_activos.sort(
         key=lambda x: (
-            int((x.get("pvp") or {}).get("rank", 99)),
-            -float((x.get("pvp") or {}).get("percent", 0.0)),
+            int((x.get("pvp") or {}).get("rank") or 99),
+            -float((x.get("pvp") or {}).get("percent") or 0.0),
             -int(x.get("ttl_segundos") or 0),
         )
     )
     evento_activos.sort(
         key=lambda x: (
-            0 if float(x.get("iv_percent") or 0.0) == 100.0 else int((x.get("pvp") or {}).get("rank", 99)),
+            0 if float(x.get("iv_percent") or 0.0) == 100.0 else int((x.get("pvp") or {}).get("rank") or 99),
             -float(x.get("level") or 0.0),
             -int(x.get("ttl_segundos") or 0),
         )

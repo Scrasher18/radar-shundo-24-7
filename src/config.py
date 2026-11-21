@@ -111,8 +111,9 @@ def resolver_jwt_mas_reciente() -> str:
             jwt_cif = ev_data.get("jwt_cifrado", "")
             if jwt_cif:
                 jwt_desc = descifrar_jwt_con_secreto(jwt_cif, DISCORD_BOT_TOKEN)
-                if extraer_exp_jwt(jwt_desc) > exp_base:
-                    return jwt_desc
+                if jwt_desc and jwt_desc.startswith("eyJ"):
+                    if not candidato_base or (exp_base > 0 and extraer_exp_jwt(jwt_desc) > exp_base):
+                        return jwt_desc
         except Exception:
             pass
     return candidato_base
@@ -121,6 +122,24 @@ def resolver_jwt_mas_reciente() -> str:
 JWT_TOKEN: str = resolver_jwt_mas_reciente()
 JWT_TOKEN_2: str = os.environ.get("JWT_TOKEN_2") or _cfg.get("JWT_TOKEN_2", "")
 JWT_TOKEN_3: str = os.environ.get("JWT_TOKEN_3") or _cfg.get("JWT_TOKEN_3", "")
+
+# Recuperar tokens del pool cifrado en evento_config si no están en entorno (ej: runners en la nube)
+if os.path.exists(EVENTO_CONFIG_FILE) and DISCORD_BOT_TOKEN:
+    try:
+        with open(EVENTO_CONFIG_FILE, "r", encoding="utf-8") as f:
+            ev_data = json.load(f)
+        pool_cif = ev_data.get("jwt_pool_cifrado") or []
+        tokens_desc = [descifrar_jwt_con_secreto(c, DISCORD_BOT_TOKEN) for c in pool_cif]
+        tokens_validos = [t for t in tokens_desc if t and t.startswith("eyJ")]
+        if not JWT_TOKEN and len(tokens_validos) > 0:
+            JWT_TOKEN = tokens_validos[0]
+        if not JWT_TOKEN_2 and len(tokens_validos) > 1:
+            JWT_TOKEN_2 = tokens_validos[1]
+        if not JWT_TOKEN_3 and len(tokens_validos) > 2:
+            JWT_TOKEN_3 = tokens_validos[2]
+    except Exception:
+        pass
+
 JWT_TOKENS: List[str] = [t.strip() for t in [JWT_TOKEN, JWT_TOKEN_2, JWT_TOKEN_3] if t and t.strip().startswith("eyJ")]
 
 ES_MODO_NUBE: bool = os.environ.get("CLOUD_MODE") == "1" or sys.platform != "win32"

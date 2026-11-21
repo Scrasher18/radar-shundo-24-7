@@ -49,13 +49,14 @@ jobs:
           DISCORD_WEBHOOK_EVENTO: ${{ secrets.DISCORD_WEBHOOK_EVENTO }}
           DISCORD_WEBHOOK_CONTROL: ${{ secrets.DISCORD_WEBHOOK_CONTROL }}
           DISCORD_CONTROL_CHANNEL_ID: "1562872060487794788"
-          DISCORD_EVENTO_CHANNEL_ID: ${{ secrets.DISCORD_EVENTO_CHANNEL_ID }}
+          DISCORD_EVENTO_CHANNEL_ID: "1562344305606262846"
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_USER_ID_MENCION: "924392800534011935"
           CLOUD_MODE: "1"
         run: |
-          git config user.name "radar-shundo-bot"
-          git config user.email "radar-bot@users.noreply.github.com"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE" || true
+          git config --global user.name "radar-shundo-bot" || true
+          git config --global user.email "radar-bot@users.noreply.github.com" || true
           python -u radar.py --duracion-minutos 40
 
       - name: Guardar historial de notificados y cache

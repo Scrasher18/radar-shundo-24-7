@@ -375,7 +375,7 @@ def preparar_lista_spawns(
         else:
             reveal_code = mon.get("reveal_code")
             iv_pct = float(mon.get("iv_percent") or 0.0)
-            pvp_rank = int((mon.get("pvp") or {}).get("rank", 99))
+            pvp_rank = int((mon.get("pvp") or {}).get("rank") or 99)
             es_shundo_100 = (iv_pct == 100.0)
             es_top_pvp = (pvp_rank <= PVP_REVEAL_MAX_RANK)
             es_evento = bool(mon.get("origen_evento"))

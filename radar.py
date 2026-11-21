@@ -39,4 +39,21 @@ from src.state_manager import (  # noqa: F401, E402
 )
 
 if __name__ == "__main__":
-    iniciar_radar()
+    import traceback
+    try:
+        iniciar_radar()
+    except Exception as e:
+        tb = traceback.format_exc()
+        print("❌ CRITICAL ERROR IN RADAR.PY:\n" + tb, file=sys.stderr, flush=True)
+        try:
+            import os, requests
+            wh = os.environ.get("DISCORD_WEBHOOK_CONTROL")
+            if wh:
+                requests.post(
+                    wh,
+                    json={"content": f"🚨 **Error en el runner de GitHub Actions:**\n```python\n{tb[:1700]}\n```"},
+                    timeout=5
+                )
+        except Exception:
+            pass
+        sys.exit(1)
