@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/runner/work/radar-shundo-24-7/radar-shundo-24-7/radar.py", line 26, in <module>
+    from src.scanner_engine import (  # noqa: F401, E402
+  File "/home/runner/work/radar-shundo-24-7/radar-shundo-24-7/src/scanner_engine.py", line 193, in <module>
+    evento_activos: List[Dict[str, Any]],
+                    ^^^^
+NameError: name 'List' is not defined. Did you mean: 'list'?
